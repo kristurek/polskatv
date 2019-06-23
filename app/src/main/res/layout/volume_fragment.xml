@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.kristurek.polskatv.ui.volume.VolumeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="@{viewModel.visibility ? View.VISIBLE : View.GONE}">
+
+        <TextView
+            android:id="@+id/volume_fragment_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/horizontal_margin"
+            android:background="#1375a5"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_header_1"
+            android:textStyle="bold" />
+
+        <com.kristurek.polskatv.ui.view.XVerticalSeekBar
+            android:id="@+id/volume_fragment_seekbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:max="100"
+            android:maxHeight="4dip"
+            android:minHeight="4dip"
+            android:nextFocusLeft="@id/epgs_fragment_list"
+            android:nextFocusRight="@id/volume_fragment_seekbar"
+            android:nextFocusUp="@id/volume_fragment_seekbar"
+            android:nextFocusDown="@id/volume_fragment_seekbar"
+            android:progress="100"
+            android:progressDrawable="@drawable/seekbar_selector" />
+
+    </LinearLayout>
+
+</layout>

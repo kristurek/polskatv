@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "BAD_SID",
+    "message": "Malformed session ID"
+  },
+  "servertime": 1555352418
+}

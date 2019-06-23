@@ -1,0 +1,55 @@
+{
+  "time_zone": 120,
+  "time_shift": 0,
+  "interface_lng": "en",
+  "parental_pass": 1111,
+  "media_server_id": 0,
+  "stb_volume": 60,
+  "stb_bright": 65,
+  "stb_contrast": 50,
+  "stb_saturation": 50,
+  "stb_buffer": 5,
+  "media_servers": [
+    {
+      "id": "71",
+      "title": "EU"
+    },
+    {
+      "id": "1",
+      "title": "Server EU-G"
+    },
+    {
+      "id": "19",
+      "title": "Server UK"
+    },
+    {
+      "id": "43",
+      "title": "Server US1"
+    },
+    {
+      "id": "3",
+      "title": "Server US2"
+    },
+    {
+      "id": "44",
+      "title": "Server US3"
+    },
+    {
+      "id": "70",
+      "title": "Server US4"
+    },
+    {
+      "id": "75",
+      "title": "Server US5 WA"
+    },
+    {
+      "id": "9",
+      "title": "Server US LA1"
+    },
+    {
+      "id": "0",
+      "title": "Авто (Server US2)"
+    }
+  ],
+  "servertime": 1555377996
+}

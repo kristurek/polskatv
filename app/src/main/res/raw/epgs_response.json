@@ -1,0 +1,483 @@
+{
+  "icons": {
+    "default": "http://xlink.ws/iptv/core/img/ico/tv/%ICON%.gif",
+    "w40h30": "http://xlink.ws/iptv/core/img/ico/tv/%ICON%.gif",
+    "playback": "http://xlink.ws/iptv/core/img/ico/tv/playback/%ICON%.png",
+    "small": "http://xlink.ws/iptv/core/img/ico/tv/small/%ICON%.png"
+  },
+  "channels": [
+    {
+      "id": 2134,
+      "name": "TV PULS2",
+      "icon": "pl-puls2",
+      "time_shift": 0,
+      "epg": [
+        {
+          "wait": "0",
+          "title": "Lwia Straż",
+          "info": "Kontynuacja przebojowego filmu wytwórni Walta Disneya \"Król Lew\", której akcja rozgrywa się jednocześnie z fabułą filmu \"Król Lew 2: Czas Simby\". Kion, syn Simby i Nali, przypadkowo odkrywa w sobie uśpiony talent: ryk czyniący z jego najpotężniejsze zwierzę w całej Lwiej Ziemi. Simba mianuje go nowym przywódcą Lwiej Straży, grupy, która ma za zadanie strzec porządku w królestwie i chronić Krąg Życia. Jednocześnie zleca mu skompletowanie elity najwaleczniejszych, najodważniejszych, najsilniejszych i najbystrzejszych zwierząt na Lwiej Ziemi",
+          "has_archive": 1,
+          "begin": 1555390800,
+          "end": 1555392600
+        },
+        {
+          "wait": "0",
+          "title": "Bob Budowniczy",
+          "info": "Na placu budowy Bob i jego maszyny budowlane po raz kolejny będą musieli rozwiązać rozmaite problemy. Praca zespołowa, wiara we własne siły oraz pozytywne myślenie pozwolą im osiągnąć każdy cel. Najmłodsi widzowie poznają nowych bohaterów: Nośkę, czyli uroczą zbieraczkę czereśni, Ładowarkę, która jest maleńką, bardzo pracowitą kompaktową maszyną do załadunku oraz Normę, czyli ogromną maszynę do wiercenia tuneli. Do koparki Scoop, betoniarki Dizzy, spychacza Mucka, dźwigu Lofty i walca Roley'a dołącza Marta, która będzie dzielnie pomagała w budowach Boba. Często pracowitym przyjaciołom będzie dokuczał Strach Na Wróble, który uwielbia robić dowcipy. Wśród jego ulubionych psikusów jest kradzież śniadanie Boba, próba tortu urodzinowego Boba przed wszystkimi gośćmi, czy kradzież rzeźby",
+          "has_archive": 1,
+          "begin": 1555392600,
+          "end": 1555393200
+        },
+        {
+          "wait": "0",
+          "title": "Tomek i przyjaciele",
+          "info": "Tomek to imię lokomotywy, która mieszka i pracuje na wyspie Sodor. Wraz z nim podróżują jego przyjaciele, lokomotywy: James, Percy, Emily, Henry i Gordon. Tomek jest kapryśny, a jego brawura często przysparza mu kłopotów. Na szczęście przyjaciele zawsze wyciągają go z tarapatów",
+          "has_archive": 1,
+          "begin": 1555393200,
+          "end": 1555394400
+        },
+        {
+          "wait": "0",
+          "title": "Monchhichi",
+          "info": "Każdego dnia po zapadnięciu zmroku wszystkie dzieci tulą się do snu, który pochodzi z tajemniczej magicznej fabryki. Właśnie tam spełniają się wszystkie senne marzenia. Dzielne i niezwykle urocze Monchhichi są stróżami i twórcami snów. Stworzenia zapraszają do poznania ich niezwykłego świata, pełnego magii i uroczego wdzięku. Udowodnią, że tworzenie snów to o wiele cięższa praca niż ktokolwiek mógłby przypuszczać",
+          "has_archive": 1,
+          "begin": 1555394400,
+          "end": 1555395300
+        },
+        {
+          "wait": "0",
+          "title": "Baranek Shaun",
+          "info": "Szalone przygody sprytnej owcy, znanej z filmu \"Wallace i Gromit: Golenie owiec\". Owca Shaun poznała pana Wallace'a, miłośnika sera i krakersów, oraz jego przyjaciela, psa Gromita, gdy schroniła się w ich domu",
+          "has_archive": 1,
+          "begin": 1555395300,
+          "end": 1555396500
+        },
+        {
+          "wait": "0",
+          "title": "Psi Patrol",
+          "info": "Rubble udaje, że jest superpsem i wpada w kłopoty. Psi Patrol musi go ratować. Tymczasem pies robot Ryder'a psuje się i zaczyna siać spustoszenie w Zatoce Przygód. Czworonogi muszą go znaleźć i okiełznać",
+          "has_archive": 1,
+          "begin": 1555396500,
+          "end": 1555398600
+        },
+        {
+          "wait": "0",
+          "title": "Blaze i megamaszyny",
+          "info": "Podczas pobytu w królestwie rycerzy-ciężarówek Blaze odkrywa tajemniczą ładowarkę. Wpada ona w ręce smoka, który może pozbawić energii całą krainę",
+          "has_archive": 1,
+          "begin": 1555398600,
+          "end": 1555400100
+        },
+        {
+          "wait": "0",
+          "title": "Marta mówi",
+          "info": "Dziesięcioletnia Helen jest właścicielką przyjaznej labradorki o imieniu Marta. Pewnego dnia pies zjada płatki śniadaniowe w kształcie alfabetu. Od tej pory Marta zaczyna mówić ludzkim głosem. W każdym odcinku labradorka uczy dzieci nowych wyrazów. Serial powstał na podstawie serii książek autorstwa Susan Meddaugh. Ma na celu przygotowanie najmłodszych do nauki czytania",
+          "has_archive": 1,
+          "begin": 1555400100,
+          "end": 1555401600
+        },
+        {
+          "wait": "0",
+          "title": "Monchhichi",
+          "info": "Każdego dnia po zapadnięciu zmroku wszystkie dzieci tulą się do snu, który pochodzi z tajemniczej magicznej fabryki. Właśnie tam spełniają się wszystkie senne marzenia. Dzielne i niezwykle urocze Monchhichi są stróżami i twórcami snów. Stworzenia zapraszają do poznania ich niezwykłego świata, pełnego magii i uroczego wdzięku. Udowodnią, że tworzenie snów to o wiele cięższa praca niż ktokolwiek mógłby przypuszczać",
+          "has_archive": 1,
+          "begin": 1555401600,
+          "end": 1555402200
+        },
+        {
+          "wait": "0",
+          "title": "Reksio",
+          "info": "Reksio sprząta swoje podwórko, a potem kąpie się w balii",
+          "has_archive": 1,
+          "begin": 1555402200,
+          "end": 1555403100
+        },
+        {
+          "wait": "0",
+          "title": "Przygody kota Filemona",
+          "info": "Kot Filemon wspólnie z Bonifacym polują na myszy. Aby łatwiej im było coś złapać chowają się w workach",
+          "has_archive": 1,
+          "begin": 1555403100,
+          "end": 1555403700
+        },
+        {
+          "wait": "0",
+          "title": "Baranek Shaun",
+          "info": "Szalone przygody sprytnej owcy, znanej z filmu \"Wallace i Gromit: Golenie owiec\". Owca Shaun poznała pana Wallace'a, miłośnika sera i krakersów, oraz jego przyjaciela, psa Gromita, gdy schroniła się w ich domu",
+          "has_archive": 1,
+          "begin": 1555403700,
+          "end": 1555404000
+        },
+        {
+          "wait": "0",
+          "title": "Baranek Shaun",
+          "info": "Szalone przygody sprytnej owcy, znanej z filmu \"Wallace i Gromit: Golenie owiec\". Owca Shaun poznała pana Wallace'a, miłośnika sera i krakersów, oraz jego przyjaciela, psa Gromita, gdy schroniła się w ich domu",
+          "has_archive": 1,
+          "begin": 1555404000,
+          "end": 1555404900
+        },
+        {
+          "wait": "0",
+          "title": "Molang",
+          "info": "Królik o imieniu Molang zawsze zachowuje pogodę ducha. Nawet problemy nie są w stanie zepsuć mu humoru. Uwielbia również podróżować, przebierać i spędzać czas z przyjacielem - Piu Piu. Towarzyszący mu w codziennych perypetiach żółty kurczaczek jest bardzo nieśmiały i skromny. Musi zwłaszcza uważać na kota. Razem doświadczają wielu niezwykłych przygód i stawiają czoło niespodziewanym sytuacjom, nie tracąc przy tym radości. Każdy pretekst jest bowiem dobry do doskonałej zabawy",
+          "has_archive": 1,
+          "begin": 1555404900,
+          "end": 1555405080
+        },
+        {
+          "wait": "0",
+          "title": "Molang",
+          "info": "Królik o imieniu Molang zawsze zachowuje pogodę ducha. Nawet problemy nie są w stanie zepsuć mu humoru. Uwielbia również podróżować, przebierać i spędzać czas z przyjacielem - Piu Piu. Towarzyszący mu w codziennych perypetiach żółty kurczaczek jest bardzo nieśmiały i skromny. Musi zwłaszcza uważać na kota. Razem doświadczają wielu niezwykłych przygód i stawiają czoło niespodziewanym sytuacjom, nie tracąc przy tym radości. Każdy pretekst jest bowiem dobry do doskonałej zabawy",
+          "has_archive": 1,
+          "begin": 1555405080,
+          "end": 1555405200
+        },
+        {
+          "wait": "0",
+          "title": "Molang",
+          "info": "Królik o imieniu Molang zawsze zachowuje pogodę ducha. Nawet problemy nie są w stanie zepsuć mu humoru. Uwielbia również podróżować, przebierać i spędzać czas z przyjacielem - Piu Piu. Towarzyszący mu w codziennych perypetiach żółty kurczaczek jest bardzo nieśmiały i skromny. Musi zwłaszcza uważać na kota. Razem doświadczają wielu niezwykłych przygód i stawiają czoło niespodziewanym sytuacjom, nie tracąc przy tym radości. Każdy pretekst jest bowiem dobry do doskonałej zabawy",
+          "has_archive": 1,
+          "begin": 1555405200,
+          "end": 1555406100
+        },
+        {
+          "wait": "0",
+          "title": "Przytul mnie",
+          "info": "Animowany serial przedstawiający codzienne życie Małego Misia i jego taty. Niedźwiadki żyją w lesie, w którym nie ma miejsca na nudę. Każdy dzień przynosi im nowe, wesołe przygody. Charyzmatyczny a przy tym nieco niezdarny Tata Miś oraz czuły i energiczny Mały Miś nie tylko rozbawią, ale i wyciągną pomocną łapę do wielu leśnych zwierząt. Razem odkryją, czym jest przyjaźń, otwartość a także odpowiedzialność. Każde zdarzenie będzie dla nich życiową lekcją",
+          "has_archive": 1,
+          "begin": 1555406100,
+          "end": 1555406400
+        },
+        {
+          "wait": "0",
+          "title": "Przytul mnie",
+          "info": "Animowany serial przedstawiający codzienne życie Małego Misia i jego taty. Niedźwiadki żyją w lesie, w którym nie ma miejsca na nudę. Każdy dzień przynosi im nowe, wesołe przygody. Charyzmatyczny a przy tym nieco niezdarny Tata Miś oraz czuły i energiczny Mały Miś nie tylko rozbawią, ale i wyciągną pomocną łapę do wielu leśnych zwierząt. Razem odkryją, czym jest przyjaźń, otwartość a także odpowiedzialność. Każde zdarzenie będzie dla nich życiową lekcją",
+          "has_archive": 1,
+          "begin": 1555406400,
+          "end": 1555407000
+        },
+        {
+          "wait": "0",
+          "title": "Zaczarowany ołówek",
+          "info": "Bajka o przygodach jasnowłosego chłopca i jego pieska. Młody bohater zostaje obdarowany przez krasnoludka zaczarowanym ołówkiem, dzięki któremu narysowane przedmioty materializują się i często okazują się pomocne w czasie niezliczonych wędrówek bajkowych przyjaciół",
+          "has_archive": 1,
+          "begin": 1555407000,
+          "end": 1555407900
+        },
+        {
+          "wait": "0",
+          "title": "Bolek i Lolek",
+          "info": "Bolek i Lolek są pod wielkim wrażeniem westernu, który właśnie obejrzeli. Chłopcy, chcąc być jak Indianie, malują twarz pomidorami, wyrywają kurom pióra na pióropusze i budują wigwam na wyspie. Zabawa zapowiada się świetnie, jednak nagle w pobliżu pojawia się baran, który rozbija namiot Bolka i Lolka",
+          "has_archive": 1,
+          "begin": 1555407900,
+          "end": 1555408500
+        },
+        {
+          "wait": "0",
+          "title": "Listonosz Pat",
+          "info": "Pat jest listonoszem w Zielonej Dolinie. Odpowiedzialny i sumienny, codziennie rozwodzi listy i przesyłki mieszkańcom miasteczka swoim czerwonym, pocztowym samochodem albo rowerem. Ze względu na zaradność i pomysłowość Pata, przyjaciele często radzą się go w różnych trudnych sprawach. Zwykle też częstują go filiżanką herbaty, której ten nigdy nie odmawia. Nieodłącznym kompanem listonosza jest czarno-biały kot Dżes, a najlepszym przyjacielem złota rączka, wynalazca, Ted Glen",
+          "has_archive": 1,
+          "begin": 1555408500,
+          "end": 1555410000
+        },
+        {
+          "wait": "0",
+          "title": "Kumple z dżungli - na ratunek!",
+          "info": "Jeśli w buszu pojawi się jakiś problem, Kumple z dżungli zawsze są gotowi, by ruszyć na pomoc. Maurice, który jest pingwinem i tygrysem w jednym, chętnie poprowadzi swoich dzielnych towarzyszy w pościg za nowymi przygodami. W ekipie Maurice'a są: jego adoptowany syn - rybka Junior, kochający banany goryl Miguel, będący \"mózgiem\" grupy Gilbert, nietoperzyca o wielkim sercu - Batricia oraz artysta - guziec Fred. Przyjaciół wspomoże niezawodny duet ropuch - Al i Bob. Cała brygada dostarczy mnóstwa śmiechu, wrażeń i emocji",
+          "has_archive": 1,
+          "begin": 1555410000,
+          "end": 1555410900
+        },
+        {
+          "wait": "0",
+          "title": "Bob Budowniczy",
+          "info": "Na placu budowy Bob i jego maszyny budowlane po raz kolejny będą musieli rozwiązać rozmaite problemy. Praca zespołowa, wiara we własne siły oraz pozytywne myślenie pozwolą im osiągnąć każdy cel. Najmłodsi widzowie poznają nowych bohaterów: Nośkę, czyli uroczą zbieraczkę czereśni, Ładowarkę, która jest maleńką, bardzo pracowitą kompaktową maszyną do załadunku oraz Normę, czyli ogromną maszynę do wiercenia tuneli. Do koparki Scoop, betoniarki Dizzy, spychacza Mucka, dźwigu Lofty i walca Roley'a dołącza Marta, która będzie dzielnie pomagała w budowach Boba. Często pracowitym przyjaciołom będzie dokuczał Strach Na Wróble, który uwielbia robić dowcipy. Wśród jego ulubionych psikusów jest kradzież śniadanie Boba, próba tortu urodzinowego Boba przed wszystkimi gośćmi, czy kradzież rzeźby",
+          "has_archive": 1,
+          "begin": 1555410900,
+          "end": 1555411500
+        },
+        {
+          "wait": "0",
+          "title": "Tomek i przyjaciele",
+          "info": "Tomek to imię lokomotywy, która mieszka i pracuje na wyspie Sodor. Wraz z nim podróżują jego przyjaciele, lokomotywy: James, Percy, Emily, Henry i Gordon. Tomek jest kapryśny, a jego brawura często przysparza mu kłopotów. Na szczęście przyjaciele zawsze wyciągają go z tarapatów",
+          "has_archive": 1,
+          "begin": 1555411500,
+          "end": 1555412400
+        },
+        {
+          "wait": "0",
+          "title": "Alvinnn!!! I wiewiórki",
+          "info": "Rozśpiewane wiewiórki - Alvin, Szymon i Teodor - każdego dnia przeżywają wiele zabawnych przygód. Ich opiekunem jest Dave Seville, muzyczny menedżer i autor piosenek",
+          "has_archive": 1,
+          "begin": 1555412400,
+          "end": 1555413000
+        },
+        {
+          "wait": "0",
+          "title": "Alvinnn!!! I wiewiórki",
+          "info": "Rozśpiewane wiewiórki - Alvin, Szymon i Teodor - każdego dnia przeżywają wiele zabawnych przygód. Ich opiekunem jest Dave Seville, muzyczny menedżer i autor piosenek",
+          "has_archive": 1,
+          "begin": 1555413000,
+          "end": 1555414500
+        },
+        {
+          "wait": "0",
+          "title": "Całkiem nowe przygody Toma i Jerry'ego",
+          "info": "Nowe perypetie pomysłowego kota i zwinnej myszki. Odwieczni wrogowie i przyjaciele zarazem każdego dnia wplątują się w serię zabawnych, ale i trochę niebezpiecznych zdarzeń",
+          "has_archive": 1,
+          "begin": 1555414500,
+          "end": 1555416600
+        },
+        {
+          "wait": "0",
+          "title": "Całkiem nowe przygody Toma i Jerry'ego",
+          "info": "Nowe perypetie pomysłowego kota i zwinnej myszki. Odwieczni wrogowie i przyjaciele zarazem każdego dnia wplątują się w serię zabawnych, ale i trochę niebezpiecznych zdarzeń",
+          "has_archive": 1,
+          "begin": 1555416600,
+          "end": 1555418100
+        },
+        {
+          "wait": "0",
+          "title": "Dom",
+          "info": "Kontynuacja przygód Oha i Tip. Sympatycznego przybysza z kosmosu i nastolatkę czeka wiele wyzwań, które nie pozwolą na nudę i będą iście kosmiczne",
+          "has_archive": 1,
+          "begin": 1555418100,
+          "end": 1555419600
+        },
+        {
+          "wait": "0",
+          "title": "Ben",
+          "info": "Ben z pozoru jest zwyczajnym chłopcem. Pewnego dnia znajduje jednak niesamowite urządzenie, które odmienia jego życie. Okazuje się, że sprzęt zwany Omnitrix jest bronią obcych, która pozwala na przeobrażanie się w dziesięć różnych stworzeń - w postaci superbohaterów. Niezwykła maszyna przyciąga także uwagę pewnego złoczyńcy Vilgaksa. Chce on zawładnąć mocą, która znajduje się w posiadaniu Bena",
+          "has_archive": 1,
+          "begin": 1555419600,
+          "end": 1555420200
+        },
+        {
+          "wait": "0",
+          "title": "Ben",
+          "info": "Ben z pozoru jest zwyczajnym chłopcem. Pewnego dnia znajduje jednak niesamowite urządzenie, które odmienia jego życie. Okazuje się, że sprzęt zwany Omnitrix jest bronią obcych, która pozwala na przeobrażanie się w dziesięć różnych stworzeń - w postaci superbohaterów. Niezwykła maszyna przyciąga także uwagę pewnego złoczyńcy Vilgaksa. Chce on zawładnąć mocą, która znajduje się w posiadaniu Bena",
+          "has_archive": 1,
+          "begin": 1555420200,
+          "end": 1555421700
+        },
+        {
+          "wait": "0",
+          "title": "Krudowie",
+          "info": "Najśmieszniejsza rodzina świata, bohaterowie kinowego hitu pod tym samym tytułem, wraca w dobrym stylu. Jaskiniowcy - Ip, Grag, Tank, Ugga, Sandy i zrzędliwa Babcia - szturmem zdobywają erę Krudaceos a przy okazji serca młodych widzów. Tym razem Krudowie wspólnie odkryją problemy współczesnego świata. Będą musieli stawić czoło takim wyzwaniom jak szkoła, organizowanie piżama party czy wybory. Nie obędzie się bez wpadek, mnóstwa śmiechu i masy przygód. Serial powstał na podstawie kinowego filmu filmu \"Krudowie\", który w 2014 roku był nominowany do Oscara i Złotego Globu w kategorii najlepszy film animowany",
+          "has_archive": 1,
+          "begin": 1555421700,
+          "end": 1555423800
+        },
+        {
+          "wait": "0",
+          "title": "Krudowie",
+          "info": "Najśmieszniejsza rodzina świata, bohaterowie kinowego hitu pod tym samym tytułem, wraca w dobrym stylu. Jaskiniowcy - Ip, Grag, Tank, Ugga, Sandy i zrzędliwa Babcia - szturmem zdobywają erę Krudaceos a przy okazji serca młodych widzów. Tym razem Krudowie wspólnie odkryją problemy współczesnego świata. Będą musieli stawić czoło takim wyzwaniom jak szkoła, organizowanie piżama party czy wybory. Nie obędzie się bez wpadek, mnóstwa śmiechu i masy przygód. Serial powstał na podstawie kinowego filmu filmu \"Krudowie\", który w 2014 roku był nominowany do Oscara i Złotego Globu w kategorii najlepszy film animowany",
+          "has_archive": 1,
+          "begin": 1555423800,
+          "end": 1555425300
+        },
+        {
+          "wait": "0",
+          "title": "Fineasz i Ferb",
+          "info": "Fineasz Flynn i jego przyrodni brat Ferb Fletcher uznali za swoją misję pokonanie nudy i sprawienie, aby każdy z 104 dni wakacji był wyjątkowy. Ich starsza siostra Fretka nie cierpi niesamowitych przygód swoich braci. Poświęca więc cały swój czas, donosząc na nich mamie i tacie, lecz jakoś nigdy nie udaje jej się dowieść wybryków chłopców. Podczas każdej przygody, Fineaszowi i Ferbowi towarzyszy ich ukochany dziobak Pepe. Na pierwszy rzut oka jest zwykłym zwierzakiem, ale tak naprawdę prowadzi sekretne życie. Jako elegancki Agent P dzielnie walczy o ocalenie świata przed złym doktorem Dundersztycem",
+          "has_archive": 1,
+          "begin": 1555425300,
+          "end": 1555426800
+        },
+        {
+          "wait": "0",
+          "title": "Fineasz i Ferb",
+          "info": "Fineasz Flynn i jego przyrodni brat Ferb Fletcher uznali za swoją misję pokonanie nudy i sprawienie, aby każdy z 104 dni wakacji był wyjątkowy. Ich starsza siostra Fretka nie cierpi niesamowitych przygód swoich braci. Poświęca więc cały swój czas, donosząc na nich mamie i tacie, lecz jakoś nigdy nie udaje jej się dowieść wybryków chłopców. Podczas każdej przygody, Fineaszowi i Ferbowi towarzyszy ich ukochany dziobak Pepe. Na pierwszy rzut oka jest zwykłym zwierzakiem, ale tak naprawdę prowadzi sekretne życie. Jako elegancki Agent P dzielnie walczy o ocalenie świata przed złym doktorem Dundersztycem",
+          "has_archive": 1,
+          "begin": 1555426800,
+          "end": 1555428900
+        },
+        {
+          "wait": "0",
+          "title": "Pingwiny z Madagaskaru",
+          "info": "Plan wynalazku Kowalskiego trafia, jako dzieło sztuki, do muzeum. Pingwiny muszą go odzyskać. W przeciwnym razie światu grozi zagłada",
+          "has_archive": 1,
+          "begin": 1555428900,
+          "end": 1555430400
+        },
+        {
+          "wait": "0",
+          "title": "Pingwiny z Madagaskaru",
+          "info": "Trwa wieczór gier. Pingwiny grają w \"łapaj bombę\" i przypadkiem wysadzają wybieg koali. Teraz musi on zamieszkać z kangurem. Szczury ściekowe mają wielki plan. Chcąc pokrzyżować im szyki pingwiny wysyłają Morta w przebraniu",
+          "has_archive": 1,
+          "begin": 1555430400,
+          "end": 1555432500
+        },
+        {
+          "wait": "0",
+          "title": "Alvinnn!!! I wiewiórki",
+          "info": "Dziewczyny postanawiają udowodnić Alvinowi i reszcie chłopaków, że bycie superbohaterem nie jest zarezerwowane tylko dla nich. Pani Smith informuje Alvina, że jeśli nie zaliczy kolejnego testu, będzie musiał powtarzać klasę, co oznacza rozdzielenie z braćmi",
+          "has_archive": 1,
+          "begin": 1555432500,
+          "end": 1555433100
+        },
+        {
+          "wait": "0",
+          "title": "Psi Patrol",
+          "info": "Z klatki w pociągu ucieka małpka. Psi Patrol ściga ją po całej Zatoce Przygód. Następnie ratuje małą sówkę i pomaga jej wrócić do mamy",
+          "has_archive": 1,
+          "begin": 1555433100,
+          "end": 1555434900
+        },
+        {
+          "wait": "0",
+          "title": "Blaze i megamaszyny",
+          "info": "Gaskłocz w końcu zebrał pieniące, aby kupić sobie długo wyczekiwaną zabawkę - Mega Błotobota. Przyjaciel Blaze'a zostaje jednak okradziony ze swoich oszczędności. Teraz musi liczyć na pomoc w zrealizowaniu swojego marzenia",
+          "has_archive": 1,
+          "begin": 1555434900,
+          "end": 1555436400
+        },
+        {
+          "wait": "0",
+          "title": "Alvinnn!!! I wiewiórki",
+          "info": "Dziewczyny postanawiają udowodnić Alvinowi i reszcie chłopaków, że bycie superbohaterem nie jest zarezerwowane tylko dla nich. Pani Smith informuje Alvina, że jeśli nie zaliczy kolejnego testu, będzie musiał powtarzać klasę, co oznacza rozdzielenie z braćmi",
+          "has_archive": 1,
+          "begin": 1555436400,
+          "end": 1555437600
+        },
+        {
+          "wait": "0",
+          "title": "Lombard. Życie pod zastaw",
+          "info": "Marcin jest wyalienowanym nastolatkiem. Rodzice niewiele przejmują się jego wychowaniem. Chłopak fascynuje się grą, która polega na realizacji kolejnych niebezpiecznych zadań na polecenie Mistrza Gry i nagrywaniu ich kamerą. Podczas spaceru po krawędzi dachu wieżowca Marcinowi wypada z rąk kamera. Sprzęt znajduje Ziutek (Henryk Gołębiewski), który akurat remontuje mieszkanie w tym budynku, i zanosi go do lombardu. Tymczasem szef Ziutka zleca mu zadanie, przez które niemal doszło do katastrofy budowlanej. Mężczyźni popadają ze sobą w konflikt. Do lombardu przychodzi Justyna, która ma pewne podejrzenia wobec Olgi i mogłaby zaniepokoić nimi Mariusza (Michał Chorosiński). Justyna i Angelika wahają się, czy podzielić się swoją wiedzą z Mariuszem",
+          "has_archive": 1,
+          "begin": 1555437600,
+          "end": 1555441200
+        },
+        {
+          "wait": "1",
+          "title": "CSI",
+          "info": "Sara i Gil poszukują nieletniego przestępcy, który zgwałcił i okaleczył pewną kobietę. Również Warrick i Catherine angażują się w trudne śledztwo. Funkcjonariusze wnikliwie porównują zeznania kolejnych świadków, aby zebrać nowe dowody. Udaje im się ustalić, że wszyscy mówili prawdę. Tymczasem uwagę Catherine zaprzątają również poważne kłopoty rodzinne. Eksmąż kobiety zaciągnął bowiem kredyty pod zastaw wspólnego domu",
+          "has_archive": 1,
+          "begin": 1555441200,
+          "end": 1555444800
+        },
+        {
+          "wait": "1",
+          "title": "CSI",
+          "info": "Okazuje się, że znalezione w magazynie zwłoki to ciało osoby, która nakryła złodziei. Odciski palców są te same, co w nierozwiązanej sprawie sprzed lat",
+          "has_archive": 0,
+          "begin": 1555444800,
+          "end": 1555448400
+        },
+        {
+          "wait": "1",
+          "title": "Code Black",
+          "info": "Neal kłóci się ze swoim ojcem, neurochirurgiem, w sprawie opieki nad ciężko chorą matką. Kobieta ma tajemnicze objawy, które zmuszą pracowników szpitala do wprowadzenia kwarantanny",
+          "has_archive": 0,
+          "begin": 1555448400,
+          "end": 1555452000
+        },
+        {
+          "wait": "1",
+          "title": "Gwiazdy lombardu",
+          "info": "Do lombardu trafiają dwa unikatowe zestawy zabawek G.I. Joe. Widzowie przekonają się, czy Rick sfinalizuje transakcję",
+          "has_archive": 0,
+          "begin": 1555452000,
+          "end": 1555453800
+        },
+        {
+          "wait": "1",
+          "title": "Gwiazdy lombardu",
+          "info": "Jeden z handlarzy oferuje list podpisany przez Napoleona. Widzowie przekonają się, czy Rick od razu zdecyduje się na zakup. Ponadto do lombardu trafia surrealistyczna figura meksykańskiego artysty Pedra Friedeberga",
+          "has_archive": 0,
+          "begin": 1555453800,
+          "end": 1555455600
+        },
+        {
+          "wait": "1",
+          "title": "Gwiazdy lombardu",
+          "info": "Do lombardu trafia motocykl triumph z 1969 roku. Później właściciele sklepu mają okazję nabyć pierwszy numer komiksu \"Mad\". Widzowie przekonają się, czy Rick zdoła wytargować dobrą cenę",
+          "has_archive": 0,
+          "begin": 1555455600,
+          "end": 1555457700
+        },
+        {
+          "wait": "1",
+          "title": "Niesamowite!",
+          "info": "Karina i Jacek tworzą udany związek. Ich szczęście kończy się jednak wraz z przeprowadzką do nowego mieszkania. Para zaczyna wówczas otrzymywać listy z pogróżkami, wobec których stróże prawa okazują się bezradni. Pewnego dnia, podczas nieobecności Jacka, w domu pary pojawia się kobieta, która podaje się za byłą dziewczynę mężczyzny. Informuje ona Karinę, że jej narzeczony utrzymuje kontakty z mafią. Zszokowana kobieta postanawia sprawdzić te informacje. Jeszcze tego samego dnia w rzeczach Jacka znajduje pistolet. Robi mężczyźnie awanturę, w wyniku której jej narzeczony wyprowadza się do matki. Gdy jednak pierwsze emocje opadają, Karina postanawia wyjaśnić sprawę",
+          "has_archive": 0,
+          "begin": 1555457700,
+          "end": 1555459200
+        },
+        {
+          "wait": "1",
+          "title": "Niesamowite!",
+          "info": "Małgorzata i Krzysztof Kozłowscy to skromni ludzie, których nie stać na wygody wielkomiejskiego życia. Para wychowuje 16-letniego syna Marka. Oboje starają się zachęcić chłopaka do nauki, wiedząc że edukacja to jedyne, co mogą mu zapewnić. Jednak pewnego dnia parę spotyka niespodzianka. Okazuje się bowiem, że nieznana osoba spłaciła długi rodziny, a Marek kupił sobie modny skuter. Kiedy kobieta próbuje rozmówić się z synem, wybucha awantura",
+          "has_archive": 0,
+          "begin": 1555459200,
+          "end": 1555461300
+        },
+        {
+          "wait": "1",
+          "title": "Niesamowite!",
+          "info": "Po śmierci rodziców Natalia dziedziczy rodzinną firmę. Dziewczyna mieszka ze swoim chłopakiem Jankiem, który zajmuje się księgowością przedsiębiorstwa. Pewnego dnia Natalia dowiaduje się, że firma ma problemy finansowe, a Janek został pobity. Na domiar złego para zostaje okradziona. Dziewczyna postanawia sprzedać przedsiębiorstwo, by mogli wyjść na prostą. Nie podejrzewa jednak, że jej problemy dopiero się zaczęły",
+          "has_archive": 0,
+          "begin": 1555461300,
+          "end": 1555462800
+        },
+        {
+          "wait": "1",
+          "title": "Niesamowite!",
+          "info": "Ilustratorka książek dla dzieci Alina nie ma szczęścia w życiu. Kobieta wynajmuje mieszkanie w Warszawie, jednak często brakuje jej pieniędzy na podstawowe potrzeby. Gdy niespodziewanie dostaje spadek po babci, postanawia wyjechać ze stolicy i zamieszkać w odziedziczonym domu. Na miejscu okazuje się jednak, że starsza pani miała liczne długi. Co gorsza, w jej domu nie ma żadnego z przedmiotów, które rzekomo kupiła na raty. Alina dochodzi do wniosku, że winę za zaistniałą sytuację ponosi jej kuzyn. Postanawia wyjaśnić sprawę na własną rękę, jednak nikt nie chce jej pomóc",
+          "has_archive": 0,
+          "begin": 1555462800,
+          "end": 1555464900
+        },
+        {
+          "wait": "1",
+          "title": "Chiny",
+          "info": "Twórcy filmu dotarli do wcześniej niedostępnych miejsc, aby opowiedzieć o specyfice i rozwoju buddyzmu w Chinach. Ekipa filmowa wzięła udział w uroczystościach modlitewnych w Shangtianzhu Faxi oraz w Klasztorze Odosobnienia Dusz, czyli liczącej sobie 1700 lat świątyni Lingyin. Autorzy cyklu zebrali wypowiedzi mistrzów buddyjskich, którzy opowiedzieli o życiu mnichów i wyjaśnili, czym tak naprawdę jest chiński zen",
+          "has_archive": 0,
+          "begin": 1555464900,
+          "end": 1555469700
+        },
+        {
+          "wait": "1",
+          "title": "Na jedwabnym szlaku",
+          "info": "Zespół Bayer Full wyrusza w fascynującą podróż po Chinach, podczas której przybliży widzom najciekawsze zakątki tego kraju oraz jego kulturę i obyczaje. Wyprawie będą towarzyszyć największe przeboje zespołu",
+          "has_archive": 0,
+          "begin": 1555469700,
+          "end": 1555472100
+        },
+        {
+          "wait": "1",
+          "title": "Dyżur",
+          "info": "Lekarze próbują uratować kobietę, która trafiła na oddział po ciężkim wypadku samochodowym. Pomagają też mężczyźnie z połamanymi po upadku z wysokości kończynami. Zobaczymy również akcję ratowania życia człowieka ugodzonego nożem",
+          "has_archive": 0,
+          "begin": 1555472100,
+          "end": 1555473000
+        },
+        {
+          "wait": "1",
+          "title": "Ale numer!",
+          "info": "Gospodyni programu Katarzyna Kołeczek w każdym odcinku serwuje widzom niezapomnianą porcję dobrego humoru. Pokazuje serię krótkich filmików, w których przypadkowi, nieświadomi niczego przechodnie muszą uporać się z niecodziennymi sytuacjami. Obserwując zaskakujące reakcje ludzi w najbardziej nieoczekiwanych momentach, nikt nie będzie w stanie powstrzymać się od śmiechu",
+          "has_archive": 0,
+          "begin": 1555473000,
+          "end": 1555474200
+        },
+        {
+          "wait": "1",
+          "title": "Ale numer!",
+          "info": "Gospodyni programu Katarzyna Kołeczek w każdym odcinku serwuje widzom niezapomnianą porcję dobrego humoru. Pokazuje serię krótkich filmików, w których przypadkowi, nieświadomi niczego przechodnie muszą uporać się z niecodziennymi sytuacjami. Obserwując zaskakujące reakcje ludzi w najbardziej nieoczekiwanych momentach, nikt nie będzie w stanie powstrzymać się od śmiechu",
+          "has_archive": 0,
+          "begin": 1555474200,
+          "end": 1555475700
+        },
+        {
+          "wait": "1",
+          "title": "Lwia Straż",
+          "info": "Kontynuacja przebojowego filmu wytwórni Walta Disneya \"Król Lew\", której akcja rozgrywa się jednocześnie z fabułą filmu \"Król Lew 2: Czas Simby\". Kion, syn Simby i Nali, przypadkowo odkrywa w sobie uśpiony talent: ryk czyniący z jego najpotężniejsze zwierzę w całej Lwiej Ziemi. Simba mianuje go nowym przywódcą Lwiej Straży, grupy, która ma za zadanie strzec porządku w królestwie i chronić Krąg Życia. Jednocześnie zleca mu skompletowanie elity najwaleczniejszych, najodważniejszych, najsilniejszych i najbystrzejszych zwierząt na Lwiej Ziemi",
+          "has_archive": 0,
+          "begin": 1555475700,
+          "end": 1555477200
+        }
+      ]
+    }
+  ],
+  "servertime": 1555442450
+}

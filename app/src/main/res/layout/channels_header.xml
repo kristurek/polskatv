@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/horizontal_margin"
+    android:layout_marginTop="@dimen/horizontal_margin"
+    android:layout_marginRight="@dimen/horizontal_margin"
+    android:layout_marginBottom="@dimen/vertical_margin">
+
+    <TextView
+        android:id="@+id/channels_header_group_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#1375a5"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normal_header_1"
+        android:textStyle="bold" />
+
+</LinearLayout>

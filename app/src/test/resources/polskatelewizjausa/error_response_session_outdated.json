@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "STIMEOUT",
+    "message": "Session is outdated"
+  },
+  "servertime": 1555352418
+}

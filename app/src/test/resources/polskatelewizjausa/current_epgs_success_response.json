@@ -1,0 +1,65 @@
+{
+  "icons": {
+    "default": "http://xlink.ws/iptv/core/img/ico/tv/%ICON%.gif",
+    "w40h30": "http://xlink.ws/iptv/core/img/ico/tv/%ICON%.gif",
+    "playback": "http://xlink.ws/iptv/core/img/ico/tv/playback/%ICON%.png",
+    "small": "http://xlink.ws/iptv/core/img/ico/tv/small/%ICON%.png"
+  },
+  "channels": [
+    {
+      "id": 521,
+      "name": "TVP1 HD",
+      "icon": "pl-tvp1",
+      "time_shift": 0,
+      "current": {
+        "title": "Zabójczy widok",
+        "info": "film sensacyjny (USA, Wielka Brytania, 1985)Występują: Roger Moore, Christopher Walken, Grace JonesJames Bond (Roger Moore) rozpracowuje bogatego Maksa Zorina (Christopher Walken). Wraz z partnerem, Tibbettem (Patrick Macnee), dostaje się na organizowane przez milionera przyjęcie. Tibbett ginie, lecz Bond wychodzi cało z opresji. Odkrywa, że Zorin zamierza zniszczyć amerykańską Krzemową Dolinę.Reżyser: John GlenOd lat: 12",
+        "begin": 1555452900,
+        "end": 1555461300
+      },
+      "next": {
+        "title": "Syzyfowe prace: odc.3",
+        "info": "serial obyczajowy (Polska, 1998) odc.3/6, 1885-1889Występują: Marcin Wołek, Łukasz Garlicki, Franciszek PieczkaNa błoniach Marcin z kolegami próbuje strzelać ze starego pistoletu. Przyłapani na gorącym uczynku, gimnazjaliści trafiają do szkolnej kozy. Nieoczekiwanie umiera matka chłopca. Marcin jest gotów pozostać w domu z ojcem.Reżyser: Paweł KomorowskiOd lat: 12",
+        "begin": 1555461300,
+        "end": 1555465200
+      }
+    },
+    {
+      "id": 522,
+      "name": "TVP2 HD",
+      "icon": "pl-tvp2",
+      "time_shift": 0,
+      "current": {
+        "title": "Terror w podziemiach: odc.6",
+        "info": "serial sensacyjny (Dania, 2017) odc.6/8 (powtórka)Występują: Jakob Oftebro, Michael Frandsen, Johannes LassenBodil zostaje zabity przez terrorystów. Jego śmierć przysparza funkcjonariuszom jeszcze więcej pracy. Śledztwo TTF prowadzi do źródeł w duńskim wojsku. Wszystko wskazuje na to, że w sprawie zakładników z metra nastąpi wielki przełom.Reżyser: Kasper BarfoedOd lat: 16",
+        "begin": 1555457700,
+        "end": 1555461300
+      },
+      "next": {
+        "title": "Magazyn Ekspresu Reporterów",
+        "info": "reportaż dokumentalnyProwadzą: Michał OlszańskiReporterzy docierają wszędzie tam, gdzie dzieje się coś ważnego. Bohaterami materiałów są zwykli ludzie, ich troski, tragedie i sukcesy. W magazynie poruszane są tematy trudne i kontrowersyjne, takie jak korupcja i niesprawiedliwość. Reporterzy demaskują oszustwa i bezprawie. Program prowadzi Michał Olszański.Od lat: 12",
+        "begin": 1555461300,
+        "end": 1555464900
+      }
+    },
+    {
+      "id": 2076,
+      "name": "TVP1",
+      "icon": "pl-tvp1",
+      "time_shift": 0,
+      "current": {
+        "title": "Zabójczy widok",
+        "info": "film sensacyjny (USA, Wielka Brytania, 1985)Występują: Roger Moore, Christopher Walken, Grace JonesJames Bond (Roger Moore) rozpracowuje bogatego Maksa Zorina (Christopher Walken). Wraz z partnerem, Tibbettem (Patrick Macnee), dostaje się na organizowane przez milionera przyjęcie. Tibbett ginie, lecz Bond wychodzi cało z opresji. Odkrywa, że Zorin zamierza zniszczyć amerykańską Krzemową Dolinę.Reżyser: John GlenOd lat: 12",
+        "begin": 1555452900,
+        "end": 1555461300
+      },
+      "next": {
+        "title": "Syzyfowe prace: odc.3",
+        "info": "serial obyczajowy (Polska, 1998) odc.3/6, 1885-1889Występują: Marcin Wołek, Łukasz Garlicki, Franciszek PieczkaNa błoniach Marcin z kolegami próbuje strzelać ze starego pistoletu. Przyłapani na gorącym uczynku, gimnazjaliści trafiają do szkolnej kozy. Nieoczekiwanie umiera matka chłopca. Marcin jest gotów pozostać w domu z ojcem.Reżyser: Paweł KomorowskiOd lat: 12",
+        "begin": 1555461300,
+        "end": 1555465200
+      }
+    }
+  ],
+  "servertime": 1555458479
+}

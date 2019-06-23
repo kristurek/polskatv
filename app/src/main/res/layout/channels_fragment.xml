@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kristurek.polskatv.ui.channels.ChannelsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:focusable="false"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/channels_fragment_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:layout_marginBottom="@dimen/vertical_margin"
+            android:background="#1375a5"
+            android:focusable="false"
+            android:gravity="center"
+            android:text="@string/msg_4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_header_1"
+            android:textStyle="bold" />
+
+        <com.kristurek.polskatv.ui.view.XListView
+            android:id="@+id/channels_fragment_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:choiceMode="singleChoice"
+            android:nextFocusLeft="@id/channels_fragment_list"
+            android:nextFocusRight="@id/epgs_fragment_list"
+            android:nextFocusUp="@id/channels_fragment_list"
+            android:nextFocusDown="@id/channels_fragment_list"
+            android:paddingLeft="@dimen/horizontal_margin"
+            android:paddingTop="@dimen/vertical_margin"
+            android:paddingRight="@dimen/horizontal_margin"
+            android:paddingBottom="@dimen/vertical_margin" />
+
+    </LinearLayout>
+</layout>

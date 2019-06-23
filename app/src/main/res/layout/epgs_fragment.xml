@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kristurek.polskatv.ui.epgs.EpgsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:focusable="false"
+        android:keepScreenOn="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:layout_marginBottom="@dimen/vertical_margin"
+            android:background="#1375a5"
+            android:focusable="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:focusable="false"
+                android:src="@drawable/ic_date" />
+
+            <TextView
+                android:id="@+id/epgs_fragment_selected_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/normal_header_1"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:focusable="false"
+                android:src="@drawable/ic_date" />
+
+        </LinearLayout>
+
+        <com.kristurek.polskatv.ui.view.XTabLayout
+            android:id="@+id/epgs_fragment_tabs"
+            style="@style/XTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+
+
+            android:nextFocusLeft="@id/epgs_fragment_tabs"
+            android:nextFocusRight="@id/epgs_fragment_tabs"
+            android:nextFocusUp="@id/epgs_fragment_tabs"
+            android:nextFocusDown="@id/epgs_fragment_tabs" />
+
+
+        <com.kristurek.polskatv.ui.view.XListView
+            android:id="@+id/epgs_fragment_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:choiceMode="singleChoice"
+            android:nextFocusLeft="@id/channels_fragment_list"
+            android:nextFocusRight="@{viewModel.enableRightFocus() ? @id/volume_fragment_seekbar : @id/epgs_fragment_list}"
+            android:nextFocusUp="@id/epgs_fragment_tabs"
+            android:nextFocusDown="@id/epgs_fragment_list"
+            android:paddingLeft="@dimen/horizontal_margin"
+            android:paddingTop="@dimen/horizontal_margin"
+            android:paddingRight="@dimen/horizontal_margin"
+            android:paddingBottom="@dimen/vertical_margin" />
+
+    </LinearLayout>
+</layout>

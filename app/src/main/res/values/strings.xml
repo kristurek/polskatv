@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PolskaTV</string>
+
+    <string name="settings_menu">Settings</string>
+    <string name="logout_menu">Logout</string>
+    <string name="generate_upload_logs_menu">Generate and upload logs</string>
+
+    <string name="msg_1">Are you sure want to logout?</string>
+    <string name="msg_2">Yes</string>
+    <string name="msg_3">No</string>
+    <string name="msg_4">CHANNELS</string>
+    <string name="msg_5">00.00.00</string>
+
+    <string name="msg_6">Subscription</string>
+    <string name="msg_7">Password</string>
+    <string name="msg_8">Save</string>
+    <string name="msg_9">Login</string>
+
+    <string name="msg_10">Next - no more</string>
+    <string name="msg_11">Content not available</string>
+
+    <string name="msg_12">Successful generate and upload logs</string>
+
+    <string name="msg_13">Are you sure want to exit?</string>
+
+    <string name="msg_14">Description</string>
+    <string name="msg_15">Find all similar (in %s)</string>
+    <string name="msg_16">Find all similar (in all channels)</string>
+    <string name="msg_17">Results</string>
+    <string name="msg_18">No results</string>
+
+    <string name="msg_19">Search by sample</string>
+    <string name="msg_20">Title</string>
+    <string name="msg_21">Search</string>
+
+    <string name="msg_22">Settings saved</string>
+    <string name="msg_23">Application has stopped unexpectedly, please restart and try again</string>
+
+    <string name="general_category_settings">General information</string>
+    <string name="account_category_settings">Account settings</string>
+    <string name="player_category_settings">Player settings</string>
+    <string name="advanced_category_settings">Advanced settings</string>
+
+    <string name="software_version_title_settings">Software version</string>
+
+    <string name="upload_logs_title_settings">Generate and upload logs</string>
+    <string name="upload_logs_summary_settings">Press to generate and upload application log files to remote server</string>
+
+    <string name="subscription_title_settings">Subscription</string>
+
+    <string name="password_title_settings">Password</string>
+
+    <string name="rest_of_day_title_settings">Rest of days</string>
+    <string name="rest_of_day_summary_settings">&#160;days remaining</string>
+
+    <string name="parental_pass_title_settings">Parental pass</string>
+    <string name="parental_pass_dialog_settings">Please provide your parental pass</string>
+
+    <string name="language_title_settings">Language</string>
+    <string name="language_dialog_settings">Please select your language</string>
+
+    <string name="media_server_title_settings">Stream server</string>
+    <string name="media_server_dialog_settings">Please select stream server location</string>
+
+    <string name="time_shift_title_settings">Time shift</string>
+
+    <string name="time_zone_title_settings">Time zone</string>
+
+    <string name="forward_title_settings">Forward move</string>
+    <string name="forward_dialog_settings">Please select time for "Forward" action</string>
+    <string name="forward_summary_settings">&#160;(min)</string>
+
+    <string name="fast_forward_title_settings">Fast forward move</string>
+    <string name="fast_forward_dialog_settings">Please select time for "Fast Forward" action</string>
+    <string name="fast_forward_summary_settings">&#160;(min)</string>
+
+    <string name="backward_title_settings">Backward move</string>
+    <string name="backward_dialog_settings">Please select time for "Backward" action</string>
+    <string name="backward_summary_settings">&#160;(min)</string>
+
+    <string name="fast_backward_title_settings">Fast backward move</string>
+    <string name="fast_backward_dialog_settings">Please select time for "Fast Backward" action</string>
+    <string name="fast_backward_summary_settings">&#160;(min)</string>
+
+    <string name="application_time_zone_title_settings">Time zone</string>
+    <string name="application_time_zone_dialog_settings">Please select time zone</string>
+
+    <string name="use_custom_time_and_partial_time_zone_to_select_default_position_in_epgs_title_settings">Use custom time and partial time zone to select default position in epgs</string>
+    <string name="custon_time_title_settings">Custom time</string>
+
+    <string name="hidden_channels_title_settings">Hidden channels</string>
+    <string name="hidden_channels_dialog_settings">Select the channels you want to hide</string>
+
+    <string name="search_channels_title_settings">Search channels</string>
+    <string name="search_channels_dialog_settings">Select the channels you want to use to search in Find all similar (in all channels)</string>
+
+    <string name="font_size_title_settings">Font size</string>
+    <string name="font_size_dialog_settings">Please select font size</string>
+
+    <string name="show_volume_title_settings">Volume control</string>
+    <string name="show_volume_summary_settings">Show volume control</string>
+
+    <string name="show_device_time_title_settings">Local time (clock)</string>
+    <string name="show_device_time_summary_settings">Show local(device) time</string>
+
+    <string name="show_console_title_settings">Tablet mode</string>
+    <string name="show_console_summary_settings">Enable tablet mode</string>
+
+    <string name="debug_console_title_settings">Debug console</string>
+    <string name="debug_console_summary_settings">Enable debug console</string>
+
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.kristurek.polskatv.ui.epgs.model.EpgType" />
+
+        <variable
+            name="viewModel"
+            type="com.kristurek.polskatv.ui.console.ConsoleViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/console_fragment_console"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#96000000"
+        android:orientation="horizontal"
+        android:visibility="@{viewModel.visibility ? View.VISIBLE : View.GONE}">
+
+        <ImageButton
+            android:id="@+id/console_fragment_console_fast_backward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="false"
+            android:focusable="false"
+            android:onClick="@{() -> viewModel.selectFastBackward()}"
+            android:src="@drawable/ic_fast_backward_selector"
+            android:visibility="@{viewModel.epgType.equals(EpgType.ARCHIVE_EPG) ? View.VISIBLE : View.GONE}" />
+
+        <ImageButton
+            android:id="@+id/console_fragment_console_backward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="false"
+            android:focusable="false"
+            android:onClick="@{() -> viewModel.selectBackward()}"
+            android:src="@drawable/ic_backward_selector"
+            android:visibility="@{viewModel.epgType.equals(EpgType.ARCHIVE_EPG) ? View.VISIBLE : View.GONE}" />
+
+        <ImageButton
+            android:id="@+id/console_fragment_console_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="false"
+            android:focusable="false"
+            android:onClick="@{() -> viewModel.selectPlayPause()}"
+            android:src="@drawable/ic_pause_selector"
+            android:visibility="@{(!viewModel.epgType.equals(EpgType.NOT_AVAILABLE) &amp;&amp; viewModel.paused==true) ? View.VISIBLE : View.GONE}" />
+
+        <ImageButton
+            android:id="@+id/console_fragment_console_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="false"
+            android:focusable="false"
+            android:onClick="@{() -> viewModel.selectPlayPause()}"
+            android:src="@drawable/ic_play_selector"
+            android:visibility="@{(!viewModel.epgType.equals(EpgType.NOT_AVAILABLE) &amp;&amp; viewModel.played==true) ? View.VISIBLE : View.GONE}" />
+
+        <ImageButton
+            android:id="@+id/console_fragment_console_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="false"
+            android:focusable="false"
+            android:onClick="@{() -> viewModel.selectForward()}"
+            android:src="@drawable/ic_forward_selector"
+            android:visibility="@{viewModel.epgType.equals(EpgType.ARCHIVE_EPG) ? View.VISIBLE : View.GONE}" />
+
+        <ImageButton
+            android:id="@+id/console_fragment_console_fast_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="false"
+            android:focusable="false"
+            android:onClick="@{() -> viewModel.selectFastForward()}"
+            android:src="@drawable/ic_fast_forward_selector"
+            android:visibility="@{viewModel.epgType.equals(EpgType.ARCHIVE_EPG) ? View.VISIBLE : View.GONE}" />
+
+    </LinearLayout>
+
+</layout>

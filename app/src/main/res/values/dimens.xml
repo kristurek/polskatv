@@ -1,0 +1,26 @@
+<resources>
+
+    <dimen name="horizontal_margin">2sp</dimen>
+    <dimen name="vertical_margin">2sp</dimen>
+
+    <dimen name="small_header_1">13sp</dimen>
+    <dimen name="small_header_2">10sp</dimen>
+    <dimen name="small_header_3">9sp</dimen>
+
+    <dimen name="normal_header_1">16sp</dimen>
+    <dimen name="normal_header_2">13sp</dimen>
+    <dimen name="normal_header_3">12sp</dimen>
+
+    <dimen name="large_header_1">19sp</dimen>
+    <dimen name="large_header_2">16sp</dimen>
+    <dimen name="large_header_3">15sp</dimen>
+
+    <dimen name="xl_header_1">21sp</dimen>
+    <dimen name="xl_header_2">19sp</dimen>
+    <dimen name="xl_header_3">18sp</dimen>
+
+    <dimen name="xxl_header_1">24sp</dimen>
+    <dimen name="xxl_header_2">22sp</dimen>
+    <dimen name="xxl_header_3">21sp</dimen>
+
+</resources>

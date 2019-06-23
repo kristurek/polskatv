@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_selector"
+    android:paddingLeft="@dimen/horizontal_margin"
+    android:paddingTop="@dimen/vertical_margin"
+    android:paddingRight="@dimen/horizontal_margin"
+    android:paddingBottom="@dimen/vertical_margin">
+
+    <LinearLayout
+        android:id="@+id/epgs_item_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/horizontal_margin"
+        android:paddingTop="@dimen/vertical_margin"
+        android:paddingRight="@dimen/horizontal_margin"
+        android:paddingBottom="@dimen/vertical_margin">
+
+        <ImageView
+            android:id="@+id/epgs_item_play"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:paddingRight="@dimen/vertical_margin" />
+
+        <TextView
+            android:id="@+id/epgs_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/epgs_item_play"
+            android:paddingRight="@dimen/vertical_margin"
+            android:textSize="@dimen/normal_header_1"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/epgs_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/epgs_item_time"
+            android:ellipsize="end"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:paddingRight="@dimen/vertical_margin"
+            android:textSize="@dimen/normal_header_1"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/epgs_item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/epgs_item_group"
+        android:ellipsize="marquee"
+        android:maxLines="5"
+        android:paddingLeft="@dimen/horizontal_margin"
+        android:paddingTop="@dimen/vertical_margin"
+        android:paddingRight="@dimen/horizontal_margin"
+        android:paddingBottom="@dimen/vertical_margin"
+        android:textSize="@dimen/normal_header_2" />
+
+</RelativeLayout>

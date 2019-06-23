@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="red">#e92314</color>
+    <color name="green">#349132</color>
+    <color name="blue">#2235e2</color>
+    <color name="orange">#ffae0c</color>
+    <color name="yellow">#f2f046</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="black2">#D7070916</color>
+
+    <color name="normal">#ffffff</color>
+    <color name="focused">#1375a5</color>
+    <color name="focused_light">#3d9dcc</color>
+    <color name="pressed">#0c567a</color>
+
+    <color name="selected">#349132</color>
+    <color name="activated">#2235e2</color>
+    <color name="checked">#f2f046</color>
+
+    <color name="btn_normal">#b0b7ba</color>
+    <color name="btn_focused">#1375a5</color>
+    <color name="btn_pressed">#0E6388</color>
+
+</resources>

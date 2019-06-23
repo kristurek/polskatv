@@ -1,0 +1,97 @@
+<resources>
+
+    <style name="PolskaTv.Theme.Transparent.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="PolskaTv.Theme.Fullscreen.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+
+        <item name="colorPrimary">@color/focused</item>
+        <item name="colorPrimaryDark">@color/pressed</item>
+        <item name="colorAccent">@color/focused</item>
+        <item name="android:textColor">@color/black2</item>
+        <item name="android:actionMenuTextColor">@color/black2</item>
+        <item name="android:textColorPrimary">@color/black2</item>
+        <item name="android:textColorSecondary">@color/black2</item>
+
+        <!--
+                <item name="android:textColorPrimary">@color/red</item>
+                <item name="android:textColorSecondary">@color/green</item>
+                <item name="colorPrimary">@color/red</item>
+                <item name="colorPrimaryDark">@color/green</item>
+                <item name="colorAccent">@color/orange</item>
+                <item name="colorControlNormal">@color/blue</item>
+        -->
+    </style>
+
+    <style name="PolskaTv.Theme.Transparent.ActionBar" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="PolskaTv.Theme.Fullscreen.ActionBar" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:windowFullscreen">true</item>
+
+        <item name="colorPrimary">@color/focused</item>
+        <item name="colorPrimaryDark">@color/pressed</item>
+        <item name="colorAccent">@color/focused</item>
+        <item name="android:textColor">@color/black2</item>
+
+<!--
+        <item name="android:textColorPrimary">@color/red</item>
+        <item name="android:textColorSecondary">@color/green</item>
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/green</item>
+        <item name="colorAccent">@color/orange</item>
+        <item name="colorControlNormal">@color/blue</item>
+-->
+    </style>
+
+    <style name="XTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabMaxWidth">75dp</item>
+        <item name="tabMinWidth">75dp</item>
+        <item name="tabUnboundedRipple">false</item>
+        <item name="tabIndicator">@drawable/tab_indicator</item>
+        <item name="tabTextColor">@null</item>
+
+        <!--<item name="tabIndicatorColor">@color/focused_light</item>-->
+        <!--<item name="tabIndicatorHeight">4dp</item>-->
+        <!--<item name="tabSelectedTextColor">@color/pressed</item>-->
+        <item name="tabTextAppearance">@style/XTabTextAppearance</item>
+        <!--<item name="tabTextColor">@null</item>-->
+        <!--<item name="tabIndicatorColor">@color/focused_light</item>-->
+        <!--<item name="tabIndicatorHeight">4dp</item>-->
+        <!--<item name="tabPaddingStart">12dp</item>-->
+        <!--<item name="tabPaddingEnd">12dp</item>-->
+        <!--<item name="tabBackground">?attr/selectableItemBackground</item>-->
+        <!--<item name="tabTextAppearance">@style/AppTabTextAppearance</item>-->
+        <!--<item name="tabSelectedTextColor">@color/pressed</item>-->
+    </style>
+
+    <!-- for text -->
+    <style name="XTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/normal_header_1</item>
+        <item name="android:textColor">@drawable/tab_selector</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <!--
+        app:tabFocusedIndicatorColor="@color/focused_light"
+        app:tabFocusedIndicatorHeight="4dp"
+        app:tabMaxWidth="75dp"
+        app:tabPaddingEnd="12dp"
+        app:tabPaddingStart="12dp"
+        app:tabScrollableMinWidth="72dp"
+        app:tabSelectedIndicatorColor="@color/pressed"
+        app:tabSelectedIndicatorHeight="4dp"
+        app:tabSelectedTextColor="@color/pressed"
+        app:tabTextColor="@color/black"
+        app:tabTextSize="@dimen/normal_header_1"
+        -->
+</resources>

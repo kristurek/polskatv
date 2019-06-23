@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/general_category_settings">
+        <Preference
+            android:key="__APPLICATION_VERSION__"
+            android:title="@string/software_version_title_settings" />
+        <Preference
+            android:key="__APPLICATION_UPLOAD_LOGS__"
+            android:summary="@string/upload_logs_summary_settings"
+            android:title="@string/upload_logs_title_settings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/account_category_settings">
+        <Preference
+            android:key="__ACCOUNT_SUBSCRIPTION__"
+            android:title="@string/subscription_title_settings" />
+        <Preference
+            android:key="__ACCOUNT_PASSWORD__"
+            android:title="@string/password_title_settings" />
+        <Preference
+            android:key="__ACCOUNT_REST_OF_DAY__"
+            android:title="@string/rest_of_day_title_settings" />
+        <EditTextPreference
+            android:dialogLayout="@layout/x_integer_edit_text_preference"
+            android:dialogTitle="@string/parental_pass_dialog_settings"
+            android:key="__ACCOUNT_PARENTAL_PASS__"
+            android:title="@string/parental_pass_title_settings" />
+        <ListPreference
+            android:dialogTitle="@string/language_dialog_settings"
+            android:key="__ACCOUNT_LANGUAGE__"
+            android:title="@string/language_title_settings" />
+        <com.kristurek.polskatv.ui.view.XIntegerListPreference
+            android:dialogTitle="@string/media_server_dialog_settings"
+            android:key="__ACCOUNT_MEDIA_SERVER_ID__"
+            android:title="@string/media_server_title_settings" />
+        <com.kristurek.polskatv.ui.view.XIntegerEditTextPreference
+            android:dialogLayout="@layout/x_integer_edit_text_preference"
+            android:key="__ACCOUNT_TIME_SHIFT__"
+            android:title="@string/time_shift_title_settings" />
+        <com.kristurek.polskatv.ui.view.XIntegerEditTextPreference
+            android:dialogLayout="@layout/x_integer_edit_text_preference"
+            android:key="__ACCOUNT_TIME_ZONE__"
+            android:title="@string/time_zone_title_settings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/player_category_settings">
+        <com.kristurek.polskatv.ui.view.XIntegerListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/forward_dialog_settings"
+            android:key="__PLAYER_FORWARD_MOVE__"
+            android:summary="@string/forward_summary_settings"
+            android:title="@string/forward_title_settings" />
+        <com.kristurek.polskatv.ui.view.XIntegerListPreference
+            android:defaultValue="5"
+            android:dialogTitle="@string/fast_forward_dialog_settings"
+            android:key="__PLAYER_FAST_FORWARD_MOVE__"
+            android:summary="@string/fast_forward_summary_settings"
+            android:title="@string/fast_forward_title_settings" />
+        <com.kristurek.polskatv.ui.view.XIntegerListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/backward_dialog_settings"
+            android:key="__PLAYER_BACKWARD_MOVE__"
+            android:summary="@string/backward_summary_settings"
+            android:title="@string/backward_title_settings" />
+        <com.kristurek.polskatv.ui.view.XIntegerListPreference
+            android:defaultValue="5"
+            android:dialogTitle="@string/fast_backward_dialog_settings"
+            android:key="__PLAYER_FAST_BACKWARD_MOVE__"
+            android:summary="@string/fast_backward_summary_settings"
+            android:title="@string/fast_backward_title_settings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/advanced_category_settings">
+        <ListPreference
+            android:defaultValue="Europe/Warsaw"
+            android:dialogTitle="@string/application_time_zone_dialog_settings"
+            android:key="__APPLICATION_TIME_ZONE__"
+            android:title="@string/application_time_zone_title_settings" />
+        <MultiSelectListPreference
+            android:dialogTitle="@string/hidden_channels_dialog_settings"
+            android:key="__APPLICATION_HIDDEN_CHANNELS__"
+            android:title="@string/hidden_channels_title_settings" />
+        <MultiSelectListPreference
+            android:dialogTitle="@string/search_channels_dialog_settings"
+            android:key="__APPLICATION_SEARCH_CHANNELS__"
+            android:title="@string/search_channels_title_settings" />
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="__APPLICATION_USE_CUSTOM_TIME_AND_PARTIAL_TIME_ZONE_IN_EPGS__"
+            android:title="@string/use_custom_time_and_partial_time_zone_to_select_default_position_in_epgs_title_settings" />
+        <com.kristurek.polskatv.ui.view.XTimeDialogPreference
+            android:defaultValue="17:00"
+            android:dialogTitle=""
+            android:key="__APPLICATION_CUSTOM_TIME_TO_FIND_DEFAULT_POSITION_IN_EPGS__"
+            android:title="@string/custon_time_title_settings" />
+        <ListPreference
+            android:defaultValue="STANDARD"
+            android:dialogTitle="@string/font_size_dialog_settings"
+            android:key="__APPLICATION_FONT_SIZE__"
+            android:title="@string/font_size_title_settings" />
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="__APPLICATION_SHOW_DEVICE_TIME__"
+            android:summary="@string/show_device_time_summary_settings"
+            android:title="@string/show_device_time_title_settings" />
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="__APPLICATION_SHOW_VOLUME__"
+            android:summary="@string/show_volume_summary_settings"
+            android:title="@string/show_volume_title_settings" />
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="__APPLICATION_SHOW_CONSOLE__"
+            android:summary="@string/show_console_summary_settings"
+            android:title="@string/show_console_title_settings" />
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="__APPLICATION_DEBUG_CONSOLE__"
+            android:summary="@string/debug_console_summary_settings"
+            android:title="@string/debug_console_title_settings" />
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Non focused states -->
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="false" android:color="@color/black2">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <size android:height="10dp" />
+        </shape>
+    </item>
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="true" android:color="@color/black2">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <size android:height="10dp" />
+        </shape>
+    </item>
+
+    <!-- Focused states -->
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="false" android:color="#99F30C0C">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/red" />
+            <size android:height="10dp" />
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="true" android:color="#99F30C0C">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/red" />
+            <size android:height="10dp" />
+        </shape>
+    </item>
+
+    <!-- Pressed -->
+    <!--    Non focused states -->
+    <item android:state_focused="false" android:state_pressed="true" android:state_selected="false" android:color="#99F30C0C">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/green" />
+            <size android:height="10dp" />
+        </shape>
+    </item>
+    <item android:state_focused="false" android:state_pressed="true" android:state_selected="true" android:color="#99F30C0C">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/green" />
+            <size android:height="10dp" />
+        </shape>
+    </item>
+
+    <!--    Focused states -->
+    <item android:state_focused="true" android:state_pressed="true" android:state_selected="false" android:color="@color/black2">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <size android:height="10dp" />
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_pressed="true" android:state_selected="true" android:color="@color/black2">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <size android:height="10dp" />
+        </shape>
+    </item>
+</selector>

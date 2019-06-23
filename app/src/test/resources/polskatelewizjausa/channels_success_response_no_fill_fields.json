@@ -1,0 +1,4416 @@
+{
+  "icons": {
+    "default": "http://xlink.ws/iptv/core/img/ico/tv/%ICON%.gif",
+    "w40h30": "http://xlink.ws/iptv/core/img/ico/tv/%ICON%.gif",
+    "playback": "http://xlink.ws/iptv/core/img/ico/tv/playback/%ICON%.png",
+    "small": "http://xlink.ws/iptv/core/img/ico/tv/small/%ICON%.png"
+  },
+  "groups": [
+    {
+      "id": 1,
+      "number": 0,
+      "alias": "GENERAL",
+      "name": "Общие",
+      "color": "#000000",
+      "user_title": "The main",
+      "channels": [
+        {
+          "id": 521,
+          "group_id": 1,
+          "number": 1,
+          "name": "TVP1 HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          //"icon": "pl-tvp1", NullPointerException
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Wieczna miłość 2 (odc. 42)",
+              "info": "Tytuł oryginalny: Kara Sevda\\nTurcja, 2015\\nWystępują: Burak Özçivit, Neslihan Atagül, Kürşat Alniaçik, Hazal Filiz Küçükköse, Zerrin Tekindor, Orhan Güner\\nOdc. 156 Emir zasypuje Deniz prezentami, wbrew niezadowoleniu Nihan. Kemal jest zmuszony przyjąć propozycję Emira i oddać mu udziały w holdingu. Kemal dowiaduje się, że Asu go zdradziła.",
+              "begin": 1555423500,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Teleexpress",
+              "info": "magazyn informacyjnyDynamicznie prowadzony serwis informacyjny prezentujący aktualne wydarzenia, wiadomości kulturalne oraz ciekawostki z kraju i ze świata.",
+              "begin": 1555426800,
+              "end": 1555427700
+            }
+          }
+        },
+        {
+          "id": 2076,
+          "group_id": 1,
+          "number": 2,
+          "name": "TVP1",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvp1",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Wieczna miłość 2 (odc. 42)",
+              "info": "Tytuł oryginalny: Kara Sevda\\nTurcja, 2015\\nWystępują: Burak Özçivit, Neslihan Atagül, Kürşat Alniaçik, Hazal Filiz Küçükköse, Zerrin Tekindor, Orhan Güner\\nOdc. 156 Emir zasypuje Deniz prezentami, wbrew niezadowoleniu Nihan. Kemal jest zmuszony przyjąć propozycję Emira i oddać mu udziały w holdingu. Kemal dowiaduje się, że Asu go zdradziła.",
+              "begin": 1555423500,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Teleexpress",
+              "info": "magazyn informacyjnyDynamicznie prowadzony serwis informacyjny prezentujący aktualne wydarzenia, wiadomości kulturalne oraz ciekawostki z kraju i ze świata.",
+              "begin": 1555426800,
+              "end": 1555427700
+            }
+          }
+        },
+        {
+          "id": 522,
+          "group_id": 1,
+          "number": 3,
+          "name": "TVP2 HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvp2",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Familiada",
+              "info": "Tytuł oryginalny: Familiada\\nPolska, 2014\\n\"Familiada\" jest quizem, w którym biorą udział dwie rodziny, przy czym każda z nich składa się z pięciu dorosłych osób (rodzice, dzieci, dziadkowie, ciocie, wujkowie). Rodziny odgadują odpowiedzi na pytania, które zadano wcześniej grupie próbnej składającej się ze stu osób. Liczba zebranych przez rodzinę punktów zależy od tego, czy odpowiedzieli tak, jak wcześniej grupa próbna. Teleturniej ma charakter wspólnej, rodzinnej zabawy.",
+              "begin": 1555425300,
+              "end": 1555427400
+            },
+            "next": {
+              "title": "Więzień miłości: odc.41",
+              "info": "serial telenowela (Turcja, 2016) odc.41Występują: Hazal Subasi, Erkan Meriç, Yaprak DurmazZehra wciąż nie może znaleźć zaginionego kontraktu. Sevim okłamuje Yenera, że straciła część pożyczonych pieniędzy. Mężczyzna postanawia dać jej nauczkę. Gdy kobieta wraca do domu, odkrywa, że ktoś ukradł zakopaną przez nią gotówkę. Zehra czyta Asji bajkę na dobranoc. Dziewczynka prosi, by Omer się do nich przyłączył.Od lat: 12",
+              "begin": 1555427400,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2077,
+          "group_id": 1,
+          "number": 4,
+          "name": "TVP 2",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvp2",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Familiada",
+              "info": "Tytuł oryginalny: Familiada\\nPolska, 2014\\n\"Familiada\" jest quizem, w którym biorą udział dwie rodziny, przy czym każda z nich składa się z pięciu dorosłych osób (rodzice, dzieci, dziadkowie, ciocie, wujkowie). Rodziny odgadują odpowiedzi na pytania, które zadano wcześniej grupie próbnej składającej się ze stu osób. Liczba zebranych przez rodzinę punktów zależy od tego, czy odpowiedzieli tak, jak wcześniej grupa próbna. Teleturniej ma charakter wspólnej, rodzinnej zabawy.",
+              "begin": 1555425300,
+              "end": 1555427400
+            },
+            "next": {
+              "title": "Więzień miłości: odc.41",
+              "info": "serial telenowela (Turcja, 2016) odc.41Występują: Hazal Subasi, Erkan Meriç, Yaprak DurmazZehra wciąż nie może znaleźć zaginionego kontraktu. Sevim okłamuje Yenera, że straciła część pożyczonych pieniędzy. Mężczyzna postanawia dać jej nauczkę. Gdy kobieta wraca do domu, odkrywa, że ktoś ukradł zakopaną przez nią gotówkę. Zehra czyta Asji bajkę na dobranoc. Dziewczynka prosi, by Omer się do nich przyłączył.Od lat: 12",
+              "begin": 1555427400,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 545,
+          "group_id": 1,
+          "number": 5,
+          "name": "TVP-Polonia",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polonia",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Zakochaj się w Polsce",
+              "info": "Początki Tomaszowa Mazowieckiego sięgają 1788 roku, kiedy nad rzeką Wolbórką powstała niewielka osada zamieszkiwana przez pracowników, którzy zajmowali się wytopem żelaza. Właścicielem okolicznych dóbr był wówczas hrabia Tomasz Ostrowski. Stworzył on niewielki ośrodek hutniczy i metalurgiczny. W 1805 roku nowym właścicielem terenu został jego najstarszy syn, Antoni Ostrowski, który postawił na rozwój przemysłu włókienniczego. Tomaszów otrzymał prawa miejskie dopiero w 1830 roku. Miasto może pochwalić się bogatym zbiorem zabytków m.in. klasycystycznym pałacem rodu Ostrowskich, stylową kamienicą rodziny Knothe oraz okazałą willą wybitnego lekarza i działacza społecznego, Jana Serafina Rodego. Miejscową atrakcją i unikatem w Europie jest też Rezerwat Przyrody Niebieskie Źródła, położony w dolinie Pilicy. Tomaszów Mazowiecki to również kuźnia talentów polskiego łyżwiarstwa szybkiego - stąd pochodzi Jaromir Radke, dwukrotny olimpijczyk",
+              "begin": 1555424700,
+              "end": 1555426200
+            },
+            "next": {
+              "title": "Margolcia i Miś zapraszają dziś",
+              "info": "W tym odcinku Margolcia i Miś wyjaśniają dzieciom, czym są figury geometryczne i pokazują ich kształty",
+              "begin": 1555426200,
+              "end": 1555427100
+            }
+          }
+        },
+        {
+          "id": 520,
+          "group_id": 1,
+          "number": 6,
+          "name": "TVN HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvn",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "19+",
+              "info": "Poprzedniego dnia Iwona zamieściła na vlogu filmik, w którym sugeruje, że Mela i Kacper mają romans. Borek nie może dojść do siebie po rozstaniu z Zuzą. Co gorsza, pokłócił się ze wszystkimi przyjaciółmi. Uważa, że zawaliło mu się życie. Chłopaka pociesza Kasia. Mela zaprzecza doniesieniom Małkowskiej. W swoim filmiku zapewnia, iż ona i Kacper nie mogliby zostać parą. Po obejrzeniu nagrania Borek ponownie się załamuje. Postanawia opuścić mieszkanie Leny. Ostatnio Magda i Ala często się kłócą. Motyl nie miała odwagi powiedzieć mamie prawdy o ich związku. Teraz próbuje poprawić atmosferę. Jakiś czas później Magda zostaje napadnięta przez pijanych mężczyzn pod szkołą tańca Ali. Kiedy stara się ona obronić partnerkę, jeden z napastników popycha ją, przez co uderza głową o chodnik i traci przytomność. Seba wzywa pogotowie",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Szpital",
+              "info": "Doktor Wojciech Jarosz leczy licealistkę, która celowo potrąciła samochodem swojego nauczyciela. Mężczyzna nie pozwolił jej pójść na dyskotekę. Pacjent walczy o życie, a sprawczyni wypadku ma niewielkie obrażenia. Nastolatka nie przejmuje się tym, co zrobiła. Ojciec próbuje wybawić ją z kłopotów, ale matka - przerażona postępowaniem córki - chce, by poniosła konsekwencje. Do doktor Anny Nowickiej trafia młoda kobieta, która spadła ze schodów w galerii handlowej, gdy uciekała przed ochroniarzem. Ten ścigał ją, ponieważ zabrała ze sklepu paczkę precelków. Pacjentka denerwuje się przygotowaniami do ślubu i kradnie ze stresu. Podejrzewa, że jest kleptomanką. O jej problemie wie tylko matka, jednak nie dopuszcza do siebie myśli o chorobie córki. Kobieta pragnie powiedzieć narzeczonemu prawdę, ale rodzicielka jej zabrania. Wkrótce siostra mężczyzny przyłapuje przyszłą bratową na kradzieży w szpitalu",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2075,
+          "group_id": 1,
+          "number": 7,
+          "name": "TVN",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvn",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "19+",
+              "info": "Poprzedniego dnia Iwona zamieściła na vlogu filmik, w którym sugeruje, że Mela i Kacper mają romans. Borek nie może dojść do siebie po rozstaniu z Zuzą. Co gorsza, pokłócił się ze wszystkimi przyjaciółmi. Uważa, że zawaliło mu się życie. Chłopaka pociesza Kasia. Mela zaprzecza doniesieniom Małkowskiej. W swoim filmiku zapewnia, iż ona i Kacper nie mogliby zostać parą. Po obejrzeniu nagrania Borek ponownie się załamuje. Postanawia opuścić mieszkanie Leny. Ostatnio Magda i Ala często się kłócą. Motyl nie miała odwagi powiedzieć mamie prawdy o ich związku. Teraz próbuje poprawić atmosferę. Jakiś czas później Magda zostaje napadnięta przez pijanych mężczyzn pod szkołą tańca Ali. Kiedy stara się ona obronić partnerkę, jeden z napastników popycha ją, przez co uderza głową o chodnik i traci przytomność. Seba wzywa pogotowie",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Szpital",
+              "info": "Doktor Wojciech Jarosz leczy licealistkę, która celowo potrąciła samochodem swojego nauczyciela. Mężczyzna nie pozwolił jej pójść na dyskotekę. Pacjent walczy o życie, a sprawczyni wypadku ma niewielkie obrażenia. Nastolatka nie przejmuje się tym, co zrobiła. Ojciec próbuje wybawić ją z kłopotów, ale matka - przerażona postępowaniem córki - chce, by poniosła konsekwencje. Do doktor Anny Nowickiej trafia młoda kobieta, która spadła ze schodów w galerii handlowej, gdy uciekała przed ochroniarzem. Ten ścigał ją, ponieważ zabrała ze sklepu paczkę precelków. Pacjentka denerwuje się przygotowaniami do ślubu i kradnie ze stresu. Podejrzewa, że jest kleptomanką. O jej problemie wie tylko matka, jednak nie dopuszcza do siebie myśli o chorobie córki. Kobieta pragnie powiedzieć narzeczonemu prawdę, ale rodzicielka jej zabrania. Wkrótce siostra mężczyzny przyłapuje przyszłą bratową na kradzieży w szpitalu",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2129,
+          "group_id": 1,
+          "number": 9,
+          "name": "TVN7 HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvn7",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Szpital",
+              "info": "Do szpitala trafia 25-letnia Katarzyna, która straciła przytomność w mieszkaniu. Pacjentka jest byłą narkomanką i leczy się od czterech miesięcy. Karetkę wezwała jej 7-letnia córka, która była u niej w odwiedzinach.",
+              "begin": 1555424400,
+              "end": 1555428000
+            },
+            "next": {
+              "title": "Big Brother Podwieczorek: odc.22",
+              "info": "rozrywka (Polska, 2019) odc.22/64 (na żywo)Krótkie wejście na żywo ukazujące codzienne życie mieszkańców Domu Wielkiego Brata.Od lat: 12",
+              "begin": 1555428000,
+              "end": 1555428300
+            }
+          }
+        },
+        {
+          "id": 524,
+          "group_id": 1,
+          "number": 10,
+          "name": "TVN7",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvn7",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Szpital",
+              "info": "Do szpitala trafia 25-letnia Katarzyna, która straciła przytomność w mieszkaniu. Pacjentka jest byłą narkomanką i leczy się od czterech miesięcy. Karetkę wezwała jej 7-letnia córka, która była u niej w odwiedzinach.",
+              "begin": 1555424400,
+              "end": 1555428000
+            },
+            "next": {
+              "title": "Big Brother Podwieczorek: odc.22",
+              "info": "rozrywka (Polska, 2019) odc.22/64 (na żywo)Krótkie wejście na żywo ukazujące codzienne życie mieszkańców Domu Wielkiego Brata.Od lat: 12",
+              "begin": 1555428000,
+              "end": 1555428300
+            }
+          }
+        },
+        {
+          "id": 579,
+          "group_id": 1,
+          "number": 11,
+          "name": "Polsat HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Na ratunek 112 (odc. 332)",
+              "info": "Tytuł oryginalny: Na ratunek 112\\nPolska, 2019\\nReżyseria: Piotr Kuciński\\nSandra i Cyprian pomagają bezdomnym w czasie zimy. Odwiedzają miejsca, w których ci przebywają. Przynoszą im ciepłe posiłki, przydatne rzeczy, informują o schroniskach. W pewnym opuszczonym budynku spotykają Martę - kobietę, która wyglądem i obyciem nie pasuje do wizerunku przeciętnej bezdomnej. Para dowiaduje się, że poszukuje jej rodzina, którą okazuje się być jej mąż. Informują go o znalezieniu zaginionej. Wkrótce przekonują się, jak wielki błąd popełnili.",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Gliniarze: odc.322",
+              "info": "serial  (Polska, 2019) odc.322Występują: Ewelina Ruckgaber, Piotr Mróz, Arkadiusz KrygierKontrowersyjna dziennikarka śledcza zostaje ostrzelana i cudem uchodzi z życiem. Kuba i Natalia szukają sprawcy, ale okazuje się, że reporterka miała wielu wrogów. W ostatnich artykułach poruszała temat polityczno-biznesowego układu. Natalia ukrywa przed Kubą, że spotyka się z Łukaszem. To może tylko pogorszyć sprawę.Od lat: 12",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2080,
+          "group_id": 1,
+          "number": 12,
+          "name": "Polsat",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Na ratunek 112 (odc. 332)",
+              "info": "Tytuł oryginalny: Na ratunek 112\\nPolska, 2019\\nReżyseria: Piotr Kuciński\\nSandra i Cyprian pomagają bezdomnym w czasie zimy. Odwiedzają miejsca, w których ci przebywają. Przynoszą im ciepłe posiłki, przydatne rzeczy, informują o schroniskach. W pewnym opuszczonym budynku spotykają Martę - kobietę, która wyglądem i obyciem nie pasuje do wizerunku przeciętnej bezdomnej. Para dowiaduje się, że poszukuje jej rodzina, którą okazuje się być jej mąż. Informują go o znalezieniu zaginionej. Wkrótce przekonują się, jak wielki błąd popełnili.",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Gliniarze: odc.322",
+              "info": "serial  (Polska, 2019) odc.322Występują: Ewelina Ruckgaber, Piotr Mróz, Arkadiusz KrygierKontrowersyjna dziennikarka śledcza zostaje ostrzelana i cudem uchodzi z życiem. Kuba i Natalia szukają sprawcy, ale okazuje się, że reporterka miała wielu wrogów. W ostatnich artykułach poruszała temat polityczno-biznesowego układu. Natalia ukrywa przed Kubą, że spotyka się z Łukaszem. To może tylko pogorszyć sprawę.Od lat: 12",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2131,
+          "group_id": 1,
+          "number": 13,
+          "name": "TTV HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-ttv",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Nauka jazdy 4 (odc. 7)",
+              "info": "Tytuł oryginalny: Nauka jazdy\\nPolska\\nZaczyna się nauka jazdy... w Londynie! Vasilis i Iwona podchodzą do państwowego egzaminu. Kogo z nich zobaczymy na ulicach królowej Elżbiety? Tymczasem na królewski trakt, ale w Krakowie, wyjeżdża miejscowa znakomitość - Jej Wysokość Natalia. Jeszcze tylko jedno selfie i wio! Natalia nawet na drodze lubi zwracać na siebie uwagę, co potwierdzają klaksony zniecierpliwionych kierowców.",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Gogglebox. Przed telewizorem 6 (odc. 11)",
+              "info": "Tytuł oryginalny: Gogglebox. Przed telewizorem\\nPolska\\nStarzy znajomi z \"Gogglebox\" wracają przed telewizory! \"Gogglebox. Przed telewizorem\" to bijący rekordy oglądalności międzynarodowy format, zdobywca wielu nagród telewizyjnych, m.in. BAFTA. Swój sukces zawdzięcza prostemu i genialnemu pomysłowi - obserwujemy, jak zwyczajni widzowie z pozycji swojej kanapy oglądają i komentują to, co śledzą w telewizji. Ich prawdziwe, zabawne i nieocenzurowane opinie składają się na niepodrabialny charakter programu.",
+              "begin": 1555426800,
+              "end": 1555429500
+            }
+          }
+        },
+        {
+          "id": 525,
+          "group_id": 1,
+          "number": 14,
+          "name": "TTV",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-ttv",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Nauka jazdy 4 (odc. 7)",
+              "info": "Tytuł oryginalny: Nauka jazdy\\nPolska\\nZaczyna się nauka jazdy... w Londynie! Vasilis i Iwona podchodzą do państwowego egzaminu. Kogo z nich zobaczymy na ulicach królowej Elżbiety? Tymczasem na królewski trakt, ale w Krakowie, wyjeżdża miejscowa znakomitość - Jej Wysokość Natalia. Jeszcze tylko jedno selfie i wio! Natalia nawet na drodze lubi zwracać na siebie uwagę, co potwierdzają klaksony zniecierpliwionych kierowców.",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Gogglebox. Przed telewizorem 6 (odc. 11)",
+              "info": "Tytuł oryginalny: Gogglebox. Przed telewizorem\\nPolska\\nStarzy znajomi z \"Gogglebox\" wracają przed telewizory! \"Gogglebox. Przed telewizorem\" to bijący rekordy oglądalności międzynarodowy format, zdobywca wielu nagród telewizyjnych, m.in. BAFTA. Swój sukces zawdzięcza prostemu i genialnemu pomysłowi - obserwujemy, jak zwyczajni widzowie z pozycji swojej kanapy oglądają i komentują to, co śledzą w telewizji. Ich prawdziwe, zabawne i nieocenzurowane opinie składają się na niepodrabialny charakter programu.",
+              "begin": 1555426800,
+              "end": 1555429500
+            }
+          }
+        },
+        {
+          "id": 544,
+          "group_id": 1,
+          "number": 15,
+          "name": "TVS",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvs",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Propozycje do \"Szlagierowej listy TVS\"",
+              "info": "Zbiór piosenek ze \"Szlagierowej listy\", na które telewidzowie będą mogli oddawać głosy",
+              "begin": 1555424100,
+              "end": 1555425600
+            },
+            "next": {
+              "title": "Schlesien Journal",
+              "info": "Cotygodniowy program poświęcony mniejszości niemieckiej w Polsce. Jego twórcy informują o tym, czym na co dzień zajmują się Niemcy mieszkający od lat w naszym kraju",
+              "begin": 1555425600,
+              "end": 1555426500
+            }
+          }
+        },
+        {
+          "id": 580,
+          "group_id": 1,
+          "number": 16,
+          "name": "TV4",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tv4",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Gliniarz i prokurator (odc. 62)",
+              "info": "Tytuł oryginalny: Jake and the Fatman\\nUSA, 1990\\nReżyseria: Ron Satlof\\nWystępują: William Conrad, Joe Penny, Alan Campbell, Robert Miranda, Reiner Schöne, Cec Verrell\\nDo miasta przybywa niejaki Hart, znany złodziej cennych kamieni. Budzi to zdziwienie policji, ponieważ po ostatnim pobycie w więzieniu Hart \"przeszedł na emeryturę\". Zdziwienie funkcjonariuszy jest tym większe, że tym razem celem Harta wydaje się prywatna rezydencja, której właściciele wcale nie są kolekcjonerami cennej biżuterii. Okazuje się, że prawdziwym powodem wizyty Harta jest chęć zemsty na swojej byłej żonie.",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Joker: odc.62",
+              "info": "rozrywka (Polska, 2018) odc.62Prowadzą: Krzysztof IbiszUczestnicy teleturnieju odpowiadają na 10 pytań z różnych dziedzin. Pomagają im w tym specjalne karty zwane Jokerami. Każdy gracz ma do dyspozycji osiem atutów, które pozwalają zachować już wygrane pieniądze lub zawężają liczbę odpowiedzi na dane pytanie. W talii kart znajduje się również Joker specjalny.Od lat: 7",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 543,
+          "group_id": 1,
+          "number": 17,
+          "name": "TV PULS",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvpuls",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Rodzinny interes (odc. 31)",
+              "info": "Tytuł oryginalny: Rodzinny interes\\nPolska, 2019\\nWystępują: Marek Krupski, Ireneusz Dydliński, Katarzyna Taracińska-Badura, Marta Zgutczyńska, Patryk Janas, Roman Szczeblewski\\n[N]. \\n\"Rodzinny interes\" to serial opowiadający o dwójce przyjaciół z dzieciństwa Wojtku i Ryszardzie , którzy wychowali się w domu dziecka, a po latach postanowili otworzyć warsztat samochodowy. Pracuje tu niezawodny duet mechaników: młody Dawid , który uczy się fachu przy doświadczonym Bronku . Bardzo ważną rolę odegra tajemnicza i przebiegła księgowa, Viola . Częstym gościem warsztatu będzie celebryta, Dariusz Witter, który skrywa pewną tajemnicę - w tej roli Dariusz Kordek.",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Rodzinny interes: odc.32",
+              "info": "serial obyczajowy (Polska, 2019) odc.32, Dobro wracaWystępują: Marek Krupski, Ireneusz Dydliński, Katarzyna Taracińska-BaduraW warsztacie 'Majewski i Wrzosek' pojawia się starszy pan Julian, który chciałby naprawić swój bardzo stary samochód, ale brakuje mu pieniędzy. Jola walczy z perfidnym windykatorem, który próbuje wymusić na niej zwrot kredytu, którego nigdy nie zaciągnęła. Kobieta podejrzewa, że ktoś ukradł jej dokumenty.Od lat: 12",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 698,
+          "group_id": 1,
+          "number": 25,
+          "name": "Polsat Cafe",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat-cafe",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Randka z nieznajomym (odc. 15)",
+              "info": "Tytuł oryginalny: Randka z nieznajomym\\nPolska, 2019\\n",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Nasz nowy dom: odc.67",
+              "info": "rozrywka (Polska, 2016) odc.67Prowadzą: Katarzyna DowborW Ostrowcu Świętokrzyskim mieszka pani Ewa i jej trzy córki: Wiktoria, Oliwia i Basia. Mąż kobiety po latach życia w nałogu odebrał sobie życie. Prowizoryczna łazienka i kuchnia, walące się sufity i instalacje grożące pożarem to problemy, z którymi zmierzy się ekipa Katarzyny Dowbor.Od lat: 7",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 586,
+          "group_id": 1,
+          "number": 59,
+          "name": "Super Polsat",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-pol-sport",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Dancing with the Stars. Taniec z gwiazdami (odc. 45)",
+              "info": "Tytuł oryginalny: Dancing with the Stars. Taniec z gwiazdami\\nPolska, 2016\\nReżyseria: Rinke Rooyens\\n[AD]. \\nDo rywalizacji na parkiecie przystąpi 12 par - gwiazdy i celebryci oraz najlepsi tancerze. Od uczestników oczekuje się sprawności fizycznej, poczucia rytmu i umiejętności szybkiej nauki kroków.",
+              "begin": 1555425000,
+              "end": 1555432200
+            },
+            "next": {
+              "title": "SuperLudzie: odc.16",
+              "info": "serial dokumentalny (Polska, 2018) odc.16Marcin Ryszka założył drużynę piłkarską Tyniecka Nie Widzę Przeszkód z Krakowa. Wcześniej uprawiał pływanie i ma na swoim koncie wiele sukcesów w tej dyscyplinie. Widzowie poznają też zespół November Project. Iwona Cichosz wyjaśni, jak należy się zachowywać w towarzystwie osób niesłyszących, by ich nie urazić.Od lat: 12",
+              "begin": 1555432200,
+              "end": 1555434000
+            }
+          }
+        },
+        {
+          "id": 583,
+          "group_id": 1,
+          "number": 65,
+          "name": "TV6",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tv6",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Drużyna A (odc. 19)",
+              "info": "Tytuł oryginalny: The A-Team\\nUSA, 1985\\n",
+              "begin": 1555424100,
+              "end": 1555427700
+            },
+            "next": {
+              "title": "Paulina: odc.64",
+              "info": "serial telenowela (Meksyk, 1998) odc.64Występują: Gabriela Spanic, Sergio Guerrero, Fernando ColungaPaulina ima się każdej pracy, by utrzymać siebie i chorą matkę. Spotyka bogatą Paolę, która od razu zauważa wyjątkowe podobieństwo między nimi. Pozbawiona skrupułów kobieta proponuje jej, by przez rok udawała przed jej mężem oraz znajomymi nią samą. Paulina odmawia, jednak zostaje zmuszona do udziału w intrydze.Od lat: 12",
+              "begin": 1555427700,
+              "end": 1555431300
+            }
+          }
+        },
+        {
+          "id": 582,
+          "group_id": 1,
+          "number": 66,
+          "name": "Polsat2",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat2",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Nasz nowy dom 3 (odc. 32)",
+              "info": "Tytuł oryginalny: Nasz nowy dom\\nPolska, 2014\\nReżyseria: Arkadiusz Biedrzycki\\n[N]. \\nEdyta Orzechowska ma 20 lat i mieszka w Milanówku razem z mamą Katarzyną i osiemnastoletnim bratem Rafałem. Od czterech lat Edyta jest głową rodziny. Gdy ona miała 16 lat, pani Katarzyna zachorowała na stwardnienie rozsiane i od tamtej pory choroba systematycznie i szybko postępuje. Dziewczyna, choć nie była pełnoletnia, poszła do pracy, by rodzina miała, z czego żyć. Dzięki Edycie brat może kończyć szkołę, a mama nie musi martwić się, jak nakarmić dzieci.",
+              "begin": 1555425000,
+              "end": 1555428600
+            },
+            "next": {
+              "title": "Malanowski i partnerzy: odc.206",
+              "info": "serial  (Polska, 2010) odc.206, Zaginiony synWystępują: Bronisław Cieślak, Marta Leleniewska, Marek KrupskiSyn klienta detektywów wyprowadził się kilka miesięcy temu z domu i zerwał z ojcem wszelkie kontakty. Ojciec uznał, że za tym wszystkim stoi dziewczyna syna, Róża, która jest Romką...Od lat: 12",
+              "begin": 1555428600,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2128,
+          "group_id": 1,
+          "number": 80,
+          "name": "TVP3",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvp3",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Kryminalna siódemka",
+              "info": "W programie prezentowanych jest siedem najgłośniejszych spraw kryminalnych, które wstrząsnęły całą Polską. Widzowie zobaczą brawurowe akcje policji, zagadkowe procesy oraz widowiskowe pościgi",
+              "begin": 1555425000,
+              "end": 1555425900
+            },
+            "next": {
+              "title": "Dziennik regionów - tematy dnia",
+              "info": "Prezentacja zapowiedzi najważniejszych tematów i wydarzeń dnia ze wszystkich regionów Polski",
+              "begin": 1555425900,
+              "end": 1555426800
+            }
+          }
+        },
+        {
+          "id": 2134,
+          "group_id": 1,
+          "number": 82,
+          "name": "TV PULS2",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-puls2",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Fineasz i Ferb",
+              "info": "Fineasz Flynn i jego przyrodni brat Ferb Fletcher uznali za swoją misję pokonanie nudy i sprawienie, aby każdy z 104 dni wakacji był wyjątkowy. Ich starsza siostra Fretka nie cierpi niesamowitych przygód swoich braci. Poświęca więc cały swój czas, donosząc na nich mamie i tacie, lecz jakoś nigdy nie udaje jej się dowieść wybryków chłopców. Podczas każdej przygody, Fineaszowi i Ferbowi towarzyszy ich ukochany dziobak Pepe. Na pierwszy rzut oka jest zwykłym zwierzakiem, ale tak naprawdę prowadzi sekretne życie. Jako elegancki Agent P dzielnie walczy o ocalenie świata przed złym doktorem Dundersztycem",
+              "begin": 1555425300,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Fineasz i Ferb",
+              "info": "Fineasz Flynn i jego przyrodni brat Ferb Fletcher uznali za swoją misję pokonanie nudy i sprawienie, aby każdy z 104 dni wakacji był wyjątkowy. Ich starsza siostra Fretka nie cierpi niesamowitych przygód swoich braci. Poświęca więc cały swój czas, donosząc na nich mamie i tacie, lecz jakoś nigdy nie udaje jej się dowieść wybryków chłopców. Podczas każdej przygody, Fineaszowi i Ferbowi towarzyszy ich ukochany dziobak Pepe. Na pierwszy rzut oka jest zwykłym zwierzakiem, ale tak naprawdę prowadzi sekretne życie. Jako elegancki Agent P dzielnie walczy o ocalenie świata przed złym doktorem Dundersztycem",
+              "begin": 1555426800,
+              "end": 1555428900
+            }
+          }
+        },
+        {
+          "id": 2393,
+          "group_id": 1,
+          "number": 691,
+          "name": "BBC World News HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "en-bbc-news",
+          "languages": "eng",
+          "audiotracks": "eng",
+          "audiotrack_default": "eng",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "HARDtalk",
+              "info": "Stephen Sackur talks to Nelson Chamisa, leader of opposition MDC-T party, Zimbabwe(n)",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Global with Matthew Amroliwala",
+              "info": "Matthew Amroliwala explains the day's global news and what it means to you - with reports from the BBC's network of correspondents around the world, and from the World's Newsroom in London(n)",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 2455,
+          "group_id": 1,
+          "number": 732,
+          "name": "Travel Channel Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-travel",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Dziwaczne potrawy",
+              "info": "Atlanta to nowoczesne miasto z południową gościnnością. Tutaj króluje tradycyjna kuchnia - smażony kurczak, placek z brzoskwiniami, słodka herbata i potrawy kuchni afroamerykańskiej. Andrew Zimmern próbuje dań, które od lat pozwalają przybyszom najeść się do syta",
+              "begin": 1555424400,
+              "end": 1555426200
+            },
+            "next": {
+              "title": "Dziwaczne potrawy Ameryki",
+              "info": "Andrew bierze udział w polowaniu. Próbuje również lepiej poznać prawdziwe życie mieszkańców górzystego stanu, jakim jest Zachodnia Wirginia",
+              "begin": 1555426200,
+              "end": 1555429800
+            }
+          }
+        },
+        {
+          "id": 2456,
+          "group_id": 1,
+          "number": 733,
+          "name": "ID Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-id",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Detektyw do zadań specjalnych 1 (odc. 6)",
+              "info": "Tytuł oryginalny: California Investigator\\nUSA, 2014\\nReżyseria: Paul Haddad\\nWystępują: Carl Watts\\nTracy jest wdowcem chorującym na chłoniaka 4 stopnia. Zawiera znajomość z mężczyzną również chorym na nowotwór. Czy może mu zaufać? [AL-T]",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Oczami ofiary",
+              "info": "serial dokumentalny (USA, 2016), Diabeł, którego znaszMissy Grubaugh jest pobożną chrześcijanką i chce czekać z seksem do ślubu. Jednak jej wytrwałość i niewinność fascynuje nieodpowiednich mężczyzn, co kończy się dla dwudziestolatki tragicznie.Od lat: 7",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2457,
+          "group_id": 1,
+          "number": 734,
+          "name": "Paramount Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "ru-paramount",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Pingwiny z Madagaskaru 2 (odc. 39)",
+              "info": "Tytuł oryginalny: The Penguins of Madagascar\\nUSA, 2012\\n\"Pingwiny z Madagasakru\" to serial animowany, będący kontynuacją przygód czterech pingwinów znanych widzom z obu części kinowego hitu \"Madagaskar\". Skipper to urodzony dowódca i lider wesołej gromadki. Kowalski to główny strateg, mózg każdej tajnej operacji. Rico to specjalista od zadań specjalnych, a Szeregowy to najniższy rangą spośród tytułowych pingwinów. Oczywiście oprócz czwórki głównych bohaterów, nowojorskie zoo zamieszkują również inne zwierzęta, m.in. lemury.",
+              "begin": 1555425300,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Cudowne lata: odc.63",
+              "info": "serial komediowy (USA, 1991) odc.63Występują: Fred Savage, Daniel Stern, Dan LauriaWayne i Kevin mieszkają od lat w tym samym pokoju. Obok jest wolny pokój Karen, która studiuje w innym mieście. Chłopcy domagają się od ojca, aby pozwolił im go zagospodarować.Reżyser: Michael Dinner",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 2458,
+          "group_id": 1,
+          "number": 735,
+          "name": "TLC Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "de-tlc",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Historie wielkiej wagi",
+              "info": "serial dokumentalny (USA, 2017), CynthiaSamotna matka pięciorga dzieci, Cynthia, uczy pociechy specjalnych potrzeb. Praca nauczycielki staje się jednak niemożliwa ze względu na jej wagę. Życie kobiety i jej rodziny są zagrożone.Od lat: 7",
+              "begin": 1555423200,
+              "end": 1555430400
+            },
+            "next": {
+              "title": "Urodzie na ratunek: odc.6",
+              "info": "serial dokumentalny (2016) odc.6Transwestyta Gypsy chce pożegnać się ze swoim wyglądem klowna. Jonathan i Gemma boją się, że nadmierna potliwość może zniszczyć im dzień ślubu.Od lat: 7",
+              "begin": 1555430400,
+              "end": 1555434000
+            }
+          }
+        },
+        {
+          "id": 2461,
+          "group_id": 1,
+          "number": 738,
+          "name": "Cinemax",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-cinemax",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Na zachód od niej",
+              "info": "Tytuł oryginalny: West of Her\\nUSA, 2016\\nReżyseria: Ethan Warren\\nWystępują: Ryan Caraway, Kelsey Siepser, Halli Herzog, Cord Nash, Caitlin Herst, Max Jessop\\nSamotny i zagubiony w życiu Dan (Ryan Caraway) zapisuje się do tajemniczej organizacji, która wysyła go w misję. Razem z enigmatyczną dziewczyną o imieniu Jane (Kelsey Siepser) ma on nocami zostawiać na ulicach amerykańskich miast tabliczki z zaszyfrowanym przesłaniem. Podczas podróży między mężczyzną a dziewczyną rodzi się intensywne uczucie. Dan jest jak otwarta książka, Jane jednak nie chce zbyt dużo mówić o sobie. Kameralne kino drogi w reżyserii dobrze rokującego debiutanta Ethana Warrena.",
+              "begin": 1555420500,
+              "end": 1555425900
+            },
+            "next": {
+              "title": "Zadymiarze",
+              "info": "Tytuł oryginalny: Tryapichnyy soyuz\\nRosja, 2015\\nReżyseria: Michaił Mestetskij\\nWystępują: Wasilij Butkewicz, Pavel Chinaryov, Fiodor Ławrow, Elena Nesterova, Aleksandr Pal, Anastasiya Pronina\\nWania (Wasilij Butkiewicz) jest wycofanym nastolatkiem, który nie wie, co zrobić ze swoim życiem. Pewnego dnia poznaje przez przypadek trójkę żywiołowych, pełnych szalonych pomysłów chłopaków, którzy twierdzą, że są przedstawicielami tzw. \"Szmacianego sojuszu\". Zafascynowany nowymi kolegami Wania zaprasza ich do domku swojej babci. Na miejscu sytuacja zaczyna wymykać się spod kontroli.",
+              "begin": 1555425900,
+              "end": 1555431900
+            }
+          }
+        },
+        {
+          "id": 2462,
+          "group_id": 1,
+          "number": 739,
+          "name": "Cinemax 2",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-cinemax2",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Złap mnie, jeśli potrafisz",
+              "info": "Tytuł oryginalny: Catch Me If You Can\\nUSA, 2002\\nReżyseria: Steven Spielberg\\nWystępują: Leonardo DiCaprio, Tom Hanks, Christopher Walken, Martin Sheen, Nathalie Baye, Amy Adams\\nSzesnastoletni Frank Abagnale (Leonardo DiCaprio) nie radzi sobie po rozstaniu rodziców. Zdesperowany postanawia uciec do Nowego Jorku i zacząć wszystko od nowa. Wykorzystując wdzięk osobisty i ogromny talent do fałszowania czeków, szybko zdobywa duże pieniądze. Chłopak w genialny sposób wciela się w różne postacie - pilota lekarza, prawnika. Zrobi wszystko, żeby osiągnąć swój cel. Szybko w pościg za nim ruszają przedstawiciele władz z agentem FBI Carlem Hanrattym (Tom Hanks) na czele.",
+              "begin": 1555423200,
+              "end": 1555431600
+            },
+            "next": {
+              "title": "Hollywoodland",
+              "info": "film dramat (USA, 2006)Występują: Adrien Brody, Diane Lane, Ben AffleckRok 1959, Hollywood. George Reeves (Ben Affleck), gwiazdor serialu \"Przygody Supermana\", ginie od kuli w swoim mieszkaniu. Matka aktora nie wierzy, że popełnił samobójstwo. Wynajmuje prywatnego detektywa Louisa Simo (Adrien Brody). Ustala on, że Reeves miał romans z żoną jednego z szefów studia filmowego MGM.Reżyser: Allen CoulterOd lat: 16",
+              "begin": 1555431600,
+              "end": 1555439400
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "number": 1,
+      "alias": "NEWS",
+      "name": "Информационные",
+      "color": "#000000",
+      "user_title": "News",
+      "channels": [
+        {
+          "id": 868,
+          "group_id": 2,
+          "number": 8,
+          "name": "Superstacja",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-sup-stac",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Informacje dnia, pogoda",
+              "info": "Tytuł oryginalny: Informacje dnia, pogoda\\nPolska\\n",
+              "begin": 1555424100,
+              "end": 1555425600
+            },
+            "next": {
+              "title": "Na tapecie",
+              "info": "Tytuł oryginalny: Na tapecie\\nPolska\\n",
+              "begin": 1555425600,
+              "end": 1555427700
+            }
+          }
+        },
+        {
+          "id": 523,
+          "group_id": 2,
+          "number": 18,
+          "name": "TVN24",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvn24",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Fakty po południu",
+              "info": "Program informacyjny, podsumowujący najistotniejsze wydarzenia dnia. Oprócz tego w programie transmisje z miejsc zdarzeń, relacje reporterskie, informacje biznesowe, prognoza pogody i informacje sportowe.",
+              "begin": 1555423200,
+              "end": 1555428600
+            },
+            "next": {
+              "title": "Teleserwis",
+              "info": "magazyn informacyjnyProwadzą: Juliusz Kaszyński, Małgorzata Kozieł, Maciej DolegaNietypowy program informacyjny, którego twórcy w nieco żartobliwej formie przedstawiają newsy dnia. Większość z wiadomości ma lekko sensacyjne zabarwienie.",
+              "begin": 1555428600,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 548,
+          "group_id": 2,
+          "number": 19,
+          "name": "TVP-Info",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-info",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Info dzień",
+              "info": "magazyn publicystycznyProwadzą: Małgorzata Steckiewicz, Michał Cholewiński, Marcin Kowalski, Kamil SmerdelReporterzy rozmawiają z ekspertami na temat bieżących wydarzeń politycznych, społecznych, kulturalnych.",
+              "begin": 1555423140,
+              "end": 1555426260
+            },
+            "next": {
+              "title": "Pogoda Info",
+              "info": "magazyn informacyjnyProwadzą: Monika Andrzejczyk, Marzena Słupkowska, Marzena Kawa, Jarosław Kret, Waldemar Dolecki, Katarzyna CiepielewskaSzczegółowe informacje na temat stanu pogody w najbliższych dniach.",
+              "begin": 1555426260,
+              "end": 1555426800
+            }
+          }
+        },
+        {
+          "id": 581,
+          "group_id": 2,
+          "number": 67,
+          "name": "Polsat News 2",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-busines",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Tak czy nie",
+              "info": "Tytuł oryginalny: Tak czy nie\\nPolska\\n",
+              "begin": 1555424400,
+              "end": 1555428000
+            },
+            "next": {
+              "title": "Newstelegraf",
+              "info": "magazyn informacyjnyProwadzą: Daria Kwiecień, Marek Piotr WójcickiPrzegląd informacji dnia, m.in. relacje reporterów w Warszawie oraz krajowych i zagranicznych korespondentów. Redakcja biznesowa przedstawia najświeższe dane walutowe i giełdowe. Nie zabraknie wiadomości o najważniejszych wydarzeniach sportowych i ciekawostek ze świata wirtualnego.",
+              "begin": 1555428000,
+              "end": 1555430100
+            }
+          }
+        },
+        {
+          "id": 526,
+          "group_id": 2,
+          "number": 68,
+          "name": "TVN24 BiS",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvn-cnbc",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Dzień na świecie",
+              "info": "Tytuł oryginalny: Dzień na świecie\\n",
+              "begin": 1555419300,
+              "end": 1555426500
+            },
+            "next": {
+              "title": "Bilans",
+              "info": "Tytuł oryginalny: Bilans\\nPolska\\nMagazyn ekonomiczny. Codzienny program podsumowujący wydarzenia dnia w gospodarce. To program, w którym znajduje się wszystko to, o czym powinien wiedzieć przedsiębiorca. W programie: skrót informacji giełdowych, aktualne tematy makroekonomiczne, relacje reporterskie o najważniejszych i najciekawszych sprawach dotyczących ludzi biznesu. W głównym wydaniu magazynu podsumowujemy wydarzenia dnia i staramy się przewidzieć ich ewentualne konsekwencje.",
+              "begin": 1555426500,
+              "end": 1555428300
+            }
+          }
+        },
+        {
+          "id": 2030,
+          "group_id": 2,
+          "number": 74,
+          "name": "Republika",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-republika",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Telezakupy",
+              "info": "magazynPrezentacja różnych produktów codziennego użytku, które można obejrzeć i kupić bez konieczności wychodzenia z domu.",
+              "begin": 1555425000,
+              "end": 1555425900
+            },
+            "next": {
+              "title": "Republika po południu",
+              "info": "magazyn publicystyczny (na żywo)Popołudniowe pasmo informacyjne Telewizji Republika, w którym dziennikarze stacji przedstawiają aktualne wieści z kraju i ze świata. W programie goszczą także eksperci, komentując najważniejsze tematy dnia.",
+              "begin": 1555425900,
+              "end": 1555428000
+            }
+          }
+        },
+        {
+          "id": 485,
+          "group_id": 2,
+          "number": 158,
+          "name": "CNN",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "cnn",
+          "languages": "eng",
+          "audiotracks": "eng",
+          "audiotrack_default": "eng",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Connect the World with Becky Anderson.",
+              "info": "",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "The Express.",
+              "info": "",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 170,
+          "group_id": 2,
+          "number": 372,
+          "name": "BBC World News",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "en-bbc-news",
+          "languages": "eng",
+          "audiotracks": "eng",
+          "audiotrack_default": "eng",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "HARDtalk",
+              "info": "Stephen Sackur talks to Nelson Chamisa, leader of opposition MDC-T party, Zimbabwe(n)",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Global with Matthew Amroliwala",
+              "info": "Matthew Amroliwala explains the day's global news and what it means to you - with reports from the BBC's network of correspondents around the world, and from the World's Newsroom in London(n)",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 44,
+          "group_id": 2,
+          "number": 456,
+          "name": "CNBC",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "en-cnbc",
+          "languages": "eng",
+          "audiotracks": "eng",
+          "audiotrack_default": "eng",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "US Squawk on the Street",
+              "info": "",
+              "begin": 1555419600,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "US Squawk Alley",
+              "info": "",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "number": 2,
+      "alias": "ENTERTAINMENT",
+      "name": "Развлекательные",
+      "color": "#000000",
+      "user_title": "Entertainment",
+      "channels": [
+        {
+          "id": 588,
+          "group_id": 3,
+          "number": 20,
+          "name": "TVP-Rozrywka",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvp-roz",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "IX Mazurska Noc Kabaretowa: Dwójki, pary, duety",
+              "info": "Tytuł oryginalny: IX Mazurska Noc Kabaretowa\\nPolska, 2007\\nKluczem do tegorocznego kabaretonu w Mrągowie była magiczna cyfra 2, ponieważ to własnie 2, a nie 7, czy 13 jest cyfrą najważniejsza i prawdziwie magiczną. To dzięki dwójce świat posuwa się do przodu. Każdy potrzebuje pary, powstaliśmy z połączenia dwóch elementów: męskiego i żeńskiego, yin i yang. Mamy dwoje oczu, dwie ręce, dwie nogi. Najlepszy model rodziny to 2 +2 . Podwójna whisky zawsze lepsza niż pojedyncza. W duecie lepiej sie śpiewa niż solo.",
+              "begin": 1555425000,
+              "end": 1555428900
+            },
+            "next": {
+              "title": "Okrasa łamie przepisy: Ogórkowa kuchnia",
+              "info": "magazyn kulinaria (Polska)Prowadzą: Karol OkrasaOkrasa wyrusza zabytkowym autobusem na spotkanie ze smakami dzieciństwa. Postanawia sprawdzić, czy z produktów, które w czasach PRL-u często stanowiły podstawę kuchni Polaków, można dzisiaj przygotować niezwykłe dania.",
+              "begin": 1555431600,
+              "end": 1555433400
+            }
+          }
+        },
+        {
+          "id": 587,
+          "group_id": 3,
+          "number": 21,
+          "name": "Kuchnia",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-kuhnia",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Żołądek czy rozsądek? 5 (odc. 14)",
+              "info": "Tytuł oryginalny: Good Chef Bad Chef\\nAustralia, 2013\\nReżyseria: Leigh Redlich\\n",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "15 minut Jamiego 1 (odc. 1)",
+              "info": "Tytuł oryginalny: Jamie's 15 Minute Meals\\nWielka Brytania, 2012\\nJamie Oliver w swoim programie pokazuje, jak przygotować smaczne i pełnowartościowe posiłki w 15 minut oraz przypomina - podstawa to świetna organizacja, dobre przepisy oraz kilka sprytnych sztuczek. Aby nie spędzać w kuchni więcej czasu niż to konieczne, należy gotować inteligentnie i używać wszystkich zmysłów: czuć zapachy, słyszeć przypalający się tłuszcz i. mieć oczy z tyłu głowy.",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 527,
+          "group_id": 3,
+          "number": 22,
+          "name": "TVN STYLE HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvn-style",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Afera fryzjera 6 (odc. 7)",
+              "info": "Tytuł oryginalny: Afera fryzjera\\nPolska, 2018\\n",
+              "begin": 1555423800,
+              "end": 1555426500
+            },
+            "next": {
+              "title": "Eks-tra zmiana 2 (odc. 3)",
+              "info": "Tytuł oryginalny: Eks-tra zmiana\\nPolska\\n",
+              "begin": 1555426500,
+              "end": 1555430100
+            }
+          }
+        },
+        {
+          "id": 528,
+          "group_id": 3,
+          "number": 23,
+          "name": "TVN-TURBO",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvn-turbo",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Samochód marzeń - kup i zrób: odc.5",
+              "info": "magazyn motoryzacyjny (Polska, 2017) odc.5Prowadzą: Adam KlimekAdam Klimek doprowadzi do perfekcji jedno z najbardziej kultowych aut lat 80-tych, wykańczając wieloletni projekt Tomka z Podlasia - jego samochodem marzeń jest mercedes W126 500 SEC. Samochód, mimo że częściowo odrestaurowany, ma zaniedbane wnętrze, stalowe koła z taksówki oraz cieknący szyberdach.Od lat: 12",
+              "begin": 1555422300,
+              "end": 1555425900
+            },
+            "next": {
+              "title": "Uwaga! Pirat!: odc.15",
+              "info": "magazyn kryminalny (Polska, 2016) odc.15/24Kamery TVN Turbo po raz siedemnasty towarzyszyć będą w pracy funkcjonariuszom drogówki podczas codziennych patroli na polskich drogach. Twórcy programu pokażą zarówno kierowców, którzy po zatrzymaniu potulnieją, jak i tych nieświadomych zagrożenia, jakie powodują swoją brawurową jazdą.Od lat: 12",
+              "begin": 1555425900,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 535,
+          "group_id": 3,
+          "number": 31,
+          "name": "DOMO+",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-domo",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Wakacyjne domy z Marią Semczyszyn 2 (odc. 4)",
+              "info": "Tytuł oryginalny: Wakacyjne domy z Marią Semczyszyn\\nPolska, 2017\\nW nowej produkcji własnej Domo+ Maria Semczyszyn, ekspertka ds. rynku nieruchomości, dyplomowana home stagerka, wyrusza w Polskę, aby znaleźć niepowtarzalne wakacyjne domy. Maria Semczyszyn podróżuje po Polsce szukając domów i mieszkań, do których można by uciec od stresu w pracy, wyjechać na wakacje z przyjaciółmi czy rodziną na święta.",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Pogotowie remontowe Wieśka 2 (odc. 2)",
+              "info": "Tytuł oryginalny: Pogotowie remontowe Wieśka\\nPolska, 2018\\nBrak wiedzy w tematach remontowo-budowlanych, naiwność i zbyt duże zaufanie powodują, że ludzie często stają się ofiarami nierzetelnych firm remontowych. Najnowsza seria poradnikowa Domo+ postara się temu zaradzić. Każdy z nas zna tę historię. Najpierw są marzenia o funkcjonalnej kuchni czy zmianie kafelków po babci. Potem pojawiają się \"złote rączki\" i pseudofachowcy z ogłoszenia. Na koniec zostają zszargane nerwy i pusty po portfel, a wyremontowanej przestrzeni jak nie było tak nie ma.",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 866,
+          "group_id": 3,
+          "number": 32,
+          "name": "Polsat Play",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat-play",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "TOP 20 - umrzesz ze śmiechu (odc. 14)",
+              "info": "Tytuł oryginalny: Top 20 Funniest\\nUSA, 2009\\nZ tego śmieje się cały świat. Zestaw 20 najśmieszniejszych filmików, jakie podbiły Internet. To zdecydowanie najlepsza kompilacja prześmiesznych sytuacji w wykonaniu naszych bliźnich. Zobacz, jaki filmik znajdzie się na miejscu pierwszym. Ból brzucha ze śmiechu gwarantowany!",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Hardkorowy lombard: odc.34",
+              "info": "serial dokumentalny (USA, 2011) odc.34Rodzina Goldów prowadzi największy lombard w Detroit. Każdego dnia Les, Seth i Ashley spotykają dziesiątki klientów zainteresowanych sprzedażą rozmaitych przedmiotów. Wielu z nich przecenia wartość oferowanych rzeczy, co prowadzi do sportów i niebezpiecznych sytuacji.Od lat: 12",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 551,
+          "group_id": 3,
+          "number": 60,
+          "name": "CBS Reality polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "cbs-reality",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Lekarze na sygnale 1 (odc. 3)",
+              "info": "Tytuł oryginalny: Trauma Investigators\\nPodążamy śladem ekipy lekarzy, którzy diagnozują I leczą pacjentów w jednym z najlepszych brytyjskich ośrodków medycyny ratunkowej.",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Uchwycone kamerą: O krok od tragedii 4: odc.10",
+              "info": "serial dokumentalny odc.10Czwarta seria programu, w którym Nick Knowles opowiada o zwyczajnych sytuacjach niespodziewanie zakończonych katastrofą. Głos zabiorą uczestnicy i ofiary wydarzeń.Od lat: 12",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 970,
+          "group_id": 3,
+          "number": 71,
+          "name": "Polsat Food HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat-food",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Kuchenne rewolucje 6 (odc. 12)",
+              "info": "Tytuł oryginalny: Kuchenne rewolucje\\nPolska, 2012\\n\"Villa Toscania\", (Pszczew). Villa Toscania to restauracja położona kilka kilometrów od miasteczka Pszczew. Żeby ją odwiedzić, trzeba się udać do niej specjalnie. Ale warto to zrobić, bo to bardzo urokliwe i zielone miejsce. Niestety, od kilku lat mało kto, tu zagląda. Ponieważ, żeby gdzieś zajrzeć, trzeba wiedzieć, jak tam dotrzeć. A do tej wielkopolskiej Toskanii nie prowadzą żadne drogowskazy. Właściciel Gustavo, rodowity Włoch, nie rozumie w czym tkwi problem.",
+              "begin": 1555424100,
+              "end": 1555427700
+            },
+            "next": {
+              "title": "Ugotowani: odc.25",
+              "info": "kulinaria (Polska, 2014) odc.25Pierwszą kolację w Trójmieście przygotowuje Paulina Czajkowska, która pochwali się pozostałym uczestnikom swoim kulinarnym kunsztem. Na co dzień kobieta dba o to, aby goście rejsowego statku nie zgłodnieli w drodze do Szwecji, a dodatkowo działa w fundacji zajmującej się bezdomnymi zwierzętami.",
+              "begin": 1555427700,
+              "end": 1555429800
+            }
+          }
+        },
+        {
+          "id": 2042,
+          "group_id": 3,
+          "number": 75,
+          "name": "Comedy Central Family",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-cc-family",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Teoria wielkiego podrywu",
+              "info": "Sheldon czuje się zlekceważony, gdy profesor Proton prosi o radę Leonarda, a nie jego. W ramach zemsty zaprzyjaźnia się z konkurencyjnym prezenterem telewizyjnym",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Teoria wielkiego podrywu",
+              "info": "Sheldon karze Leonarda za dawne przewinienia. Zmusza go, by poczuł się tak samo jak on. Tymczasem Penny spotyka dawną dziewczynę Raja, Lucy",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 2132,
+          "group_id": 3,
+          "number": 81,
+          "name": "ATM Rozrivka",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-atm-rozrivka",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "IX Mazurska Noc Kabaretowa: Dwójki, pary, duety",
+              "info": "Tytuł oryginalny: IX Mazurska Noc Kabaretowa\\nPolska, 2007\\nKluczem do tegorocznego kabaretonu w Mrągowie była magiczna cyfra 2, ponieważ to własnie 2, a nie 7, czy 13 jest cyfrą najważniejsza i prawdziwie magiczną. To dzięki dwójce świat posuwa się do przodu. Każdy potrzebuje pary, powstaliśmy z połączenia dwóch elementów: męskiego i żeńskiego, yin i yang. Mamy dwoje oczu, dwie ręce, dwie nogi. Najlepszy model rodziny to 2 +2 . Podwójna whisky zawsze lepsza niż pojedyncza. W duecie lepiej sie śpiewa niż solo.",
+              "begin": 1555425000,
+              "end": 1555428900
+            },
+            "next": {
+              "title": "Okrasa łamie przepisy: Ogórkowa kuchnia",
+              "info": "magazyn kulinaria (Polska)Prowadzą: Karol OkrasaOkrasa wyrusza zabytkowym autobusem na spotkanie ze smakami dzieciństwa. Postanawia sprawdzić, czy z produktów, które w czasach PRL-u często stanowiły podstawę kuchni Polaków, można dzisiaj przygotować niezwykłe dania.",
+              "begin": 1555431600,
+              "end": 1555433400
+            }
+          }
+        },
+        {
+          "id": 171,
+          "group_id": 3,
+          "number": 371,
+          "name": "BBC Lifestyle",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "en-bbc-ent",
+          "languages": "eng",
+          "audiotracks": "eng",
+          "audiotrack_default": "eng",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Last Of The Summer Wıne",
+              "info": "Comedy.'Variations on a Theme of Road Rage' More vintage misadventures around the beautiful Yorkshire Dales in Roy Clarke's classic sitcom",
+              "begin": 1555424700,
+              "end": 1555426500
+            },
+            "next": {
+              "title": "Last Of The Summer Wıne",
+              "info": "Comedy.'In Which Howard Gets Double Booked' More vintage misadventures around the beautiful Yorkshire Dales in Roy Clarke's classic sitcom",
+              "begin": 1555426500,
+              "end": 1555428300
+            }
+          }
+        },
+        {
+          "id": 2459,
+          "group_id": 3,
+          "number": 736,
+          "name": "MTV Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "de-mtv",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "M is for Music Supercharts",
+              "info": "Tytuł oryginalny: M is for Music Supercharts\\n",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Dziara za dziarę 2: odc.9",
+              "info": "rozrywka (Wielka Brytania, 2017) odc.9Prowadzą: Stephen Bear, Charlotte CrosbyCharlotte i Bear powracają z jeszcze bardziej szokującymi projektami. Pary przyjaciół i bliskich, w tym także celebryci, tworzą dla siebie nawzajem wyjątkowe tatuaże, które mogą obejrzeć dopiero po ich wykonaniu. Bohaterowie nie mają pojęcia, co przygotowali dla nich towarzysze. Wielu z nich może doznać szoku.Od lat: 16",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "number": 3,
+      "alias": "CHILDRENS",
+      "name": "Детские",
+      "color": "#000000",
+      "user_title": "Childrens",
+      "channels": [
+        {
+          "id": 697,
+          "group_id": 4,
+          "number": 26,
+          "name": "Boomerang pol",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "boomerang",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Królikula",
+              "info": "Królikula to żywiący się sokiem z warzyw królik-wampir. Okryte puszystym futerkiem monstrum musi stawić czoło wielu przerażającym i fantastycznym bestiom. Z opresji ratują go przyjaciele czyli sceptyczny i lekko strachliwy kot Chester, poczciwy, choć niezbyt bystry pies Harold oraz ukochana opiekunka całej trójki - nastolatka Mina",
+              "begin": 1555423800,
+              "end": 1555425600
+            },
+            "next": {
+              "title": "Angelo rządzi",
+              "info": "Zabawne historie z życia nastolatka, który uwielbia płatać figle. Rodzice, nauczyciele i starsza siostra nie mają z nim lekkiego życia. W tej serii Angelo postanawia trafić do Księgi rekordów Guinessa, a także zbudować hełm, dzięki któremu będzie można czytać w myślach. Wspierają go przyjaciele, Sharewood i Lola",
+              "begin": 1555425600,
+              "end": 1555427100
+            }
+          }
+        },
+        {
+          "id": 627,
+          "group_id": 4,
+          "number": 27,
+          "name": "Nickelodeon pol",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "nickelodeon",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Mysticons 1 (odc. 12)",
+              "info": "Tytuł oryginalny: Mysticons\\nKanada, 2017\\nThe tale of four girls who transform into legendary warriors known as Mysticons. The Mysticons must use their powers to save their realm from Necrafa, an evil queen.",
+              "begin": 1555424400,
+              "end": 1555425900
+            },
+            "next": {
+              "title": "SpongeBob Kanciastoporty 7 (odc. 145)",
+              "info": "Tytuł oryginalny: SpongeBob SquarePants\\nUSA, 2010\\nSpongeBob Kanciastoporty to zabawna gąbka, która nosi kanciaste portki i mieszka w domku z ananasa na dnie Oceanu, w miejscowości Bikini Dolne. Jego największą życiową ambicją jest bycie najlepszym kucharzem, specjalistą w smażeniu smakołyków. SpongeBob pracuje w podwodnej restauracji serwującej kraboburgery, dzięki czemu każdego dnia spełnia swe marzenie. Pełen optymizmu i inicjatywy, zawsze potrafi po mistrzowsku wpakować się w tarapaty, wciągając w nie przy okazji wszystkich wokół.",
+              "begin": 1555425900,
+              "end": 1555427700
+            }
+          }
+        },
+        {
+          "id": 584,
+          "group_id": 4,
+          "number": 28,
+          "name": "MiniMini",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-mini",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Little People",
+              "info": "Kontynuacja przygód piątki przedszkolaków, którzy wspólnie realizują wszystkie swoje szalone pomysły. Mia, Sofie, Kobi, Tessa i Eddie poznają świat poprzez zabawę, która pozwala odkryć im jego różnorodność oraz panujące w nim relacje międzyludzkie. Każdy odcinek skoncentrowany jest na określonych wartościach społecznych, takich jak szacunek, empatia, bezinteresowność czy zaufanie, które mają wielkie znaczenie w codziennym życiu. Świat Małych Odkrywców jest przepełniony niezwykłymi przygodami, które w humorystyczny sposób przekazują najmłodszym proste prawdy, rozwijając ich inteligencję emocjonalną",
+              "begin": 1555425300,
+              "end": 1555425900
+            },
+            "next": {
+              "title": "Little People",
+              "info": "Kontynuacja przygód piątki przedszkolaków, którzy wspólnie realizują wszystkie swoje szalone pomysły. Mia, Sofie, Kobi, Tessa i Eddie poznają świat poprzez zabawę, która pozwala odkryć im jego różnorodność oraz panujące w nim relacje międzyludzkie. Każdy odcinek skoncentrowany jest na określonych wartościach społecznych, takich jak szacunek, empatia, bezinteresowność czy zaufanie, które mają wielkie znaczenie w codziennym życiu. Świat Małych Odkrywców jest przepełniony niezwykłymi przygodami, które w humorystyczny sposób przekazują najmłodszym proste prawdy, rozwijając ich inteligencję emocjonalną",
+              "begin": 1555425900,
+              "end": 1555426800
+            }
+          }
+        },
+        {
+          "id": 537,
+          "group_id": 4,
+          "number": 29,
+          "name": "TELETOON+",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-teletoon",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Trolle: Impreza trwa, odc. 21",
+              "info": "",
+              "begin": 1555423800,
+              "end": 1555425600
+            },
+            "next": {
+              "title": "Lexi i Lottie: Bliźniaczki na tropie, odc. 12",
+              "info": "",
+              "begin": 1555425600,
+              "end": 1555427100
+            }
+          }
+        },
+        {
+          "id": 553,
+          "group_id": 4,
+          "number": 30,
+          "name": "Disney XD polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "disney-xd",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Star Butterfly kontra siły zła 3 (odc. 2)",
+              "info": "Tytuł oryginalny: Star vs. the Forces of Evil\\nUSA, 2017\\nStar Butterfly to niezwykła księżniczka i zadziorna dziewczynka. W trosce o jej bezpieczeństwo, rodzice wysłali ją z innego świata na Ziemię, gdzie walczy ze złoczyńcami i na zawsze zmienia życie otaczających ją osób.",
+              "begin": 1555424940,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Prawo Milo Murphy'ego: odc.20",
+              "info": "serial animowany (USA, 2016) odc.2013-letni Milo Murphy, fikcyjny praprapraprawnuk odkrywcy praw Murphy'ego, jest wielkim pechowcem. Życie nauczyło go, że wszystko, co może pójść źle, pójdzie źle. Dzięki wsparciu przyjaciół zwykle wychodzi z kłopotów cało. Mimo to nie przejmuje się drobnostkami.",
+              "begin": 1555426800,
+              "end": 1555428540
+            }
+          }
+        },
+        {
+          "id": 985,
+          "group_id": 4,
+          "number": 73,
+          "name": "NICK JR. pol",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "nick-jr",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Kuchciwróżki",
+              "info": "Wróżka Butterbean jest właścicielką kawiarni w krainie Puddlebrook. Jej knajpa na co dzień musi radzić sobie z nieuczciwą konkurencją pani Marmolady, która prowadzi pobliski lokal. Na szczęście Butterbean może liczyć na pomoc siostry oraz przyjaciół",
+              "begin": 1555423800,
+              "end": 1555425600
+            },
+            "next": {
+              "title": "Kiva potrafi",
+              "info": "Przygody pięcioletniej Kivy, która przemierza krainę wyobraźni razem ze swoimi przyjaciółmi: Saulem oraz pieskiem Angusem",
+              "begin": 1555425600,
+              "end": 1555426500
+            }
+          }
+        },
+        {
+          "id": 2056,
+          "group_id": 4,
+          "number": 76,
+          "name": "TVP ABC",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvp-abc",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Dinotrux",
+              "info": "Prehistoryczny świat zamieszkany przez hybrydy dinozaurów i maszyn. Ty, tyranosaurus trux, oraz Revvit, reptool, są najlepszymi przyjaciółmi. Razem ze swoimi kompanami muszą bronić świata, w którym żyją, przed zakusami złego D-Structsa",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Rescue Bots",
+              "info": "Kolejna seria przygód czterech robotów, które zostają wysłane na Ziemię, aby bronić ludzi przed zagrożeniem ze strony rozmaitych wrogów",
+              "begin": 1555426800,
+              "end": 1555428300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "number": 4,
+      "alias": "CINEMA",
+      "name": "Фильмы / сериалы",
+      "color": "#000000",
+      "user_title": "Cinema",
+      "channels": [
+        {
+          "id": 547,
+          "group_id": 5,
+          "number": 24,
+          "name": "TVP-Kultura",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-kultura",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Bo oszalałem dla niej",
+              "info": "Tytuł oryginalny: Bo oszalałem dla niej\\nPolska, 1980\\nReżyseria: Sylwester Chęciński\\nWystępują: Zdzisław Wardejn, Gabriela Kownacka, Ignacy Gogolewski, Witold Pyrkosz, Witold Skaruch, Wiesław Drzewicz\\nAdaptacja opowiadania Jerzego Stefana Stawińskiego pod tym samym tytułem. Główna postać filmu to Roman Kolatowski - skromny, prowincjonalny buchalter o aktorskich skłonnościach, marzący o stolicy, Teatrze Wielkim i pracy z Hanuszkiewiczem. Podczas występu w amatorskim teatrze zwraca na niego uwagę szef zaopatrzenia zakładów odzieżowych. Jego zdaniem uzdolnienia aktorskie Kolatowskiego znakomicie się przydadzą do pracy zaopatrzeniowca. I rzeczywiście. Pan Roman jest znakomity.",
+              "begin": 1555423500,
+              "end": 1555430400
+            },
+            "next": {
+              "title": "Jak się robi muzykę rozrywkową (odc. 7)",
+              "info": "Tytuł oryginalny: Soundbreaking\\nUSA, 2016\\nReżyseria: Jeff Dupre\\nSiódmy odcinek serii pokazuje znaczenie aspektów wizualnych w muzyce i udowadnia, że widzieć muzykę jest równie istotne, co jej słuchanie.",
+              "begin": 1555430400,
+              "end": 1555434300
+            }
+          }
+        },
+        {
+          "id": 536,
+          "group_id": 5,
+          "number": 33,
+          "name": "TVP",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "pl-tvp",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Ranczo",
+              "info": "Posterunkowy Wojtek wprowadza w życie opracowany przez siebie plan poprawy bezpieczeństwa mieszkańców wsi. Jego działania nie spotykają się z entuzjazmem i przychylnością zainteresowanych. Halina udziela Lodzi rozmaitych porad, jak ratować swoje małżeństwo. Kusy przechodzi kryzys twórczy. Na domiar złego pogarsza się stan jego nogi, na którą od lat utyka. W efekcie mężczyzna niemal w ogóle nie może chodzić. Babka za pomocą ludowej psychoanalizy szuka przyczyn takiego stanu rzeczy. Tymczasem komitet wyborczy nowej kandydatki na stanowisko wójta przystępuje do prac nad nakreśleniem strategii dalszych działań",
+              "begin": 1555422600,
+              "end": 1555425600
+            },
+            "next": {
+              "title": "Przepis dnia",
+              "info": "Dwóch znanych i lubianych szefów kuchni: Jakub Steuermark i Jerzy Sobieniak, pokaże, jak w prosty sposób przygotować oryginalne i pyszne dania. Codziennie zaskoczą widzów nowym pomysłem i zainspirują do przyrządzania kolejnych potraw. W każdym odcinku programu zaprezentują jeden przepis, podzielą się swoim doświadczeniem i zdradzą sekrety, które pomogą widzom osiągnąć kulinarny sukces",
+              "begin": 1555425600,
+              "end": 1555426500
+            }
+          }
+        },
+        {
+          "id": 867,
+          "group_id": 5,
+          "number": 34,
+          "name": "Polsat Film",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat-film",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Ludzie jak my",
+              "info": "Tytuł oryginalny: People Like Us\\nUSA, 2012\\nReżyseria: Alex Kurtzman\\nWystępują: Chris Pine, Elizabeth Banks, Michael Hall D'Addario, Michelle Pfeiffer, Olivia Wilde, Mark Duplass\\n2012 Stopniowo między rodzeństwem nawiązuje się relacja, która wywróci życie Sama do góry nogami.  Udogodnienia: napisy dla niesłyszących i audiodeskrypcja",
+              "begin": 1555425300,
+              "end": 1555434000
+            },
+            "next": {
+              "title": "Głupi, głupszy, najgłupszy",
+              "info": "film komediowy (USA, 2012)Występują: Sean Hayes, Will Sasso, Chris DiamantopoulosLarry, Curly i Moe wychowali się w sierocińcu. Choć są już dorośli, wciąż w nim mieszkają. Zadłużonej placówce grozi zamknięcie. Przyjaciele postanawiają do tego nie dopuścić i zdobyć potrzebne pieniądze. Okazja nadarza się, kiedy pewna kobieta proponuje im sowitą zapłatę za... zabicie jej męża.Reżyser: Bobby Farrelly, Peter FarrellyOd lat: 12",
+              "begin": 1555434000,
+              "end": 1555441200
+            }
+          }
+        },
+        {
+          "id": 534,
+          "group_id": 5,
+          "number": 35,
+          "name": "ALE KINO HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-ale-kino",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Postrzeganie miłości",
+              "info": "Tytuł oryginalny: Postrzeganie miłości\\nPolska, 2008\\n",
+              "begin": 1555424400,
+              "end": 1555429800
+            },
+            "next": {
+              "title": "Nebraska",
+              "info": "Tytuł oryginalny: Nebraska\\nUSA, 2013\\nReżyseria: Alexander Payne\\nWystępują: Bruce Dern, Will Forte, June Squibb, Bob Odenkirk, Stacy Keach, Mary Louise Wilson\\nNominowana do sześciu Oscarów historia starzejącego się alkoholika, który wraz z synem wyrusza w podróż do Nebraski, by odebrać wygraną na loterii nagrodę. Woody Grant (Bruce Dern) jest alkoholikiem. Pewnego dnia dowiaduje się, że wygrał na loterii milion dolarów. Problem w tym, że aby odebrać nagrodę, musi pojechać do odległej Nebraski. Postanawia poprosić o pomoc syna Davida (Will Forte). Mężczyźnie trudno uwierzyć w wygraną. Jest pewien, że ojciec padł ofiarą oszustwa.",
+              "begin": 1555429800,
+              "end": 1555438200
+            }
+          }
+        },
+        {
+          "id": 589,
+          "group_id": 5,
+          "number": 36,
+          "name": "KINO Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-kino-pol",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Ki",
+              "info": "",
+              "begin": 1555420500,
+              "end": 1555427700
+            },
+            "next": {
+              "title": "Kocie ślady",
+              "info": "",
+              "begin": 1555427700,
+              "end": 1555434000
+            }
+          }
+        },
+        {
+          "id": 533,
+          "group_id": 5,
+          "number": 37,
+          "name": "TVP Seriale",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvp-ser",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Na sygnale (odc. 39)",
+              "info": "Tytuł oryginalny: Na sygnale\\nPolska, 2016\\nReżyseria: Krzysztof Kasior\\nWystępują: Wojciech Kuliński, Monika Mazur, Dariusz Wieteska, Konrad Darocha, Iga Górecka, Tomasz Piątkowski\\nRatownicy, pod kierownictwem doktora Góry, odpowiadają na wezwanie do mężczyzny, który zasłabł w saunie. Pacjent jest kompletnie pijany, a załoga karetki wdycha w trakcie interwencji opary alkoholu i ulega zatruciu. Ekipa Wiktora ratuje młodą matkę, która spadła ze schodów trzymając na rękach noworodka. Okazuje się, że dziewczyna jest surogatką, a biologiczni rodzice dziecka próbują zmusić ją do oddania synka. Serial fabularyzowany,",
+              "begin": 1555424100,
+              "end": 1555425900
+            },
+            "next": {
+              "title": "Ranczo 4 (odc. 2)",
+              "info": "Tytuł oryginalny: Ranczo\\nPolska, 2009\\nReżyseria: Wojciech Adamczyk\\nWystępują: Ilona Ostrowska, Cezary Żak, Paweł Królikowski, Grzegorz Wons, Artur Barciś, Marta Lipińska\\nKusy z pasją walczy o czystość w domu, żeby nie dopuścić do córeczki jakiejkolwiek choroby zakaźnej. Jego bezwzględność w tej dziedzinie prowadzi do konfliktów. Wikary skarcony przez księdza, że swoją kapłańską misję zredukował do pośrednictwa pracy, bierze się za ewangelizację gminy. Stan wiedzy parafian na tematy religijne i herezje, które w dobrej wierze głoszą, wprawiają go w rozpacz i osłupienie.",
+              "begin": 1555425900,
+              "end": 1555429800
+            }
+          }
+        },
+        {
+          "id": 623,
+          "group_id": 5,
+          "number": 38,
+          "name": "Canal+ HD Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-c-plus",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Nieufność",
+              "info": "Veronica Malloy (Jane Seymour) jest kobietą niezależną. Wyzwolona i atrakcyjna, lubi swoje życie kochanki wolnej od wszelkich zobowiązań. Pewnego dnia uzmysławia sobie, że choć zawsze stroniła o romantycznych relacji, jeden mężczyzna zna ją na wylot i co więcej - jest w stanie rozbudzić w niej emocje silniejsze niż ulotne pożądanie. To jej wieloletni, oddany przyjaciel Brandon McKellan (Parker Stevenson). I chociaż Veronica - w obawie przed rozczarowaniem - stara się trzymać uczucia na wodzy, jej wysiłki spełzają na niczym",
+              "begin": 1555424400,
+              "end": 1555429800
+            },
+            "next": {
+              "title": "Szanghajska robota",
+              "info": "Agent bezpieczeństwa Danny Stratton (Orlando Bloom) popadł w niełaskę przełożonych. Teraz zyskuje okazję, aby odbudować swą reputację. Ma bezpiecznie wywieźć cenny chiński antyk z Szanghaju. W trakcie misji wpada jednak w zasadzkę. Okazuje się, że jego ukochana, znajduje się w śmiertelnym niebezpieczeństwie. By ją uratować, Stratton podejmuję współpracę z członkami grupy specjalnej SMART. Agenci stacjonujący w Szanghaju pomogą mu dowiedzieć się, komu zależało na niepowodzeniu akcji. Film akcji powstały we współpracy chińsko-brytyjskiej. W rolach głównych Orlando Bloom i największe gwiazdy azjatyckiego kina, m.in. Lei Wu, Simon Yam, Hannah Quinlivan, Lynn Hung i Jing Liang",
+              "begin": 1555429800,
+              "end": 1555435200
+            }
+          }
+        },
+        {
+          "id": 624,
+          "group_id": 5,
+          "number": 39,
+          "name": "Canal + HD  Film",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-c-plus-f",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "The Place",
+              "info": "Tajemniczy mężczyzna (Valerio Mastandrea) codziennie siada przy tym samym stoliku w tej samej restauracji. Rozmawia z osobami, którego proszą go o nietypowe przysługi. Każdy przybysz ma wielkie marzenie, wyznacza sobie trudne do osiągnięcia cele lub podejmuje niemal niemożliwe wyzwania. Dla mężczyzny spełniającego ich prośby wszystko jest wykonalne. Jednak zanim spełni życzenie, zleca interesantom pewne zadanie. To jego jedyny warunek",
+              "begin": 1555424400,
+              "end": 1555430700
+            },
+            "next": {
+              "title": "Nie przegap",
+              "info": "W magazynie prezentowane są najciekawsze propozycje programowe Canal+, których żaden widz nie powinien przegapić",
+              "begin": 1555430700,
+              "end": 1555431300
+            }
+          }
+        },
+        {
+          "id": 625,
+          "group_id": 5,
+          "number": 40,
+          "name": "Canal + HD  Seriale",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-c-plus-f2",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Bulletproof (odc. 4)",
+              "info": "Tytuł oryginalny: Bulletproof\\nWielka Brytania, 2018\\nReżyseria: Ole Endresen\\nWystępują: Noel Clarke, Ashley Walters, Christina Chong, Lashana Lynch, Mandeep Dhillon, David Elliot\\n",
+              "begin": 1555424700,
+              "end": 1555427700
+            },
+            "next": {
+              "title": "Płacz (odc. 1)",
+              "info": "Tytuł oryginalny: The Cry\\nWielka Brytania, 2018\\nReżyseria: Glendyn Ivin\\nWystępują: Jenna Coleman, Ewen Leslie, Asher Keddie, Kim Adis, Moyo Akandé, Shareena Clanton\\n",
+              "begin": 1555427700,
+              "end": 1555431300
+            }
+          }
+        },
+        {
+          "id": 862,
+          "group_id": 5,
+          "number": 41,
+          "name": "Canal + HD Family",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-cplus-fam",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Męska historia",
+              "info": "Tytuł oryginalny: The History Boys\\nWielka Brytania, 2006\\nReżyseria: Nicholas Hytner\\nWystępują: Samuel Anderson, James Corden, Stephen Campbell Moore, Richard Griffiths, Frances de la Tour, Andrew Knott\\nWielka Brytania, burzliwe lata 80. Nadgorliwy i zbyt ambitny dyrektor (Clive Merrison) Cutlers' Grammar School w Sheffield wyznacza grupę uczniów, którzy mają z powodzeniem przejść przez zasieki egzaminów wstępnych na najbardziej prestiżowe angielskie uczelnie Oxford i Cambridge. Aby pomóc ośmiu wybrańcom w przygotowaniach, zatrudnia nowego nauczyciela, świeżego absolwenta Oxfordu, Irwina (Stephen Campbell Moore).",
+              "begin": 1555422900,
+              "end": 1555429500
+            },
+            "next": {
+              "title": "Olivia Newton-John - mężczyźni, kino i śpiew",
+              "info": "Tytuł oryginalny: Olivia Newton-John: Hopelessly Devoted to Yo\\nAustralia, 2018\\nReżyseria: Shawn Seet\\nWystępują: Delta Goodrem, Kate Jenkinson, Paul David-Goddard, Diana Glenn, Robyn Malcolm, Richard Bligh\\nOlivia Newton-John przeszła do historii Hollywood za sprawą kultowej roli Sandy w musicalu \"Grease\", w którym partnerował jej John Travolta. Artystka ma też na swoim koncie cztery nagrody Grammy oraz pięć hitów numer jeden na amerykańskiej liście Billboard Hot 100. Sprzedała łącznie 100 milionów nagrań na całym świecie. Newton-John jest także aktywistką na rzecz środowiska i praw zwierząt oraz biznesmenką.",
+              "begin": 1555429500,
+              "end": 1555435800
+            }
+          }
+        },
+        {
+          "id": 863,
+          "group_id": 5,
+          "number": 42,
+          "name": "Canal + Discovery Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-cplus-disc",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Podróż zielonym szlakiem (odc. 2)",
+              "info": "Tytuł oryginalny: Hopeful Earth\\nFrancja, 2018\\nReżyseria: Eric Captaine\\n",
+              "begin": 1555424100,
+              "end": 1555427400
+            },
+            "next": {
+              "title": "Ostatni Dalajlama?",
+              "info": "Tytuł oryginalny: The Last Dalai Lama\\nUSA, 2016\\nReżyseria: Mickey Lemle\\nŚwieże spojrzenie na rolę Dalajlamy XIV i tego, co było dla niego naprawdę ważne, czyli trwająca konfrontacja Tybetańczyków z Chinami, jego wpływ na politykę i sfery duchowe. Dokument prezentuje też osobiste przemyślenia Dalajlamy na temat starzenia się i umierania. Autorzy próbują odpowiedzieć na pytanie czy będzie piętnasty Dalajlama. \"Ostatni Dalajlama?",
+              "begin": 1555427400,
+              "end": 1555432200
+            }
+          }
+        },
+        {
+          "id": 555,
+          "group_id": 5,
+          "number": 43,
+          "name": "CBS Action polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-cbs-action",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Wzór 3  odc.21",
+              "info": "serial kryminalny (USA, 2007) odc.21Występują  David Krumholtz, Rob Morrow, Judd HirschDon i Alvin Brickle z Departamentu Sprawiedliwości odwiedzają mordercę Ponyego. Zgadza się wskazać miejsca, w których ukrył zwłoki w zamian za spotkanie z córką. Ląduje prom kosmiczny z Larrym na pokładzie.Reżyser  John BehringOd lat  12",
+              "begin": 1555423500,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        },
+        {
+          "id": 552,
+          "group_id": 5,
+          "number": 44,
+          "name": "AXN polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "de-axn",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Seal Team 1 (odc. 14)",
+              "info": "Tytuł oryginalny: SEAL Team\\nUSA, 2018\\nWystępują: David Boreanaz, Max Thieriot, Jessica Paré, Neil Brown Jr., A.J. Buckley, Toni Trucks\\nProdukcja SEAL Team śledzi losy członków najbardziej elitarnego oddziału sił specjalnych amerykańskiej marynarki wojennej. W serialu zobaczymy jak trenują, planują i biorą udział w najniebezpieczniejszych misjach różnych zakątkach świata. Życie pod rygorem, wyjazdy na śmiertelnie niebezpieczne akcje ma także ogromny wpływ na ich rodziny, psychikę i życie prywatne. Kapitanem oddziału jest Jason Hayes (znany z seriali Kości i Buffy: Postrach wampirów David Boreanaz).",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Seal Team: odc.15",
+              "info": "serial sensacyjny (USA, 2017) odc.15Występują: David Boreanaz, Jessica Paré, A.J. BuckleyJason w asyście swoich podwładnych odnajduje plantację maków. To tu dilerzy rozpoczęli produkcję heroiny. Komandosi zauważają pieniądze, które posłużyły jako zapłata za wykonanie wyroku na członkach jednostki Echo. Wkrótce na terytorium bazy Jason spotyka tajemniczą kobietę.Reżyser: Benjamin CavellOd lat: 12",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 864,
+          "group_id": 5,
+          "number": 45,
+          "name": "Filmbox",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-filmbox",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "W rodzinie",
+              "info": "Tytuł oryginalny: Affaire de famille\\nFrancja, 2008\\nReżyseria: Claus Drexel\\nWystępują: André Dussollier, Miou-Miou, Hande Kodja, Eric Caravaca, Julien Courbey, Philippe Hérisson\\nPozornie zwyczajna rodzina. Dobry ojciec, oddana żona i ambitna córka. Życie tej trójki zostaje wywrócone do góry nogami, a wszystkie wartości, którymi się kierowali zostają zweryfikowane. Kiedy pewnego dnia, rodzina odnajduje sportową torbę przepełnioną banknotami, dotychczasowy schemat ich funkcjonowania się załamuje, a rozpoczyna się gra pozorów, w której każdy z nich odgrywa nową rolę i pokazuje nieznaną dotąd twarz.",
+              "begin": 1555421700,
+              "end": 1555427400
+            },
+            "next": {
+              "title": "Telezakupy",
+              "info": "magazynPrezentacja różnych produktów codziennego użytku, które można obejrzeć i kupić bez konieczności wychodzenia z domu.",
+              "begin": 1555427400,
+              "end": 1555430100
+            }
+          }
+        },
+        {
+          "id": 861,
+          "group_id": 5,
+          "number": 46,
+          "name": "Stopklatka TV",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-stopkl",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Wojny kontenerowe: odc.10",
+              "info": "serial dokumentalny (USA, 2013) odc.10Serial przybliża bezwzględny świat aukcji w portach handlowych. Ludzie podejmują duże ryzyko, by zdobyć towar, który może przynieść w przyszłości zysk. Wśród zaprawionych w bojach biznesmenów są: aukcjoner John Kunkle oraz doświadczeni handlarze, Jason R. Hughes i Matthew Gaus.Od lat: 12",
+              "begin": 1555425300,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Umrzesz ze śmiechu - wpadki i wypadki: odc.58",
+              "info": "lifestyle (USA, 2014) odc.58Kompilacja najśmieszniejszych, najbardziej kompromitujących wpadek i najgłupszych sytuacji. Fatalne popisy niezbyt inteligentnych oraz rozmaite niepowodzenia prawdziwych pechowców, które rozbawią widzów do łez.Od lat: 12",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 2057,
+          "group_id": 5,
+          "number": 77,
+          "name": "SciFi Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-scifi",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Xena: Wojownicza księżniczka 3: odc.4",
+              "info": "serial przygodowy (USA, 1997) odc.4, ZbawcaWystępują: Lucy Lawless, Kevin Smith, Renée O'ConnorXena udaje się do Bretanii, aby powstrzymać inwazję Cezara. Tymczasem Gabriella wpada w pułapkę. Zabija człowieka i traci swoją niewinność. Cieszy to Dahaka.Reżyser: Oley SassoneOd lat: 7",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Xena: Wojownicza księżniczka 3: odc.5",
+              "info": "serial przygodowy (USA, 1997) odc.5, Gabrielle przy nadzieiWystępują: Lucy Lawless, Catherine Boniface, Renée O'ConnorGabrielle zachodzi w ciążę. Kobieta prześladowana jest przez rozgniewanych wieśniaków, tajemniczych rycerzy i złowieszcze widma, ma bowiem wydać na świat demona, który zniszczy świat. Xenę bardzo niepokoi stan przyjaciółki, a płód bardzo szybko się rozwija.Reżyser: Charles Siebert, Andrew MerrifieldOd lat: 7",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2058,
+          "group_id": 5,
+          "number": 78,
+          "name": "13 Ulica HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-13ulica",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Mentalista",
+              "info": "W lesie zostaje zamordowany doświadczony strażak Paul Satterfield. Podczas poszukiwania dowodów Patrick ma wypadek i omal nie tonie. W ostatniej chwili odnajduje go Lisbon. Okazuje się jednak, że mężczyzna zupełnie stracił pamięć. Za namową służb medycznych wraca do pracy, gdzie może odzyskać swoje wspomnienia. Szybko okazuje się, że Jane'owi wróciły wszystkie złe nawyki, które poważnie utrudniają pracę agentom CBI",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Kobra - oddział specjalny",
+              "info": "12-letni Felix i jego matka są przypadkowymi świadkami napadu na bank. W czasie strzelaniny matka zostaje śmiertelnie postrzelona, a Felix zostaje zabrany przez złodziei jako zakładnik. Semir oraz Alex, który jest przyjacielem chłopca, robią wszystko, co możliwe, by go odnaleźć. Niedługo później udaje im się uwolnić ofiarę z rąk przestępców, którzy trafiają do aresztu. Jednak na rozprawie obaj sprawcy zostają uniewinnieni. Alex jest sfrustrowany, ponieważ ciężka praca policjantów poszła na marne. Z kolei Semir próbuje znaleźć dowody, które doprowadzą do osadzenia kryminalistów w więzieniu. Napotyka ślad, który pozwala mu odkryć ciemną przeszłość Alexa i zrozumieć, że jego partner jest tylko pionkiem w grze prowadzonej przez tajemniczą organizację",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2166,
+          "group_id": 5,
+          "number": 84,
+          "name": "Filmbox Premium",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "fbox-premium",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Historia naszej miłości",
+              "info": "Tytuł oryginalny: Maré, Nossa História de Amor\\nBrazylia, 2007\\nReżyseria: Lucia Murat\\nWystępują: Cristina Lago, Vinícius D'Black, Marisa Orth, Babu Santana, Jefchander Lucas, Anjo Lopes\\nAnalidia i Jonathan pochodzą z faveli da Mare, największych i najbardziej niebezpiecznych slumsów Rio de Janeiro. Są spokrewnieni z szefami rywalizujących gangów narkotykowych. Spotykają się w szkole tańca i tam rozkwita ich zakazana miłość. Grupę taneczną prowadzi Fernanda, która próbuje pogodzić wrogie sobie grupy.",
+              "begin": 1555422000,
+              "end": 1555428300
+            },
+            "next": {
+              "title": "Autor widmo",
+              "info": "Tytuł oryginalny: The Ghost Writer\\nFrancja, 2010\\nReżyseria: Roman Polański\\nWystępują: Ewan McGregor, Olivia Williams, Pierce Brosnan, Jon Bernthal, Tim Preece, James Belushi\\nMroczny thriller Romana Polańskiego. Pewien pisarz (Ewan McGregor) dostaje zlecenie ukończenia autobiografii Adama Langa, byłego brytyjskiego premiera (Pierce Brosnan). Oczywiście nazwisko autora-widmo nie pojawi się na okładce, ale to bardzo intratna propozycja, pisarz przyjeżdża więc do rezydencji Langa. Tu dowiaduje się, że jego poprzednik utonął w tajemniczych okolicznościach. Kluczem do tajemnicy przeszłości Langa wydaje się jego amerykańska żona (Olivia Williams)...",
+              "begin": 1555428300,
+              "end": 1555435800
+            }
+          }
+        },
+        {
+          "id": 2167,
+          "group_id": 5,
+          "number": 85,
+          "name": "Filmbox Action",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "fbox-action",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Mały gliniarz",
+              "info": "Tytuł oryginalny: Kid Cop\\nUSA, 1996\\nReżyseria: Rob Malenfant\\nWystępują: Alexandra Paul, Jeremy Lelliott, Edward Albert, Cindy Pickett, John Rubinstein, Tim Thomerson\\nPeter Hansen (Jeremy Lelliott) jest sympatycznym jedenastolatkiem, który dobrze wie, kim chciałby zostać w przyszłości - policjantem, tak jak jego zmarły przed rokiem ojciec. Codziennie po lekcjach, zamiast grać w piłkę z kolegami, wsiada na rower i z przypiętą odznaką swojego taty rusza na patrol, szukając oznak potencjalnych przestępstw. Gdy pewnego dnia w okolicy dochodzi do serii drobnych włamań, Peter rozpoczyna prywatne śledztwo, lecz popełnia błąd i donosi policji na niewinną osobę.",
+              "begin": 1555424100,
+              "end": 1555429500
+            },
+            "next": {
+              "title": "Młodzi muszkieterowie",
+              "info": "film historia/archeologia (USA, 2005)Występują: Tobias Mehler, Karen Cliche, Zak SantiagoFrancja, XVII wiek. Kardynał Mazarin (Michael Ironside) chce przejąć władzę. Jego ludzie zabijają ojca Jacqueline (Karen Cliche) i biorą jej brata do niewoli. Dziewczyna chce go ocalić. W męskim przebraniu zaciąga się do muszkieterów. Poznaje D'Artagnana II (Tobias Mehler).Reżyser: Ron Oliver, Richard MartinOd lat: 16",
+              "begin": 1555429500,
+              "end": 1555434900
+            }
+          }
+        },
+        {
+          "id": 2168,
+          "group_id": 5,
+          "number": 86,
+          "name": "Filmbox Family",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "fbox-family",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Pluk z blokowczyka",
+              "info": "Tytuł oryginalny: Pluk van de petteflet\\nHolandia, 2004\\nReżyseria: Ben Sombogaart\\nWystępują: Janieck van de Polder, Suzanne Zuiderwijk, Yeshela Crommelin, Colin Tetteroo, Luka Shäfer, Siebe Schoneveld\\nFantastyczna opowieść, której akcja toczy się w pięknym ogrodzie. Pluk to mały chłopiec, który jest wielkim miłośnikiem zwierząt - tych dużych i całkiem małych. Młody bohater szuka dla siebie schronienia, walcząc przy tym o prawa dla zwierząt. Chłopiec marzy, by mogły one swobodnie żyć w ogrodzie, gdzie nie będzie im zagrażało żadne niebezpieczeństwo.",
+              "begin": 1555420500,
+              "end": 1555426200
+            },
+            "next": {
+              "title": "Lisa i tygrys szablozębny",
+              "info": "Tytuł oryginalny: Lisa und die Säbelzahntiger\\nAustria, 1996\\nReżyseria: Bernd Neuburger\\nWystępują: Cornelia Lippert, Toni Böhm, Therese Affolter, Ernst Josef Lauscher, Bianca Herzog, Anya Blum\\n8-letnia Lisa całe życie wychowywała się w sierocińcu. Dziewczynka jest ogromnie podekscytowana, gdy dowiaduje się, że ma zastać adoptowana. Teraz Lisa zajęta jest swoim nowym życiem, jednak wciąż odwiedza swojego najlepszego przyjaciela - szablastozębnego tygrysa w Muzeum Historii Naturalnej. Lisa nie jest jednak świadoma, że jej nowi rodzice mają zamiar się wkrótce rozwieść.",
+              "begin": 1555426200,
+              "end": 1555431300
+            }
+          }
+        },
+        {
+          "id": 2169,
+          "group_id": 5,
+          "number": 87,
+          "name": "AXN White",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "axn-white",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Nastoletnia Maria Stuart",
+              "info": "Maria mści się na swoich przeciwnikach. Elżbieta ponosi znaczącą porażkę, która wywraca jej świat do góry nogami",
+              "begin": 1555422900,
+              "end": 1555426200
+            },
+            "next": {
+              "title": "Wild Horses",
+              "info": "Rozległe gospodarstwo \"Holzmanka\", położone w Małych Karpatach na Słowacji. Mieszkający tu potomkowie Niemców karpackich Holzmannów zajmują się hodowlą rasowych koni. Są kolejnym pokoleniem, które stara się żyć w zgodzie z otaczającą ich przyrodą. Sąsiadami Holzmannów są nuworysze Zavodscy, kochający bogactwo, blichtr, komercję i rozgłos. Dzieje tych dwóch rodzin skrywają ponurą tajemnicę z końca II wojny światowej. Popełniona wówczas zbrodnia wychodzi na jaw i zaczyna kształtować teraźniejszość oraz przyszłość obu rodzin. Być może konfliktowi między nimi zapobiegnie miłość lekkoducha - Adama Zavodskiego (Ján Dobrík) - wnuka właściciela majątku oraz młodej weterynarz i kaskaderki, Hany Kopeckiej (Monika Šagátová)",
+              "begin": 1555426200,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2170,
+          "group_id": 5,
+          "number": 88,
+          "name": "AXN Black",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-axn-black",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Grimm",
+              "info": "Nick i Hank prowadzą śledztwo w sprawie zamordowanego kelnera, którego ciało zostało znalezione w zamrażarce. Na miejscu zbrodni brakuje uniformu mężczyzny. Wkrótce w pokoju hotelowym pokojówka znajduje ciało młodego mężczyzny, Alexa, który cały pokryty jest wielkimi pęcherzami. W jego rzeczach policja odnajduje zaginiony stój kelnera. Jakiś czas temu chłopak zaatakował rosyjskiego uzdrowiciela, Borisa Myszkina. Okazuje się on być wesenem o silnej mocy - może leczyć innych, ale tak samo potrafi zatruć czyjś organizm",
+              "begin": 1555423500,
+              "end": 1555427100
+            },
+            "next": {
+              "title": "Conan",
+              "info": "Conan i towarzyszący mu w podróży przyjaciele spotykają starego łucznika walczącego z atakującymi go żołnierzami pod dowództwem diabolicznego czarodzieja, Khartana. Wędrowcy pokonują żołnierzy, nie udaje im się jednak uratować łucznika. Ten tuż przed śmiercią przekazuje on Conanowi kryształową tarczę i prosi, aby zaniósł ją w jego rodzinne strony znajdujące się za Mglistymi Wrotami",
+              "begin": 1555427100,
+              "end": 1555430700
+            }
+          }
+        },
+        {
+          "id": 2177,
+          "group_id": 5,
+          "number": 95,
+          "name": "TVN Fabula",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvn-fabula",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Inspektor Gadżet",
+              "info": "John Brown (Matthew Broderick) marzy, by zostać stróżem prawa. Poddany eksperymentalnej operacji wszczepienia w ciało urządzeń mechanicznych, staje się superpolicjantem. Stara się odnaleźć zabójców słynnego naukowca, w którego córce się zakochał.",
+              "begin": 1555422600,
+              "end": 1555428900
+            },
+            "next": {
+              "title": "Ramię za milion dolarów",
+              "info": "film dramat (USA, 2014)Występują: Jon Hamm, Aasif Mandvi, Bill PaxtonMenadżerowi sportowemu JB Bernsteinowi (Jon Hamm)nie wiedzie się ostatnio najlepiej. Podczas oglądania meczu krykieta wpada na pomysł, który odmieni jego karierę. Wraz ze swoim partnerem wyrusza do Indii w poszukiwaniu potencjalnych gwiazd bejsbolu. Wybiera dwóch najlepszych graczy i zabiera ich ze sobą do Stanów.Reżyser: Craig GillespieOd lat: 12",
+              "begin": 1555428900,
+              "end": 1555437600
+            }
+          }
+        },
+        {
+          "id": 2178,
+          "group_id": 5,
+          "number": 96,
+          "name": "Filmbox Extra",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-fbox-extra",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Opowieści z ławeczki",
+              "info": "film komediowy (Francja, 2009)Występują: Olivier Gourmet, Catherine Deneuve, Pierre ArditiLucie jest sekretarką i bardzo lubi to, co robi. W biurze, w którym pracuje, panuje świetna atmosfera. Zapowiada się kolejny zwyczajny dzień. Nagle jednak na ścianie budynku stojącego naprzeciw pojawia się tajemniczy napis. Wszyscy porzucają swoje obowiązki służbowe, by wyjaśnić zagadkę.Reżyser: Bruno Podalydes",
+              "begin": 1555421400,
+              "end": 1555428000
+            },
+            "next": {
+              "title": "Zanim powiesz \"Tak!\"",
+              "info": "film komediowy (USA, 2009)Występują: David Sutcliffe, Jennifer Westfeldt, Lauren HollyGeorge Murray chciałby się ożenić z Jane. Kobieta jednak ma już za sobą jeden nieudany związek i nie wierzy w szczęśliwe małżeństwo. Nieoczekiwanie George cofa się w czasie i dostaje szansę zmiany swojego losu. Musi tylko zapobiec pierwszemu ślubowi ukochanej. Tylko tak może zapewnić sobie szczęście u boku Jane.Reżyser: Paul Fox",
+              "begin": 1555428000,
+              "end": 1555433400
+            }
+          }
+        },
+        {
+          "id": 2453,
+          "group_id": 5,
+          "number": 730,
+          "name": "AXN Spin",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-axn-spin",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Agenci NCIS",
+              "info": "Komandor porucznik Patrick Casey, z wywiadu marynarki wojennej, zostaje zastrzelony. Przed śmiercią udaje mu się zostawić wiadomość, napisaną własną krwią. Jej treść zaszyfrowuje kodem Birdsonga. Trop prowadzi agentów do rękopisu zatytułowanego \"Operacja Birdsong\". Anonimowy autor, były agent wywiadu, prawdopodobnie zdradza w nim wiele wojskowych tajemnic, których ujawnienie grozi bezpieczeństwu kraju. W takcie rozmowy z wydawcą okazuje się, że wszystkie materiały na ten temat zostały skonfiskowane przez agentów AWO. Jednak wcześniej dwa egzemplarze okazowe zostały wysłane na prośbę autora do Patricka Casey'a oraz agentki FBI, Elise Archer, która specjalizuje się w krajowych operacjach antyterrorystycznych. Okazuje się, że kobieta została uduszona nylonową linką, taka samą, jaką związano ręce komandora Casey'a. Jej egzemplarz został spalony. Gibbs zignoruje trzy zaproszenia ślubne od swojej byłej partnerki, Diane, która zawierza wyjść za starszego agenta FBI, T.C. Fornella",
+              "begin": 1555423200,
+              "end": 1555426500
+            },
+            "next": {
+              "title": "Grimm",
+              "info": "Nick i Hank badają sprawę serii niepokojących zbrodni. W trakcie śledztwa dochodzi do odnowienia starej waśni między rodziną Grimmów o rodem Monroe'a. Tuż po podaniu wiadomości o śmierci członka rodziny królewskiej kilku kluczowych graczy rozpoczyna swoje posunięcia. Nick wraca do pełni zdrowia",
+              "begin": 1555426500,
+              "end": 1555429800
+            }
+          }
+        },
+        {
+          "id": 2454,
+          "group_id": 5,
+          "number": 731,
+          "name": "Romance TV Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "de-romance",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Burza uczuć 7 (odc. 495)",
+              "info": "Tytuł oryginalny: Sturm der Liebe\\nNiemcy, 2013\\nReżyseria: Siegi Jonas\\nWystępują: Liza Tzschirner, Christian Feist, Mona Seefried, Dirk Galuba, Antje Hagen, Sepp Schauer\\nPaulina walczy ze sobą, nie wie, czy powinna przyjąć odszkodowanie od Wernera i w końcu decyduje się zwrócić mu pieniądze. Werner nie jest z tego faktu zadowolony, bo już wyobrażał sobie finansową klęskę Friedricha. Ze względu na dobro brata André chce przekonać Paulinę, żeby jednak przyjęła odszkodowanie. Paulina zastanawia się i w końcu prosi Friedricha o udziały w hotelu Fürstenhof, żeby móc uczcić w ten sposób pamięć swojego dziadka.",
+              "begin": 1555424100,
+              "end": 1555427700
+            },
+            "next": {
+              "title": "Górscy ratownicy: odc.75",
+              "info": "serial obyczajowy (Niemcy, 2011) odc.75, Matczyna miłość - część 1Występują: Martin Gruber, Stefan Murr, Stefanie von PoserPodopieczna Markusa, Mia, zaprzyjaźnia się z dziewięcioletnim Maksem. Dzieci dzielą się swoimi troskami. Mały Maks żyje w strachu. Podsłuchał bowiem rozmowę ukochanej matki z obcą kobietą, która twierdzi, że jest jego biologicznym rodzicem.Reżyser: Axel de RocheOd lat: 12",
+              "begin": 1555427700,
+              "end": 1555431000
+            }
+          }
+        },
+        {
+          "id": 2460,
+          "group_id": 5,
+          "number": 737,
+          "name": "CBS Europa",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-cbs-europa",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Guru miłości",
+              "info": "Tytuł oryginalny: The Love Guru\\nUSA, 2008\\nReżyseria: Marco Schnabel\\nWystępują: Mike Myers, Justin Timberlake, Jessica Alba, Verne Troyer, Romany Malco, Meagan Good\\nCzy guru wprost z Indii uratuje drużynę hokejową? Guru Pitka należy do czołówki popularnych przewodników duchowych na świecie. Niestety wciąż jest numerem 2, bo wyprzedza go Deepak Chopra... Choć jego interesami zajmuje się rzutki menedżer Dick Pants, na razie wymarzony występ w Oprah Winfrey Show wydaje się nierealny. Tymczasem w Kanadzie atrakcyjna Jane Bullard dziedziczy po swoim ojcu drużynę hokejową Toronto Maple Leafs.",
+              "begin": 1555422600,
+              "end": 1555428900
+            },
+            "next": {
+              "title": "Ciepła czapka",
+              "info": "film dramat (USA, 2004)Występują: William H. Macy, Keke Palmer, Ned BeattyWzruszająca opowieść o niemym dozorcy Gigocie (nominowany do Złotego Globu William H. Macy), który musi się zaopiekować dziesięciolatką porzuconą przez matkę. Zawiązuje się między nimi nić przyjaźni. Wkrótce Gigot postanawia zaadoptować dziewczynkę.Reżyser: Steven SchachterOd lat: 12",
+              "begin": 1555428900,
+              "end": 1555435500
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "number": 5,
+      "alias": "INFORMATIVE",
+      "name": "Познавательные",
+      "color": "#000000",
+      "user_title": "Invormative",
+      "channels": [
+        {
+          "id": 699,
+          "group_id": 6,
+          "number": 47,
+          "name": "Discovery Life polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-an-pl",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Córka inna niż wszystkie: Postrach chłopców",
+              "info": "Tytuł oryginalny: I Am Jazz\\nPo raz pierwszy chłopak zaczyna się interesować Jazz. I Jazz , i jej rodzice, zastanawiają się, jak ona jako transgenderyczna kobieta poradzi sobie z randkami i seksem.",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Cztery żony i mąż",
+              "info": "serial dokumentalny, Wszystko o JanelleKody Brown i jego żony to szczęśliwa, oryginalna rodzina poligamistów. Mimo wielu wzlotów i upadków, ich życie rodzinne opiera się na zaangażowaniu, wierze, szczerości i miłości.",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 700,
+          "group_id": 6,
+          "number": 48,
+          "name": "Discovery Historia pol",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-disc-hist",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Powrót do przeszłości (odc. 3)",
+              "info": "Tytuł oryginalny: Powrót do przeszłości\\nPolska, 2015\\nWidzowie poznają Polaków, którzy pasjonują się rekonstrukcjami historycznymi. W ten sposób raz jeszcze przeżywają znane wydarzenia. [9-A]",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Łowcy staroci 13 (odc. 2)",
+              "info": "Tytuł oryginalny: Salvage Hunters\\nWielka Brytania, 2018\\nNa ogromnym targu staroci w Walii Drew może wybierać towary z ponad tysiąca straganów. Znajduje 200-letnie krzesło typu Windsor w najlepszym stanie, jaki kiedykolwiek widział. [AL]",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 701,
+          "group_id": 6,
+          "number": 49,
+          "name": "Discovery Turbo HD pol",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-disc-t",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Brytyjscy truckersi",
+              "info": "Firma Eddie Stobart rozwozi przesyłki i zaopatruje brytyjskie sklepy. Ich praca jest nie jest łatwa, ponieważ niezależnie od pogody, muszą dowieźć wszystko na czas",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Piekielne drogi",
+              "info": "Tym razem Jamie Davis i jego specjalnie przebudowany samochód holowniczy HR-126 zostaną poddani prawdziwemu testowi. Przekonamy się, czy potężna maszyna poradzi sobie z wyjątkowo dużym ciężarem. Kelly i John muszą zająć się skutkami wypadku wywrotki przewożącej żwir, która odbiła się od ściany skalnej. Gord Lundin, który od dłuższego czasu był pomocnikiem, ma szansę sam prowadzić auto holownicze. Zobaczymy, jak się odnajdzie w nowej roli",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 538,
+          "group_id": 6,
+          "number": 50,
+          "name": "DISCOVERY HD polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "ru-disc",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Złomowisko PL",
+              "info": "Spotkanie z ludźmi, którzy na co dzień pracują na złomowiskach w całej Polsce. Ich praca jest ciężka, a czasami również bywa bardzo niebezpieczna. Choć dla większości społeczeństwa złom nie przedstawia żadnej wartości, oni potrafią zrobić na nim bardzo opłacalny biznes. To praca dla ludzi, którzy nie boją się pobrudzić sobie rąk i mają intuicję do ryzykownych transakcji",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Ciężarówką przez Wietnam",
+              "info": "Dawid Andres to doświadczony globtroter, który realizuje swoją pasję bez znacznego zaplecza finansowego. W świat ruszył, zatrudniając się na statku pasażerskim. Podróż wzdłuż Amazonki odbył na rowerze, a Stany Zjednoczone zwiedził, pokonując tysiące kilometrów dróg potężną, osiemnastokołową ciężarówką jako zawodowy kierowca. Tym razem Dawid wyrusza do Wietnamu, by doświadczyć tam wszystkiego, co można. Od lokalnego jedzenia przez kłopoty z policją po zwiedzanie najważniejszych, jak i mniej oczywistych, miejsc na terenie kraju",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 585,
+          "group_id": 6,
+          "number": 51,
+          "name": "Planete",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-planet",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Afryka - wodne królestwo (odc. 2)",
+              "info": "Tytuł oryginalny: Waterworld Africa\\nRPA, 2016\\nReżyseria: Claudio Velasquez Rojas\\nZaskakujący obraz Afryki. Podróż wzdłuż wybrzeży oceanu i w głąb lądu pełnego jezior, delt i lasów tropikalnych. \"Afryka - wodne królestwo\" to nieoczywista podróż przez kontynent często kojarzony z suszą. Twórcy serii zapraszają widzów Planete+ w głąb lądu, gdzie czekają na nich ogromne słone jeziora, rozległe delty rzek, wilgotne lasy tropikalne oraz przepiękne wybrzeża oceaniczne.",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Potęga żywiołów (odc. 6)",
+              "info": "Tytuł oryginalny: The Earth's Furies\\nFrancja, 2017\\nSeria udowadnia, że to nie wojna atomowa stanowi prawdziwe zagrożenie - zagładę przynieść mogą katastrofy naturalne takie jak powodzie, trzęsienia ziemi, huragany, erupcje wulkanów. Kamery dwunastoodcinkowej serii przemierzają cały świat, aby udokumentować niszczycielską potęgę żywiołów. Ludzkość wciąż musi wymyślać nowe sposoby na ich okiełznanie. Czy nasze wysiłki nie są jednak nieuchronnie skazane na porażkę?",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 546,
+          "group_id": 6,
+          "number": 52,
+          "name": "TVP-Historia",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-istoria",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "On wierzył w Polskę",
+              "info": "Tytuł oryginalny: On wierzył w Polskę\\nPolska, 1992\\nFilm opowiada o życiu i śmierci Emila Fieldorfa \"Nila\", jednego z najwybitniejszych dowódców Armii Krajowej i przywódców ruchu oporu. Człowieka, którego stalinowskie UB uznało za najgroźniejszego przeciwnika Polski Ludowej i Związku Radzieckiego. Autorka programu przypomina fakty, przytacza relacje świadków oraz rodziny i wykorzystuje unikatowe dokumenty dotyczące procesu \"Nila\".",
+              "begin": 1555425300,
+              "end": 1555428900
+            },
+            "next": {
+              "title": "Było, nie minęło - kronika zwiadowców historii",
+              "info": "magazyn melodramat (Polska)Program skierowany jest do młodych widzów, chcących poszerzyć swoje historyczne zainteresowania. Prezentuje w interesujący sposób przeróżne sensacyjne wydarzenia historyczne, poruszając najczęściej tematy mało znane i kontrowersyjne.Od lat: 7",
+              "begin": 1555428900,
+              "end": 1555430700
+            }
+          }
+        },
+        {
+          "id": 865,
+          "group_id": 6,
+          "number": 53,
+          "name": "National Geographic HD pol",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "nat-geo",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Anatomia głupoty 5 (odc. 17)",
+              "info": "Tytuł oryginalny: Science of Stupid\\nWielka Brytania, 2017\\nPoznajcie całkowicie pozbawionych rozsądku śmiałków z całego świata. Ich potknięcia i wypadki zostaną przedstawione z punktu widzenia praw fizyki. \"Poznajemy kolejne czynności obarczone wysokim ryzkiem: szaleńczy zjazd sankami z góry, zeskok z wysokiego drążka i. uderzenie piłeczki golfowej. \" \"Piąta seria programu. Prowadzący Dallas Campbell prezentuje korowód nieustraszonych i zarazem całkowicie pozbawionych rozsądku śmiałków z całego świata.",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Anatomia głupoty 5: odc.8",
+              "info": "serial dokumentalny (Wielka Brytania, 2017) odc.8Prowadzą: Dallas CampbellPozornie niegroźne bieganie po piasku, noszenie tortów weselnych i przybijanie piątek czasem może skończyć się prawdziwą katastrofą.Od lat: 12",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 2060,
+          "group_id": 6,
+          "number": 79,
+          "name": "Discovery Science HD pol",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-disc-sci",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Wielka piątka: Dźwigi",
+              "info": "Tytuł oryginalny: World's Top 5\\nUSA\\nPiątka dźwigów gigantycznych rozmiarów, z których każdy jest cudem inżynierii. Która maszyna okaże się najlepszym dźwigiem-olbrzymem?",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Porzucone konstrukcje: odc.14",
+              "info": "serial dokumentalny (Wielka Brytania, 2018) odc.14Seria prezentująca losy konstruktorów odpowiedzialnych za stworzenie niesamowitych dzieł światowej inżynierii, których potencjał nie został wykorzystany. Niektóre z nich zostaną jednak zrekonstruowane dzięki ambicji pełnych pasji, pomysłowych ludzi. Widzowie dowiedzą się, jak tworzono niektóre budowle.",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2165,
+          "group_id": 6,
+          "number": 83,
+          "name": "Fokus TV",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "pl-fokus",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Łowcy opali: odc.5",
+              "info": "serial dokumentalny (Australia, 2018) odc.5Występują: Daniel Becker, Justin Lang, Mick CookeDan Becker i Justin Lang chcą wydobywać kamienie szlachetne metodą odkrywkową. Mają jednak problem z odsunięciem wystarczającej ilości skał. Zmuszeni są pracować w nocy. W Lightning Ridge jesteśmy świadkami braterskiej rywalizacji. Mick i Pete Cooke'owie próbują z części ze złomowiska zbudować potężną maszynę górniczą.Od lat: 12",
+              "begin": 1555422300,
+              "end": 1555425600
+            },
+            "next": {
+              "title": "Supersamoloty bojowe: Prowler-Growler: odc.2",
+              "info": "technika (USA, 2015) odc.2Historia elektronicznego wojownika armii USA - Prowlera - i jego następcy Growlera. Te samoloty zawsze trafiają na pierwszą linię ataku. Są w stanie zlokalizować, zagłuszyć i zniszczyć radary wroga.Od lat: 12",
+              "begin": 1555425600,
+              "end": 1555429500
+            }
+          }
+        },
+        {
+          "id": 2171,
+          "group_id": 6,
+          "number": 89,
+          "name": "History",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-history",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Gwiazdy lombardu 20 (odc. 5)",
+              "info": "Tytuł oryginalny: Pawn Stars\\nUSA, 2018\\nChum bawi w Los Angeles za sprawą filmowego rekwizytu Austina Powersa. Tymczasem w lombardzie pojawia się przedmiot z czasów starożytnego Rzymu. Rick chce kupić rysunek jednego z pierwszych amerykańskich bohaterów opatrzony autografem autora.",
+              "begin": 1555424100,
+              "end": 1555427700
+            },
+            "next": {
+              "title": "Fachowcy: tak to się robiło 2: odc.8",
+              "info": "serial dokumentalny (USA) odc.8, Brygantyna/witraże/parasolNa całym świecie żyją rzemieślnicy, którzy do wytwarzania swoich wyjątkowych przedmiotów używają tych samych technik i narzędzi, co ich przodkowie dziesiątki, setki a nawet tysiące lat temu. Ci prawdziwi mistrzowie rękodzieła tworzą przedmioty zaskakująco piękne, bardzo trwałe oraz niezwykle pożądane.",
+              "begin": 1555427700,
+              "end": 1555429500
+            }
+          }
+        },
+        {
+          "id": 2172,
+          "group_id": 6,
+          "number": 90,
+          "name": "History 2",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-h2",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Starożytni kosmici",
+              "info": "Japoński megalit Ishi-no-Hoden to wykuty w zboczu góry kamienny blok o wadze 500 ton, który wydaje się unosić nad powierzchnią wody. Istnieje wiele hipotez i legend związanych z jego powstaniem. Jedna z nich głosi, że Ishi-no-Hoden przedstawia statek, który przybył z niebios. Blok zwany Płynącym Kamieniem to niejedyny megalit w Japonii, zbudowany na pamiątkę czasów, kiedy bogowie - a może obcy - zstąpili na ziemię. Zdjęcia satelitarne Marsa ujawniły struktury wykazujące niezwykłe podobieństwo do najstarszych grobowców w Kraju Kwitnącej Wiśni. Twórcy programu zastanawiają się, czy to możliwe, że przodkowie Japończyków pochodzili z kosmosu",
+              "begin": 1555423800,
+              "end": 1555427400
+            },
+            "next": {
+              "title": "Podziemne miasta",
+              "info": "Pod koniec XIX w. miasto nad Tamizą nie należało do bezpiecznych. Mieszkańcy żyli w strachu przed Kubą Rozpruwaczem, funkcjonowały tajne pogańskie stowarzyszenia, a złodzieje nie wahali się zabijać, byle tylko dokonać rabunku",
+              "begin": 1555427400,
+              "end": 1555430700
+            }
+          }
+        },
+        {
+          "id": 2173,
+          "group_id": 6,
+          "number": 91,
+          "name": "Viasat Explore Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "vs-explore",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Dzika Montana",
+              "info": "James, Ron i Kayl próbują uratować cielaka, którego został porzucony przez matkę. Noc jest zimna, a młode zaczyna się wychładzać. Bez mleka matki umrze w ciągu kilku godzin",
+              "begin": 1555424100,
+              "end": 1555427400
+            },
+            "next": {
+              "title": "Kowboje z zimnych wód",
+              "info": "Conway, pierwszy oficer kutra Seadoo, podejmuje ryzyko i wypływa daleko w morze. Zamierza bowiem łowić 200 mil od północnych wybrzeży Nowej Fundlandii. Jeśli warunki pogodowe gwałtownie się pogorszą, łódź może pójść na dno. Z kolei niedoświadczony szyper Rick Crane chce udowodnić, że nie jest gorszy od swoich kolegów. Tymczasem Morris Anstey wraz ze swą ekipą rozpoczyna sezon połowu krabów na słynącym z gór lodowych i kry obszarze Atlantyku",
+              "begin": 1555427400,
+              "end": 1555431000
+            }
+          }
+        },
+        {
+          "id": 2174,
+          "group_id": 6,
+          "number": 92,
+          "name": "Viasat History Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "vs-history",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Osiem dni: jak narodził się Rzym (odc. 7)",
+              "info": "Tytuł oryginalny: Eight Days That Made Rome\\nWielka Brytania, 2017\\nHistoryczka Bettany Hughes odchodzi od konwencjonalnego, chronologicznego przedstawiania tysiącletniej historii starożytnego Rzymu. Zamiast tego bardzo dokładnie analizuje osiem decydujących o powstaniu Imperium Rzymskiego dni, które były dla niego zarówno wyzwaniem, jaki i potwierdzeniem jego wielkości. W każdym odcinku zobaczymy Rzym, którego najszlachetniejsze i najpodlejsze cechy wciąż znajdują odbicie w otaczającym nas świecie.",
+              "begin": 1555422900,
+              "end": 1555426200
+            },
+            "next": {
+              "title": "Osiem dni: jak narodził się Rzym (odc. 8)",
+              "info": "Tytuł oryginalny: Eight Days That Made Rome\\nWielka Brytania, 2017\\nHistoryczka Bettany Hughes odchodzi od konwencjonalnego, chronologicznego przedstawiania tysiącletniej historii starożytnego Rzymu. Zamiast tego bardzo dokładnie analizuje osiem decydujących o powstaniu Imperium Rzymskiego dni, które były dla niego zarówno wyzwaniem, jaki i potwierdzeniem jego wielkości. W każdym odcinku zobaczymy Rzym, którego najszlachetniejsze i najpodlejsze cechy wciąż znajdują odbicie w otaczającym nas świecie.",
+              "begin": 1555426200,
+              "end": 1555429800
+            }
+          }
+        },
+        {
+          "id": 2176,
+          "group_id": 6,
+          "number": 94,
+          "name": "Da Vinchi Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "davinchi",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Projekt eksploracja: Bajeczna planeta: Wędrówki zwierząt",
+              "info": "magazyn naukowyProwadzą: Phillippe CousteauPodczas podróży na Hawaje, do Gór Skalistych i do Zatoki Delaware Philippe zdradza wszystkie sekrety wędrówek zwierząt.",
+              "begin": 1555423800,
+              "end": 1555425600
+            },
+            "next": {
+              "title": "Bezcenne śmieci: Szalone Stwory i Vivienne Westwood: odc.2",
+              "info": "magazyn edukacyjny odc.2Nigel i Michelle prezentują oryginalne buty z recyklingu oraz specyficzną skarbonkę. Pokazują także, jaki patent na blaszane puszki zastosowała Vivienne Westwood.",
+              "begin": 1555425600,
+              "end": 1555427700
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "number": 6,
+      "alias": "SPORT",
+      "name": "Спорт",
+      "color": "#000000",
+      "user_title": "Sport",
+      "channels": [
+        {
+          "id": 530,
+          "group_id": 7,
+          "number": 54,
+          "name": "TVP-SPORT HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-tvp-s",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Gol Ekstra",
+              "info": "Magazyn piłkarski. Opis: Skrót najważniejszych wydarzeń z piłkarskiej Ekstraklasy. Widzowie zobaczą między innymi gole strzelone w danej kolejce. W każdym odcinku pojawi się również gość związany ze światem piłki nożnej.",
+              "begin": 1555421400,
+              "end": 1555427100
+            },
+            "next": {
+              "title": "Gol po Golu",
+              "info": "Magazyn piłkarski.",
+              "begin": 1555427100,
+              "end": 1555429500
+            }
+          }
+        },
+        {
+          "id": 531,
+          "group_id": 7,
+          "number": 55,
+          "name": "N-SPORT HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-n-sport",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Piłka nożna",
+              "info": "30 . kolejka to ostatnia seria spotkań sezonu zasadniczego. Po niej zespoły zostaną podzielone na dwie grupy po osiem drużyn. W jednym z ciekawszych spotkań zmierzą się dwie drużyny dobrze grające na wiosnę - Cracovia i Lechia Gdańsk. Zespół z Gdańska już od kilku kolejek był spokojny o miejsce w najlepszej ósemce",
+              "begin": 1555419600,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "FIM SuperEnduro",
+              "info": "Podsumowanie najważniejszych i najciekawszych wydarzeń mistrzostw świata SuperEnduro. Miłośnicy ekstremalnych wyścigów na motocyklach crossowych zobaczą, jak w poszczególnych etapach serii spisywali się najlepsi zawodnicy tej widowiskowej dyscypliny",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 626,
+          "group_id": 7,
+          "number": 56,
+          "name": "Canal + HD  Sport Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-c-plus-s",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "La Liga Highlights Show",
+              "info": "Tytuł oryginalny: La Liga Highlights Show\\nPolska, 2019\\n",
+              "begin": 1555425300,
+              "end": 1555429500
+            },
+            "next": {
+              "title": "Basket+",
+              "info": "Tytuł oryginalny: Basket+\\nPolska, 2019\\n",
+              "begin": 1555429500,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 634,
+          "group_id": 7,
+          "number": 57,
+          "name": "Eurosport HD Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "eurosport",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Kolarstwo: Wyścig Paryż-Roubaix",
+              "info": "kolarstwo117. edycja wyścigu Paryż-Roubaix. Jego trasa liczyć będzie 257 kilometrów z czego ponad 54 po nierównym bruku. W ubiegłym roku po znakomitym finiszu klasyk wygrał Peter Sagan z Bora-hansgrohe. Słowacki kolarz na mecie wyprzedził Silvana Dilliera i Nikiego Terpstra. W bieżącym sezonie, oprócz zwycięzcy poprzedniej edycji, na trasie zobaczymy m.in. Grega Van Avermaeta, Philippe'a Gilberta i Alexandra Kristoffa.",
+              "begin": 1555423500,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Golf: Turniej Masters w Auguście",
+              "info": "golfPierwszy wielkoszlemowy turniej w bieżącym sezonie. Tradycyjnie najlepsi golfiści cyklu zawitają do Augusta National Golf Club, aby rywalizować o nagrodę główną w wysokości niespełna 2 milionów dolarów. W poprzedniej edycji imprezy po wspomnianą kwotę sięgnął Patrick Reed. Amerykanin zagra przed własną publicznością również w tym roku. Jego głównymi konkurentami w walce o końcowy triumf będą Justin Rose oraz Sergio Garcia.",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 635,
+          "group_id": 7,
+          "number": 58,
+          "name": "Eurosport 2 HD Polska",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "eurosport2",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "ME w Batumi. Podnoszenie ciężarów",
+              "info": "Sport. Mistrzostwa Europy w Batumi. Opis: Celem Polaków jest powtórzenie sukcesu z ubiegłorocznej edycji czempionatu, podczas której Biało-Czerwoni wywalczyli w sumie 19 krążków: 7 złotych, 4 srebrne i 8 brązowych. Dało to naszym ciężarowcom trzecie miejsce w klasyfikacji medalowej, zaraz po reprezentantach Gruzji i Rumunii. Do wspomnianego wyniku w największym stopniu przyczynili się Joanna Łochowska oraz Arkadiusz Michalski.",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "ME w Batumi. Podnoszenie ciężarów",
+              "info": "Sport. Mistrzostwa Europy w Batumi. Opis: Celem Polaków jest powtórzenie sukcesu z ubiegłorocznej edycji czempionatu, podczas której Biało-Czerwoni wywalczyli w sumie 19 krążków: 7 złotych, 4 srebrne i 8 brązowych. Dało to naszym ciężarowcom trzecie miejsce w klasyfikacji medalowej, zaraz po reprezentantach Gruzji i Rumunii. Do wspomnianego wyniku w największym stopniu przyczynili się Joanna Łochowska oraz Arkadiusz Michalski.",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 969,
+          "group_id": 7,
+          "number": 69,
+          "name": "Polsat Sport HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat-sport",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "has_ams_archive": 1,
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Tenis",
+              "info": "Cztery ostatnie edycje Monte Carlo Masters wygrywał Rafael Nadal. Łącznie triumfował w tej imprezie aż jedenaście razy. Hiszpan ostatnio zmagał się z kontuzją kolana, ale ma być gotowy do gry i rozpocząć tym turniejem sezon na mączce. Szyki postara mu się pokrzyżować m.in. Novak Djoković. Serbski tenisista zwyciężał w Monako już dwukrotnie",
+              "begin": 1555419600,
+              "end": 1555428600
+            },
+            "next": {
+              "title": "Siatkówka mężczyzn",
+              "info": "PlusLiga - mecz o 5. miejsce",
+              "begin": 1555428600,
+              "end": 1555439400
+            }
+          }
+        },
+        {
+          "id": 2072,
+          "group_id": 7,
+          "number": 70,
+          "name": "Polsat Sport Fight HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "pl-polsat-s2",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Boks: Ewa Brodnicka - Nozipho Bell",
+              "info": "boks (powtórka)Walka o pas WBO w Lublinie - waga superpiórkowa. W Lublinie niepokonana w zawodowej karierze Polka po raz pierwszy będzie bronić pasa mistrzyni świata WBO w wadze superpiórkowej, który wywalczyła w kwietniu tego roku, pokonując Sarah Pucek.",
+              "begin": 1555414200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Sporty walki: Borys Mańkowski - Roberto Soldić",
+              "info": "sporty walki (powtórka)KSW 41 (PPV)",
+              "begin": 1555426800,
+              "end": 1555441500
+            }
+          }
+        },
+        {
+          "id": 2175,
+          "group_id": 7,
+          "number": 93,
+          "name": "Motowizija",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "motowizja",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "The Inside Line - najszybsi z najszybszych (odc. 15)",
+              "info": "Tytuł oryginalny: The Inside Line\\nAustralia, 2019\\nMagazyn \"The Inside Line - Najszybsi z najszybszych\" to cotygodniowa porcja wiedzy wprost ze świata Formuły 1. Na widzów czekają podsumowania wyścigów, wieści z padoku, a także najnowsze ciekawostki techniczne.",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Motowizja Sport PL: Sezon 2019 (odc. 1)",
+              "info": "Tytuł oryginalny: Motowizja Sport PL: Sezon 2019\\nPolska, 2019\\nMagazyn skupiony na tym, co najważniejsze w polskim motosporcie. Zobaczymy jak nasi rodacy radzą sobie na torach i odcinkach na całym świecie.",
+              "begin": 1555426800,
+              "end": 1555428600
+            }
+          }
+        },
+        {
+          "id": 2183,
+          "group_id": 7,
+          "number": 100,
+          "name": "Canal+ Sport2 HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-cplus-s2-hd",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Piłka nożna",
+              "info": "Transmisja łączona z meczów ostatniej kolejki sezonu zasadniczego. Roszady na ławkach trenerskich w zespołach z LOTTO Ekstraklasy w ostatnich dwóch tygodniach były równie ciekawe, jak te w ligowej tabeli. Z posadami pożegnali się m.in. Ricardo Sa Pinto w Legii oraz Adam Nawałka w Lechu",
+              "begin": 1555412400,
+              "end": 1555434000
+            },
+            "next": {
+              "title": "Basket+",
+              "info": "W programie obszerne fragmenty ostatnich spotkań w NBA, wyniki oraz statystyki poszczególnych zawodników",
+              "begin": 1555434000,
+              "end": 1555434900
+            }
+          }
+        },
+        {
+          "id": 2130,
+          "group_id": 7,
+          "number": 490,
+          "name": "Polsat Sport Extra HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat-sport",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "KOTV Weekly",
+              "info": "magazyn  (powtórka)Najświeższe wiadomości z pięściarskiego świata. Fani boksu znajdą w tym programie m.in. wyniki najważniejszych walk, zapowiedzi gal oraz ciekawostki związane z tą widowiskową dyscypliną sportu.",
+              "begin": 1555423800,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Tenis: Turniej ATP w Monte Carlo",
+              "info": "tenis (na żywo)mecze 1. i 2. rundy gry pojedynczej",
+              "begin": 1555426800,
+              "end": 1555435800
+            }
+          }
+        },
+        {
+          "id": 2396,
+          "group_id": 7,
+          "number": 590,
+          "name": "Eleven Sports 1 Polska HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-eleven-hd",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "FIFA Football",
+              "info": "Tytuł oryginalny: FIFA Football\\n",
+              "begin": 1555425000,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Magazyn PGE Ekstraligi",
+              "info": "magazyn sportowy (powtórka)Cotygodniowy magazyn poświęcony rozgrywkom żużlowej PGE Ekstraligi. Podsumowuje on każdą kolejkę. Nie zabraknie w nim skrótów meczów, ciekawostek oraz materiałów zakulisowych. Najciekawsze i najbardziej kontrowersyjne sytuacje analizowane będą przez ekspertów - Krzysztofa Cegielskiego i Roberta Wardzała.",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2397,
+          "group_id": 7,
+          "number": 591,
+          "name": "Eleven Sports 2 Polska HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-eleven-s-hd",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Piłka nożna: RCD Espanyol - CD Alaves",
+              "info": "piłka nożna (powtórka)Liga hiszpańska - skrót meczu",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Piłka nożna: Eintracht Frankfurt - FC Augsburg",
+              "info": "piłka nożna (powtórka)Liga niemiecka - skrót meczu",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2398,
+          "group_id": 7,
+          "number": 592,
+          "name": "Eleven Sports 3 Polska HD",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-eleven-extra",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Piłka nożna: Frosinone Calcio - Inter Mediolan",
+              "info": "piłka nożna (powtórka)Liga włoska. Frosinone przystępuje do spotkania z Interem po dwóch zwycięstwach z rzędu w Serie A. Celem walczącego o utrzymanie beniaminka jest wykorzystanie słabszej ostatnio dyspozycji Nerazzurrich.",
+              "begin": 1555419600,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Magazyn ligi hiszpańskiej",
+              "info": "magazynProgram poświęcony rozgrywkom La Ligi podsumowujący ostatnią kolejkę. Prezentowane są w nim skróty wszystkich meczów, ciekawe dane statyczne oraz wywiady z zawodnikami.",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2467,
+          "group_id": 7,
+          "number": 773,
+          "name": "Polsat Sport Premium 1",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat-sport",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Piłka nożna: AFC Ajax - Juventus FC",
+              "info": "piłka nożna (powtórka)Liga Mistrzów - mecz ćwierćfinałowy",
+              "begin": 1555423200,
+              "end": 1555430400
+            },
+            "next": {
+              "title": "Piłka nożna: Liga Mistrzów",
+              "info": "piłka nożna (na żywo)studio",
+              "begin": 1555430400,
+              "end": 1555440600
+            }
+          }
+        },
+        {
+          "id": 2468,
+          "group_id": 7,
+          "number": 774,
+          "name": "Polsat Sport Premium 2",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polsat-sport",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Piłka nożna: Liverpool FC - FC Porto",
+              "info": "piłka nożna (powtórka)Liga Mistrzów - mecz ćwierćfinałowy",
+              "begin": 1555423200,
+              "end": 1555430400
+            },
+            "next": {
+              "title": "Piłka nożna: AFC Ajax - Juventus FC",
+              "info": "piłka nożna (powtórka)Liga Mistrzów - mecz ćwierćfinałowy",
+              "begin": 1555430400,
+              "end": 1555438500
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "number": 7,
+      "alias": "MUSIC",
+      "name": "Музыка",
+      "color": "#000000",
+      "user_title": "Music",
+      "channels": [
+        {
+          "id": 554,
+          "group_id": 8,
+          "number": 61,
+          "name": "ESKA",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-eska",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Hity na czasie",
+              "info": "magazyn muzycznyZestawienie najpopularniejszych utworów muzycznych i teledysków, które znajdują się na szczytach różnych list przebojów.Od lat: 12",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Nagrywarka",
+              "info": "rozrywka (Polska) (powtórka)Program, w którym widzowie przesyłają pozdrowienia. Wystarczy, że odnajdą specjalne pudełko i zostawią w nim swoje nagranie. Prowadzący Filip zawita zarówno do dużych, jak i mniejszych miast. Uczestnicy programu oprócz możliwości nagrania pozdrowień, będą mogli wziąć udział w quizach i wygrać nagrody pieniężne.Od lat: 12",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 550,
+          "group_id": 8,
+          "number": 62,
+          "name": "POLO TV",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-polo",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555382363,
+              "end": 1555468763
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        },
+        {
+          "id": 978,
+          "group_id": 8,
+          "number": 72,
+          "name": "MTV MUSIC",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "viva",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "MTV Music PL Top 10",
+              "info": "Tytuł oryginalny: MTV Music PL Top 10\\n",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "MTV 3 z 1",
+              "info": "Tytuł oryginalny: MTV 3 z 1\\n",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2179,
+          "group_id": 8,
+          "number": 97,
+          "name": "4Fun",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "pl-4fun",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "4Fun Tube",
+              "info": "Tytuł oryginalny: 4Fun Tube\\nPolska\\n",
+              "begin": 1555419600,
+              "end": 1555430400
+            },
+            "next": {
+              "title": "Hot  Fresh",
+              "info": "Tytuł oryginalny: Hot  Fresh\\nPolska\\n",
+              "begin": 1555430400,
+              "end": 1555437600
+            }
+          }
+        },
+        {
+          "id": 2181,
+          "group_id": 8,
+          "number": 98,
+          "name": "4Fun Dance",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "pl-4fun-dance",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Najwięcej muzyki na imprezę",
+              "info": "dance/groove (Polska, 2017)Prezentacja różnych hitów muzyki tanecznej, zapewniających dobrą zabawę na imprezach dla miłośników dyskotekowych rytmów.Od lat: 12",
+              "begin": 1555421400,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Party Room",
+              "info": "dance/grooveWidzowie poznają najnowsze hity muzyki klubowej i relacje z imprez w popularnych miejscach. Gospodarz programu, DJ Inox, miksuje muzykę na żywo wraz z zaproszonymi gośćmi.Od lat: 12",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 2182,
+          "group_id": 8,
+          "number": 99,
+          "name": "Stars",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "pl-stars",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Best Hits",
+              "info": "magazyn muzycznyZestawienie największych hitów muzycznych, które niezmiennie cieszą się dużą popularnością w Polsce i na świecie.Od lat: 12",
+              "begin": 1555423200,
+              "end": 1555426800
+            },
+            "next": {
+              "title": "Best 80's",
+              "info": "magazyn muzycznyMuzyczna podróż w przeszłość do lat osiemdziesiątych XX wieku, w których nie brakowało hitów polskich i zagranicznych.Od lat: 12",
+              "begin": 1555426800,
+              "end": 1555430400
+            }
+          }
+        },
+        {
+          "id": 759,
+          "group_id": 8,
+          "number": 201,
+          "name": "MTV Hits",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "mtv-hits",
+          "languages": "eng",
+          "audiotracks": "eng",
+          "audiotrack_default": "eng",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Non-Stop Pop!",
+              "info": "",
+              "begin": 1555408800,
+              "end": 1555430400
+            },
+            "next": {
+              "title": "Fresh Vidz  Hot Hits!",
+              "info": "",
+              "begin": 1555430400,
+              "end": 1555437600
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "number": 9,
+      "alias": "CULTURE",
+      "name": "Культура",
+      "color": "#000000",
+      "user_title": "Culture",
+      "channels": [
+        {
+          "id": 636,
+          "group_id": 10,
+          "number": 63,
+          "name": "TRWAM",
+          "is_video": 1,
+          "protected": 0,
+          "has_archive": 1,
+          "is_favorite": 0,
+          "icon": "pl-trwam",
+          "languages": "pol",
+          "audiotracks": "pol",
+          "audiotrack_default": "pol",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "Kalejdoskop młodych",
+              "info": "Program religijny.",
+              "begin": 1555425000,
+              "end": 1555426200
+            },
+            "next": {
+              "title": "Express studencki",
+              "info": "Program informacyjny. Polska 2019. Opis: W programie znajdzie się podsumowanie najważniejszych uczelnianych wydarzeń minionego tygodnia.",
+              "begin": 1555426200,
+              "end": 1555426800
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "number": 10,
+      "alias": "ADULTS",
+      "name": "Для взрослых",
+      "color": "#000000",
+      "user_title": "Adult",
+      "channels": [
+        {
+          "id": 155,
+          "group_id": 11,
+          "number": 760,
+          "name": "XXX 1 HD",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "k-xxx1",
+          "languages": "rus",
+          "audiotracks": "rus",
+          "audiotrack_default": "rus",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555382363,
+              "end": 1555468763
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        },
+        {
+          "id": 157,
+          "group_id": 11,
+          "number": 761,
+          "name": "XXX 3 HD",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "k-xxx3",
+          "languages": "rus",
+          "audiotracks": "rus",
+          "audiotrack_default": "rus",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555382363,
+              "end": 1555468763
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        },
+        {
+          "id": 156,
+          "group_id": 11,
+          "number": 762,
+          "name": "XXX 2 HD",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "k-xxx2",
+          "languages": "rus",
+          "audiotracks": "rus",
+          "audiotrack_default": "rus",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555382363,
+              "end": 1555468763
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        },
+        {
+          "id": 158,
+          "group_id": 11,
+          "number": 763,
+          "name": "XXX 4",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "k-xxx4",
+          "languages": "rus",
+          "audiotracks": "rus",
+          "audiotrack_default": "rus",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555382363,
+              "end": 1555468763
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        },
+        {
+          "id": 360,
+          "group_id": 11,
+          "number": 765,
+          "name": "XXX 6",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "k-xxx4",
+          "languages": "rus",
+          "audiotracks": "rus",
+          "audiotrack_default": "rus",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555382363,
+              "end": 1555468763
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        },
+        {
+          "id": 363,
+          "group_id": 11,
+          "number": 768,
+          "name": "XXX 9",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "k-xxx5",
+          "languages": "rus",
+          "audiotracks": "rus",
+          "audiotrack_default": "rus",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555382363,
+              "end": 1555468763
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        },
+        {
+          "id": 578,
+          "group_id": 11,
+          "number": 769,
+          "name": "XXX10",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "k-xxx1",
+          "languages": "rus",
+          "audiotracks": "rus",
+          "audiotrack_default": "rus",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555382363,
+              "end": 1555468763
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        },
+        {
+          "id": 364,
+          "group_id": 11,
+          "number": 770,
+          "name": "XXX 11 HD",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "k-xxx2",
+          "languages": "rus",
+          "audiotracks": "rus",
+          "audiotrack_default": "rus",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555382363,
+              "end": 1555468763
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        },
+        {
+          "id": 366,
+          "group_id": 11,
+          "number": 772,
+          "name": "XXX 13 HD",
+          "is_video": 1,
+          "protected": 1,
+          "has_archive": 0,
+          "is_favorite": 0,
+          "icon": "k-xxx2",
+          "languages": "rus",
+          "audiotracks": "rus",
+          "audiotrack_default": "rus",
+          "aspect_ratio": "default",
+          "quality": [
+            "mq"
+          ],
+          "epg": {
+            "time_shift": 0,
+            "current": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555382363,
+              "end": 1555468763
+            },
+            "next": {
+              "title": "No info",
+              "info": " ",
+              "begin": 1555468763,
+              "end": 1555511963
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "servertime": 1555425562
+}

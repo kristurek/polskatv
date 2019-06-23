@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/menu_epgs_description"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/btn_selector"
+        android:padding="12dp"
+        android:text="@string/msg_14"
+        android:textColor="#ff000000" />
+
+    <Button
+        android:id="@+id/menu_epgs_find_in_one_channel"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btn_selector"
+        android:padding="12dp"
+        android:text="@string/msg_15"
+        android:textColor="#ff000000" />
+
+    <Button
+        android:id="@+id/menu_epgs_find_in_many_channels"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btn_selector"
+        android:padding="12dp"
+        android:text="@string/msg_16"
+        android:textColor="#ff000000" />
+
+    <Button
+        android:id="@+id/menu_epgs_find_by_input_text"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btn_selector"
+        android:padding="12dp"
+        android:text="@string/msg_19"
+        android:textColor="#ff000000" />
+
+</LinearLayout>
