@@ -85,6 +85,7 @@ public class SimilarEpgsViewModel extends AbstractViewModel {
         focusedEpg.postValue(item);
 
         RecreateAppEvent event = new RecreateAppEvent();
+        event.setEpgBeginTime(item.getBeginTime());
         event.setEpgCurrentTime(item.getBeginTime());
         event.setChannelId(item.getChannelId());
 

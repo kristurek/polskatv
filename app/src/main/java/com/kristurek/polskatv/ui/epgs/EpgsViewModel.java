@@ -253,7 +253,7 @@ public class EpgsViewModel extends AbstractViewModel {
         Log.d(Tag.UI, "EpgsViewModel.recreateEpgs()[" + event + "]");
 
         selectedChannelId = event.getChannelId();
-        LocalDate currentDay = DateTimeHelper.unixTimeToLocalDate(event.getEpgCurrentTime());
+        LocalDate currentDay = DateTimeHelper.unixTimeToLocalDate(event.getEpgBeginTime());
 
         disposables.add(new InitializeEpgsInteractor(iptvService)
                 .execute(event.getChannelId(), currentDay)

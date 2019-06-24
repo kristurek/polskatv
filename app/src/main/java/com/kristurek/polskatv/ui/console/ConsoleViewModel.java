@@ -191,6 +191,7 @@ public class ConsoleViewModel extends AbstractViewModel {
             RecreateAppEvent event = new RecreateAppEvent();
 
             event.setChannelId(model.getChannelId());
+            event.setEpgBeginTime(model.getEpgBeginTime());
             event.setEpgCurrentTime(model.getEpgCurrentTime());
 
             return event;
