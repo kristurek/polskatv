@@ -8,6 +8,7 @@ import com.dropbox.core.v2.files.Metadata;
 import com.dropbox.core.v2.files.WriteMode;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.kristurek.polskatv.BuildConfig;
 import com.kristurek.polskatv.service.RemoteServerService;
 
 import java.io.File;
@@ -24,15 +25,13 @@ public class PolskaTvRemoteServerService implements RemoteServerService {
 
     private DbxClientV2 client;
 
-    private static final String ACCESS_TOKEN = "goGvn4rexkAAAAAAAAAACj6MUOhAeegDNIUxzCZqRzFw5vKW8_My3_DA9Equm8Uy";
-
     public PolskaTvRemoteServerService() {
         client = login();
     }
 
     private DbxClientV2 login() {
         DbxRequestConfig config = new DbxRequestConfig("polskatv.firetv");
-        return new DbxClientV2(config, ACCESS_TOKEN);
+        return new DbxClientV2(config, BuildConfig.DROPBOX_TOKEN);
     }
 
     @Override

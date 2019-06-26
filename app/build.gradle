@@ -5,6 +5,12 @@ def keystoreProperties = new Properties()
 
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
+def getDropboxToken() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('settings.properties').newDataInputStream())
+    return properties.getProperty("dropbox_token");
+}
+
 android {
     signingConfigs {
         config {
@@ -23,6 +29,7 @@ android {
         versionName "100"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        buildConfigField "String", "DROPBOX_TOKEN", "\""+getDropboxToken()+"\""
     }
     buildTypes {
         release {
