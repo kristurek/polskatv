@@ -1,6 +1,7 @@
 package com.kristurek.polskatv;
 
 import android.content.Intent;
+import android.util.Log;
 
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.service.DiagnosticService;
@@ -11,10 +12,14 @@ import com.kristurek.polskatv.ui.arch.ViewModelFactory;
 import com.kristurek.polskatv.ui.update.UpdateIntentService;
 import com.kristurek.polskatv.util.DateTimeHelper;
 import com.kristurek.polskatv.util.FontHelper;
+import com.kristurek.polskatv.util.Tag;
 
 import javax.inject.Inject;
 
-public class PolskaTvApplication extends android.app.Application {
+import io.reactivex.functions.Consumer;
+import io.reactivex.plugins.RxJavaPlugins;
+
+public class PolskaTvApplication extends android.app.Application implements Consumer<Throwable> {
 
     private static PolskaTvComponent component;
 
@@ -33,6 +38,8 @@ public class PolskaTvApplication extends android.app.Application {
     public void onCreate() {
         super.onCreate();
 
+        RxJavaPlugins.setErrorHandler(this);
+
         component = DaggerPolskaTvComponent.builder().polskaTvModule(new PolskaTvModule(this)).build();
 
         PolskaTvApplication.getComponent().inject(this);
@@ -47,5 +54,10 @@ public class PolskaTvApplication extends android.app.Application {
 
     public static PolskaTvComponent getComponent() {
         return component;
+    }
+
+    @Override
+    public void accept(Throwable throwable) throws Exception {
+        Log.e(Tag.UI, throwable.getMessage(), throwable);
     }
 }
