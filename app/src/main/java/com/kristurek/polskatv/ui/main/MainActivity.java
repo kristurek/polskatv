@@ -184,6 +184,8 @@ public class MainActivity extends AbstractActivity {
                     .setPositiveButton(R.string.msg_2, (dialog, id) -> {
                         viewModel.onExitSelected();
                         MainActivity.super.onBackPressed();
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        System.exit(1);
                     })
                     .setNegativeButton(R.string.msg_3, null)
                     .show();
