@@ -29,6 +29,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -244,9 +245,19 @@ public class EpgsViewModel extends AbstractViewModel {
 
         disposables.add(new InitializeEpgsInteractor(iptvService)
                 .execute(event.getChannelId(), currentDay)
+                .flatMap(epgModels -> {
+                            if (!epgModels.isEmpty()) {
+                                if (event.getEpgCurrentTime() < epgModels.iterator().next().getBeginTime())
+                                    return new InitializeEpgsInteractor(iptvService).execute(event.getChannelId(), DateTimeHelper.getPreviousDay(currentDay));
+                                if (event.getEpgCurrentTime() > Iterables.getLast(epgModels).getEndTime())
+                                    return new InitializeEpgsInteractor(iptvService).execute(event.getChannelId(), DateTimeHelper.getNextDay(currentDay));
+                            }
+                            return Single.just(epgModels);
+                        }
+                )
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(result -> postProcessAfterInitializeEpgs(result, currentDay, event.getEpgCurrentTime()), throwable -> notifyException(throwable)));
+                .subscribe(result -> postProcessAfterInitializeEpgs(result, event.getEpgCurrentTime()), throwable -> notifyException(throwable)));
     }
 
     public void recreateEpgs(RecreateAppEvent event) {
@@ -259,10 +270,11 @@ public class EpgsViewModel extends AbstractViewModel {
                 .execute(event.getChannelId(), currentDay)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(result -> postProcessAfterInitializeEpgs(result, currentDay, event.getEpgCurrentTime()), throwable -> notifyException(throwable)));
+                .subscribe(result -> postProcessAfterInitializeEpgs(result, event.getEpgCurrentTime()), throwable -> notifyException(throwable)));
     }
 
-    private void postProcessAfterInitializeEpgs(List<EpgModel> result, LocalDate currentDay, long epgCurrentTime) {
+    private void postProcessAfterInitializeEpgs(List<EpgModel> result,
+                                                long epgCurrentTime) {
         epgs.postValue(result);
         selectedEpg.postValue(null);
 
@@ -270,7 +282,7 @@ public class EpgsViewModel extends AbstractViewModel {
 
         if (epg != null) {
             SelectedEpgEvent selectedEpgEvent = new SelectedEpgEvent();
-            selectedDay.postValue(currentDay);
+            selectedDay.postValue(DateTimeHelper.unixTimeToLocalDate(epg.getBeginTime()));
             selectedEpg.postValue(epg);
             focusedEpg.postValue(epg);
 
