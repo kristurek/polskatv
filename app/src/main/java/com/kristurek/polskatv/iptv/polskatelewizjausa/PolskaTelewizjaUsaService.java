@@ -171,15 +171,14 @@ public class PolskaTelewizjaUsaService extends BasePolskaTelewizjaUsaService imp
         if (!ValidatorBean.validate(request))
             throw new IptvValidatorException(ExceptionHelper.VALIDATOR_MSG);
 
-        long beginArchive = Duration.millis(DateTime.now().withTimeAtStartOfDay().minusDays(13).getMillis()).getStandardSeconds();
         int hours = 336; // liczba dni * 24h czyli (13+1)*24 (13 dni wstecz + dzien dzisiejszy razy 24h)
         List<List<Integer>> dividedChannelsIds = Lists.partition(new ArrayList<>(request.getChannelIds()), 40);
 
-        Log.d(Tag.API, "PolskaTelewizjaUsaService.getSimilarEpgs()[beginArchive=" + beginArchive + ",hours=" + hours + ",channels.size()=" + request.getChannelIds().size() + "]");
+        Log.d(Tag.API, "PolskaTelewizjaUsaService.getSimilarEpgs()[beginArchive=" + request.getFromBeginTime() + ",hours=" + hours + ",channels.size()=" + request.getChannelIds().size() + "]");
 
         List<Epg> results = new LinkedList<>();
         for (List channels : dividedChannelsIds) {
-            EpgsResponse lResults = process(new EpgsConverter(beginArchive), () -> api.getEpgs(Joiner.on(",").join(channels), beginArchive, hours, 0), () -> login(reLoginRequest));
+            EpgsResponse lResults = process(new EpgsConverter(request.getFromBeginTime()), () -> api.getEpgs(Joiner.on(",").join(channels), request.getFromBeginTime(), hours, 0), () -> login(reLoginRequest));
             results.addAll(lResults.getEpgs());
         }
 

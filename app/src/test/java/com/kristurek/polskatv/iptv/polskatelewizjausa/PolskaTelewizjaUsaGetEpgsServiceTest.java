@@ -124,7 +124,7 @@ public class PolskaTelewizjaUsaGetEpgsServiceTest {
         EpgsResponse responseDTO = service.getEpgs(new EpgsRequest(cidsSet, 1555390800));
 
         assertNotNull(responseDTO);
-        assertEquals(3768, responseDTO.getEpgs().size());
+        assertEquals(3693, responseDTO.getEpgs().size());
     }
 }
 

@@ -9,6 +9,8 @@ import com.kristurek.polskatv.iptv.polskatelewizjausa.retrofit.PolskaTelewizjaUs
 import com.kristurek.polskatv.iptv.polskatelewizjausa.util.ExceptionHelper;
 import com.kristurek.polskatv.util.TestExceptionHelper;
 
+import org.joda.time.DateTime;
+import org.joda.time.Duration;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -63,7 +65,7 @@ public class PolskaTelewizjaUsaGetSimilarEpgsServiceTest {
         expectedEx.expect(IptvValidatorException.class);
         expectedEx.expectMessage(ExceptionHelper.VALIDATOR_MSG);
 
-        service.getSimilarEpgs(new SimilarEpgsRequest(new HashSet<>(), ""));
+        service.getSimilarEpgs(new SimilarEpgsRequest(new HashSet<>(), "", 0));
     }
 
     @Test
@@ -81,7 +83,7 @@ public class PolskaTelewizjaUsaGetSimilarEpgsServiceTest {
         mockServer.enqueue(mockedResponse);//first attempt
         mockServer.enqueue(mockedResponse);//second attempt
 
-        service.getSimilarEpgs(new SimilarEpgsRequest(new HashSet<>(Arrays.asList(101, 21)), "Supernatural"));
+        service.getSimilarEpgs(new SimilarEpgsRequest(new HashSet<>(Arrays.asList(101, 21)), "Supernatural", 0));
     }
 
     @Test
@@ -95,9 +97,11 @@ public class PolskaTelewizjaUsaGetSimilarEpgsServiceTest {
 
         mockServer.enqueue(mockedResponse);
 
-        SimilarEpgsResponse responseDTO = service.getSimilarEpgs(new SimilarEpgsRequest(new HashSet<>(Arrays.asList(101, 21)), "Herkules 4 (odc. 11)"));
+        long beginArchive = Duration.millis(new DateTime(1555390800).withTimeAtStartOfDay().minusDays(13).getMillis()).getStandardSeconds();
+
+        SimilarEpgsResponse responseDTO = service.getSimilarEpgs(new SimilarEpgsRequest(new HashSet<>(Arrays.asList(2455)), "Międzynarodowi poszukiwacze domów", beginArchive));
 
         assertNotNull(responseDTO);
-        assertEquals(3, responseDTO.getEpgs().size());
+        assertEquals(4, responseDTO.getEpgs().size());
     }
 }

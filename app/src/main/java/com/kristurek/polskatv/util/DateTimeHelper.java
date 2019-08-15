@@ -210,6 +210,10 @@ public class DateTimeHelper {
         return milisecondsToUnixTime(dateTime.getMillis());
     }
 
+    public static long unixTimeFromCurrentDayMinus13Days() {
+        return Duration.millis(DateTime.now().withTimeAtStartOfDay().minusDays(13).getMillis()).getStandardSeconds();
+    }
+
     public static void main(String[] argv) {
 
     }

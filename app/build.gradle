@@ -66,36 +66,36 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     //implementation 'androidx.databinding:databinding-compiler:3.4.0'
 
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.14.1'
-    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.14.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.1.0'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:4.1.0'
 
     implementation 'joda-time:joda-time:2.10.3'
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'org.apache.commons:commons-text:1.7'
     implementation 'org.apache.commons:commons-collections4:4.4'
     implementation 'com.dropbox.core:dropbox-core-sdk:3.1.1'
-    api 'com.google.guava:guava:27.1-android'
+    api 'com.google.guava:guava:28.0-jre'
 
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.22.1'
-    implementation 'com.google.dagger:dagger:2.22.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.24'
+    implementation 'com.google.dagger:dagger:2.24'
 
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:2.26.0'
-    testImplementation 'org.mockito:mockito-inline:2.26.0'
-    testImplementation 'com.squareup.retrofit2:retrofit-mock:2.2.0'
-    testImplementation 'com.squareup.okhttp3:mockwebserver:3.14.1'
+    testImplementation 'org.mockito:mockito-core:3.0.0'
+    testImplementation 'org.mockito:mockito-inline:3.0.0'
+    testImplementation 'com.squareup.retrofit2:retrofit-mock:2.6.1'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.1.0'
     testImplementation 'org.hamcrest:hamcrest-library:2.1'
 
-    implementation "io.reactivex.rxjava2:rxjava:2.2.6"
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.11'
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
 
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.10.+'
-    implementation 'com.google.android.exoplayer:exoplayer-ui:2.10.+'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.10.3'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.10.3'
 
     implementation 'com.google.android.material:material:1.0.0'
 }

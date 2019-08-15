@@ -56,6 +56,7 @@ public class FindSimilarEpgsInteractor extends ArrayParamAbstractInteractor<List
         SimilarEpgsRequest request = new SimilarEpgsRequest();
         request.setChannelIds(channelIds);
         request.setTitle(title);
+        request.setFromBeginTime(DateTimeHelper.unixTimeFromCurrentDayMinus13Days());
 
         SimilarEpgsResponse response = iptvService.getSimilarEpgs(request);
 
