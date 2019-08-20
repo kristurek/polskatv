@@ -21,6 +21,7 @@ android {
         }
     }
     compileSdkVersion 28
+    buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.kristurek.polskatv"
         minSdkVersion 22
@@ -64,7 +65,7 @@ dependencies {
     implementation 'androidx.preference:preference:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
-    //implementation 'androidx.databinding:databinding-compiler:3.4.0'
+    //implementation 'androidx.databinding:databinding-compiler:3.4.2'
 
     implementation 'com.squareup.retrofit2:retrofit:2.6.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
