@@ -34,16 +34,14 @@ import com.kristurek.polskatv.iptv.polskatelewizjausa.converter.LoginConverter;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.converter.LogoutConverter;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.converter.SettingsConverter;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.converter.UrlConverter;
-import com.kristurek.polskatv.iptv.polskatelewizjausa.service.PolskaTelewizjaUsaApi;
-import com.kristurek.polskatv.iptv.polskatelewizjausa.util.ExceptionHelper;
+import com.kristurek.polskatv.iptv.polskatelewizjausa.endpoint.PolskaTelewizjaUsaApi;
+import com.kristurek.polskatv.iptv.common.ExceptionHelper;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.util.Md5HashGenerator;
-import com.kristurek.polskatv.iptv.polskatelewizjausa.validator.ValidatorBean;
+import com.kristurek.polskatv.iptv.common.ValidatorBean;
 import com.kristurek.polskatv.iptv.util.Tag;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.text.similarity.JaroWinklerDistance;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
 
 import java.util.ArrayList;
 import java.util.Collections;

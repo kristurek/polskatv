@@ -2,6 +2,7 @@ package com.kristurek.polskatv.iptv.polskatelewizjausa.converter;
 
 import android.util.Log;
 
+import com.kristurek.polskatv.iptv.common.Converter;
 import com.kristurek.polskatv.iptv.core.dto.CurrentEpgsResponse;
 import com.kristurek.polskatv.iptv.core.dto.common.Channel;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.currentepgs.CurrentEpgsRetrofitResponse;

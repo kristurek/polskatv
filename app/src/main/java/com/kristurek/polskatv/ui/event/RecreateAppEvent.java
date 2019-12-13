@@ -5,6 +5,7 @@ import com.kristurek.polskatv.ui.arch.Event;
 public class RecreateAppEvent implements Event {
 
     private int channelId;
+    private String channelName;
     private long epgBeginTime;
     private long epgCurrentTime;
 
@@ -14,6 +15,14 @@ public class RecreateAppEvent implements Event {
 
     public void setChannelId(int channelId) {
         this.channelId = channelId;
+    }
+
+    public String getChannelName() {
+        return channelName;
+    }
+
+    public void setChannelName(String channelName) {
+        this.channelName = channelName;
     }
 
     public long getEpgCurrentTime() {
@@ -36,6 +45,7 @@ public class RecreateAppEvent implements Event {
     public String toString() {
         final StringBuilder sb = new StringBuilder("RecreateAppEvent{");
         sb.append("channelId=").append(channelId);
+        sb.append("channelName=").append(channelName);
         sb.append(", epgBeginTime=").append(epgBeginTime);
         sb.append(", epgCurrentTime=").append(epgCurrentTime);
         sb.append('}');

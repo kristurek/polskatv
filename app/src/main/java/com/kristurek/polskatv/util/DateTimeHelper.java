@@ -66,6 +66,7 @@ public class DateTimeHelper {
     public static DateTimeFormatter EEE = DateTimeFormat.forPattern("EEE");
     public static DateTimeFormatter ddMM = DateTimeFormat.forPattern("dd/MM");
     public static DateTimeFormatter ddMMMyyyy = DateTimeFormat.forPattern("dd. MMM yyyy");
+    public static DateTimeFormatter ddMMMyy = DateTimeFormat.forPattern("ddMMyy");
 
     public static String unixTimeToString(long unixTime, DateTimeFormatter formatter) {
         DateTime dt = new DateTime(unixTimeToMiliseconds(unixTime), DateTimeZone.forID(SELECTED_TIME_ZONE_ID));
@@ -75,6 +76,10 @@ public class DateTimeHelper {
 
     public static String localDateTimeToString(LocalDateTime localDateTime, DateTimeFormatter formatter) {
         return localDateTime.toString(formatter);
+    }
+
+    public static String localDateToString(LocalDate localDate, DateTimeFormatter formatter) {
+        return localDate.toString(formatter);
     }
 
     public static int currentPercentBetweenUnixTime(long beginUnixTime, long endUnixTime) {
@@ -215,6 +220,8 @@ public class DateTimeHelper {
     }
 
     public static void main(String[] argv) {
+        long unixTime = 1575924100;milisecondsToUnixTime(DateTime.now().withTimeAtStartOfDay().getMillis());
 
+        System.out.println(unixTimeToString(unixTime, DateTimeHelper.ddMMMyy));
     }
 }

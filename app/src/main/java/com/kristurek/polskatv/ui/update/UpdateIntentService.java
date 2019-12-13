@@ -89,7 +89,7 @@ public class UpdateIntentService extends IntentService {
                     }
                 }
             }
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
             Log.e(Tag.UI, ex.getMessage(), ex);
         }
         Log.d(Tag.UI, "UpdateIntentService.onHandleIntent()[end]");

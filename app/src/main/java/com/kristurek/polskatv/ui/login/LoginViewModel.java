@@ -27,6 +27,7 @@ public class LoginViewModel extends AbstractViewModel {
 
     private MutableLiveData<String> subscription = new MutableLiveData<>();
     private MutableLiveData<String> password = new MutableLiveData<>();
+    private MutableLiveData<String> parentalPassword = new MutableLiveData<>();
     private MutableLiveData<List<ProviderModel>> providers = new MutableLiveData<>();
     private MutableLiveData<Integer> providerId = new MutableLiveData<>();
 
@@ -47,6 +48,10 @@ public class LoginViewModel extends AbstractViewModel {
 
     public MutableLiveData<String> getPassword() {
         return password;
+    }
+
+    public MutableLiveData<String> getParentalPassword() {
+        return parentalPassword;
     }
 
     public MutableLiveData<List<ProviderModel>> getProviders() {
@@ -92,19 +97,23 @@ public class LoginViewModel extends AbstractViewModel {
 
         List<ProviderModel> providersM = new ArrayList<>();
         providersM.add(new ProviderModel("No selected", ""));
+        providersM.add(new ProviderModel("Polbox", "com.kristurek.polskatv.api.polbox.PolboxService"));
         providersM.add(new ProviderModel("PolskaTelewizjaUsa.com", "com.kristurek.polskatv.api.polskatelewizjausa.PolskaTelewizjaUsaService"));
         providers.setValue(providersM);
 
         if (prefService.contains(PreferencesService.KEYS.ACCOUNT_SUBSCRIPTION)
                 && prefService.contains(PreferencesService.KEYS.ACCOUNT_PASSWORD)
+                && prefService.contains(PreferencesService.KEYS.ACCOUNT_PARENTAL_PASSWORD)
                 && prefService.contains(PreferencesService.KEYS.API_PROVIDER_ID)) {
             subscription.setValue(prefService.get(PreferencesService.KEYS.ACCOUNT_SUBSCRIPTION, ""));
             password.setValue(prefService.get(PreferencesService.KEYS.ACCOUNT_PASSWORD, ""));
+            parentalPassword.setValue(prefService.get(PreferencesService.KEYS.ACCOUNT_PARENTAL_PASSWORD, ""));
             providerId.setValue(prefService.get(PreferencesService.KEYS.API_PROVIDER_ID, 0));
             saveChecked.setValue(true);
         } else {
             subscription.setValue("");
             password.setValue("");
+            parentalPassword.setValue("");
             providerId.setValue(1);
             saveChecked.setValue(true);
         }
@@ -131,7 +140,7 @@ public class LoginViewModel extends AbstractViewModel {
 
     public void manualLogin() {
         disposables.add(new ManualLoginInteractor(iptvService, prefService)
-                .execute(subscription.getValue(), password.getValue(), saveChecked.getValue(), providerId.getValue())
+                .execute(subscription.getValue(), password.getValue(), saveChecked.getValue(), providerId.getValue(), parentalPassword.getValue())
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
@@ -142,7 +151,7 @@ public class LoginViewModel extends AbstractViewModel {
 
     private void postProcessAfterSuccessfulLogin() {
         disposables.add(new GenerateAndUploadLogsInteractor(context, remoteService, logService, diagService)
-                .execute(subscription.getValue(), password.getValue(), providerId.getValue())
+                .execute(subscription.getValue(), password.getValue(), providerId.getValue(), parentalPassword.getValue())
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(

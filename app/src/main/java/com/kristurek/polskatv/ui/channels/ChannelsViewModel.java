@@ -129,6 +129,7 @@ public class ChannelsViewModel extends AbstractViewModel {
 
         SelectedChannelEvent event = new SelectedChannelEvent();
         event.setChannelId(((ChannelModel) item).getId());
+        event.setChannelName(((ChannelModel) item).getName());
 
         getEventBus().post(event);
     }
@@ -142,14 +143,19 @@ public class ChannelsViewModel extends AbstractViewModel {
     }
 
     private void postProcessAfterInitializeChannels(List<Serializable> result) {
-        Serializable item = Iterables.find(result, input -> input instanceof ChannelModel, null);
-        channels.postValue(result);
-        selectedChannel.postValue(item);
+        if (result != null) {
+            Serializable item = Iterables.find(result, input -> input instanceof ChannelModel, null);
+            if (item != null) {
+                channels.postValue(result);
+                selectedChannel.postValue(item);
 
-        SelectedChannelEvent event = new SelectedChannelEvent();
-        event.setChannelId(((ChannelModel) item).getId());
+                SelectedChannelEvent event = new SelectedChannelEvent();
+                event.setChannelId(((ChannelModel) item).getId());
+                event.setChannelName(((ChannelModel) item).getName());
 
-        getEventBus().post(event);
+                getEventBus().post(event);
+            }
+        }
     }
 
     public void recreateChannels(RecreateAppEvent event) {

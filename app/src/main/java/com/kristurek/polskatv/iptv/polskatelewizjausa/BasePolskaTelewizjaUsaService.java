@@ -5,10 +5,10 @@ import android.util.Log;
 import com.kristurek.polskatv.iptv.core.exception.IptvException;
 import com.kristurek.polskatv.iptv.core.exception.IptvConverterException;
 import com.kristurek.polskatv.iptv.core.exception.common.ExceptionModel;
-import com.kristurek.polskatv.iptv.polskatelewizjausa.converter.Converter;
+import com.kristurek.polskatv.iptv.common.Converter;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.common.BaseRetrofitResponse;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.error.ErrorRetrofitResponse;
-import com.kristurek.polskatv.iptv.polskatelewizjausa.util.ExceptionHelper;
+import com.kristurek.polskatv.iptv.common.ExceptionHelper;
 import com.kristurek.polskatv.iptv.util.Tag;
 
 import java.util.concurrent.Callable;

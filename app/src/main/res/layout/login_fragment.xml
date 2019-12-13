@@ -92,6 +92,17 @@
                     android:maxLines="1"
                     android:text="@={viewModel.password}" />
 
+                <EditText
+                    android:id="@+id/login_input_parental_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:hint="@string/msg_24"
+                    android:inputType="textPassword|number"
+                    android:maxLines="1"
+                    android:text="@={viewModel.parentalPassword}" />
+
                 <Spinner
                     android:id="@+id/login_input_provider"
                     android:layout_width="match_parent"

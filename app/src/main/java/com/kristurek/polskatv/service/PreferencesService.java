@@ -70,7 +70,7 @@ public interface PreferencesService {
 
     void save(KEYS key, float value);
 
-    void save(KEYS key, LinkedHashMap<Integer, String> value);
+    void save(KEYS key, LinkedHashMap<String, String> value);
 
     void save(KEYS key, HashSet<String> value);
 
@@ -86,7 +86,7 @@ public interface PreferencesService {
 
     float get(KEYS key, float defaultValue);
 
-    Map<Integer, String> get(KEYS key, LinkedHashMap<Integer, String> defaultValue);
+    Map<String, String> get(KEYS key, LinkedHashMap<String, String> defaultValue);
 
     Set<String> get(KEYS key, HashSet<String> defaultValues);
 }

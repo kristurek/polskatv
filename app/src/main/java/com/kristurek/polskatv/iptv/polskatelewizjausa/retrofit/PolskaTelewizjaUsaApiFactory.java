@@ -8,7 +8,7 @@ import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.login.LoginRetrofitRe
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.logout.LogoutRetrofitResponse;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.settings.SettingsRetrofitResponse;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.url.UrlRetrofitResponse;
-import com.kristurek.polskatv.iptv.polskatelewizjausa.service.PolskaTelewizjaUsaApi;
+import com.kristurek.polskatv.iptv.polskatelewizjausa.endpoint.PolskaTelewizjaUsaApi;
 
 import java.net.CookieManager;
 import java.net.CookiePolicy;

@@ -7,7 +7,7 @@ import com.kristurek.polskatv.iptv.core.dto.common.enumeration.SettingType;
 import com.kristurek.polskatv.iptv.core.exception.IptvException;
 import com.kristurek.polskatv.iptv.core.exception.IptvValidatorException;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.retrofit.PolskaTelewizjaUsaApiFactory;
-import com.kristurek.polskatv.iptv.polskatelewizjausa.util.ExceptionHelper;
+import com.kristurek.polskatv.iptv.common.ExceptionHelper;
 import com.kristurek.polskatv.util.TestExceptionHelper;
 
 import org.junit.AfterClass;
@@ -117,10 +117,5 @@ public class PolskaTelewizjaUsaSaveSettingsServiceTest {
         SettingsResponse responseDTO = service.saveSettings(new SettingsRequest(SettingType.LANGUAGE,"pl", "en"));
 
         assertNotNull(responseDTO);
-        assertEquals("en", responseDTO.getInterfaceLang());
-        assertEquals(0, responseDTO.getMediaServerId());
-        assertEquals(1111, responseDTO.getParentalPass());
-        assertEquals(0, responseDTO.getTimeShift());
-        assertEquals(120, responseDTO.getTimeZone());
     }
 }

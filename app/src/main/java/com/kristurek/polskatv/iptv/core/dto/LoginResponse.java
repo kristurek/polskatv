@@ -1,46 +1,17 @@
 package com.kristurek.polskatv.iptv.core.dto;
 
-import org.joda.time.LocalDate;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class LoginResponse {
 
-    private String sid;
-    private LocalDate beginDate;
-    private LocalDate endDate;
     private int restOfDay;
-    private int mediaServerId;
+    private String mediaServerId;
     private int timeShift;
     private int timeZone;
     private String parentalPass;
     private String interfaceLang;
-    private Map<Integer, String> mediaServers = new LinkedHashMap<>();
-
-    public String getSid() {
-        return sid;
-    }
-
-    public void setSid(String sid) {
-        this.sid = sid;
-    }
-
-    public LocalDate getBeginDate() {
-        return beginDate;
-    }
-
-    public void setBeginDate(LocalDate beginDate) {
-        this.beginDate = beginDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
+    private Map<String, String> mediaServers = new LinkedHashMap<>();
 
     public int getRestOfDay() {
         return restOfDay;
@@ -50,11 +21,11 @@ public class LoginResponse {
         this.restOfDay = restOfDay;
     }
 
-    public int getMediaServerId() {
+    public String getMediaServerId() {
         return mediaServerId;
     }
 
-    public void setMediaServerId(int mediaServerId) {
+    public void setMediaServerId(String mediaServerId) {
         this.mediaServerId = mediaServerId;
     }
 
@@ -90,21 +61,18 @@ public class LoginResponse {
         this.interfaceLang = interfaceLang;
     }
 
-    public Map<Integer, String> getMediaServers() {
+    public Map<String, String> getMediaServers() {
         return mediaServers;
     }
 
-    public void setMediaServers(Map<Integer, String> mediaServers) {
+    public void setMediaServers(Map<String, String> mediaServers) {
         this.mediaServers = mediaServers;
     }
 
     @Override
     public String toString() {
         return "LoginRetrofitResponse{" +
-                "sid='" + sid + '\'' +
-                ", beginDate='" + beginDate + '\'' +
-                ", endDate='" + endDate + '\'' +
-                ", restOfDay=" + restOfDay +
+                " restOfDay=" + restOfDay +
                 ", mediaServerId=" + mediaServerId +
                 ", timeShift=" + timeShift +
                 ", timeZone=" + timeZone +

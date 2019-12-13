@@ -40,7 +40,7 @@ public class InitializeChannelsInteractor extends VoidParamAbstractInteractor<Li
         List<Serializable> channels = new ArrayList<>();
 
         Set<String> hiddenChannels = prefService.get(PreferencesService.KEYS.APPLICATION_HIDDEN_CHANNELS, new HashSet<>());
-        LinkedHashMap<Integer, String> allChannels = new LinkedHashMap<>();
+        LinkedHashMap<String, String> allChannels = new LinkedHashMap<>();
 
         ChannelsResponse response = iptvService.getChannels(new ChannelsRequest());
 
@@ -51,7 +51,7 @@ public class InitializeChannelsInteractor extends VoidParamAbstractInteractor<Li
             channels.add(group);
 
             for (Channel channelDTO : entry.getValue()) {
-                allChannels.put(channelDTO.getId(), channelDTO.getName());
+                allChannels.put(String.valueOf(channelDTO.getId()), channelDTO.getName());
                 if (!hiddenChannels.contains(String.valueOf(channelDTO.getId()))) {
                     ChannelModel channel = new ChannelModel();
 
@@ -65,7 +65,7 @@ public class InitializeChannelsInteractor extends VoidParamAbstractInteractor<Li
                     channel.setLiveEpgBeginTime(channelDTO.getLiveEpgBeginTime());
                     channel.setLiveEpgEndTime(channelDTO.getLiveEpgEndTime());
                     channel.setLiveEpgDescription(channelDTO.getLiveEpgDescription());
-                    channel.setProtectedContent(channelDTO.getProtectedContent());
+
                     if (channelDTO.getType().equals(ChannelType.LIVE_CHANNEL))
                         channel.setType(com.kristurek.polskatv.ui.channels.model.ChannelType.LIVE_CHANNEL);
                     if (channelDTO.getType().equals(ChannelType.ARCHIVE_CHANNEL))

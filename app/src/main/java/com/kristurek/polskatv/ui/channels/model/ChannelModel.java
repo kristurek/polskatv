@@ -11,7 +11,6 @@ public class ChannelModel implements Serializable {
     private String time;
     private Drawable icon;
     private ChannelType type;
-    private boolean protectedContent;
 
     private String liveEpgTitle;
     private long liveEpgBeginTime;
@@ -57,14 +56,6 @@ public class ChannelModel implements Serializable {
 
     public void setType(ChannelType type) {
         this.type = type;
-    }
-
-    public boolean isProtectedContent() {
-        return protectedContent;
-    }
-
-    public void setProtectedContent(boolean protectedContent) {
-        this.protectedContent = protectedContent;
     }
 
     public String getLiveEpgTitle() {
@@ -115,7 +106,6 @@ public class ChannelModel implements Serializable {
         sb.append(", time='").append(time).append('\'');
         sb.append(", icon=").append(icon);
         sb.append(", type=").append(type);
-        sb.append(", protectedContent=").append(protectedContent);
         sb.append(", liveEpgTitle='").append(liveEpgTitle).append('\'');
         sb.append(", liveEpgBeginTime=").append(liveEpgBeginTime);
         sb.append(", liveEpgEndTime=").append(liveEpgEndTime);

@@ -11,10 +11,8 @@ import com.kristurek.polskatv.iptv.core.exception.IptvException;
 import com.kristurek.polskatv.iptv.core.exception.IptvSubscriptionExpiredException;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.common.BaseRetrofitResponse;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.login.LoginRetrofitResponse;
-import com.kristurek.polskatv.iptv.polskatelewizjausa.service.PolskaTelewizjaUsaApi;
+import com.kristurek.polskatv.iptv.polskatelewizjausa.endpoint.PolskaTelewizjaUsaApi;
 
-import org.joda.time.LocalDate;
-import org.joda.time.format.DateTimeFormat;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -93,11 +91,6 @@ public class PolskaTelewizjaUsaLoginServiceBusinessBehaviorTest {
 
         LoginResponse loginResponseDTO = service.login(new LoginRequest("user", "pass"));
 
-        assertEquals(loginResponse.getSid(), loginResponseDTO.getSid());
-        assertEquals(LocalDate.parse(loginResponse.getAccount().getSubscriptions().get(0).getBeginDate(), DateTimeFormat.forPattern("yyyy-MM-dd")),
-                loginResponseDTO.getBeginDate());
-        assertEquals(LocalDate.parse(loginResponse.getAccount().getSubscriptions().get(0).getEndDate(), DateTimeFormat.forPattern("yyyy-MM-dd")),
-                loginResponseDTO.getEndDate());
         assertEquals(loginResponse.getSettings().getInterfaceLng(), loginResponseDTO.getInterfaceLang());
         assertEquals(loginResponse.getSettings().getMediaServerId(), Integer.valueOf(loginResponseDTO.getMediaServerId()));
         assertEquals(loginResponse.getSettings().getParentalPass(), loginResponseDTO.getParentalPass());

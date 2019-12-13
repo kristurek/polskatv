@@ -88,6 +88,7 @@ public class SimilarEpgsViewModel extends AbstractViewModel {
         event.setEpgBeginTime(item.getBeginTime());
         event.setEpgCurrentTime(item.getBeginTime());
         event.setChannelId(item.getChannelId());
+        event.setChannelName(item.getChannelName());
 
         getEventBus().post(new QuietPausePlayerEvent());
         getEventBus().post(event);

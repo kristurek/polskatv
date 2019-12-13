@@ -63,8 +63,8 @@ public class FindSimilarEpgsInteractor extends ArrayParamAbstractInteractor<List
         for (Epg epgDTO : response.getEpgs()) {
             EpgModel epgModel = new EpgModel();
 
-            epgModel.setChannelId(epgDTO.getChannelId());
-            epgModel.setChannelName(epgDTO.getChannelName());
+            epgModel.setChannelId(channelId);
+            //epgModel.setChannelName(channelName); TODO FIXME
             epgModel.setTitle(epgDTO.getTitle());
             epgModel.setDescription(epgDTO.getDescription());
             epgModel.setTime(DateTimeHelper.unixTimeToString(epgDTO.getBeginTime(), DateTimeHelper.HHmm));

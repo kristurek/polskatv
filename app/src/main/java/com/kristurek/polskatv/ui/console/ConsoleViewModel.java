@@ -165,6 +165,7 @@ public class ConsoleViewModel extends AbstractViewModel {
 
         model = new ConsoleModel();
         model.setChannelId(event.getChannelId());
+        model.setChannelName(event.getChannelName());
         model.setEpgType(event.getEpgType());
         model.setEpgBeginTime(event.getEpgBeginTime());
         model.setEpgEndTime(event.getEpgEndTime());
@@ -191,6 +192,7 @@ public class ConsoleViewModel extends AbstractViewModel {
             RecreateAppEvent event = new RecreateAppEvent();
 
             event.setChannelId(model.getChannelId());
+            event.setChannelName(model.getChannelName());
             event.setEpgBeginTime(model.getEpgBeginTime());
             event.setEpgCurrentTime(model.getEpgCurrentTime());
 

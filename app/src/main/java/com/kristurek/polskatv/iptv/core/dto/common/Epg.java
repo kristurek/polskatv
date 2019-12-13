@@ -5,29 +5,11 @@ import com.kristurek.polskatv.iptv.core.dto.common.enumeration.EpgType;
 
 public class Epg {
 
-    private int channelId;
-    private String channelName;
     private long beginTime;
     private long endTime;
     private EpgType type;
     private String description;
     private String title;
-
-    public int getChannelId() {
-        return channelId;
-    }
-
-    public void setChannelId(int channelId) {
-        this.channelId = channelId;
-    }
-
-    public String getChannelName() {
-        return channelName;
-    }
-
-    public void setChannelName(String channelName) {
-        this.channelName = channelName;
-    }
 
     public long getBeginTime() {
         return beginTime;
@@ -72,9 +54,7 @@ public class Epg {
     @Override
     public String toString() {
         return "Epg{" +
-                "channelId=" + channelId +
-                ", channelName='" + channelName + '\'' +
-                ", beginTime=" + beginTime +
+                "beginTime=" + beginTime +
                 ", endTime=" + endTime +
                 ", type=" + type +
                 ", title='" + title + '\'' +

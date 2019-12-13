@@ -2,6 +2,7 @@ package com.kristurek.polskatv.iptv.polskatelewizjausa.converter;
 
 import android.util.Log;
 
+import com.kristurek.polskatv.iptv.common.Converter;
 import com.kristurek.polskatv.iptv.core.dto.ChannelsResponse;
 import com.kristurek.polskatv.iptv.core.dto.common.Channel;
 import com.kristurek.polskatv.iptv.core.dto.common.Group;
@@ -34,7 +35,6 @@ public class ChannelsConverter implements Converter<ChannelsRetrofitResponse, Ch
                 channelDTO.setIcon("polskatelewizjausa/" + channel.getIcon().replace('-', '_') + ".png");
                 channelDTO.setType(channel.getHasArchive() == 0 ? ChannelType.LIVE_CHANNEL : ChannelType.ARCHIVE_CHANNEL);
                 channelDTO.setProtectedContent(channel.getProtected() == 1);
-                channelDTO.setGroupId(group.getId());
                 if (channel.getEpg() != null && channel.getEpg().getCurrent() != null) {
                     channelDTO.setLiveEpgTitle(channel.getEpg().getCurrent().getTitle().replace("\\n", " ").replaceAll("\\p{Cntrl}", ""));
                     channelDTO.setLiveEpgDescription(channel.getEpg().getCurrent().getInfo().replace("\\n", " ").replaceAll("\\p{Cntrl}", ""));

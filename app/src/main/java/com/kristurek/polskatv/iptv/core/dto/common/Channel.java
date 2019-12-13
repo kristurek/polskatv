@@ -9,7 +9,6 @@ public class Channel {
     private long liveEpgEndTime;
     private String liveEpgDescription;
     private String liveEpgTitle;
-    private int groupId;
     private ChannelType type;
     private String icon;
     private int id;
@@ -46,14 +45,6 @@ public class Channel {
 
     public void setLiveEpgTitle(String liveEpgTitle) {
         this.liveEpgTitle = liveEpgTitle;
-    }
-
-    public int getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(int groupId) {
-        this.groupId = groupId;
     }
 
     public ChannelType getType() {
@@ -104,7 +95,6 @@ public class Channel {
                 ", liveEpgBeginTime=" + liveEpgBeginTime +
                 ", liveEpgEndTime=" + liveEpgEndTime +
                 ", liveEpgTitle='" + liveEpgTitle + '\'' +
-                ", groupId=" + groupId +
                 ", type=" + type +
                 ", icon=" + icon +
                 ", protectedContent=" + protectedContent +

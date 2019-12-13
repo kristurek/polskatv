@@ -102,7 +102,7 @@ public class PolskaTvDiagnosticService implements DiagnosticService {
         report.append(preferencesService.get(ACCOUNT_MEDIA_SERVERS, "None"));
         report.append(LINE_SEPARATOR);
         report.append("Stream server ID: ");
-        report.append(preferencesService.get(ACCOUNT_MEDIA_SERVER_ID, 0));
+        report.append(preferencesService.get(ACCOUNT_MEDIA_SERVER_ID, "None"));
         report.append(LINE_SEPARATOR);
         report.append("Rest of day: ");
         report.append(preferencesService.get(ACCOUNT_REST_OF_DAY, 0));

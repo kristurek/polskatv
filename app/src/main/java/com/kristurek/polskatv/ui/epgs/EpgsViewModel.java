@@ -43,6 +43,7 @@ public class EpgsViewModel extends AbstractViewModel {
     private MutableLiveData<Boolean> needRefresh = new MutableLiveData<>();
 
     private Integer selectedChannelId;
+    private String selectedChannelName;
 
     private IptvService iptvService;
     private PreferencesService prefService;
@@ -137,22 +138,23 @@ public class EpgsViewModel extends AbstractViewModel {
         selectedDay.postValue(days.getValue().get(position));
 
         if (selectedChannelId != null)
-            initializeEpgs(selectedChannelId, days.getValue().get(position));
+            initializeEpgs(selectedChannelId, days.getValue().get(position), selectedChannelName);
     }
 
     public void initializeEpgs(SelectedChannelEvent event) {
         Log.d(Tag.UI, "EpgsViewModel.initializeEpgs()[" + event + "]");
 
         selectedChannelId = event.getChannelId();
+        selectedChannelName = event.getChannelName();
 
-        initializeEpgs(event.getChannelId(), selectedDay.getValue());
+        initializeEpgs(event.getChannelId(), selectedDay.getValue(), selectedChannelName);
     }
 
-    private void initializeEpgs(Integer channelId, LocalDate day) {
+    private void initializeEpgs(Integer channelId, LocalDate day, String channelName) {
         Log.d(Tag.UI, "EpgsViewModel.initializeEpgs()[" + channelId + ", " + day + "]");
 
         disposables.add(new InitializeEpgsInteractor(iptvService)
-                .execute(channelId, day)
+                .execute(channelId, day, channelName)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(result -> postProcessAfterInitializeEpgs(result), throwable -> notifyException(throwable)));
@@ -233,7 +235,7 @@ public class EpgsViewModel extends AbstractViewModel {
 
         if (nextDay != null && selectedChannelId != null) {
             selectedDay.postValue(nextDay);
-            initializeEpgs(selectedChannelId, nextDay);
+            initializeEpgs(selectedChannelId, nextDay, selectedChannelName);
         } else
             getMessageNotifier().postValue(R.string.msg_10);
     }
@@ -264,10 +266,11 @@ public class EpgsViewModel extends AbstractViewModel {
         Log.d(Tag.UI, "EpgsViewModel.recreateEpgs()[" + event + "]");
 
         selectedChannelId = event.getChannelId();
+        selectedChannelName = event.getChannelName();
         LocalDate currentDay = DateTimeHelper.unixTimeToLocalDate(event.getEpgBeginTime());
 
         disposables.add(new InitializeEpgsInteractor(iptvService)
-                .execute(event.getChannelId(), currentDay)
+                .execute(event.getChannelId(), currentDay, event.getChannelName())
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(result -> postProcessAfterInitializeEpgs(result, event.getEpgCurrentTime()), throwable -> notifyException(throwable)));

@@ -2,6 +2,7 @@ package com.kristurek.polskatv.iptv.polskatelewizjausa.converter;
 
 import android.util.Log;
 
+import com.kristurek.polskatv.iptv.common.Converter;
 import com.kristurek.polskatv.iptv.core.dto.EpgsResponse;
 import com.kristurek.polskatv.iptv.core.dto.common.Epg;
 import com.kristurek.polskatv.iptv.core.dto.common.enumeration.EpgType;
@@ -34,8 +35,6 @@ public class EpgsConverter implements Converter<EpgsRetrofitResponse, EpgsRespon
                 if (epg.getBegin() >= fromBeginTime) {
                     Epg epgDTO = new Epg();
 
-                    epgDTO.setChannelId(channel.getId());
-                    epgDTO.setChannelName(channel.getName().replace("\\n", " ").replaceAll("\\p{Cntrl}", ""));
                     epgDTO.setBeginTime(epg.getBegin());
                     epgDTO.setEndTime(epg.getEnd());
                     epgDTO.setDescription(epg.getInfo().replace("\\n", " ").replaceAll("\\p{Cntrl}", ""));

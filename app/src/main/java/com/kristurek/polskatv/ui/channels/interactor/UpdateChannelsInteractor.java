@@ -36,16 +36,13 @@ public class UpdateChannelsInteractor extends SingleParamAbstractInteractor<List
             ChannelModel channel = new ChannelModel();
 
             channel.setId(channelDTO.getId());
-            channel.setName(channelDTO.getName());
             channel.setTime(DateTimeHelper.unixTimeToString(channelDTO.getLiveEpgBeginTime(), DateTimeHelper.HHmm) + " - " + DateTimeHelper.unixTimeToString(channelDTO.getLiveEpgEndTime(), DateTimeHelper.HHmm));
             channel.setLiveEpgTitle(channelDTO.getLiveEpgTitle());
-            channel.setIcon(DrawableHelper.getIcon(context, channelDTO.getIcon()));
             channel.setLiveEpgProgress(DateTimeHelper.currentPercentBetweenUnixTime(channelDTO.getLiveEpgBeginTime(), channelDTO.getLiveEpgEndTime()));
 
             channel.setLiveEpgBeginTime(channelDTO.getLiveEpgBeginTime());
             channel.setLiveEpgEndTime(channelDTO.getLiveEpgEndTime());
             channel.setLiveEpgDescription(channelDTO.getLiveEpgDescription());
-            channel.setProtectedContent(channelDTO.getProtectedContent());
 
             result.add(channel);
         }

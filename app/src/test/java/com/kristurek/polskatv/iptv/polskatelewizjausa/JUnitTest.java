@@ -9,7 +9,7 @@ import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.error.ErrorRetrofitRe
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.login.LoginRetrofitResponse;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.url.UrlRetrofitResponse;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.retrofit.PolskaTelewizjaUsaApiFactory;
-import com.kristurek.polskatv.iptv.polskatelewizjausa.service.PolskaTelewizjaUsaApi;
+import com.kristurek.polskatv.iptv.polskatelewizjausa.endpoint.PolskaTelewizjaUsaApi;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.util.Md5HashGenerator;
 
 import org.junit.Test;

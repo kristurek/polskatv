@@ -25,6 +25,7 @@ public class ManualLoginInteractor extends ArrayParamAbstractInteractor<Boolean,
         String password = (String) param[1];
         Boolean save = (Boolean) param[2];
         Integer providerId = (Integer) param[3];
+        String parentalPassword = (String) param[4];
 
         LoginResponse response = iptvService.login(new LoginRequest(subscription, password));
 
@@ -32,15 +33,16 @@ public class ManualLoginInteractor extends ArrayParamAbstractInteractor<Boolean,
             prefService.save(PreferencesService.KEYS.ACCOUNT_SUBSCRIPTION, subscription);
             prefService.save(PreferencesService.KEYS.ACCOUNT_PASSWORD, password);
             prefService.save(PreferencesService.KEYS.API_PROVIDER_ID, providerId);
+            prefService.save(PreferencesService.KEYS.ACCOUNT_PARENTAL_PASSWORD, parentalPassword);
         } else {
             prefService.clear(PreferencesService.KEYS.ACCOUNT_SUBSCRIPTION);
             prefService.clear(PreferencesService.KEYS.ACCOUNT_PASSWORD);
             prefService.clear(PreferencesService.KEYS.API_PROVIDER_ID);
+            prefService.clear(PreferencesService.KEYS.ACCOUNT_PARENTAL_PASSWORD);
         }
 
-        prefService.save(PreferencesService.KEYS.ACCOUNT_PARENTAL_PASSWORD, response.getParentalPass());
         prefService.save(PreferencesService.KEYS.ACCOUNT_LANGUAGE, response.getInterfaceLang());
-        prefService.save(PreferencesService.KEYS.ACCOUNT_MEDIA_SERVERS, (LinkedHashMap<Integer, String>) response.getMediaServers());
+        prefService.save(PreferencesService.KEYS.ACCOUNT_MEDIA_SERVERS, (LinkedHashMap<String, String>) response.getMediaServers());
         prefService.save(PreferencesService.KEYS.ACCOUNT_MEDIA_SERVER_ID, response.getMediaServerId());
         prefService.save(PreferencesService.KEYS.ACCOUNT_REST_OF_DAY, response.getRestOfDay());
         prefService.save(PreferencesService.KEYS.ACCOUNT_TIME_SHIFT, response.getTimeShift());

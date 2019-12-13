@@ -56,10 +56,10 @@ public class PolskaTvPreferencesService implements PreferencesService {
     }
 
     @Override
-    public void save(KEYS key, LinkedHashMap<Integer, String> value) {
+    public void save(KEYS key, LinkedHashMap<String, String> value) {
         try {
             JSONArray arr = new JSONArray();
-            for (Integer index : value.keySet()) {
+            for (String index : value.keySet()) {
                 JSONObject json = new JSONObject();
 
                 json.put("id", index);
@@ -117,17 +117,17 @@ public class PolskaTvPreferencesService implements PreferencesService {
     }
 
     @Override
-    public Map<Integer, String> get(KEYS key, LinkedHashMap<Integer, String> defaultValue) {
+    public Map<String, String> get(KEYS key, LinkedHashMap<String, String> defaultValue) {
         try {
             String data = prefs.getString(key.getValue(), null);
             if (data == null)
                 return defaultValue;
 
-            LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+            LinkedHashMap<String, String> map = new LinkedHashMap<>();
             JSONArray arr = new JSONArray(data);
             for (int i = 0; i < arr.length(); i++) {
                 JSONObject json = arr.getJSONObject(i);
-                map.put(json.getInt("id"), json.getString("name"));
+                map.put(json.getString("id"), json.getString("name"));
             }
             return map;
         } catch (Exception e) {

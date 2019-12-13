@@ -6,11 +6,9 @@ import com.kristurek.polskatv.iptv.core.dto.LoginResponse;
 import com.kristurek.polskatv.iptv.core.exception.IptvException;
 import com.kristurek.polskatv.iptv.core.exception.IptvValidatorException;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.retrofit.PolskaTelewizjaUsaApiFactory;
-import com.kristurek.polskatv.iptv.polskatelewizjausa.util.ExceptionHelper;
+import com.kristurek.polskatv.iptv.common.ExceptionHelper;
 import com.kristurek.polskatv.util.TestExceptionHelper;
 
-import org.joda.time.LocalDate;
-import org.joda.time.format.DateTimeFormat;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -80,11 +78,8 @@ public class PolskaTelewizjaUsaLoginServiceTest {
         LoginResponse responseDTO = service.login(new LoginRequest("user", "password"));
 
         assertNotNull(responseDTO);
-        assertEquals("3736223480e8b6e280640cc4d94b0204", responseDTO.getSid());
-        assertEquals(LocalDate.parse("2019-04-14", DateTimeFormat.forPattern("yyyy-MM-dd")), responseDTO.getBeginDate());
-        assertEquals(LocalDate.parse("2019-05-14", DateTimeFormat.forPattern("yyyy-MM-dd")), responseDTO.getEndDate());
         assertEquals("ru", responseDTO.getInterfaceLang());
-        assertEquals(0, responseDTO.getMediaServerId());
+        assertEquals("0", responseDTO.getMediaServerId());
         assertEquals("1111", responseDTO.getParentalPass());
         assertEquals(29, responseDTO.getRestOfDay());
         assertEquals(0, responseDTO.getTimeShift());

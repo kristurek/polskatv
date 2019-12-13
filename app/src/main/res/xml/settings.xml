@@ -30,7 +30,7 @@
             android:dialogTitle="@string/language_dialog_settings"
             android:key="__ACCOUNT_LANGUAGE__"
             android:title="@string/language_title_settings" />
-        <com.kristurek.polskatv.ui.view.XIntegerListPreference
+        <ListPreference
             android:dialogTitle="@string/media_server_dialog_settings"
             android:key="__ACCOUNT_MEDIA_SERVER_ID__"
             android:title="@string/media_server_title_settings" />

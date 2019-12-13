@@ -21,8 +21,8 @@ import com.kristurek.polskatv.service.DiagnosticService;
 import com.kristurek.polskatv.service.LoggerService;
 import com.kristurek.polskatv.service.PreferencesService;
 import com.kristurek.polskatv.service.RemoteServerService;
-import com.kristurek.polskatv.ui.settings.interactor.PersistSettingsInteractor;
 import com.kristurek.polskatv.ui.settings.interactor.GenerateAndUploadLogsInteractor;
+import com.kristurek.polskatv.ui.settings.interactor.PersistSettingsInteractor;
 import com.kristurek.polskatv.ui.view.XTimeDialogPreference;
 import com.kristurek.polskatv.ui.view.XTimePreferenceDialogFragmentCompat;
 import com.kristurek.polskatv.util.DateTimeHelper;
@@ -125,12 +125,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         accountLanguagePref.setOnPreferenceChangeListener(this);
 
         ListPreference accountMediaServerPref = (ListPreference) findPreference(ACCOUNT_MEDIA_SERVER_ID.getValue());
-        Map<Integer, String> mediaServers = prefService.get(ACCOUNT_MEDIA_SERVERS, new LinkedHashMap<>());
+        Map<String, String> mediaServers = prefService.get(ACCOUNT_MEDIA_SERVERS, new LinkedHashMap<>());
         List<CharSequence> entries = new ArrayList<>();
         List<CharSequence> entryValues = new ArrayList<>();
-        for (Map.Entry<Integer, String> entry : mediaServers.entrySet()) {
+        for (Map.Entry<String, String> entry : mediaServers.entrySet()) {
             entries.add(entry.getValue());
-            entryValues.add(entry.getKey().toString());
+            entryValues.add(entry.getKey());
         }
         accountMediaServerPref.setEntries(entries.toArray(new CharSequence[0]));
         accountMediaServerPref.setEntryValues(entryValues.toArray(new CharSequence[0]));
@@ -168,10 +168,10 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         applicationFontSizePref.setEntryValues(FontHelper.SIZES.names());
         applicationFontSizePref.setOnPreferenceChangeListener(this);
 
-        LinkedHashMap<Integer, String> allChannels = (LinkedHashMap<Integer, String>) prefService.get(PreferencesService.KEYS.APPLICATION_ALL_CHANNELS, new LinkedHashMap<>());
+        LinkedHashMap<String, String> allChannels = (LinkedHashMap<String, String>) prefService.get(PreferencesService.KEYS.APPLICATION_ALL_CHANNELS, new LinkedHashMap<>());
         List<CharSequence> entriesAllChannels = new ArrayList<>();
         List<CharSequence> entryValuesAllChannels = new ArrayList<>();
-        for (Map.Entry<Integer, String> entry : allChannels.entrySet()) {
+        for (Map.Entry<String, String> entry : allChannels.entrySet()) {
             entriesAllChannels.add(entry.getValue());
             entryValuesAllChannels.add(String.valueOf(entry.getKey()));
         }

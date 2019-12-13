@@ -32,6 +32,7 @@ public class InitializeEpgsInteractor extends ArrayParamAbstractInteractor<List<
     protected List<EpgModel> process(Object... param) throws Exception {
         Integer channelId = (Integer) param[0];
         LocalDate day = (LocalDate) param[1];
+        String channelName = (String) param[2];
 
         Log.d(Tag.UI, "InitializeEpgsInteractor.process()[" + channelId + "," + day + "]");
 
@@ -46,8 +47,8 @@ public class InitializeEpgsInteractor extends ArrayParamAbstractInteractor<List<
         for (Epg epgDTO : response.getEpgs()) {
             EpgModel epgModel = new EpgModel();
 
-            epgModel.setChannelId(epgDTO.getChannelId());
-            epgModel.setChannelName(epgDTO.getChannelName());
+            epgModel.setChannelId(channelId);
+            epgModel.setChannelName(channelName);
             epgModel.setTitle(epgDTO.getTitle());
             epgModel.setDescription(epgDTO.getDescription());
             epgModel.setTime(DateTimeHelper.unixTimeToString(epgDTO.getBeginTime(), DateTimeHelper.HHmm));

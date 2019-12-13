@@ -113,6 +113,5 @@ public class PolskaTelewizjaUsaLogoutServiceTest {
 
         LogoutResponse responseDTO = service.logout(new LogoutRequest());
         assertNotNull(responseDTO);
-        assertEquals(responseDTO.getMessage(),"OK");
     }
 }
