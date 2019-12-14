@@ -44,13 +44,14 @@ public class SimilarEpgsDialogFragment extends AbstractDialogFragment implements
         return frag;
     }
 
-    public static SimilarEpgsDialogFragment newInstanceOneChannel(String title, Integer id) {
+    public static SimilarEpgsDialogFragment newInstanceOneChannel(String title, Integer id, String name) {
         SimilarEpgsDialogFragment frag = new SimilarEpgsDialogFragment();
         Bundle args = new Bundle();
 
         args.putSerializable("many_channels", false);
         args.putSerializable("title", title);
         args.putSerializable("id", id);
+        args.putSerializable("name", name);
 
         frag.setArguments(args);
         return frag;
@@ -116,11 +117,12 @@ public class SimilarEpgsDialogFragment extends AbstractDialogFragment implements
         });
 
         String title = (String) getArguments().getSerializable("title");
+        String name = (String) getArguments().getSerializable("name");
         Integer id = (Integer) getArguments().getSerializable("id");
         Boolean manyChannels = (Boolean) getArguments().getSerializable("many_channels");
 
         loadingView.setVisibility(View.VISIBLE);
-        viewModel.initialize(id, title, manyChannels);
+        viewModel.initialize(id, title, manyChannels, name);
 
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
     }

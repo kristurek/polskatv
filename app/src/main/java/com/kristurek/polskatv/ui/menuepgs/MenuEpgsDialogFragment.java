@@ -65,7 +65,7 @@ public class MenuEpgsDialogFragment extends DialogFragment {
 
         findAllSimilarInOneChannelBtn.setOnClickListener(v -> {
             dismiss();
-            SimilarEpgsDialogFragment dialog = SimilarEpgsDialogFragment.newInstanceOneChannel(title, id);
+            SimilarEpgsDialogFragment dialog = SimilarEpgsDialogFragment.newInstanceOneChannel(title, id, name);
             dialog.show(getFragmentManager(), "SimilarEpgsDialogFragment");
         });
 

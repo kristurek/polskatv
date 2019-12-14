@@ -34,6 +34,7 @@ public class FindSimilarEpgsInteractor extends ArrayParamAbstractInteractor<List
         Integer channelId = (Integer) param[0];
         String title = (String) param[1];
         Boolean manyChannels = (Boolean) param[2];
+        String channelName = (String) param[3];
 
         Log.d(Tag.UI, "FindSimilarEpgsInteractor.process()[" + channelId + "," + title + "," + manyChannels + "]");
 
@@ -64,7 +65,7 @@ public class FindSimilarEpgsInteractor extends ArrayParamAbstractInteractor<List
             EpgModel epgModel = new EpgModel();
 
             epgModel.setChannelId(channelId);
-            //epgModel.setChannelName(channelName); TODO FIXME
+            epgModel.setChannelName(channelName);
             epgModel.setTitle(epgDTO.getTitle());
             epgModel.setDescription(epgDTO.getDescription());
             epgModel.setTime(DateTimeHelper.unixTimeToString(epgDTO.getBeginTime(), DateTimeHelper.HHmm));

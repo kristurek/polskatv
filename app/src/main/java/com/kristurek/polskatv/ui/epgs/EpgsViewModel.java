@@ -246,13 +246,13 @@ public class EpgsViewModel extends AbstractViewModel {
         LocalDate currentDay = DateTimeHelper.unixTimeToLocalDate(event.getEpgCurrentTime());
 
         disposables.add(new InitializeEpgsInteractor(iptvService)
-                .execute(event.getChannelId(), currentDay)
+                .execute(event.getChannelId(), currentDay, event.getChannelName())
                 .flatMap(epgModels -> {
                             if (!epgModels.isEmpty()) {
                                 if (event.getEpgCurrentTime() < epgModels.iterator().next().getBeginTime())
-                                    return new InitializeEpgsInteractor(iptvService).execute(event.getChannelId(), DateTimeHelper.getPreviousDay(currentDay));
+                                    return new InitializeEpgsInteractor(iptvService).execute(event.getChannelId(), DateTimeHelper.getPreviousDay(currentDay), event.getChannelName());
                                 if (event.getEpgCurrentTime() > Iterables.getLast(epgModels).getEndTime())
-                                    return new InitializeEpgsInteractor(iptvService).execute(event.getChannelId(), DateTimeHelper.getNextDay(currentDay));
+                                    return new InitializeEpgsInteractor(iptvService).execute(event.getChannelId(), DateTimeHelper.getNextDay(currentDay), event.getChannelName());
                             }
                             return Single.just(epgModels);
                         }

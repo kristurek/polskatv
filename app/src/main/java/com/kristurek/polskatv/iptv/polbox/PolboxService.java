@@ -3,6 +3,8 @@ package com.kristurek.polskatv.iptv.polbox;
 import android.util.Log;
 
 import com.google.common.base.Joiner;
+import com.kristurek.polskatv.iptv.common.ExceptionHelper;
+import com.kristurek.polskatv.iptv.common.ValidatorBean;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.iptv.core.dto.ChannelsRequest;
 import com.kristurek.polskatv.iptv.core.dto.ChannelsResponse;
@@ -20,6 +22,8 @@ import com.kristurek.polskatv.iptv.core.dto.SimilarEpgsRequest;
 import com.kristurek.polskatv.iptv.core.dto.SimilarEpgsResponse;
 import com.kristurek.polskatv.iptv.core.dto.UrlRequest;
 import com.kristurek.polskatv.iptv.core.dto.UrlResponse;
+import com.kristurek.polskatv.iptv.core.dto.common.Epg;
+import com.kristurek.polskatv.iptv.core.dto.common.enumeration.EpgType;
 import com.kristurek.polskatv.iptv.core.exception.IptvException;
 import com.kristurek.polskatv.iptv.core.exception.IptvSubscriptionExpiredException;
 import com.kristurek.polskatv.iptv.core.exception.IptvValidatorException;
@@ -28,17 +32,21 @@ import com.kristurek.polskatv.iptv.polbox.converter.CurrentEpgsConverter;
 import com.kristurek.polskatv.iptv.polbox.converter.EpgsConverter;
 import com.kristurek.polskatv.iptv.polbox.converter.LoginConverter;
 import com.kristurek.polskatv.iptv.polbox.converter.LogoutConverter;
+import com.kristurek.polskatv.iptv.polbox.converter.SettingsConverter;
 import com.kristurek.polskatv.iptv.polbox.converter.UnionEpgsConverter;
 import com.kristurek.polskatv.iptv.polbox.converter.UrlConverter;
 import com.kristurek.polskatv.iptv.polbox.endpoint.PolboxApi;
 import com.kristurek.polskatv.iptv.polbox.pojo.epgs.EpgsRetrofitResponse;
-import com.kristurek.polskatv.iptv.polbox.converter.SettingsConverter;
-import com.kristurek.polskatv.iptv.common.ExceptionHelper;
-import com.kristurek.polskatv.iptv.common.ValidatorBean;
 import com.kristurek.polskatv.iptv.util.Tag;
 import com.kristurek.polskatv.util.DateTimeHelper;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.text.similarity.JaroWinklerDistance;
 import org.joda.time.LocalDate;
+
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -124,13 +132,13 @@ public class PolboxService extends BasePolboxService implements IptvService {
         if (!ValidatorBean.validate(request) || request.getChannelIds().isEmpty())
             throw new IptvValidatorException(ExceptionHelper.VALIDATOR_MSG);
 
-        String currentDay = DateTimeHelper.unixTimeToString(request.getFromBeginTime(), DateTimeHelper.ddMMMyy);
+        String currentDay = DateTimeHelper.unixTimeToString(request.getFromBeginTime(), DateTimeHelper.ddMMyy);
 
         LocalDate previousDayLD = DateTimeHelper.getPreviousDay(DateTimeHelper.unixTimeToLocalDate(request.getFromBeginTime()));
-        String previousDay = previousDayLD != null ? DateTimeHelper.localDateToString(previousDayLD, DateTimeHelper.ddMMMyy) : null;
+        String previousDay = previousDayLD != null ? DateTimeHelper.localDateToString(previousDayLD, DateTimeHelper.ddMMyy) : null;
 
         LocalDate nextDayLD = DateTimeHelper.getNextDay(DateTimeHelper.unixTimeToLocalDate(request.getFromBeginTime()));
-        String nextDay = nextDayLD != null ? DateTimeHelper.localDateToString(nextDayLD, DateTimeHelper.ddMMMyy) : null;
+        String nextDay = nextDayLD != null ? DateTimeHelper.localDateToString(nextDayLD, DateTimeHelper.ddMMyy) : null;
 
         String cid = Joiner.on(",").join(request.getChannelIds());
 
@@ -185,7 +193,39 @@ public class PolboxService extends BasePolboxService implements IptvService {
 
     @Override
     public SimilarEpgsResponse getSimilarEpgs(SimilarEpgsRequest request) throws IptvException {
-        return new SimilarEpgsResponse();
+        Log.d(Tag.API, "Polbox.getSimilarEpgs(" + request + ")");
+
+        if (!ValidatorBean.validate(request))
+            throw new IptvValidatorException(ExceptionHelper.VALIDATOR_MSG);
+
+        if (request.getChannelIds().size() > 1)
+            throw new IptvException(ExceptionHelper.UNSUPPORTED_FUNCTIONALITY_MSG);
+
+        List<LocalDate> days = DateTimeHelper.generateDays();
+
+        List<Epg> results = new LinkedList<>();
+        for (LocalDate day : days) {
+            EpgsRequest epgsRequest = new EpgsRequest();
+            epgsRequest.setChannelIds(request.getChannelIds());
+            epgsRequest.setFromBeginTime(DateTimeHelper.localDateToUnixTime(day));
+
+            EpgsResponse lResults = getEpgs(epgsRequest);
+            results.addAll(lResults.getEpgs());
+        }
+
+        JaroWinklerDistance jaroWinklerDistance = new JaroWinklerDistance();
+        CollectionUtils.filter(results, epg -> {
+            double result = jaroWinklerDistance.apply(request.getTitle(), epg.getTitle());
+            return result > 0.80 && epg.getType().equals(EpgType.ARCHIVE_EPG);
+        });
+
+        Collections.reverse(results);
+
+        SimilarEpgsResponse response = new SimilarEpgsResponse();
+        response.setEpgs(results);
+
+        Log.d(Tag.API, "Polbox.getSimilarEpgs(" + response + ")");
+        return response;
     }
 
 

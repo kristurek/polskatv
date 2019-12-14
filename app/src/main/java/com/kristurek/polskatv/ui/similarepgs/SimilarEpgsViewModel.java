@@ -54,13 +54,13 @@ public class SimilarEpgsViewModel extends AbstractViewModel {
         loading.setValue(false);
     }
 
-    public void initialize(Integer channelId, String title, Boolean manyChannels) {
-        Log.d(Tag.UI, "SimilarEpgsViewModel.initializeEpgs()[" + channelId + ", " + title + "]");
+    public void initialize(Integer channelId, String title, Boolean manyChannels, String channelName) {
+        Log.d(Tag.UI, "SimilarEpgsViewModel.initializeEpgs()[" + channelId + ", " + title + ", " + channelName + "]");
 
         loading.postValue(true);
 
         disposables.add(new FindSimilarEpgsInteractor(iptvService, prefService)
-                .execute(channelId, title, manyChannels)
+                .execute(channelId, title, manyChannels, channelName)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(result -> postProcessAfterInitializationEpgs(result), throwable -> notifyException(throwable)));

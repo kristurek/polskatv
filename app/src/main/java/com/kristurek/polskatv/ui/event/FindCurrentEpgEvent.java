@@ -1,11 +1,11 @@
 package com.kristurek.polskatv.ui.event;
 
 import com.kristurek.polskatv.ui.arch.Event;
-import com.kristurek.polskatv.ui.epgs.model.EpgType;
 
 public class FindCurrentEpgEvent implements Event {
 
     private int channelId;
+    private String channelName;
     private long epgCurrentTime;
 
     public int getChannelId() {
@@ -14,6 +14,14 @@ public class FindCurrentEpgEvent implements Event {
 
     public void setChannelId(int channelId) {
         this.channelId = channelId;
+    }
+
+    public String getChannelName() {
+        return channelName;
+    }
+
+    public void setChannelName(String channelName) {
+        this.channelName = channelName;
     }
 
     public long getEpgCurrentTime() {
@@ -28,6 +36,7 @@ public class FindCurrentEpgEvent implements Event {
     public String toString() {
         final StringBuilder sb = new StringBuilder("FindCurrentEpgEvent{");
         sb.append("channelId=").append(channelId);
+        sb.append(", channelName=").append(channelName);
         sb.append(", epgCurrentTime=").append(epgCurrentTime);
         sb.append('}');
         return sb.toString();
