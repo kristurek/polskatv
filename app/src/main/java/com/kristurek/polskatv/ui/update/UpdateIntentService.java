@@ -50,7 +50,12 @@ public class UpdateIntentService extends IntentService {
 
             List<String> files = remoteService.downloadListFileNames("/apk");
             if (!files.isEmpty()) {
-                Collections.sort(files, (file1, file2) -> file1.replaceAll("\\D+", "").compareTo(file2.replaceAll("\\D+", "")));
+
+                Collections.sort(files, (file1, file2) -> {
+                    int version1 = Integer.valueOf(file1.replaceAll("\\D+", ""));
+                    int version2 = Integer.valueOf(file2.replaceAll("\\D+", ""));
+                    return version1 - version2;
+                });
 
                 Log.d(Tag.UI, "UpdateIntentService.onHandleIntent()[" + files + "]");
 
