@@ -2,13 +2,13 @@ package com.kristurek.polskatv.iptv.polbox;
 
 import android.util.Log;
 
+import com.kristurek.polskatv.iptv.common.Converter;
+import com.kristurek.polskatv.iptv.common.ExceptionHelper;
 import com.kristurek.polskatv.iptv.core.exception.IptvConverterException;
 import com.kristurek.polskatv.iptv.core.exception.IptvException;
 import com.kristurek.polskatv.iptv.core.exception.common.ExceptionModel;
-import com.kristurek.polskatv.iptv.common.Converter;
 import com.kristurek.polskatv.iptv.polbox.pojo.common.BaseRetrofitResponse;
 import com.kristurek.polskatv.iptv.polbox.pojo.error.ErrorRetrofitResponse;
-import com.kristurek.polskatv.iptv.common.ExceptionHelper;
 import com.kristurek.polskatv.iptv.util.Tag;
 
 import java.util.concurrent.Callable;
@@ -16,18 +16,16 @@ import java.util.concurrent.Callable;
 import retrofit2.Call;
 import retrofit2.Response;
 
-public abstract class BasePolboxService {//TODO potencially merge to BasePolskaTelewizjaUsaService and move to common
+public abstract class BasePolboxService {
 
-    private static final String SESSION_TIME_OUT = "STIMEOUT";//TODO
-    private static final String NO_SUCH_SESSION = "NO_SUCH_SESSION";
-    private static final String WRONG_SID = "WRONG_SID";
+    private static final String ANOTHER_CLIENT_WAS_LOGGED = "11";
 
     protected static <R> R process(Converter converter, Callable<Call<BaseRetrofitResponse>> callableService, Callable<?> autoReLoginService) throws IptvException {
         try {
             return process(converter, callableService);
         } catch (IptvException e) {
-            Log.d(Tag.API+".TEST",e.getMessage());
-            if (e.getException() != null && (e.getException().getCode().equals(SESSION_TIME_OUT) || e.getException().getCode().equals(NO_SUCH_SESSION) || e.getException().getCode().equals(WRONG_SID))) {
+            Log.d(Tag.API, e.getMessage());
+            if (e.getException() != null && (e.getException().getCode().equals(ANOTHER_CLIENT_WAS_LOGGED))) {
                 tryReLoginProcess(autoReLoginService);
                 return process(converter, callableService);
             } else
@@ -64,9 +62,9 @@ public abstract class BasePolboxService {//TODO potencially merge to BasePolskaT
             if (!response.isSuccessful())
                 throw prepareException(response);
 
-            if (response.body() instanceof ErrorRetrofitResponse)
+            if (response.body() instanceof ErrorRetrofitResponse) {
                 throw prepareException((ErrorRetrofitResponse) response.body());
-
+            }
             return convert(response.body(), converter);
         } catch (IptvException e) {
             Log.e(Tag.API, "BasePolboxService.process()", e);
