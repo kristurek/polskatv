@@ -48,15 +48,12 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.inject.Inject;
-
 public class PolboxService extends BasePolboxService implements IptvService {
 
     private PolboxApi api;
 
     private LoginRequest reLoginRequest;
 
-    @Inject
     public PolboxService(PolboxApi api) {
         this.api = api;
     }

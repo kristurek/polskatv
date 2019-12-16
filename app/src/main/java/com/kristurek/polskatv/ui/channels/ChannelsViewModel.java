@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Iterables;
+import com.kristurek.polskatv.iptv.FactoryService;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.service.PreferencesService;
 import com.kristurek.polskatv.ui.arch.AbstractViewModel;
@@ -54,9 +55,8 @@ public class ChannelsViewModel extends AbstractViewModel {
     private Context context;
     private Timer timer;
 
-    public ChannelsViewModel(Context context,
-                             IptvService iptvService, PreferencesService prefService) {
-        this.iptvService = iptvService;
+    public ChannelsViewModel(Context context, PreferencesService prefService) {
+        this.iptvService = FactoryService.SERVICE.getInstance();
         this.prefService = prefService;
         this.context = context;
 

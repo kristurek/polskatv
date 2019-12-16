@@ -16,6 +16,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import com.kristurek.polskatv.BuildConfig;
 import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
+import com.kristurek.polskatv.iptv.FactoryService;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.service.DiagnosticService;
 import com.kristurek.polskatv.service.LoggerService;
@@ -65,7 +66,6 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
     @Inject
     public PreferencesService prefService;
-    @Inject
     public IptvService iptvService;
     @Inject
     public RemoteServerService remoteService;
@@ -93,6 +93,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void onResume() {
         super.onResume();
         getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+
+        iptvService= FactoryService.SERVICE.getInstance();
     }
 
     @Override

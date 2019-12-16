@@ -4,6 +4,7 @@ import android.content.Context;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.kristurek.polskatv.iptv.FactoryService;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.service.PreferencesService;
 import com.kristurek.polskatv.ui.arch.AbstractViewModel;
@@ -30,9 +31,8 @@ public class MainViewModel extends AbstractViewModel {
     //==============================================================================================
 
     public MainViewModel(Context context,
-                         IptvService iptvService,
                          PreferencesService prefService) {
-        this.iptvService = iptvService;
+        this.iptvService = FactoryService.SERVICE.getInstance();
         this.prefService = prefService;
         this.context = context;
 

@@ -14,7 +14,10 @@ public class UrlConverter implements Converter<UrlRetrofitResponse, UrlResponse>
 
         UrlResponse responseDTO = new UrlResponse();
 
-        responseDTO.setUrl(response.getUrl().replace("/ts",""));
+        String url = response.getUrl().replace("/ts","");
+        url = url.split(" ", 2)[0];
+
+        responseDTO.setUrl(url);
         responseDTO.setUserAgent("Polbox.TV 3.0.0B - Windows, built at Jul 18 2016");
 
         Log.d(Tag.API, "UrlConverter.convert(" + responseDTO + ")");

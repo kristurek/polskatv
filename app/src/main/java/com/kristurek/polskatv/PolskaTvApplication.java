@@ -26,8 +26,6 @@ public class PolskaTvApplication extends android.app.Application implements Cons
     @Inject
     public PreferencesService prefService;
     @Inject
-    public IptvService iptvService;
-    @Inject
     public RemoteServerService remoteService;
     @Inject
     public LoggerService logService;
@@ -44,7 +42,7 @@ public class PolskaTvApplication extends android.app.Application implements Cons
 
         PolskaTvApplication.getComponent().inject(this);
 
-        ViewModelFactory.initialize(this, iptvService, prefService, remoteService, logService, diagService);
+        ViewModelFactory.initialize(this, prefService, remoteService, logService, diagService);
 
         DateTimeHelper.setSelectedTimeZoneId(prefService.get(PreferencesService.KEYS.APPLICATION_TIME_ZONE, DateTimeHelper.DEFAULT_TIME_ZONE_ID));
         FontHelper.setFontSize(prefService.get(PreferencesService.KEYS.APPLICATION_FONT_SIZE, FontHelper.DEFAULT_FONT_SIZE));

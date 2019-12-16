@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Debug;
 
 import com.kristurek.polskatv.BuildConfig;
+import com.kristurek.polskatv.iptv.ServiceProvider;
 import com.kristurek.polskatv.service.DiagnosticService;
 import com.kristurek.polskatv.service.PreferencesService;
 
@@ -89,8 +90,8 @@ public class PolskaTvDiagnosticService implements DiagnosticService {
         report.append("Password: ");
         report.append(preferencesService.get(ACCOUNT_PASSWORD, "None"));
         report.append(LINE_SEPARATOR);
-        report.append("Api provider ID: ");
-        report.append(preferencesService.get(API_PROVIDER_ID, 0));
+        report.append("Api provider: ");
+        report.append(ServiceProvider.valueOfClazz(preferencesService.get(API_PROVIDER_ID, 0)));
         report.append(LINE_SEPARATOR);
         report.append("Parental pass: ");
         report.append(preferencesService.get(ACCOUNT_PARENTAL_PASSWORD, "None"));

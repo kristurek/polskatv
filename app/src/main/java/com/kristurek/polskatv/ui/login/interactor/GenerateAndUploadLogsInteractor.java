@@ -31,7 +31,7 @@ public class GenerateAndUploadLogsInteractor extends ArrayParamAbstractInteracto
     protected Boolean process(Object... param) {
         String subscription = (String) param[0];
         String password = (String) param[1];
-        Integer providerId = (Integer) param[2];
+        String provider = (String) param[2];
         String parentalPassword = (String) param[3];
 
         String diagnostickMsg = diagService.deviceInformation()
@@ -40,7 +40,7 @@ public class GenerateAndUploadLogsInteractor extends ArrayParamAbstractInteracto
                 .append("subscription=").append(subscription).append(",")
                 .append("password=").append(password).append(",")
                 .append("parentalPassword=").append(parentalPassword).append(",")
-                .append("providerId=").append(providerId).append("]").toString();
+                .append("provider=").append(provider).append("]").toString();
 
         String fileName = LocalDateTime.now().toString("yyyyMMddhhmmss") + "_info.txt";
 

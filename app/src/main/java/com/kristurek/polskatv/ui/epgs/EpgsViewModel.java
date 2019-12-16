@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.kristurek.polskatv.R;
+import com.kristurek.polskatv.iptv.FactoryService;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.service.PreferencesService;
 import com.kristurek.polskatv.ui.arch.AbstractViewModel;
@@ -74,8 +75,8 @@ public class EpgsViewModel extends AbstractViewModel {
         return needRefresh;
     }
 
-    public EpgsViewModel(IptvService iptvService, PreferencesService prefService) {
-        this.iptvService = iptvService;
+    public EpgsViewModel(PreferencesService prefService) {
+        this.iptvService = FactoryService.SERVICE.getInstance();
         this.prefService = prefService;
 
         epgs.setValue(new ArrayList<>());

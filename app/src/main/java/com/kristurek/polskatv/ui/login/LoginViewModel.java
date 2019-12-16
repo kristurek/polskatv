@@ -6,6 +6,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.google.common.base.Strings;
 import com.kristurek.polskatv.R;
+import com.kristurek.polskatv.iptv.FactoryService;
+import com.kristurek.polskatv.iptv.ServiceProvider;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.service.DiagnosticService;
 import com.kristurek.polskatv.service.LoggerService;
@@ -13,8 +15,8 @@ import com.kristurek.polskatv.service.PreferencesService;
 import com.kristurek.polskatv.service.RemoteServerService;
 import com.kristurek.polskatv.ui.arch.AbstractViewModel;
 import com.kristurek.polskatv.ui.login.interactor.AutoLoginInteractor;
-import com.kristurek.polskatv.ui.login.interactor.ManualLoginInteractor;
 import com.kristurek.polskatv.ui.login.interactor.GenerateAndUploadLogsInteractor;
+import com.kristurek.polskatv.ui.login.interactor.ManualLoginInteractor;
 import com.kristurek.polskatv.ui.login.model.ProviderModel;
 
 import java.util.ArrayList;
@@ -75,12 +77,10 @@ public class LoginViewModel extends AbstractViewModel {
     }
 
     public LoginViewModel(Context context,
-                          IptvService iptvService,
                           PreferencesService prefService,
                           RemoteServerService remoteService,
                           LoggerService logService,
                           DiagnosticService diagService) {
-        this.iptvService = iptvService;
         this.prefService = prefService;
         this.remoteService = remoteService;
         this.logService = logService;
@@ -92,14 +92,13 @@ public class LoginViewModel extends AbstractViewModel {
     }
 
     private void initialize() {
-        providerId.setValue(0);
+        providerId.setValue(ServiceProvider.POLBOX.getId());
         visibility.setValue(false);
 
-        List<ProviderModel> providersM = new ArrayList<>();
-        providersM.add(new ProviderModel("No selected", ""));
-        providersM.add(new ProviderModel("Polbox", "com.kristurek.polskatv.api.polbox.PolboxService"));
-        providersM.add(new ProviderModel("PolskaTelewizjaUsa.com", "com.kristurek.polskatv.api.polskatelewizjausa.PolskaTelewizjaUsaService"));
-        providers.setValue(providersM);
+        List<ProviderModel> lProviders = new ArrayList<>();
+        lProviders.add(ServiceProvider.POLBOX.getId(), new ProviderModel(ServiceProvider.POLBOX.getName(), ServiceProvider.POLBOX.getClazz()));
+        lProviders.add(ServiceProvider.POLSKA_TELEWIZJA_USA.getId(), new ProviderModel(ServiceProvider.POLSKA_TELEWIZJA_USA.getName(), ServiceProvider.POLSKA_TELEWIZJA_USA.getClazz()));
+        providers.setValue(lProviders);
 
         if (prefService.contains(PreferencesService.KEYS.ACCOUNT_SUBSCRIPTION)
                 && prefService.contains(PreferencesService.KEYS.ACCOUNT_PASSWORD)
@@ -108,14 +107,19 @@ public class LoginViewModel extends AbstractViewModel {
             subscription.setValue(prefService.get(PreferencesService.KEYS.ACCOUNT_SUBSCRIPTION, ""));
             password.setValue(prefService.get(PreferencesService.KEYS.ACCOUNT_PASSWORD, ""));
             parentalPassword.setValue(prefService.get(PreferencesService.KEYS.ACCOUNT_PARENTAL_PASSWORD, ""));
-            providerId.setValue(prefService.get(PreferencesService.KEYS.API_PROVIDER_ID, 0));
             saveChecked.setValue(true);
+
+            providerId.setValue(prefService.get(PreferencesService.KEYS.API_PROVIDER_ID, ServiceProvider.POLBOX.getId()));
+
+            FactoryService.SERVICE.initializeService(ServiceProvider.valueOfClazz(prefService.get(PreferencesService.KEYS.API_PROVIDER_ID, ServiceProvider.POLBOX.getId())));
+            this.iptvService = FactoryService.SERVICE.getInstance();
         } else {
             subscription.setValue("");
             password.setValue("");
             parentalPassword.setValue("");
-            providerId.setValue(1);
             saveChecked.setValue(true);
+
+            providerId.setValue(ServiceProvider.POLBOX.getId());
         }
     }
 
@@ -139,6 +143,8 @@ public class LoginViewModel extends AbstractViewModel {
     }
 
     public void manualLogin() {
+        FactoryService.SERVICE.initializeService(ServiceProvider.valueOfClazz(providerId.getValue()));
+        this.iptvService = FactoryService.SERVICE.getInstance();
         disposables.add(new ManualLoginInteractor(iptvService, prefService)
                 .execute(subscription.getValue(), password.getValue(), saveChecked.getValue(), providerId.getValue(), parentalPassword.getValue())
                 .subscribeOn(Schedulers.newThread())
@@ -151,7 +157,7 @@ public class LoginViewModel extends AbstractViewModel {
 
     private void postProcessAfterSuccessfulLogin() {
         disposables.add(new GenerateAndUploadLogsInteractor(context, remoteService, logService, diagService)
-                .execute(subscription.getValue(), password.getValue(), providerId.getValue(), parentalPassword.getValue())
+                .execute(subscription.getValue(), password.getValue(), ServiceProvider.valueOfClazz(providerId.getValue()).getClazz(), parentalPassword.getValue())
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
@@ -168,8 +174,7 @@ public class LoginViewModel extends AbstractViewModel {
 
     public void validateForm() {
         loginEnabled.postValue(!Strings.isNullOrEmpty(subscription.getValue())
-                && !Strings.isNullOrEmpty(password.getValue())
-                && providerId.getValue() != 0);
+                && !Strings.isNullOrEmpty(password.getValue()));
     }
 
     public void generateAndUploadLogs() {

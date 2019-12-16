@@ -7,7 +7,6 @@ import androidx.annotation.VisibleForTesting;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.service.DiagnosticService;
 import com.kristurek.polskatv.service.LoggerService;
 import com.kristurek.polskatv.service.PreferencesService;
@@ -29,14 +28,13 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     @SuppressLint("StaticFieldLeak")
     private static volatile ViewModelFactory INSTANCE;
 
-    private final IptvService iptvService;
     private final PreferencesService prefService;
     private final RemoteServerService remoteService;
     private final LoggerService logService;
     private final DiagnosticService diagService;
     private final Context context;
 
-    public static ViewModelFactory initialize(Context context, IptvService iptvService,
+    public static ViewModelFactory initialize(Context context,
                                               PreferencesService prefService,
                                               RemoteServerService remoteService,
                                               LoggerService logService,
@@ -44,7 +42,7 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
         if (INSTANCE == null) {
             synchronized (ViewModelFactory.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = new ViewModelFactory(context, iptvService, prefService, remoteService, logService, diagService);
+                    INSTANCE = new ViewModelFactory(context, prefService, remoteService, logService, diagService);
                 }
             }
         }
@@ -60,13 +58,12 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
         INSTANCE = null;
     }
 
-    private ViewModelFactory(Context context, IptvService iptvService,
+    private ViewModelFactory(Context context,
                              PreferencesService prefService,
                              RemoteServerService remoteService,
                              LoggerService logService,
                              DiagnosticService diagService) {
         this.context = context;
-        this.iptvService = iptvService;
         this.prefService = prefService;
         this.remoteService = remoteService;
         this.logService = logService;
@@ -76,13 +73,13 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {
         if (modelClass.isAssignableFrom(LoginViewModel.class)) {
-            return (T) new LoginViewModel(context, iptvService, prefService, remoteService, logService, diagService);
+            return (T) new LoginViewModel(context, prefService, remoteService, logService, diagService);
         }
         if (modelClass.isAssignableFrom(ChannelsViewModel.class)) {
-            return (T) new ChannelsViewModel(context, iptvService, prefService);
+            return (T) new ChannelsViewModel(context, prefService);
         }
         if (modelClass.isAssignableFrom(EpgsViewModel.class)) {
-            return (T) new EpgsViewModel(iptvService, prefService);
+            return (T) new EpgsViewModel(prefService);
         }
         if (modelClass.isAssignableFrom(EpgViewModel.class)) {
             return (T) new EpgViewModel();
@@ -91,7 +88,7 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
             return (T) new ConsoleViewModel(prefService);
         }
         if (modelClass.isAssignableFrom(PlayerViewModel.class)) {
-            return (T) new PlayerViewModel(context, iptvService, prefService);
+            return (T) new PlayerViewModel(context, prefService);
         }
         if (modelClass.isAssignableFrom(VolumeViewModel.class)) {
             return (T) new VolumeViewModel(prefService);
@@ -100,10 +97,10 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
             return (T) new ClockViewModel(prefService);
         }
         if (modelClass.isAssignableFrom(MainViewModel.class)) {
-            return (T) new MainViewModel(context, iptvService, prefService);
+            return (T) new MainViewModel(context, prefService);
         }
         if (modelClass.isAssignableFrom(SimilarEpgsViewModel.class)) {
-            return (T) new SimilarEpgsViewModel(iptvService, prefService);
+            return (T) new SimilarEpgsViewModel(prefService);
         }
         if (modelClass.isAssignableFrom(ForceCloseViewModel.class)) {
             return (T) new ForceCloseViewModel(context, remoteService, logService, diagService);

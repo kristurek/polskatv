@@ -2,6 +2,7 @@ package com.kristurek.polskatv;
 
 import android.content.Context;
 
+import com.kristurek.polskatv.iptv.ServiceProvider;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.iptv.polbox.PolboxService;
 import com.kristurek.polskatv.iptv.polbox.retrofit.PolboxApiFactory;
@@ -39,22 +40,9 @@ public class PolskaTvModule {
 
     @Singleton
     @Provides
-    IptvService provideApiService() {
-        return new PolboxService(PolboxApiFactory.create());
-    }
-
-    @Singleton
-    //@Provides
-    IptvService provideMockApiService() {
-        return new PolskaTelewizjaUsaServiceMock(context);
-    }
-
-    @Singleton
-    @Provides
     PreferencesService providePrefService() {
         return new PolskaTvPreferencesService(context);
     }
-
 
     @Singleton
     @Provides

@@ -5,6 +5,8 @@ import android.util.Log;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
+import com.kristurek.polskatv.iptv.common.ExceptionHelper;
+import com.kristurek.polskatv.iptv.common.ValidatorBean;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.iptv.core.dto.ChannelsRequest;
 import com.kristurek.polskatv.iptv.core.dto.ChannelsResponse;
@@ -35,9 +37,7 @@ import com.kristurek.polskatv.iptv.polskatelewizjausa.converter.LogoutConverter;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.converter.SettingsConverter;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.converter.UrlConverter;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.endpoint.PolskaTelewizjaUsaApi;
-import com.kristurek.polskatv.iptv.common.ExceptionHelper;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.util.Md5HashGenerator;
-import com.kristurek.polskatv.iptv.common.ValidatorBean;
 import com.kristurek.polskatv.iptv.util.Tag;
 
 import org.apache.commons.collections4.CollectionUtils;
@@ -48,15 +48,12 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.inject.Inject;
-
 public class PolskaTelewizjaUsaService extends BasePolskaTelewizjaUsaService implements IptvService {
 
     private PolskaTelewizjaUsaApi api;
 
     private LoginRequest reLoginRequest;
 
-    @Inject
     public PolskaTelewizjaUsaService(PolskaTelewizjaUsaApi api) {
         this.api = api;
     }

@@ -18,6 +18,7 @@ import com.google.android.exoplayer2.trackselection.TrackSelection;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
+import com.kristurek.polskatv.iptv.FactoryService;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.service.PreferencesService;
 import com.kristurek.polskatv.ui.arch.AbstractViewModel;
@@ -79,9 +80,8 @@ public class PlayerViewModel extends AbstractViewModel {
     //==============================================================================================
 
     public PlayerViewModel(Context context,
-                           IptvService iptvService,
                            PreferencesService prefService) {
-        this.iptvService = iptvService;
+        this.iptvService = FactoryService.SERVICE.getInstance();
         this.prefService = prefService;
         this.context = context;
 
