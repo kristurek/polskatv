@@ -29,4 +29,11 @@ public class LoginActivity extends AbstractActivity {
         getMenuInflater().inflate(R.menu.login, menu);
         return true;
     }
+
+    @Override
+    public void onBackPressed() {
+        LoginActivity.super.onBackPressed();
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(1);
+    }
 }
