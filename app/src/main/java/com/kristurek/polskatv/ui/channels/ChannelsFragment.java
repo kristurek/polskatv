@@ -20,6 +20,7 @@ import com.kristurek.polskatv.ui.arch.ViewModelFactory;
 import com.kristurek.polskatv.ui.channels.adapter.ChannelsAdapter;
 import com.kristurek.polskatv.ui.event.InitializeChannelsEvent;
 import com.kristurek.polskatv.ui.event.RecreateAppEvent;
+import com.kristurek.polskatv.ui.event.ReselectChannelEvent;
 import com.kristurek.polskatv.ui.view.XListView;
 import com.kristurek.polskatv.util.Focus;
 import com.kristurek.polskatv.util.FontHelper;
@@ -109,6 +110,12 @@ public class ChannelsFragment extends AbstractFragment implements AdapterView.On
     public void receive(RecreateAppEvent event) {
         Log.d(Tag.EVENT, "ChannelsFragment.receive()[" + event + "]");
         viewModel.recreateChannels(event);
+    }
+
+    @Subscribe(threadMode = ThreadMode.POSTING)
+    public void receive(ReselectChannelEvent event) {
+        Log.d(Tag.EVENT, "ChannelsFragment.receive()[" + event + "]");
+        viewModel.reselectChannels(event);
     }
 
     public void requestFocus(Focus focus) {

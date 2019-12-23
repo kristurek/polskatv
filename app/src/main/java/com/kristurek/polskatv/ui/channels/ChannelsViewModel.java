@@ -14,6 +14,7 @@ import com.kristurek.polskatv.ui.channels.interactor.InitializeChannelsInteracto
 import com.kristurek.polskatv.ui.channels.interactor.UpdateChannelsInteractor;
 import com.kristurek.polskatv.ui.channels.model.ChannelModel;
 import com.kristurek.polskatv.ui.event.RecreateAppEvent;
+import com.kristurek.polskatv.ui.event.ReselectChannelEvent;
 import com.kristurek.polskatv.ui.event.SelectedChannelEvent;
 import com.kristurek.polskatv.util.DateTimeHelper;
 
@@ -132,6 +133,12 @@ public class ChannelsViewModel extends AbstractViewModel {
         event.setChannelName(((ChannelModel) item).getName());
 
         getEventBus().post(event);
+    }
+
+    public void reselectChannels(ReselectChannelEvent event) {
+        Serializable item = Iterables.find(channels.getValue(), input -> input instanceof ChannelModel && ((ChannelModel) input).getId() == event.getChannelId(), null);
+        if (item != null)
+            selectedChannel.postValue(item);
     }
 
     public void initializeChannels() {

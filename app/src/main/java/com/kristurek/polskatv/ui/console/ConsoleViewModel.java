@@ -229,6 +229,7 @@ public class ConsoleViewModel extends AbstractViewModel {
                     FindCurrentEpgEvent event = new FindCurrentEpgEvent();
                     event.setChannelId(model.getChannelId());
                     event.setEpgCurrentTime(model.getEpgCurrentTime() + stepInSeconds);
+                    event.setChannelName(model.getChannelName());
 
                     return event;
                 } else
@@ -242,6 +243,7 @@ public class ConsoleViewModel extends AbstractViewModel {
                     FindCurrentEpgEvent event = new FindCurrentEpgEvent();
                     event.setChannelId(model.getChannelId());
                     event.setEpgCurrentTime(model.getEpgCurrentTime() + stepInSeconds);
+                    event.setChannelName(model.getChannelName());
 
                     return event;
                 } else {

@@ -17,6 +17,7 @@ import com.kristurek.polskatv.ui.epgs.model.EpgType;
 import com.kristurek.polskatv.ui.event.FindCurrentEpgEvent;
 import com.kristurek.polskatv.ui.event.QuietPausePlayerEvent;
 import com.kristurek.polskatv.ui.event.RecreateAppEvent;
+import com.kristurek.polskatv.ui.event.ReselectChannelEvent;
 import com.kristurek.polskatv.ui.event.SelectedChannelEvent;
 import com.kristurek.polskatv.ui.event.SelectedEpgEvent;
 import com.kristurek.polskatv.ui.event.StopPlayerEvent;
@@ -244,6 +245,9 @@ public class EpgsViewModel extends AbstractViewModel {
     public void resolveCurrentEpg(FindCurrentEpgEvent event) {
         Log.d(Tag.EVENT, "EpgsViewModel.resolveCurrentEpg()[" + event + "]");
 
+        selectedChannelId = event.getChannelId();
+        selectedChannelName = event.getChannelName();
+
         LocalDate currentDay = DateTimeHelper.unixTimeToLocalDate(event.getEpgCurrentTime());
 
         disposables.add(new InitializeEpgsInteractor(iptvService)
@@ -285,6 +289,9 @@ public class EpgsViewModel extends AbstractViewModel {
         EpgModel epg = Iterables.find(result, input -> epgCurrentTime >= input.getBeginTime() && epgCurrentTime < input.getEndTime() && !input.getType().equals(EpgType.NOT_AVAILABLE), null);
 
         if (epg != null) {
+            ReselectChannelEvent selectedChannelEvent = new ReselectChannelEvent();
+            selectedChannelEvent.setChannelId(epg.getChannelId());
+
             SelectedEpgEvent selectedEpgEvent = new SelectedEpgEvent();
             selectedDay.postValue(DateTimeHelper.unixTimeToLocalDate(epg.getBeginTime()));
             selectedEpg.postValue(epg);
@@ -303,6 +310,7 @@ public class EpgsViewModel extends AbstractViewModel {
                 selectedEpgEvent.setEpgCurrentTime(epgCurrentTime);
 
             getEventBus().post(new QuietPausePlayerEvent());
+            getEventBus().post(selectedChannelEvent);
             getEventBus().post(selectedEpgEvent);
         } else {
             getEventBus().post(new StopPlayerEvent());
