@@ -18,6 +18,7 @@ import com.kristurek.polskatv.ui.event.ResumePlayerEvent;
 import com.kristurek.polskatv.ui.event.SeekToTimeEvent;
 import com.kristurek.polskatv.ui.event.SelectedEpgEvent;
 import com.kristurek.polskatv.ui.event.StopPlayerEvent;
+import com.kristurek.polskatv.ui.event.StreamEndedEvent;
 import com.kristurek.polskatv.util.Tag;
 
 import java.io.Serializable;
@@ -181,6 +182,24 @@ public class ConsoleViewModel extends AbstractViewModel {
 
         model = null;
     }
+
+    public void replayEpg(StreamEndedEvent event) {
+        Log.d(Tag.EVENT, "ConsoleViewModel.replayEpg()[" + event + "]");
+
+        if (model != null) {
+
+            SeekToTimeEvent seekToTimeEvent = new SeekToTimeEvent();
+
+            seekToTimeEvent.setChannelId(model.getChannelId());
+            seekToTimeEvent.setEpgType(model.getEpgType());
+            seekToTimeEvent.setEpgBeginTime(model.getEpgBeginTime());
+            seekToTimeEvent.setEpgEndTime(model.getEpgEndTime());
+            seekToTimeEvent.setEpgCurrentTime(model.getEpgCurrentTime());
+
+            getEventBus().post(seekToTimeEvent);
+        }
+    }
+
 
     //==============================================================================================
 

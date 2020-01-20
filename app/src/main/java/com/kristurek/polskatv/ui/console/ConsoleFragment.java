@@ -18,6 +18,7 @@ import com.kristurek.polskatv.ui.arch.ViewModelFactory;
 import com.kristurek.polskatv.ui.event.EpgCurrentTimeEvent;
 import com.kristurek.polskatv.ui.event.SelectedEpgEvent;
 import com.kristurek.polskatv.ui.event.StopPlayerEvent;
+import com.kristurek.polskatv.ui.event.StreamEndedEvent;
 import com.kristurek.polskatv.util.Tag;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -111,5 +112,11 @@ public class ConsoleFragment extends AbstractFragment {
         Log.d(Tag.EVENT, "ConsoleFragment.receive()[" + event + "]");
 
         viewModel.stopPlayer(event);
+    }
+
+    @Subscribe(threadMode = ThreadMode.POSTING)
+    public void receive(StreamEndedEvent event) {
+        Log.d(Tag.EVENT, "EpgsFragment.receive()[" + event + "]");
+        viewModel.replayEpg(event);
     }
 }

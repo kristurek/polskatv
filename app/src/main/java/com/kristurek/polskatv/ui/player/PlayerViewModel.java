@@ -28,6 +28,7 @@ import com.kristurek.polskatv.ui.event.QuietPausePlayerEvent;
 import com.kristurek.polskatv.ui.event.ResumePlayerEvent;
 import com.kristurek.polskatv.ui.event.SeekToTimeEvent;
 import com.kristurek.polskatv.ui.event.StopPlayerEvent;
+import com.kristurek.polskatv.ui.event.StreamEndedEvent;
 import com.kristurek.polskatv.ui.event.VolumePlayerEvent;
 import com.kristurek.polskatv.ui.player.interactor.InitializeUrlInteractor;
 import com.kristurek.polskatv.ui.player.model.PlayerModel;
@@ -111,6 +112,9 @@ public class PlayerViewModel extends AbstractViewModel {
                     break;
                 case Player.STATE_ENDED:
                     Log.d(Tag.MASSIVE, "PlayerViewModel.refresh()[Player.STATE_ENDED]");
+
+                    releasePlayer();
+                    getEventBus().post(new StreamEndedEvent());
                     break;
                 case Player.STATE_IDLE:
                     Log.d(Tag.MASSIVE, "PlayerViewModel.refresh()[Player.STATE_IDLE]");
@@ -208,7 +212,7 @@ public class PlayerViewModel extends AbstractViewModel {
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl()[" + result + "]");
 
             TrackSelection.Factory videoTrackSelectionFactory = new AdaptiveTrackSelection.Factory();
-            TrackSelector trackSelector = new DefaultTrackSelector(videoTrackSelectionFactory);
+            TrackSelector trackSelector = new DefaultTrackSelector(context, videoTrackSelectionFactory);
 
             SimpleExoPlayer internalPlayer = ExoPlayerFactory.createInstance(context, trackSelector);
 
@@ -216,7 +220,7 @@ public class PlayerViewModel extends AbstractViewModel {
 
             Uri uri = Uri.parse(result.getUrl());
             //Uri uri = Uri.parse("/storage/emulated/0/download/sd.mp4");
-            String userAgent = Util.getUserAgent(context, result.getUserAgent()); //TODO use custom UserAgent like PolskaTV 12.121 ?
+            String userAgent = Util.getUserAgent(context, result.getUserAgent());
             DefaultHttpDataSourceFactory httpDataSourceFactory = new DefaultHttpDataSourceFactory(userAgent, null, CONNECT_TIMEOUT, READ_TIMEOUT, true);
             //DefaultDataSourceFactory httpDataSourceFactory = new DefaultDataSourceFactory(context,userAgent );
 

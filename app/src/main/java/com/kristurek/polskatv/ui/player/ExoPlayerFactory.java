@@ -15,7 +15,7 @@ public class ExoPlayerFactory {
         if (player == null) {
             synchronized (SimpleExoPlayer.class) {
                 if (player == null) {
-                    player = com.google.android.exoplayer2.ExoPlayerFactory.newSimpleInstance(context, trackSelector);
+                    player = new SimpleExoPlayer.Builder(context).setTrackSelector(trackSelector).build();
                 }
             }
         }
