@@ -31,20 +31,20 @@ public class ChannelsConverter implements Converter<ChannelsRetrofitResponse, Ch
                 if (channel.getIsVideo().equals("1")) {
                     Channel channelDTO = new Channel();
 
-                    channelDTO.setId(Integer.valueOf(channel.getId()));
+                    channelDTO.setId(Integer.parseInt(channel.getId()));
                     channelDTO.setName(channel.getName().replace("\\n", " ").replaceAll("\\p{Cntrl}", ""));
 
                     String pattern = "/dune/polbox/images_v3/";
                     channelDTO.setIcon("polbox/" + channel.getBigIcon().substring(pattern.length()));
 
-                    channelDTO.setType(Integer.valueOf(channel.getHaveArchive()) == 0 ? ChannelType.LIVE_CHANNEL : ChannelType.ARCHIVE_CHANNEL);
+                    channelDTO.setType(Integer.parseInt(channel.getHaveArchive()) == 0 ? ChannelType.LIVE_CHANNEL : ChannelType.ARCHIVE_CHANNEL);
                     if (channel.getEpgProgname() != null) {
                         String sString[] = channel.getEpgProgname().split("\\.", 2);
 
                         channelDTO.setLiveEpgTitle(sString[0].replace("\\n", " ").replaceAll("\\p{Cntrl}", "").trim());
                         channelDTO.setLiveEpgDescription(sString[1].replace("\\n", " ").replaceAll("\\p{Cntrl}", "").trim());
-                        channelDTO.setLiveEpgBeginTime(Long.valueOf(channel.getEpgStart()));
-                        channelDTO.setLiveEpgEndTime(Long.valueOf(channel.getEpgEnd()));
+                        channelDTO.setLiveEpgBeginTime(channel.getEpgStart() != null && !channel.getEpgStart().equals("null") ? Long.parseLong(channel.getEpgStart()) : 0);
+                        channelDTO.setLiveEpgEndTime(channel.getEpgEnd() != null && !channel.getEpgEnd().equals("null") ? Long.parseLong(channel.getEpgEnd()) : 0);
                     }
 
                     channelsDTO.add(channelDTO);
@@ -53,7 +53,7 @@ public class ChannelsConverter implements Converter<ChannelsRetrofitResponse, Ch
 
             Group groupDTO = new Group();
 
-            groupDTO.setId(Integer.valueOf(group.getId()));
+            groupDTO.setId(Integer.parseInt(group.getId()));
             groupDTO.setTitle(group.getName());
 
             if (!channelsDTO.isEmpty())
