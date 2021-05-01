@@ -14,6 +14,7 @@ import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
+import com.google.android.exoplayer2.trackselection.ExoTrackSelection;
 import com.google.android.exoplayer2.trackselection.TrackSelection;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
@@ -211,7 +212,7 @@ public class PlayerViewModel extends AbstractViewModel {
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl()[begin]");
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl()[" + result + "]");
 
-            TrackSelection.Factory videoTrackSelectionFactory = new AdaptiveTrackSelection.Factory();
+            ExoTrackSelection.Factory videoTrackSelectionFactory = new AdaptiveTrackSelection.Factory();
             TrackSelector trackSelector = new DefaultTrackSelector(context, videoTrackSelectionFactory);
 
             SimpleExoPlayer internalPlayer = ExoPlayerFactory.createInstance(context, trackSelector);
