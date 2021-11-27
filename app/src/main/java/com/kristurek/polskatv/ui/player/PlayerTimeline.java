@@ -8,7 +8,7 @@ import com.kristurek.polskatv.util.Tag;
 
 import java.util.concurrent.TimeUnit;
 
-public class PlayerTimeline implements Player.EventListener {
+public class PlayerTimeline implements Player.Listener {
 
     private volatile long actualProgressLastFrame = 0L;
     private volatile long actualProgressTotal = 0L;

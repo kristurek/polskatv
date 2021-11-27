@@ -8,6 +8,8 @@ import android.view.View;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -15,9 +17,9 @@ import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.ExoTrackSelection;
-import com.google.android.exoplayer2.trackselection.TrackSelection;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
+import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.util.Util;
 import com.kristurek.polskatv.iptv.FactoryService;
 import com.kristurek.polskatv.iptv.core.IptvService;
@@ -40,7 +42,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class PlayerViewModel extends AbstractViewModel {
 
-    private MutableLiveData<SimpleExoPlayer> player = new MutableLiveData<>();
+    private MutableLiveData<ExoPlayer> player = new MutableLiveData<>();
     private MutableLiveData<Integer> loading = new MutableLiveData<>();
     private MutableLiveData<Integer> paused = new MutableLiveData<>();
 
@@ -57,7 +59,7 @@ public class PlayerViewModel extends AbstractViewModel {
     private PreferencesService prefService;
     private Context context;
 
-    public MutableLiveData<SimpleExoPlayer> getPlayer() {
+    public MutableLiveData<ExoPlayer> getPlayer() {
         return player;
     }
 
@@ -215,20 +217,24 @@ public class PlayerViewModel extends AbstractViewModel {
             ExoTrackSelection.Factory videoTrackSelectionFactory = new AdaptiveTrackSelection.Factory();
             TrackSelector trackSelector = new DefaultTrackSelector(context, videoTrackSelectionFactory);
 
-            SimpleExoPlayer internalPlayer = ExoPlayerFactory.createInstance(context, trackSelector);
+            ExoPlayer internalPlayer = ExoPlayerFactory.createInstance(context, trackSelector);
 
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl() hash[" + internalPlayer.hashCode() + "]");
 
             Uri uri = Uri.parse(result.getUrl());
             //Uri uri = Uri.parse("/storage/emulated/0/download/sd.mp4");
             String userAgent = Util.getUserAgent(context, result.getUserAgent());
-            DefaultHttpDataSourceFactory httpDataSourceFactory = new DefaultHttpDataSourceFactory(userAgent, null, CONNECT_TIMEOUT, READ_TIMEOUT, true);
-            //DefaultDataSourceFactory httpDataSourceFactory = new DefaultDataSourceFactory(context,userAgent );
+            HttpDataSource.Factory  httpDataSourceFactory= new DefaultHttpDataSource.Factory()
+                    .setUserAgent(userAgent)
+                    .setAllowCrossProtocolRedirects(true)
+                    .setConnectTimeoutMs(CONNECT_TIMEOUT)
+                    .setReadTimeoutMs(READ_TIMEOUT);
 
-            MediaSource source = new ProgressiveMediaSource.Factory(httpDataSourceFactory).createMediaSource(uri);
+            MediaSource source = new ProgressiveMediaSource.Factory(httpDataSourceFactory).createMediaSource(MediaItem.fromUri(uri));
 
             player.postValue(internalPlayer);
-            internalPlayer.prepare(source);
+            internalPlayer.setMediaSource(source);
+            internalPlayer.prepare();
 
             timeline = new PlayerTimeline(result.getEpgCurrentTime());
             internalPlayer.addListener(timeline);
