@@ -14,7 +14,7 @@ public class UrlConverter implements Converter<UrlRetrofitResponse, UrlResponse>
 
         UrlResponse responseDTO = new UrlResponse();
 
-        String url = response.getUrl().replace("/ts","");
+        String url = "http://".concat(response.getUrl().split("//", 2)[1]);
         url = url.split(" ", 2)[0];
 
         responseDTO.setUrl(url);

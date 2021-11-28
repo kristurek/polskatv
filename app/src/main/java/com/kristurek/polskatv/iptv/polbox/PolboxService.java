@@ -166,6 +166,27 @@ public class PolboxService extends BasePolboxService implements IptvService {
     public UrlResponse getUrl(UrlRequest request) throws IptvException {
         Log.d(Tag.API, "Polbox.getUrl(" + request + ")");
 
+        UrlResponse response = null;
+
+        for (int i = 0; i < 5; i++) {
+            response = tryGetUrl(request);
+
+            if (!response.getUrl().contains("http://:/"))
+                return response;
+            else {
+                Log.e(Tag.API, "Polbox.getUrl(" + request + ") found incorrect url, re-try");
+
+                logout(new LogoutRequest());
+                login(reLoginRequest);
+            }
+        }
+
+        return response;
+    }
+
+    private UrlResponse tryGetUrl(UrlRequest request) throws IptvException {
+        Log.d(Tag.API, "Polbox.tryGetUrl(" + request + ")");
+
         if (!ValidatorBean.validate(request))
             throw new IptvValidatorException(ExceptionHelper.VALIDATOR_MSG);
 
