@@ -82,6 +82,5 @@ public class MenuEpgsDialogFragment extends DialogFragment {
         });
 
         descriptionBtn.requestFocusFromTouch();
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
     }
 }

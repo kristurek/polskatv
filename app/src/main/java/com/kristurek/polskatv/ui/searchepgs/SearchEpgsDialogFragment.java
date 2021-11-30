@@ -42,6 +42,5 @@ public class SearchEpgsDialogFragment extends DialogFragment {
         });
 
         searchEpgsInput.requestFocusFromTouch();
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
     }
 }

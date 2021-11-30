@@ -123,8 +123,6 @@ public class SimilarEpgsDialogFragment extends AbstractDialogFragment implements
 
         loadingView.setVisibility(View.VISIBLE);
         viewModel.initialize(id, title, manyChannels, name);
-
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
     }
 
     @NonNull
