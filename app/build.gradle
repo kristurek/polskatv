@@ -31,8 +31,8 @@ android {
         applicationId "com.kristurek.polskatv"
         minSdkVersion 22
         targetSdkVersion 28
-        versionCode 115
-        versionName "115"
+        versionCode 116
+        versionName "116"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         buildConfigField "String", "DROPBOX_TOKEN", "\""+getDropboxToken()+"\""
