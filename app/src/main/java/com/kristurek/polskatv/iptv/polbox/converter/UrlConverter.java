@@ -14,8 +14,14 @@ public class UrlConverter implements Converter<UrlRetrofitResponse, UrlResponse>
 
         UrlResponse responseDTO = new UrlResponse();
 
-        String url = "http://".concat(response.getUrl().split("//", 2)[1]);
-        url = url.split(" ", 2)[0];
+        String url;
+
+        if(!response.getUrl().contains("protected")) {
+            url = "http://".concat(response.getUrl().split("//", 2)[1]);
+            url = url.split(" ", 2)[0];
+        } else {
+            url = response.getUrl();
+        }
 
         responseDTO.setUrl(url);
         responseDTO.setUserAgent("Polbox.TV 3.0.0B - Windows, built at Jul 18 2016");
