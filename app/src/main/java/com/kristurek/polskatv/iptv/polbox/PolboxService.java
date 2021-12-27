@@ -168,7 +168,7 @@ public class PolboxService extends BasePolboxService implements IptvService {
 
         UrlResponse response = null;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 2; i++) {
             response = tryGetUrl(request);
 
             if (!response.getUrl().contains("http://:/"))

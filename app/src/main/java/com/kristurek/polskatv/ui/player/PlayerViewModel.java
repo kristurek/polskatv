@@ -37,6 +37,7 @@ import com.kristurek.polskatv.ui.player.interactor.InitializeUrlInteractor;
 import com.kristurek.polskatv.ui.player.model.PlayerModel;
 import com.kristurek.polskatv.util.Tag;
 
+import java.util.concurrent.atomic.AtomicBoolean;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -135,14 +136,27 @@ public class PlayerViewModel extends AbstractViewModel {
 
     //==============================================================================================
 
+    private final AtomicBoolean locked = new AtomicBoolean(false);
+
     void startPlayer(SeekToTimeEvent event) {
         Log.d(Tag.EVENT, "PlayerViewModel.startPlayer()[" + event + "]");
 
-        disposables.add(new InitializeUrlInteractor(iptvService, prefService)
-                .execute(event.getChannelId(), event.getEpgType(), event.getEpgCurrentTime())
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(result -> postProcessAfterInitializationUrl(result), throwable -> notifyException(throwable)));
+        if (locked.compareAndSet(false, true)) {
+            disposables.add(new InitializeUrlInteractor(iptvService, prefService)
+                    .execute(event.getChannelId(), event.getEpgType(), event.getEpgCurrentTime())
+                    .subscribeOn(Schedulers.newThread())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(result -> {
+                                locked.set(false);
+                                postProcessAfterInitializationUrl(result);
+                            }, throwable -> {
+                                locked.set(false);
+                                notifyException(throwable);
+                            }
+                    ));
+        } else {
+            Log.d(Tag.SERVICE, "PlayerViewModel.startPlayer()[ignored startPlayer action, another action is in progress]");
+        }
     }
 
     void stopPlayer(StopPlayerEvent event) {
