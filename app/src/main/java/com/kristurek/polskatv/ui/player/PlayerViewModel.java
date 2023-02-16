@@ -14,6 +14,7 @@ import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import com.google.android.exoplayer2.source.hls.HlsMediaSource;
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.ExoTrackSelection;
@@ -244,10 +245,14 @@ public class PlayerViewModel extends AbstractViewModel {
                     .setConnectTimeoutMs(CONNECT_TIMEOUT)
                     .setReadTimeoutMs(READ_TIMEOUT);
 
-            MediaSource source = new ProgressiveMediaSource.Factory(httpDataSourceFactory).createMediaSource(MediaItem.fromUri(uri));
+            //MediaSource source = new ProgressiveMediaSource.Factory(httpDataSourceFactory).createMediaSource(MediaItem.fromUri(uri));
+
+            HlsMediaSource hlsMediaSource =
+                    new HlsMediaSource.Factory(httpDataSourceFactory)
+                            .createMediaSource(MediaItem.fromUri(uri));
 
             player.postValue(internalPlayer);
-            internalPlayer.setMediaSource(source);
+            internalPlayer.setMediaSource(hlsMediaSource);
             internalPlayer.prepare();
 
             timeline = new PlayerTimeline(result.getEpgCurrentTime());

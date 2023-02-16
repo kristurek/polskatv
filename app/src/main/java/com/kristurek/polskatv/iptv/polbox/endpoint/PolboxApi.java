@@ -36,7 +36,8 @@ public interface PolboxApi {
                                      @Field("settings") String settings,
                                      @Field("softid") String softId,
                                      @Field("cli_serial") String cliSerial,
-                                     @Field("lang") String lang);
+                                     @Field("lang") String lang,
+                                     @Field("device") String device);
 
     @TargetClass(clazz = LogoutRetrofitResponse.class)
     @GET("/api/json/logout")

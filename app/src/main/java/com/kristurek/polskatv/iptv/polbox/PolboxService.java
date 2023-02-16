@@ -71,7 +71,7 @@ public class PolboxService extends BasePolboxService implements IptvService {
 
         persistRequest(request);
 
-        LoginResponse response = process(new LoginConverter(), () -> api.login(request.getLogin(), request.getPass(), "all", "polwin-jo-001", "b9007bc2ca5768442a3fa4c41f14a4fb", "en"));
+        LoginResponse response = process(new LoginConverter(), () -> api.login(request.getLogin(), request.getPass(), "all", "polwin-jo-001", "b9007bc2ca5768442a3fa4c41f14a4fb", "en", "apple"));
 
         if (response.getRestOfDay() == 0)
             throw new IptvSubscriptionExpiredException(ExceptionHelper.SUBSCRIPTION_EXPIRED_MSG);
