@@ -19,6 +19,7 @@ import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.ExoTrackSelection;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
+import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
 import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.util.Util;
@@ -247,9 +248,7 @@ public class PlayerViewModel extends AbstractViewModel {
 
             //MediaSource source = new ProgressiveMediaSource.Factory(httpDataSourceFactory).createMediaSource(MediaItem.fromUri(uri));
 
-            HlsMediaSource hlsMediaSource =
-                    new HlsMediaSource.Factory(httpDataSourceFactory)
-                            .createMediaSource(MediaItem.fromUri(uri));
+            HlsMediaSource hlsMediaSource = new HlsMediaSource.Factory((DataSource.Factory) new DefaultHttpDataSource.Factory()).setAllowChunklessPreparation(false).createMediaSource(MediaItem.fromUri(uri));
 
             player.postValue(internalPlayer);
             internalPlayer.setMediaSource(hlsMediaSource);
