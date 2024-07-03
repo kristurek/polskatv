@@ -46,6 +46,10 @@ public class MainActivity extends AbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         viewModel = obtainViewModel();
         viewModel.initializeEventBus(this);
 
