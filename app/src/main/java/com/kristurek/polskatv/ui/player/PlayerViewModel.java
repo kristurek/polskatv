@@ -10,19 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Player;
-import androidx.media3.common.util.UnstableApi;
-import androidx.media3.common.util.Util;
-import androidx.media3.datasource.DataSource;
-import androidx.media3.datasource.DefaultHttpDataSource;
-import androidx.media3.datasource.HttpDataSource;
 import androidx.media3.exoplayer.ExoPlayer;
-import androidx.media3.exoplayer.hls.HlsMediaSource;
-import androidx.media3.exoplayer.source.MediaSource;
-import androidx.media3.exoplayer.source.ProgressiveMediaSource;
-import androidx.media3.exoplayer.trackselection.AdaptiveTrackSelection;
-import androidx.media3.exoplayer.trackselection.DefaultTrackSelector;
-import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
-import androidx.media3.exoplayer.trackselection.TrackSelector;
 import com.kristurek.polskatv.iptv.FactoryService;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.service.PreferencesService;
@@ -43,7 +31,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-@UnstableApi
 public class PlayerViewModel extends AbstractViewModel {
 
     private MutableLiveData<ExoPlayer> player = new MutableLiveData<>();
@@ -51,9 +38,6 @@ public class PlayerViewModel extends AbstractViewModel {
     private MutableLiveData<Integer> paused = new MutableLiveData<>();
 
     private PlayerTimeline timeline;
-
-    private static final int CONNECT_TIMEOUT = 30000;
-    private static final int READ_TIMEOUT = 30000;
 
     private final Object lock = new Object();
 
@@ -231,28 +215,15 @@ public class PlayerViewModel extends AbstractViewModel {
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl()[begin]");
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl()[" + result + "]");
 
-            ExoTrackSelection.Factory videoTrackSelectionFactory = new AdaptiveTrackSelection.Factory();
-            TrackSelector trackSelector = new DefaultTrackSelector(context, videoTrackSelectionFactory);
-
-            ExoPlayer internalPlayer = ExoPlayerFactory.createInstance(context, trackSelector);
+            ExoPlayer internalPlayer = ExoPlayerFactory.createInstance(context);
 
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl() hash[" + internalPlayer.hashCode() + "]");
 
             Uri uri = Uri.parse(result.getUrl());
-            //Uri uri = Uri.parse("/storage/emulated/0/download/sd.mp4");
-            String userAgent = Util.getUserAgent(context, result.getUserAgent());
-            HttpDataSource.Factory  httpDataSourceFactory= new DefaultHttpDataSource.Factory()
-                    .setUserAgent(userAgent)
-                    .setAllowCrossProtocolRedirects(true)
-                    .setConnectTimeoutMs(CONNECT_TIMEOUT)
-                    .setReadTimeoutMs(READ_TIMEOUT);
-
-            //MediaSource source = new ProgressiveMediaSource.Factory(httpDataSourceFactory).createMediaSource(MediaItem.fromUri(uri));
-
-            HlsMediaSource hlsMediaSource = new HlsMediaSource.Factory((DataSource.Factory) new DefaultHttpDataSource.Factory()).setAllowChunklessPreparation(false).createMediaSource(MediaItem.fromUri(uri));
+            MediaItem mediaItem = MediaItem.fromUri(uri);
 
             player.postValue(internalPlayer);
-            internalPlayer.setMediaSource(hlsMediaSource);
+            internalPlayer.setMediaItem(mediaItem);
             internalPlayer.prepare();
 
             timeline = new PlayerTimeline(result.getEpgCurrentTime());
