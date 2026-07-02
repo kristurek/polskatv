@@ -29,7 +29,7 @@ android {
             storePassword keystoreProperties['storePassword']
         }
     }
-    compileSdkVersion 33
+    compileSdkVersion 37
     defaultConfig {
         applicationId "com.kristurek.polskatv"
         minSdkVersion 22
@@ -52,6 +52,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        buildConfig true
     }
     android.applicationVariants.all { variant ->
         variant.outputs.all { output ->
