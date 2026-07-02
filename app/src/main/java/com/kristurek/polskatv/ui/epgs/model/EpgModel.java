@@ -1,8 +1,7 @@
 package com.kristurek.polskatv.ui.epgs.model;
 
-import org.joda.time.LocalDate;
-
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class EpgModel implements Serializable {
 

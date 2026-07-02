@@ -42,8 +42,8 @@ import com.kristurek.polskatv.util.DateTimeHelper;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.text.similarity.JaroWinklerDistance;
-import org.joda.time.LocalDate;
 
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;

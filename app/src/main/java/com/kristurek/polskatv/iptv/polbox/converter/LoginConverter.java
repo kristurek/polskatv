@@ -9,8 +9,8 @@ import com.kristurek.polskatv.iptv.polbox.pojo.login.LoginRetrofitResponse;
 import com.kristurek.polskatv.iptv.util.Tag;
 import com.kristurek.polskatv.util.DateTimeHelper;
 
-import org.joda.time.Days;
-import org.joda.time.LocalDate;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class LoginConverter implements Converter<LoginRetrofitResponse, LoginResponse> {
 
@@ -20,8 +20,10 @@ public class LoginConverter implements Converter<LoginRetrofitResponse, LoginRes
 
         LoginResponse responseDTO = new LoginResponse();
 
-        if (response.getAccount() != null && response.getAccount().getPacketExpire() != null)
-            responseDTO.setRestOfDay(Days.daysBetween(LocalDate.now(), DateTimeHelper.unixTimeToLocalDate(response.getAccount().getPacketExpire())).getDays());
+        if (response.getAccount() != null && response.getAccount().getPacketExpire() != null) {
+            long daysBetween = ChronoUnit.DAYS.between(LocalDate.now(), DateTimeHelper.unixTimeToLocalDate(response.getAccount().getPacketExpire()));
+            responseDTO.setRestOfDay((int) daysBetween);
+        }
 
         responseDTO.setMediaServerId(response.getSettings().getStreamServer().getValue());
         responseDTO.setTimeShift(Integer.parseInt(response.getSettings().getTimeshift().getValue()));

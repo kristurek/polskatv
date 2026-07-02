@@ -10,9 +10,7 @@ import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.epgs.Channel;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.pojo.epgs.EpgsRetrofitResponse;
 import com.kristurek.polskatv.iptv.util.Tag;
 
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,7 +68,7 @@ public class EpgsConverter implements Converter<EpgsRetrofitResponse, EpgsRespon
     }
 
     private static boolean isLiveStream(Integer begin, Integer end) {
-        long now = Duration.millis(DateTime.now().getMillis()).getStandardSeconds();
+        long now = Instant.now().getEpochSecond();
 
         return now >= begin && now <= end;
     }

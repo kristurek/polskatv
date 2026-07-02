@@ -7,9 +7,9 @@ import com.kristurek.polskatv.service.LoggerService;
 import com.kristurek.polskatv.service.RemoteServerService;
 import com.kristurek.polskatv.ui.arch.SingleParamAbstractInteractor;
 
-import org.joda.time.LocalDateTime;
-
 import java.io.File;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class GenerateAndUploadLogsInteractor extends SingleParamAbstractInteractor<Boolean, String> {
 
@@ -35,7 +35,7 @@ public class GenerateAndUploadLogsInteractor extends SingleParamAbstractInteract
                 .append(param)
                 .toString();
 
-        String dateTime = LocalDateTime.now().toString("yyyyMMddhhmmss");
+        String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
 
         File cacheDir = context.getExternalCacheDir();
         if (cacheDir == null)

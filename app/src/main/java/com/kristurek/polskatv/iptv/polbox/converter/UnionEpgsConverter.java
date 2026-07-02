@@ -9,10 +9,8 @@ import com.kristurek.polskatv.iptv.polbox.pojo.epgs.EpgsRetrofitResponse;
 import com.kristurek.polskatv.iptv.util.Tag;
 import com.kristurek.polskatv.util.DateTimeHelper;
 
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-import org.joda.time.LocalDate;
-
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,14 +80,14 @@ public class UnionEpgsConverter {
     }
 
     private static boolean isLiveStream(long begin, long end) {
-        long now = Duration.millis(DateTime.now().getMillis()).getStandardSeconds();
+        long now = Instant.now().getEpochSecond();
 
         return now >= begin && now <= end;
     }
 
 
     private static boolean isArchiveStream(long begin, long end) {
-        long now = Duration.millis(DateTime.now().getMillis()).getStandardSeconds();
+        long now = Instant.now().getEpochSecond();
 
         return now >= begin && now > end;
     }

@@ -24,8 +24,7 @@ import com.kristurek.polskatv.ui.event.StopPlayerEvent;
 import com.kristurek.polskatv.util.DateTimeHelper;
 import com.kristurek.polskatv.util.Tag;
 
-import org.joda.time.LocalDate;
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;

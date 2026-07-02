@@ -7,9 +7,9 @@ import com.kristurek.polskatv.service.LoggerService;
 import com.kristurek.polskatv.service.RemoteServerService;
 import com.kristurek.polskatv.ui.arch.VoidParamAbstractInteractor;
 
-import org.joda.time.LocalDateTime;
-
 import java.io.File;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class GenerateAndUploadLogsInteractor extends VoidParamAbstractInteractor<Boolean> {
 
@@ -29,7 +29,7 @@ public class GenerateAndUploadLogsInteractor extends VoidParamAbstractInteractor
 
     @Override
     protected Boolean process() {
-        String dateTime = LocalDateTime.now().toString("yyyyMMddhhmmss");
+        String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
 
         String infoFileName = dateTime + "_info.txt";
         File infoFile = logService.prepareInfoFile(context.getExternalCacheDir().getPath(), infoFileName, diagService.deviceInformation().toString());

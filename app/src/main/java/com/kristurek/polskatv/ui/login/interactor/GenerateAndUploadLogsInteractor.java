@@ -7,9 +7,9 @@ import com.kristurek.polskatv.service.LoggerService;
 import com.kristurek.polskatv.service.RemoteServerService;
 import com.kristurek.polskatv.ui.arch.ArrayParamAbstractInteractor;
 
-import org.joda.time.LocalDateTime;
-
 import java.io.File;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class GenerateAndUploadLogsInteractor extends ArrayParamAbstractInteractor<Boolean, Object> {
 
@@ -42,7 +42,7 @@ public class GenerateAndUploadLogsInteractor extends ArrayParamAbstractInteracto
                 .append("parentalPassword=").append(parentalPassword).append(",")
                 .append("provider=").append(provider).append("]").toString();
 
-        String fileName = LocalDateTime.now().toString("yyyyMMddhhmmss") + "_info.txt";
+        String fileName = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")) + "_info.txt";
 
         File infoFile = logService.prepareInfoFile(context.getExternalCacheDir().getPath(), fileName, diagnostickMsg);
         remoteService.uploadFile(infoFile, "account");

@@ -17,8 +17,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.kristurek.polskatv.util.DateTimeHelper;
 import com.kristurek.polskatv.util.FontHelper;
 
-import org.joda.time.LocalDate;
-
+import java.time.LocalDate;
 import java.util.List;
 
 import static com.google.android.material.tabs.TabLayout.Tab.INVALID_POSITION;
@@ -82,7 +81,7 @@ public class XTabLayout extends TabLayout {
             Tab tab = newTab();
 
             TextView customView = new TextView(getContext());
-            customView.setText(Html.fromHtml("<b>" + day.toString(DateTimeHelper.EEE) + "</b>" + "<br />" + "<small>" + day.toString(DateTimeHelper.ddMM) + "</small>"));
+            customView.setText(Html.fromHtml("<b>" + day.format(DateTimeHelper.EEE) + "</b>" + "<br />" + "<small>" + day.format(DateTimeHelper.ddMM) + "</small>"));
             customView.setGravity(Gravity.CENTER);
             FontHelper.setFont(getContext(), customView, FontHelper.Header.H_1);
 

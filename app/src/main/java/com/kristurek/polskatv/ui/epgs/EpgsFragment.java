@@ -94,7 +94,7 @@ public class EpgsFragment extends AbstractFragment implements XTabLayout.OnTabSe
         viewModel.getSelectedDay().observe(getViewLifecycleOwner(), (day) -> {
             Log.d(Tag.UI, "EpgsFragment.getSelectedDay().observe()[" + day + "]");
             daysTabs.selectWithoutTriggerListeners(day);
-            selectedDayText.setText(day.toString(DateTimeHelper.EEEddMMyyyy));
+            selectedDayText.setText(day.toString());
         });
         viewModel.getFocusedEpg().observe(getViewLifecycleOwner(), model -> {
             Log.d(Tag.UI, "EpgsFragment.getFocusEpg().observe()[" + model + "]");

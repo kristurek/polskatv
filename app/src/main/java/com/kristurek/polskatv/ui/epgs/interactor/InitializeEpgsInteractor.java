@@ -13,8 +13,7 @@ import com.kristurek.polskatv.ui.epgs.model.EpgModel;
 import com.kristurek.polskatv.util.DateTimeHelper;
 import com.kristurek.polskatv.util.Tag;
 
-import org.joda.time.LocalDate;
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;

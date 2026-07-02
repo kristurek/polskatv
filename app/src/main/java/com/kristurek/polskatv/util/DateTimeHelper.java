@@ -2,16 +2,14 @@ package com.kristurek.polskatv.util;
 
 import android.util.Log;
 
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Duration;
-import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
-import org.joda.time.LocalTime;
-import org.joda.time.Period;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
-
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -60,30 +58,30 @@ public class DateTimeHelper {
             "Etc/GMT+11",
             "Etc/GMT+12"};
 
-    public static DateTimeFormatter HHmm = DateTimeFormat.forPattern("HH:mm");
-    public static DateTimeFormatter HHmmss = DateTimeFormat.forPattern("HH:mm:ss");
-    public static DateTimeFormatter EEEddMMyyyy = DateTimeFormat.forPattern("EEE - dd/MM/yyyy");
-    public static DateTimeFormatter EEE = DateTimeFormat.forPattern("EEE");
-    public static DateTimeFormatter ddMM = DateTimeFormat.forPattern("dd/MM");
-    public static DateTimeFormatter ddMMMyyyy = DateTimeFormat.forPattern("dd. MMM yyyy");
-    public static DateTimeFormatter ddMMyy = DateTimeFormat.forPattern("ddMMyy");
+    public static DateTimeFormatter HHmm = DateTimeFormatter.ofPattern("HH:mm");
+    public static DateTimeFormatter HHmmss = DateTimeFormatter.ofPattern("HH:mm:ss");
+    public static DateTimeFormatter EEEddMMyyyy = DateTimeFormatter.ofPattern("EEE - dd/MM/yyyy");
+    public static DateTimeFormatter EEE = DateTimeFormatter.ofPattern("EEE");
+    public static DateTimeFormatter ddMM = DateTimeFormatter.ofPattern("dd/MM");
+    public static DateTimeFormatter ddMMMyyyy = DateTimeFormatter.ofPattern("dd. MMM yyyy");
+    public static DateTimeFormatter ddMMyy = DateTimeFormatter.ofPattern("ddMMyy");
 
     public static String unixTimeToString(long unixTime, DateTimeFormatter formatter) {
-        DateTime dt = new DateTime(unixTimeToMiliseconds(unixTime), DateTimeZone.forID(SELECTED_TIME_ZONE_ID));
+        ZonedDateTime dt = Instant.ofEpochSecond(unixTime).atZone(ZoneId.of(SELECTED_TIME_ZONE_ID));
 
-        return dt.toString(formatter);
+        return dt.format(formatter);
     }
 
     public static String localDateTimeToString(LocalDateTime localDateTime, DateTimeFormatter formatter) {
-        return localDateTime.toString(formatter);
+        return localDateTime.format(formatter);
     }
 
     public static String localDateToString(LocalDate localDate, DateTimeFormatter formatter) {
-        return localDate.toString(formatter);
+        return localDate.format(formatter);
     }
 
     public static int currentPercentBetweenUnixTime(long beginUnixTime, long endUnixTime) {
-        long current = milisecondsToUnixTime(DateTime.now().getMillis());
+        long current = Instant.now().getEpochSecond();
 
         long rangeBeginEnd = endUnixTime - beginUnixTime;
         long rangeBeginCurrent = current - beginUnixTime;
@@ -91,7 +89,7 @@ public class DateTimeHelper {
         if (rangeBeginEnd == 0)
             return 0;
 
-        int precent = Math.round(rangeBeginCurrent * 100 / rangeBeginEnd);
+        int precent = Math.round((float) rangeBeginCurrent * 100 / rangeBeginEnd);
         if (precent > 100)
             return 100;
         else if (precent < 0)
@@ -100,20 +98,12 @@ public class DateTimeHelper {
             return precent;
     }
 
-    private static long unixTimeToMiliseconds(long unixTime) {
-        return unixTime * 1000L;
-    }
-
-    private static long milisecondsToUnixTime(long miliseconds) {
-        return miliseconds / 1000L;
-    }
-
     public static LocalDate getCurrentDaySelectedTimeZone() {
-        return LocalDate.now(DateTimeZone.forID(SELECTED_TIME_ZONE_ID));
+        return LocalDate.now(ZoneId.of(SELECTED_TIME_ZONE_ID));
     }
 
     public static LocalDateTime getCurrentTimeSelectedTimeZone() {
-        return LocalDateTime.now(DateTimeZone.forID(SELECTED_TIME_ZONE_ID));
+        return LocalDateTime.now(ZoneId.of(SELECTED_TIME_ZONE_ID));
     }
 
     public static LocalDate getCurrentDayDeviceTimeZone() {
@@ -163,28 +153,28 @@ public class DateTimeHelper {
     }
 
     public static long localDateToUnixTime(LocalDate day) {
-        return day.toDateTimeAtStartOfDay(DateTimeZone.forID(SELECTED_TIME_ZONE_ID)).getMillis() / 1000L;
+        return day.atStartOfDay(ZoneId.of(SELECTED_TIME_ZONE_ID)).toEpochSecond();
     }
 
     public static long localDateTimeToUnixTime(LocalDateTime dateTime) {
-        return milisecondsToUnixTime(dateTime.toDateTime(DateTimeZone.forID(SELECTED_TIME_ZONE_ID)).getMillis());
+        return dateTime.atZone(ZoneId.of(SELECTED_TIME_ZONE_ID)).toEpochSecond();
     }
 
     public static LocalDate unixTimeToLocalDate(long unixTime) {
-        return new LocalDate(unixTimeToMiliseconds(unixTime), DateTimeZone.forID(SELECTED_TIME_ZONE_ID));
+        return Instant.ofEpochSecond(unixTime).atZone(ZoneId.of(SELECTED_TIME_ZONE_ID)).toLocalDate();
     }
 
     public static String rangeUnixTimeToString(long beginUnixTime, long endUnixTime) {
-        DateTime beginDateTime = new DateTime(unixTimeToMiliseconds(beginUnixTime), DateTimeZone.forID(SELECTED_TIME_ZONE_ID));
-        DateTime endDateTime = new DateTime(unixTimeToMiliseconds(endUnixTime), DateTimeZone.forID(SELECTED_TIME_ZONE_ID));
-        long minutesDuration = new Duration(beginDateTime, endDateTime).getStandardMinutes();
+        ZonedDateTime beginDateTime = Instant.ofEpochSecond(beginUnixTime).atZone(ZoneId.of(SELECTED_TIME_ZONE_ID));
+        ZonedDateTime endDateTime = Instant.ofEpochSecond(endUnixTime).atZone(ZoneId.of(SELECTED_TIME_ZONE_ID));
+        long minutesDuration = Duration.between(beginDateTime, endDateTime).toMinutes();
 
         StringBuilder result = new StringBuilder();
-        result.append(beginDateTime.toString(ddMMMyyyy));
+        result.append(beginDateTime.format(ddMMMyyyy));
         result.append(", ");
-        result.append(beginDateTime.toString(HHmm));
+        result.append(beginDateTime.format(HHmm));
         result.append(" - ");
-        result.append(endDateTime.toString(HHmm));
+        result.append(endDateTime.format(HHmm));
         result.append(" (");
         result.append(minutesDuration);
         result.append(" min.)");
@@ -193,9 +183,13 @@ public class DateTimeHelper {
     }
 
     public static String periodUnixTimeToString(long beginUnixTime, long endUnixTime) {
-        Period pr = new Period(unixTimeToMiliseconds(beginUnixTime), unixTimeToMiliseconds(endUnixTime));
+        Duration duration = Duration.between(Instant.ofEpochSecond(beginUnixTime), Instant.ofEpochSecond(endUnixTime));
 
-        return String.format("%02d.%02d.%02d", pr.getHours(), pr.getMinutes(), pr.getSeconds());
+        long hours = duration.toHours();
+        long minutes = duration.toMinutesPart();
+        long seconds = duration.toSecondsPart();
+
+        return String.format("%02d.%02d.%02d", hours, minutes, seconds);
     }
 
     public static int compareCurrentDayBetweenTimeZones() {
@@ -211,15 +205,11 @@ public class DateTimeHelper {
     }
 
     public static long customDateTimeToUnixTime(LocalDate mDate, String mTime) {
-        DateTime dateTime = mDate.toDateTime(LocalTime.parse(mTime), DateTimeZone.forID(SELECTED_TIME_ZONE_ID));
-        return milisecondsToUnixTime(dateTime.getMillis());
+        ZonedDateTime dateTime = mDate.atTime(LocalTime.parse(mTime)).atZone(ZoneId.of(SELECTED_TIME_ZONE_ID));
+        return dateTime.toEpochSecond();
     }
 
     public static long unixTimeFromCurrentDayMinus13Days() {
-        return Duration.millis(DateTime.now().withTimeAtStartOfDay().minusDays(13).getMillis()).getStandardSeconds();
-    }
-
-    public static void main(String[] argv) {
-
+        return LocalDate.now().minusDays(13).atStartOfDay(ZoneId.systemDefault()).toEpochSecond();
     }
 }

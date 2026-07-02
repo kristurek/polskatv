@@ -9,8 +9,6 @@ import com.kristurek.polskatv.iptv.polskatelewizjausa.retrofit.PolskaTelewizjaUs
 import com.kristurek.polskatv.iptv.common.ExceptionHelper;
 import com.kristurek.polskatv.util.TestExceptionHelper;
 
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -21,6 +19,8 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -96,7 +96,13 @@ public class PolskaTelewizjaUsaGetSimilarEpgsServiceTest {
 
         mockServer.enqueue(mockedResponse);
 
-        long beginArchive = Duration.millis(new DateTime(1555390800).withTimeAtStartOfDay().minusDays(13).getMillis()).getStandardSeconds();
+        long beginArchive = Instant.ofEpochMilli(1555390800L)
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate()
+                .atStartOfDay(ZoneId.systemDefault())
+                .minusDays(13)
+                .toInstant()
+                .toEpochMilli() / 1000L;
 
         SimilarEpgsResponse responseDTO = service.getSimilarEpgs(new SimilarEpgsRequest(new HashSet<>(Arrays.asList(2455)), "Międzynarodowi poszukiwacze domów", beginArchive));
 
