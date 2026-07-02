@@ -122,11 +122,6 @@
             android:title="@string/show_console_title_settings" />
         <SwitchPreferenceCompat
             android:defaultValue="false"
-            android:key="__APPLICATION_DEBUG_CONSOLE__"
-            android:summary="@string/debug_console_summary_settings"
-            android:title="@string/debug_console_title_settings" />
-        <SwitchPreferenceCompat
-            android:defaultValue="false"
             android:key="__APPLICATION_DEBUG_VIEW__"
             android:summary="@string/debug_view_summary_settings"
             android:title="@string/debug_view_title_settings" />

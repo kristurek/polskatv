@@ -113,9 +113,6 @@
     <string name="show_console_title_settings">Tablet mode</string>
     <string name="show_console_summary_settings">Enable tablet mode</string>
 
-    <string name="debug_console_title_settings">Debug console</string>
-    <string name="debug_console_summary_settings">Enable debug console</string>
-
     <string name="debug_view_title_settings">Debug view</string>
     <string name="debug_view_summary_settings">Show debug view</string>
 
