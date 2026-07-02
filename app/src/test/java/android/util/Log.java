@@ -1,6 +1,11 @@
 package android.util;
 
 public class Log {
+    public static int v(String tag, String msg) {
+        System.out.println("VERBOSE: " + tag + ": " + msg);
+        return 0;
+    }
+
     public static int d(String tag, String msg) {
         System.out.println("DEBUG: " + tag + ": " + msg);
         return 0;
@@ -43,5 +48,14 @@ public class Log {
         System.out.println("ERROR: " + tag + ": " + msg);
         tr.printStackTrace();
         return 0;
+    }
+
+    public static int wtf(String tag, String msg) {
+        System.err.println("WTF: " + tag + ": " + msg);
+        return 0;
+    }
+
+    public static boolean isLoggable(String tag, int level) {
+        return false;
     }
 }
