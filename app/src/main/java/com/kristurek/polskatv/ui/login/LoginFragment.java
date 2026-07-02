@@ -11,17 +11,22 @@ import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.LoginFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelFactory;
+import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.login.adapter.ProviderAdapter;
 import com.kristurek.polskatv.ui.main.MainActivity;
 
+import javax.inject.Inject;
+
 public class LoginFragment extends AbstractFragment {
+
+    @Inject
+    public ViewModelProviderFactory factory;
 
     private LoginViewModel viewModel;
 
@@ -43,12 +48,12 @@ public class LoginFragment extends AbstractFragment {
         binding.setViewModel(viewModel);
         binding.setLifecycleOwner(this);
 
-        binding.getViewModel().getSubscription().observe(this, r -> viewModel.validateForm());
-        binding.getViewModel().getPassword().observe(this, r -> viewModel.validateForm());
-        binding.getViewModel().getProviderId().observe(this, r -> viewModel.validateForm());
-        binding.getViewModel().getSuccessNotifier().observe(this, r -> startMainActivity());
-        binding.getViewModel().getExceptionNotifier().observe(this, this::handleException);
-        binding.getViewModel().getMessageNotifier().observe(this, this::handleMessage);
+        binding.getViewModel().getSubscription().observe(getViewLifecycleOwner(), r -> viewModel.validateForm());
+        binding.getViewModel().getPassword().observe(getViewLifecycleOwner(), r -> viewModel.validateForm());
+        binding.getViewModel().getProviderId().observe(getViewLifecycleOwner(), r -> viewModel.validateForm());
+        binding.getViewModel().getSuccessNotifier().observe(getViewLifecycleOwner(), r -> startMainActivity());
+        binding.getViewModel().getExceptionNotifier().observe(getViewLifecycleOwner(), this::handleException);
+        binding.getViewModel().getMessageNotifier().observe(getViewLifecycleOwner(), this::handleMessage);
 
         Spinner providerSpinner = binding.getRoot().findViewById(R.id.login_input_provider);
         providerSpinner.setAdapter(new ProviderAdapter(getContext()));
@@ -67,9 +72,7 @@ public class LoginFragment extends AbstractFragment {
 
     @NonNull
     public LoginViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
-
-        return ViewModelProviders.of(getActivity(), factory).get(LoginViewModel.class);
+        return new ViewModelProvider(getActivity(), factory).get(LoginViewModel.class);
     }
 
     @Override

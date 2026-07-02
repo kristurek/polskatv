@@ -12,18 +12,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.VolumeFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelFactory;
+import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.view.XVerticalSeekBar;
 import com.kristurek.polskatv.util.Focus;
 import com.kristurek.polskatv.util.FontHelper;
 import com.kristurek.polskatv.util.Tag;
 
+import javax.inject.Inject;
+
 public class VolumeFragment extends AbstractFragment implements View.OnKeyListener, SeekBar.OnSeekBarChangeListener {
+
+    @Inject
+    public ViewModelProviderFactory factory;
 
     private VolumeViewModel viewModel;
 
@@ -34,6 +40,8 @@ public class VolumeFragment extends AbstractFragment implements View.OnKeyListen
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
         viewModel.initializeEventBus(this);
@@ -58,10 +66,10 @@ public class VolumeFragment extends AbstractFragment implements View.OnKeyListen
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        viewModel.getExceptionNotifier().observe(this, this::handleException);
-        viewModel.getMessageNotifier().observe(this, this::handleMessage);
+        viewModel.getExceptionNotifier().observe(getViewLifecycleOwner(), this::handleException);
+        viewModel.getMessageNotifier().observe(getViewLifecycleOwner(), this::handleMessage);
 
-        viewModel.getProgress().observe(this, progress -> {
+        viewModel.getProgress().observe(getViewLifecycleOwner(), progress -> {
             volumeSeekbar.setProgress(progress);
             volumeValue.setText(String.valueOf(progress));
         });
@@ -69,9 +77,7 @@ public class VolumeFragment extends AbstractFragment implements View.OnKeyListen
 
     @NonNull
     public VolumeViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
-
-        return ViewModelProviders.of(getActivity(), factory).get(VolumeViewModel.class);
+        return new ViewModelProvider(getActivity(), factory).get(VolumeViewModel.class);
     }
 
     @Override

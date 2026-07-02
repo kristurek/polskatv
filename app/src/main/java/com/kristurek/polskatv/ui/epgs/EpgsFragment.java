@@ -12,13 +12,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.tabs.TabLayout;
+import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.EpgsFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelFactory;
+import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.epgs.adapter.EpgsAdapter;
 import com.kristurek.polskatv.ui.epgs.model.EpgModel;
 import com.kristurek.polskatv.ui.event.FindCurrentEpgEvent;
@@ -35,7 +36,12 @@ import com.kristurek.polskatv.util.Tag;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import javax.inject.Inject;
+
 public class EpgsFragment extends AbstractFragment implements XTabLayout.OnTabSelectedListener, AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
+
+    @Inject
+    public ViewModelProviderFactory factory;
 
     private EpgsViewModel viewModel;
     private EpgsAdapter adapter;
@@ -47,6 +53,8 @@ public class EpgsFragment extends AbstractFragment implements XTabLayout.OnTabSe
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        PolskaTvApplication.getComponent().inject(this);
 
         adapter = new EpgsAdapter(getActivity());
 
@@ -84,28 +92,28 @@ public class EpgsFragment extends AbstractFragment implements XTabLayout.OnTabSe
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        viewModel.getExceptionNotifier().observe(this, this::handleException);
-        viewModel.getMessageNotifier().observe(this, this::handleMessage);
+        viewModel.getExceptionNotifier().observe(getViewLifecycleOwner(), this::handleException);
+        viewModel.getMessageNotifier().observe(getViewLifecycleOwner(), this::handleMessage);
 
-        viewModel.getEpgs().observe(this, (list) -> adapter.setList(list));
-        viewModel.getDays().observe(this, (days) -> daysTabs.addTabs(days));
-        viewModel.getSelectedDay().observe(this, (day) -> {
+        viewModel.getEpgs().observe(getViewLifecycleOwner(), (list) -> adapter.setList(list));
+        viewModel.getDays().observe(getViewLifecycleOwner(), (days) -> daysTabs.addTabs(days));
+        viewModel.getSelectedDay().observe(getViewLifecycleOwner(), (day) -> {
             Log.d(Tag.UI, "EpgsFragment.getSelectedDay().observe()[" + day + "]");
             daysTabs.selectWithoutTriggerListeners(day);
             selectedDayText.setText(day.toString(DateTimeHelper.EEEddMMyyyy));
         });
-        viewModel.getFocusedEpg().observe(this, model -> {
+        viewModel.getFocusedEpg().observe(getViewLifecycleOwner(), model -> {
             Log.d(Tag.UI, "EpgsFragment.getFocusEpg().observe()[" + model + "]");
             epgsList.setSelection(adapter.getPosition(model));
             epgsList.requestFocus();
 
         });
-        viewModel.getSelectedEpg().observe(this, model -> {
+        viewModel.getSelectedEpg().observe(getViewLifecycleOwner(), model -> {
             Log.d(Tag.UI, "EpgsFragment.getSelectedEpg().observe()[" + model + "]");
             epgsList.setItemChecked(adapter.getPosition(model), true);
             epgsList.requestFocus();
         });
-        viewModel.getNeedRefresh().observe(this, (refresh) -> {
+        viewModel.getNeedRefresh().observe(getViewLifecycleOwner(), (refresh) -> {
             if (refresh)
                 adapter.notifyDataSetChanged();
         });
@@ -115,9 +123,7 @@ public class EpgsFragment extends AbstractFragment implements XTabLayout.OnTabSe
 
     @NonNull
     public EpgsViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
-
-        return ViewModelProviders.of(getActivity(), factory).get(EpgsViewModel.class);
+        return new ViewModelProvider(getActivity(), factory).get(EpgsViewModel.class);
     }
 
     @Override

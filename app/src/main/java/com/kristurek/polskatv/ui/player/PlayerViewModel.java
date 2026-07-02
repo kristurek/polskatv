@@ -32,6 +32,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+import javax.inject.Inject;
+
 @UnstableApi
 public class PlayerViewModel extends AbstractViewModel {
 
@@ -73,6 +75,7 @@ public class PlayerViewModel extends AbstractViewModel {
 
     //==============================================================================================
 
+    @Inject
     public PlayerViewModel(Context context,
                            PreferencesService prefService) {
         this.iptvService = FactoryService.SERVICE.getInstance();

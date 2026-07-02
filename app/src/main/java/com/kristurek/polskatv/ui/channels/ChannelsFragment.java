@@ -11,12 +11,13 @@ import android.widget.AdapterView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.ChannelsFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelFactory;
+import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.channels.adapter.ChannelsAdapter;
 import com.kristurek.polskatv.ui.event.InitializeChannelsEvent;
 import com.kristurek.polskatv.ui.event.RecreateAppEvent;
@@ -29,16 +30,28 @@ import com.kristurek.polskatv.util.Tag;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import javax.inject.Inject;
+
 public class ChannelsFragment extends AbstractFragment implements AdapterView.OnItemClickListener {
+
+    @Inject
+    public ViewModelProviderFactory factory;
 
     private ChannelsViewModel viewModel;
     private ChannelsAdapter adapter;
     private XListView list;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        PolskaTvApplication.getComponent().inject(this);
 
         adapter = new ChannelsAdapter(getActivity());
 
@@ -68,19 +81,19 @@ public class ChannelsFragment extends AbstractFragment implements AdapterView.On
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        viewModel.getExceptionNotifier().observe(this, this::handleException);
-        viewModel.getMessageNotifier().observe(this, this::handleMessage);
+        viewModel.getExceptionNotifier().observe(getViewLifecycleOwner(), this::handleException);
+        viewModel.getMessageNotifier().observe(getViewLifecycleOwner(), this::handleMessage);
 
-        viewModel.getChannels().observe(this, (items) -> adapter.setList(items));
-        viewModel.getSelectedChannel().observe(this, (item) -> {
+        viewModel.getChannels().observe(getViewLifecycleOwner(), (items) -> adapter.setList(items));
+        viewModel.getSelectedChannel().observe(getViewLifecycleOwner(), (item) -> {
             list.setItemChecked(adapter.getPosition(item), true);
             list.requestFocus();
         });
-        viewModel.getFocusedChannel().observe(this, (item) -> {
+        viewModel.getFocusedChannel().observe(getViewLifecycleOwner(), (item) -> {
             list.setSelection(adapter.getPosition(item));
             list.requestFocus();
         });
-        viewModel.getNeedRefresh().observe(this, (refresh) -> {
+        viewModel.getNeedRefresh().observe(getViewLifecycleOwner(), (refresh) -> {
             if (refresh)
                 adapter.notifyDataSetChanged();
         });
@@ -90,9 +103,7 @@ public class ChannelsFragment extends AbstractFragment implements AdapterView.On
 
     @NonNull
     public ChannelsViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
-
-        return ViewModelProviders.of(getActivity(), factory).get(ChannelsViewModel.class);
+        return new ViewModelProvider(getActivity(), factory).get(ChannelsViewModel.class);
     }
 
     @Override

@@ -35,6 +35,8 @@ import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+import javax.inject.Inject;
+
 public class EpgsViewModel extends AbstractViewModel {
 
     private MutableLiveData<List<EpgModel>> epgs = new MutableLiveData<>();
@@ -76,6 +78,7 @@ public class EpgsViewModel extends AbstractViewModel {
         return needRefresh;
     }
 
+    @Inject
     public EpgsViewModel(PreferencesService prefService) {
         this.iptvService = FactoryService.SERVICE.getInstance();
         this.prefService = prefService;

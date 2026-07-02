@@ -14,6 +14,8 @@ import com.kristurek.polskatv.ui.forceclose.interactor.GenerateAndUploadLogsInte
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+import javax.inject.Inject;
+
 public class ForceCloseViewModel extends AbstractViewModel {
 
     private MutableLiveData<String> error = new MutableLiveData<>();
@@ -27,6 +29,7 @@ public class ForceCloseViewModel extends AbstractViewModel {
         return error;
     }
 
+    @Inject
     public ForceCloseViewModel(Context context,
                                RemoteServerService remoteService,
                                LoggerService logService,

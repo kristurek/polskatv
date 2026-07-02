@@ -9,6 +9,8 @@ import com.kristurek.polskatv.ui.event.EpgCurrentTimeEvent;
 import com.kristurek.polskatv.ui.event.SelectedEpgEvent;
 import com.kristurek.polskatv.util.DateTimeHelper;
 
+import javax.inject.Inject;
+
 public class EpgViewModel extends AbstractViewModel {
 
     private MutableLiveData<String> dateTime = new MutableLiveData<>();
@@ -66,6 +68,7 @@ public class EpgViewModel extends AbstractViewModel {
 
     //==============================================================================================
 
+    @Inject
     public EpgViewModel() {
         visibility.setValue(false);
     }

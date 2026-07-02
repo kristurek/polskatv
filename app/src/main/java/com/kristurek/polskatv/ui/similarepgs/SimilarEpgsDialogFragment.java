@@ -12,18 +12,24 @@ import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.SimilarEpgsDialogFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractDialogFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelFactory;
+import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.similarepgs.adapter.SimilarEpgsAdapter;
 import com.kristurek.polskatv.ui.view.XListView;
 import com.kristurek.polskatv.util.FontHelper;
 import com.kristurek.polskatv.util.Tag;
 
+import javax.inject.Inject;
+
 public class SimilarEpgsDialogFragment extends AbstractDialogFragment implements AdapterView.OnItemClickListener {
+
+    @Inject
+    public ViewModelProviderFactory factory;
 
     private SimilarEpgsViewModel viewModel;
     private SimilarEpgsAdapter adapter;
@@ -59,6 +65,8 @@ public class SimilarEpgsDialogFragment extends AbstractDialogFragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        PolskaTvApplication.getComponent().inject(this);
+
         adapter = new SimilarEpgsAdapter(getActivity());
 
         viewModel = obtainViewModel();
@@ -91,23 +99,23 @@ public class SimilarEpgsDialogFragment extends AbstractDialogFragment implements
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viewModel.getExceptionNotifier().observe(this, this::handleException);
-        viewModel.getMessageNotifier().observe(this, this::handleMessage);
+        viewModel.getExceptionNotifier().observe(getViewLifecycleOwner(), this::handleException);
+        viewModel.getMessageNotifier().observe(getViewLifecycleOwner(), this::handleMessage);
 
-        viewModel.getEpgs().observe(this, (list) -> adapter.setList(list));
-        viewModel.getFocusedEpg().observe(this, model -> {
+        viewModel.getEpgs().observe(getViewLifecycleOwner(), (list) -> adapter.setList(list));
+        viewModel.getFocusedEpg().observe(getViewLifecycleOwner(), model -> {
             Log.d(Tag.UI, "SimilarEpgsFragment.getFocusEpg().observe()[" + model + "]");
             list.setSelection(adapter.getPosition(model));
             list.requestFocus();
         });
-        viewModel.getNoResults().observe(this, noResult -> {
+        viewModel.getNoResults().observe(getViewLifecycleOwner(), noResult -> {
             Log.d(Tag.UI, "SimilarEpgsFragment.getNoResults().observe()[" + noResult + "]");
             if (noResult)
                 noResultView.setVisibility(View.VISIBLE);
             else
                 noResultView.setVisibility(View.GONE);
         });
-        viewModel.getLoading().observe(this, loading -> {
+        viewModel.getLoading().observe(getViewLifecycleOwner(), loading -> {
             Log.d(Tag.UI, "SimilarEpgsFragment.getLoading().observe()[" + loading + "]");
             if (loading)
                 loadingView.setVisibility(View.VISIBLE);
@@ -126,9 +134,7 @@ public class SimilarEpgsDialogFragment extends AbstractDialogFragment implements
 
     @NonNull
     public SimilarEpgsViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
-
-        return ViewModelProviders.of(getActivity(), factory).get(SimilarEpgsViewModel.class);
+        return new ViewModelProvider(getActivity(), factory).get(SimilarEpgsViewModel.class);
     }
 
     @Override

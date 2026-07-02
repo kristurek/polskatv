@@ -20,6 +20,8 @@ import java.util.List;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+import javax.inject.Inject;
+
 public class SimilarEpgsViewModel extends AbstractViewModel {
 
     private MutableLiveData<List<EpgModel>> epgs = new MutableLiveData<>();
@@ -46,6 +48,7 @@ public class SimilarEpgsViewModel extends AbstractViewModel {
         return loading;
     }
 
+    @Inject
     public SimilarEpgsViewModel(PreferencesService prefService) {
         this.iptvService = FactoryService.SERVICE.getInstance();
         this.prefService = prefService;

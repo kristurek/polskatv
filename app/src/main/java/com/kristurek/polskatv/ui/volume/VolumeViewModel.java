@@ -6,6 +6,8 @@ import com.kristurek.polskatv.service.PreferencesService;
 import com.kristurek.polskatv.ui.arch.AbstractViewModel;
 import com.kristurek.polskatv.ui.event.VolumePlayerEvent;
 
+import javax.inject.Inject;
+
 public class VolumeViewModel extends AbstractViewModel {
 
     private MutableLiveData<Integer> progress = new MutableLiveData<>();
@@ -21,6 +23,7 @@ public class VolumeViewModel extends AbstractViewModel {
         return visibility;
     }
 
+    @Inject
     public VolumeViewModel(PreferencesService prefService) {
         this.prefService = prefService;
     }

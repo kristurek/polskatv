@@ -25,6 +25,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.inject.Inject;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -56,6 +58,7 @@ public class ChannelsViewModel extends AbstractViewModel {
     private Context context;
     private Timer timer;
 
+    @Inject
     public ChannelsViewModel(Context context, PreferencesService prefService) {
         this.iptvService = FactoryService.SERVICE.getInstance();
         this.prefService = prefService;

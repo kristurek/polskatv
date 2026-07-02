@@ -9,14 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.ForceCloseFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelFactory;
+import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
+
+import javax.inject.Inject;
 
 public class ForceCloseFragment extends AbstractFragment {
+
+    @Inject
+    public ViewModelProviderFactory factory;
 
     private ForceCloseViewModel viewModel;
     private TextView error;
@@ -29,6 +35,8 @@ public class ForceCloseFragment extends AbstractFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
 
@@ -45,18 +53,16 @@ public class ForceCloseFragment extends AbstractFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        viewModel.getExceptionNotifier().observe(this, this::handleException);
-        viewModel.getMessageNotifier().observe(this, this::handleMessage);
+        viewModel.getExceptionNotifier().observe(getViewLifecycleOwner(), this::handleException);
+        viewModel.getMessageNotifier().observe(getViewLifecycleOwner(), this::handleMessage);
 
-        viewModel.getError().observe(this, errorMsg -> error.setText(errorMsg));
+        viewModel.getError().observe(getViewLifecycleOwner(), errorMsg -> error.setText(errorMsg));
 
         viewModel.initialize(getActivity().getIntent().getStringExtra("error"));
     }
 
     @NonNull
     public ForceCloseViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
-
-        return ViewModelProviders.of(getActivity(), factory).get(ForceCloseViewModel.class);
+        return new ViewModelProvider(getActivity(), factory).get(ForceCloseViewModel.class);
     }
 }

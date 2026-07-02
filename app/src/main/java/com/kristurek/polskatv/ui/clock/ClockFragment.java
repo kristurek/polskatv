@@ -9,14 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.ClockFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelFactory;
+import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
+
+import javax.inject.Inject;
 
 public class ClockFragment extends AbstractFragment {
+
+    @Inject
+    public ViewModelProviderFactory factory;
 
     private ClockViewModel viewModel;
     private TextView clock;
@@ -25,6 +31,8 @@ public class ClockFragment extends AbstractFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
 
@@ -41,15 +49,13 @@ public class ClockFragment extends AbstractFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        viewModel.getTime().observe(this, (item) -> clock.setText(item));
+        viewModel.getTime().observe(getViewLifecycleOwner(), (item) -> clock.setText(item));
 
         viewModel.initializeClock();
     }
 
     @NonNull
     public ClockViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
-
-        return ViewModelProviders.of(getActivity(), factory).get(ClockViewModel.class);
+        return new ViewModelProvider(getActivity(), factory).get(ClockViewModel.class);
     }
 }

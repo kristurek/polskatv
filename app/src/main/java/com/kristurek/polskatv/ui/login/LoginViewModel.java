@@ -22,6 +22,8 @@ import com.kristurek.polskatv.ui.login.model.ProviderModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -76,6 +78,7 @@ public class LoginViewModel extends AbstractViewModel {
         return visibility;
     }
 
+    @Inject
     public LoginViewModel(Context context,
                           PreferencesService prefService,
                           RemoteServerService remoteService,

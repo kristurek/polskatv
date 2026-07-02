@@ -9,6 +9,8 @@ import com.kristurek.polskatv.util.DateTimeHelper;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.inject.Inject;
+
 public class ClockViewModel extends AbstractViewModel {
 
     private MutableLiveData<String> time = new MutableLiveData<>();
@@ -25,6 +27,7 @@ public class ClockViewModel extends AbstractViewModel {
         return visibility;
     }
 
+    @Inject
     public ClockViewModel(PreferencesService prefService) {
         this.prefService = prefService;
 

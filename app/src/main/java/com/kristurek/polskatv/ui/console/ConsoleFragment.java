@@ -9,12 +9,13 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.ConsoleFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelFactory;
+import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.event.EpgCurrentTimeEvent;
 import com.kristurek.polskatv.ui.event.SelectedEpgEvent;
 import com.kristurek.polskatv.ui.event.StopPlayerEvent;
@@ -26,7 +27,12 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.Serializable;
 
+import javax.inject.Inject;
+
 public class ConsoleFragment extends AbstractFragment {
+
+    @Inject
+    public ViewModelProviderFactory factory;
 
     private ConsoleViewModel viewModel;
 
@@ -34,6 +40,8 @@ public class ConsoleFragment extends AbstractFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
         viewModel.initializeEventBus(this);
@@ -49,15 +57,13 @@ public class ConsoleFragment extends AbstractFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        viewModel.getExceptionNotifier().observe(this, this::handleException);
-        viewModel.getMessageNotifier().observe(this, this::handleMessage);
+        viewModel.getExceptionNotifier().observe(getViewLifecycleOwner(), this::handleException);
+        viewModel.getMessageNotifier().observe(getViewLifecycleOwner(), this::handleMessage);
     }
 
     @NonNull
     public ConsoleViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
-
-        return ViewModelProviders.of(getActivity(), factory).get(ConsoleViewModel.class);
+        return new ViewModelProvider(getActivity(), factory).get(ConsoleViewModel.class);
     }
 
     public void onForwardClick() {

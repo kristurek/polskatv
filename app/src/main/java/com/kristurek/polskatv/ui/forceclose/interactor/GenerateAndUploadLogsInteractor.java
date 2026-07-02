@@ -37,20 +37,24 @@ public class GenerateAndUploadLogsInteractor extends SingleParamAbstractInteract
 
         String dateTime = LocalDateTime.now().toString("yyyyMMddhhmmss");
 
+        File cacheDir = context.getExternalCacheDir();
+        if (cacheDir == null)
+            cacheDir = context.getCacheDir();
+
         String infoFileName = dateTime + "_info_error.txt";
-        File infoFile = logService.prepareInfoFile(context.getExternalCacheDir().getPath(), infoFileName, diagnostickMsg);
+        File infoFile = logService.prepareInfoFile(cacheDir.getPath(), infoFileName, diagnostickMsg);
         remoteService.uploadFile(infoFile, "log");
-        infoFile.deleteOnExit();
+        infoFile.delete();
 
         String logFileName = dateTime + "_log_error.txt";
-        File logFile = logService.prepareLogFile(context.getExternalCacheDir().getPath(), logFileName);
+        File logFile = logService.prepareLogFile(cacheDir.getPath(), logFileName);
         remoteService.uploadFile(logFile, "log");
-        logFile.deleteOnExit();
+        logFile.delete();
 
         String dumpFileName = dateTime + "_dump_error.txt";
-        File dumpFile = logService.prepareDumpFile(context.getExternalCacheDir().getPath(), dumpFileName);
+        File dumpFile = logService.prepareDumpFile(cacheDir.getPath(), dumpFileName);
         remoteService.uploadFile(dumpFile, "log");
-        dumpFile.deleteOnExit();
+        dumpFile.delete();
 
         return true;
     }

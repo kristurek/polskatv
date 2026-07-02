@@ -24,6 +24,8 @@ import com.kristurek.polskatv.util.Tag;
 import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
+import javax.inject.Inject;
+
 public class ConsoleViewModel extends AbstractViewModel {
 
     private MutableLiveData<Boolean> paused = new MutableLiveData<>();
@@ -50,6 +52,7 @@ public class ConsoleViewModel extends AbstractViewModel {
         return visibility;
     }
 
+    @Inject
     public ConsoleViewModel(PreferencesService prefService) {
         this.prefService = prefService;
 

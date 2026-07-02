@@ -13,12 +13,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.EpgFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelFactory;
+import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.epgs.model.EpgType;
 import com.kristurek.polskatv.ui.event.EpgCurrentTimeEvent;
 import com.kristurek.polskatv.ui.event.SelectedEpgEvent;
@@ -29,7 +30,12 @@ import com.kristurek.polskatv.util.Tag;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import javax.inject.Inject;
+
 public class EpgFragment extends AbstractFragment {
+
+    @Inject
+    public ViewModelProviderFactory factory;
 
     private EpgViewModel viewModel;
 
@@ -47,6 +53,8 @@ public class EpgFragment extends AbstractFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
         viewModel.initializeEventBus(this);
@@ -82,13 +90,13 @@ public class EpgFragment extends AbstractFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        viewModel.getExceptionNotifier().observe(this, this::handleException);
-        viewModel.getMessageNotifier().observe(this, this::handleMessage);
+        viewModel.getExceptionNotifier().observe(getViewLifecycleOwner(), this::handleException);
+        viewModel.getMessageNotifier().observe(getViewLifecycleOwner(), this::handleMessage);
 
-        viewModel.getName().observe(this, param -> name.setText(param));
-        viewModel.getTitle().observe(this, param -> title.setText(param));
-        viewModel.getDateTime().observe(this, param -> dateTime.setText(param));
-        viewModel.getType().observe(this, param -> {
+        viewModel.getName().observe(getViewLifecycleOwner(), param -> name.setText(param));
+        viewModel.getTitle().observe(getViewLifecycleOwner(), param -> title.setText(param));
+        viewModel.getDateTime().observe(getViewLifecycleOwner(), param -> dateTime.setText(param));
+        viewModel.getType().observe(getViewLifecycleOwner(), param -> {
             if (param.equals(EpgType.ARCHIVE_EPG)) {
                 type.setText("ARCHIVE");
                 typeImage.setImageResource(R.drawable.ic_play);
@@ -99,17 +107,15 @@ public class EpgFragment extends AbstractFragment {
                 seekBarTime.setVisibility(View.GONE);
             }
         });
-        viewModel.getCurrentSecond().observe(this, param -> seekBar.setProgress(param));
-        viewModel.getTotalSecond().observe(this, param -> seekBar.setMax(param));
-        viewModel.getCurrentTime().observe(this, param -> currentTime.setText(param));
-        viewModel.getTotalTime().observe(this, param -> totalTime.setText(param));
+        viewModel.getCurrentSecond().observe(getViewLifecycleOwner(), param -> seekBar.setProgress(param));
+        viewModel.getTotalSecond().observe(getViewLifecycleOwner(), param -> seekBar.setMax(param));
+        viewModel.getCurrentTime().observe(getViewLifecycleOwner(), param -> currentTime.setText(param));
+        viewModel.getTotalTime().observe(getViewLifecycleOwner(), param -> totalTime.setText(param));
     }
 
     @NonNull
     public EpgViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
-
-        return ViewModelProviders.of(getActivity(), factory).get(EpgViewModel.class);
+        return new ViewModelProvider(getActivity(), factory).get(EpgViewModel.class);
     }
 
     @Subscribe(threadMode = ThreadMode.POSTING)

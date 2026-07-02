@@ -14,6 +14,8 @@ import com.kristurek.polskatv.ui.main.interactor.LogoutInteractor;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+import javax.inject.Inject;
+
 public class MainViewModel extends AbstractViewModel {
 
     private MutableLiveData<Boolean> visibility = new MutableLiveData<>();
@@ -30,6 +32,7 @@ public class MainViewModel extends AbstractViewModel {
 
     //==============================================================================================
 
+    @Inject
     public MainViewModel(Context context,
                          PreferencesService prefService) {
         this.iptvService = FactoryService.SERVICE.getInstance();
