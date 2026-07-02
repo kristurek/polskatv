@@ -3,7 +3,7 @@ package com.kristurek.polskatv.ui.player;
 import android.os.Handler;
 import android.util.Log;
 
-import com.google.android.exoplayer2.Player;
+import androidx.media3.common.Player;
 import com.kristurek.polskatv.util.Tag;
 
 import java.util.concurrent.TimeUnit;
@@ -50,15 +50,17 @@ public class PlayerTimeline implements Player.Listener {
     }
 
     @Override
-    public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
-        if (playWhenReady && playbackState == Player.STATE_READY) {
-            startCount = TimeUnit.NANOSECONDS.toMillis(System.nanoTime());
-            actualProgressLastFrame = 0L;
-            count = true;
-        } else {
-            count = false;
-            actualProgressTotal = actualProgressTotal + actualProgressLastFrame;
-            actualProgressLastFrame = 0L;
+    public void onEvents(Player player, Player.Events events) {
+        if (events.containsAny(Player.EVENT_PLAYBACK_STATE_CHANGED, Player.EVENT_PLAY_WHEN_READY_CHANGED)) {
+            if (player.getPlayWhenReady() && player.getPlaybackState() == Player.STATE_READY) {
+                startCount = TimeUnit.NANOSECONDS.toMillis(System.nanoTime());
+                actualProgressLastFrame = 0L;
+                count = true;
+            } else {
+                count = false;
+                actualProgressTotal = actualProgressTotal + actualProgressLastFrame;
+                actualProgressLastFrame = 0L;
+            }
         }
     }
 }

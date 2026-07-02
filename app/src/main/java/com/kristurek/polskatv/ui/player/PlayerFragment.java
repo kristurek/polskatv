@@ -11,7 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.google.android.exoplayer2.ui.PlayerView;
+import androidx.media3.common.util.UnstableApi;
+import androidx.media3.ui.PlayerView;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.PlayerFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
@@ -27,6 +28,7 @@ import com.kristurek.polskatv.util.Tag;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+@UnstableApi
 public class PlayerFragment extends AbstractFragment {
 
     private PlayerViewModel viewModel;

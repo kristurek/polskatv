@@ -3,19 +3,21 @@ package com.kristurek.polskatv.ui.player;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
-import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.trackselection.TrackSelector;
+import androidx.media3.common.util.UnstableApi;
+import androidx.media3.exoplayer.ExoPlayer;
+import androidx.media3.exoplayer.trackselection.TrackSelector;
 
+@UnstableApi
 public class ExoPlayerFactory {
 
     @SuppressLint("StaticFieldLeak")
-    private static volatile SimpleExoPlayer player;
+    private static volatile ExoPlayer player;
 
-    public static SimpleExoPlayer createInstance(Context context, TrackSelector trackSelector) {
+    public static ExoPlayer createInstance(Context context, TrackSelector trackSelector) {
         if (player == null) {
-            synchronized (SimpleExoPlayer.class) {
+            synchronized (ExoPlayer.class) {
                 if (player == null) {
-                    player = new SimpleExoPlayer.Builder(context).setTrackSelector(trackSelector).build();
+                    player = new ExoPlayer.Builder(context).setTrackSelector(trackSelector).build();
                 }
             }
         }
