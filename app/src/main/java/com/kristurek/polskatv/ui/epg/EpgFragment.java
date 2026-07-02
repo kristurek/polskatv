@@ -107,7 +107,7 @@ public class EpgFragment extends AbstractFragment {
 
     @NonNull
     public EpgViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(getActivity(), factory).get(EpgViewModel.class);
     }

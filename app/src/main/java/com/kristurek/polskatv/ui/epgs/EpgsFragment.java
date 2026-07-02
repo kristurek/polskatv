@@ -115,7 +115,7 @@ public class EpgsFragment extends AbstractFragment implements XTabLayout.OnTabSe
 
     @NonNull
     public EpgsViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(getActivity(), factory).get(EpgsViewModel.class);
     }

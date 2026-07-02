@@ -6,7 +6,6 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.RelativeLayout;
 
@@ -127,7 +126,7 @@ public class SimilarEpgsDialogFragment extends AbstractDialogFragment implements
 
     @NonNull
     public SimilarEpgsViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(getActivity(), factory).get(SimilarEpgsViewModel.class);
     }

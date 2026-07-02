@@ -67,7 +67,7 @@ public class LoginFragment extends AbstractFragment {
 
     @NonNull
     public LoginViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(getActivity(), factory).get(LoginViewModel.class);
     }

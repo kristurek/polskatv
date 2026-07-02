@@ -48,7 +48,7 @@ public class ClockFragment extends AbstractFragment {
 
     @NonNull
     public ClockViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(getActivity(), factory).get(ClockViewModel.class);
     }

@@ -90,7 +90,7 @@ public class ChannelsFragment extends AbstractFragment implements AdapterView.On
 
     @NonNull
     public ChannelsViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(getActivity(), factory).get(ChannelsViewModel.class);
     }

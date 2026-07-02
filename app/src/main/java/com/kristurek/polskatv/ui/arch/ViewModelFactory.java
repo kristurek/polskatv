@@ -49,7 +49,7 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
         return INSTANCE;
     }
 
-    public static ViewModelFactory getInstance() {
+    public static ViewModelFactory getSingletonInstance() {
         return INSTANCE;
     }
 

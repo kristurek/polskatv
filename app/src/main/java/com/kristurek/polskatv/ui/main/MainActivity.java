@@ -95,7 +95,7 @@ public class MainActivity extends AbstractActivity {
 
     @NonNull
     public MainViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(this, factory).get(MainViewModel.class);
     }

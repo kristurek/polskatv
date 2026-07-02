@@ -55,7 +55,7 @@ public class ForceCloseFragment extends AbstractFragment {
 
     @NonNull
     public ForceCloseViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(getActivity(), factory).get(ForceCloseViewModel.class);
     }

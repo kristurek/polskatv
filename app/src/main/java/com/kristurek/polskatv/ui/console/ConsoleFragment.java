@@ -55,7 +55,7 @@ public class ConsoleFragment extends AbstractFragment {
 
     @NonNull
     public ConsoleViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(getActivity(), factory).get(ConsoleViewModel.class);
     }

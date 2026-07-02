@@ -61,7 +61,7 @@ public class PlayerFragment extends AbstractFragment {
 
     @NonNull
     public PlayerViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(getActivity(), factory).get(PlayerViewModel.class);
     }

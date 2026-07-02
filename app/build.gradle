@@ -1,5 +1,13 @@
 apply plugin: 'com.android.application'
 
+configurations.all {
+    resolutionStrategy {
+        force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+    }
+}
+
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
 
@@ -12,10 +20,6 @@ def getDropboxToken() {
 }
 
 android {
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
 
     signingConfigs {
         config {
@@ -26,7 +30,6 @@ android {
         }
     }
     compileSdkVersion 33
-    buildToolsVersion "30.0.2"
     defaultConfig {
         applicationId "com.kristurek.polskatv"
         minSdkVersion 22
@@ -60,6 +63,11 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
     sourceSets.test.resources.srcDirs += ["src/test/resources"]
+    namespace 'com.kristurek.polskatv'
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
 }
 
 dependencies {

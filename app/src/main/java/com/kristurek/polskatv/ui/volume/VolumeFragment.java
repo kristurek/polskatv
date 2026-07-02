@@ -69,7 +69,7 @@ public class VolumeFragment extends AbstractFragment implements View.OnKeyListen
 
     @NonNull
     public VolumeViewModel obtainViewModel() {
-        ViewModelFactory factory = ViewModelFactory.getInstance();
+        ViewModelFactory factory = ViewModelFactory.getSingletonInstance();
 
         return ViewModelProviders.of(getActivity(), factory).get(VolumeViewModel.class);
     }
