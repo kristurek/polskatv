@@ -38,6 +38,10 @@ public class ExoPlayerFactory {
         return player;
     }
 
+    public static ExoPlayer getInstance() {
+        return player;
+    }
+
     public static void destroyInstance() {
         if (player != null) {
             player.setPlayWhenReady(false);

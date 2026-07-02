@@ -35,6 +35,15 @@
             android:layout_alignParentEnd="true"
             tools:layout="@layout/clock_fragment" />
 
+        <fragment
+            android:id="@+id/debug_view_fragment"
+            android:name="com.kristurek.polskatv.ui.debug.DebugViewFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            tools:layout="@layout/debug_view_fragment" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
