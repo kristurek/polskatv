@@ -8,6 +8,7 @@ import android.view.View;
 
 import androidx.lifecycle.MutableLiveData;
 
+import androidx.media3.common.util.UnstableApi;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Player;
 import androidx.media3.exoplayer.ExoPlayer;
@@ -31,6 +32,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+@UnstableApi
 public class PlayerViewModel extends AbstractViewModel {
 
     private MutableLiveData<ExoPlayer> player = new MutableLiveData<>();
@@ -215,7 +217,7 @@ public class PlayerViewModel extends AbstractViewModel {
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl()[begin]");
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl()[" + result + "]");
 
-            ExoPlayer internalPlayer = ExoPlayerFactory.createInstance(context);
+            ExoPlayer internalPlayer = ExoPlayerFactory.createInstance(context, prefService);
 
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl() hash[" + internalPlayer.hashCode() + "]");
 

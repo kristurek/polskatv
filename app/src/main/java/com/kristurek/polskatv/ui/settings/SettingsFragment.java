@@ -58,6 +58,7 @@ import static com.kristurek.polskatv.service.PreferencesService.KEYS.APPLICATION
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.APPLICATION_UPLOAD_LOGS;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.APPLICATION_VERSION;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_BACKWARD_MOVE;
+import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_BUFFER;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_FAST_BACKWARD_MOVE;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_FAST_FORWARD_MOVE;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_FORWARD_MOVE;
@@ -144,6 +145,10 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         EditTextPreference accountTimeZonePref = (EditTextPreference) findPreference(ACCOUNT_TIME_ZONE.getValue());
         accountTimeZonePref.setOnPreferenceChangeListener(this);
 
+        ListPreference playerBufferPref = (ListPreference) findPreference(PLAYER_BUFFER.getValue());
+        playerBufferPref.setEntries(new String[]{"1", "3", "5", "10", "30", "60"});
+        playerBufferPref.setEntryValues(new String[]{"1", "3", "5", "10", "30", "60"});
+
         ListPreference playerForwardPref = (ListPreference) findPreference(PLAYER_FORWARD_MOVE.getValue());
         playerForwardPref.setEntries(new String[]{"1", "2", "3", "4", "5"});
         playerForwardPref.setEntryValues(new String[]{"1", "2", "3", "4", "5"});
@@ -217,6 +222,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         EditTextPreference timeZonePref = (EditTextPreference) findPreference(ACCOUNT_TIME_ZONE.getValue());
         timeZonePref.setSummary(String.valueOf(prefService.get(ACCOUNT_TIME_ZONE, 0)));
+
+        ListPreference bufferPref = (ListPreference) findPreference(PLAYER_BUFFER.getValue());
+        bufferPref.setSummary(prefService.get(PLAYER_BUFFER, 5) + getResources().getString(R.string.buffer_summary_settings));
 
         ListPreference forwardPref = (ListPreference) findPreference(PLAYER_FORWARD_MOVE.getValue());
         forwardPref.setSummary(prefService.get(PLAYER_FORWARD_MOVE, 0) + getResources().getString(R.string.forward_summary_settings));

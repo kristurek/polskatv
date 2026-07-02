@@ -46,6 +46,12 @@
 
     <PreferenceCategory android:title="@string/player_category_settings">
         <com.kristurek.polskatv.ui.view.XIntegerListPreference
+            android:defaultValue="5"
+            android:dialogTitle="@string/buffer_dialog_settings"
+            android:key="__PLAYER_BUFFER__"
+            android:summary="@string/buffer_summary_settings"
+            android:title="@string/buffer_title_settings" />
+        <com.kristurek.polskatv.ui.view.XIntegerListPreference
             android:defaultValue="1"
             android:dialogTitle="@string/forward_dialog_settings"
             android:key="__PLAYER_FORWARD_MOVE__"

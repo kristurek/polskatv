@@ -85,6 +85,10 @@
     <string name="fast_backward_dialog_settings">Please select time for "Fast Backward" action</string>
     <string name="fast_backward_summary_settings">&#160;(min)</string>
 
+    <string name="buffer_title_settings">Stream Buffer</string>
+    <string name="buffer_dialog_settings">Please select buffer duration</string>
+    <string name="buffer_summary_settings">&#160;seconds</string>
+
     <string name="application_time_zone_title_settings">Time zone</string>
     <string name="application_time_zone_dialog_settings">Please select time zone</string>
 
