@@ -34,7 +34,7 @@ android {
     defaultConfig {
         applicationId "com.kristurek.polskatv"
         minSdk 23
-        targetSdk 35
+        targetSdk 37
         versionCode 119
         versionName "119"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -59,8 +59,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 
     sourceSets {
@@ -106,7 +106,7 @@ dependencies {
     implementation 'org.greenrobot:eventbus:3.3.1'
     implementation 'org.apache.commons:commons-text:1.15.0'
     implementation 'org.apache.commons:commons-collections4:4.5.0'
-    implementation 'com.dropbox.core:dropbox-core-sdk:7.0.0'
+    implementation 'com.dropbox.core:dropbox-core-sdk:8.0.1'
     api 'com.google.guava:guava:33.6.0-android'  //remember - android, not jre
 
     annotationProcessor 'com.google.dagger:dagger-compiler:2.60'
