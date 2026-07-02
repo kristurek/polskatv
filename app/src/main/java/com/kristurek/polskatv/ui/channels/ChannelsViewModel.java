@@ -27,9 +27,12 @@ import java.util.TimerTask;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+import dagger.hilt.android.qualifiers.ApplicationContext;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+@HiltViewModel
 public class ChannelsViewModel extends AbstractViewModel {
 
     private MutableLiveData<List<Serializable>> channels = new MutableLiveData<>();
@@ -59,7 +62,7 @@ public class ChannelsViewModel extends AbstractViewModel {
     private Timer timer;
 
     @Inject
-    public ChannelsViewModel(Context context, PreferencesService prefService) {
+    public ChannelsViewModel(@ApplicationContext Context context, PreferencesService prefService) {
         this.iptvService = FactoryService.SERVICE.getInstance();
         this.prefService = prefService;
         this.context = context;

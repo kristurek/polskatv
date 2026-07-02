@@ -22,6 +22,9 @@ import io.reactivex.schedulers.Schedulers;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class SimilarEpgsViewModel extends AbstractViewModel {
 
     private MutableLiveData<List<EpgModel>> epgs = new MutableLiveData<>();

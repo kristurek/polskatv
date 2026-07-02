@@ -11,6 +11,9 @@ import com.kristurek.polskatv.util.DateTimeHelper;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class EpgViewModel extends AbstractViewModel {
 
     private MutableLiveData<String> dateTime = new MutableLiveData<>();

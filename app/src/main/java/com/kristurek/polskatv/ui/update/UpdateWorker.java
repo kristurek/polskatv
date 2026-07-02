@@ -12,27 +12,32 @@ import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
 import com.kristurek.polskatv.BuildConfig;
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.service.PreferencesService;
 import com.kristurek.polskatv.service.RemoteServerService;
 import com.kristurek.polskatv.util.Tag;
+
+import dagger.assisted.Assisted;
+import dagger.assisted.AssistedInject;
+import androidx.hilt.work.HiltWorker;
 
 import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
-import javax.inject.Inject;
-
+@HiltWorker
 public class UpdateWorker extends Worker {
 
-    @Inject
     public PreferencesService prefService;
-    @Inject
     public RemoteServerService remoteService;
 
-    public UpdateWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
+    @AssistedInject
+    public UpdateWorker(@Assisted @NonNull Context context,
+                        @Assisted @NonNull WorkerParameters workerParams,
+                        PreferencesService prefService,
+                        RemoteServerService remoteService) {
         super(context, workerParams);
-        PolskaTvApplication.getComponent().inject(this);
+        this.prefService = prefService;
+        this.remoteService = remoteService;
     }
 
     @NonNull

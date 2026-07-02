@@ -22,25 +22,17 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import dagger.hilt.InstallIn;
+import dagger.hilt.android.qualifiers.ApplicationContext;
+import dagger.hilt.components.SingletonComponent;
 
 @Module
+@InstallIn(SingletonComponent.class)
 public class PolskaTvModule {
 
-    private Context context;
-
-    public PolskaTvModule(Context context) {
-        this.context = context;
-    }
-
     @Singleton
     @Provides
-    Context provideContext() {
-        return context;
-    }
-
-    @Singleton
-    @Provides
-    PreferencesService providePrefService() {
+    PreferencesService providePrefService(@ApplicationContext Context context) {
         return new PolskaTvPreferencesService(context);
     }
 
@@ -58,8 +50,8 @@ public class PolskaTvModule {
 
     @Singleton
     @Provides
-    DiagnosticService provideDiagnosticService() {
-        return new PolskaTvDiagnosticService(context, providePrefService());
+    DiagnosticService provideDiagnosticService(@ApplicationContext Context context, PreferencesService preferencesService) {
+        return new PolskaTvDiagnosticService(context, preferencesService);
     }
 
 }

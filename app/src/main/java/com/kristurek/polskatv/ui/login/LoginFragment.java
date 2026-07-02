@@ -13,20 +13,16 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.LoginFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.login.adapter.ProviderAdapter;
 import com.kristurek.polskatv.ui.main.MainActivity;
 
-import javax.inject.Inject;
+import dagger.hilt.android.AndroidEntryPoint;
 
+@AndroidEntryPoint
 public class LoginFragment extends AbstractFragment {
-
-    @Inject
-    public ViewModelProviderFactory factory;
 
     private LoginViewModel viewModel;
 
@@ -38,8 +34,6 @@ public class LoginFragment extends AbstractFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
 
@@ -72,7 +66,7 @@ public class LoginFragment extends AbstractFragment {
 
     @NonNull
     public LoginViewModel obtainViewModel() {
-        return new ViewModelProvider(getActivity(), factory).get(LoginViewModel.class);
+        return new ViewModelProvider(this).get(LoginViewModel.class);
     }
 
     @Override

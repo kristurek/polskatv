@@ -14,25 +14,20 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.VolumeFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.view.XVerticalSeekBar;
 import com.kristurek.polskatv.util.Focus;
 import com.kristurek.polskatv.util.FontHelper;
 import com.kristurek.polskatv.util.Tag;
 
-import javax.inject.Inject;
+import dagger.hilt.android.AndroidEntryPoint;
 
+@AndroidEntryPoint
 public class VolumeFragment extends AbstractFragment implements View.OnKeyListener, SeekBar.OnSeekBarChangeListener {
 
-    @Inject
-    public ViewModelProviderFactory factory;
-
     private VolumeViewModel viewModel;
-
     private XVerticalSeekBar volumeSeekbar;
     private TextView volumeValue;
 
@@ -40,8 +35,6 @@ public class VolumeFragment extends AbstractFragment implements View.OnKeyListen
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
         viewModel.initializeEventBus(this);
@@ -77,7 +70,7 @@ public class VolumeFragment extends AbstractFragment implements View.OnKeyListen
 
     @NonNull
     public VolumeViewModel obtainViewModel() {
-        return new ViewModelProvider(getActivity(), factory).get(VolumeViewModel.class);
+        return new ViewModelProvider(this).get(VolumeViewModel.class);
     }
 
     @Override

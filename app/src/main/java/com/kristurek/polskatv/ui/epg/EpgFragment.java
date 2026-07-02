@@ -15,11 +15,9 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.EpgFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.epgs.model.EpgType;
 import com.kristurek.polskatv.ui.event.EpgCurrentTimeEvent;
 import com.kristurek.polskatv.ui.event.SelectedEpgEvent;
@@ -27,15 +25,13 @@ import com.kristurek.polskatv.ui.event.StopPlayerEvent;
 import com.kristurek.polskatv.util.FontHelper;
 import com.kristurek.polskatv.util.Tag;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import javax.inject.Inject;
-
+@AndroidEntryPoint
 public class EpgFragment extends AbstractFragment {
-
-    @Inject
-    public ViewModelProviderFactory factory;
 
     private EpgViewModel viewModel;
 
@@ -53,8 +49,6 @@ public class EpgFragment extends AbstractFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
         viewModel.initializeEventBus(this);
@@ -115,7 +109,7 @@ public class EpgFragment extends AbstractFragment {
 
     @NonNull
     public EpgViewModel obtainViewModel() {
-        return new ViewModelProvider(getActivity(), factory).get(EpgViewModel.class);
+        return new ViewModelProvider(this).get(EpgViewModel.class);
     }
 
     @Subscribe(threadMode = ThreadMode.POSTING)

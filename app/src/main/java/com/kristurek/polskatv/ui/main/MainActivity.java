@@ -14,11 +14,9 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.MainActivityBinding;
 import com.kristurek.polskatv.ui.arch.AbstractActivity;
-import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.channels.ChannelsFragment;
 import com.kristurek.polskatv.ui.console.ConsoleFragment;
 import com.kristurek.polskatv.ui.epgs.EpgsFragment;
@@ -30,14 +28,12 @@ import com.kristurek.polskatv.ui.volume.VolumeFragment;
 import com.kristurek.polskatv.util.Focus;
 import com.kristurek.polskatv.util.Tag;
 
-import javax.inject.Inject;
+import dagger.hilt.android.AndroidEntryPoint;
 
+@AndroidEntryPoint
 public class MainActivity extends AbstractActivity {
 
     public static final int ID = 6789;
-
-    @Inject
-    public ViewModelProviderFactory factory;
 
     private MainViewModel viewModel;
 
@@ -51,8 +47,6 @@ public class MainActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        PolskaTvApplication.getComponent().inject(this);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -103,7 +97,7 @@ public class MainActivity extends AbstractActivity {
 
     @NonNull
     public MainViewModel obtainViewModel() {
-        return new ViewModelProvider(this, factory).get(MainViewModel.class);
+        return new ViewModelProvider(this).get(MainViewModel.class);
     }
 
     @Override

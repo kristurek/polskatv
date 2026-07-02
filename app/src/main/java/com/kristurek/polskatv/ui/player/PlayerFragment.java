@@ -13,11 +13,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import androidx.media3.common.util.UnstableApi;
 import androidx.media3.ui.PlayerView;
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.PlayerFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.event.PausePlayerEvent;
 import com.kristurek.polskatv.ui.event.QuietPausePlayerEvent;
 import com.kristurek.polskatv.ui.event.ResumePlayerEvent;
@@ -29,13 +27,11 @@ import com.kristurek.polskatv.util.Tag;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import javax.inject.Inject;
+import dagger.hilt.android.AndroidEntryPoint;
 
+@AndroidEntryPoint
 @UnstableApi
 public class PlayerFragment extends AbstractFragment {
-
-    @Inject
-    public ViewModelProviderFactory factory;
 
     private PlayerViewModel viewModel;
     private PlayerView playerView;
@@ -44,8 +40,6 @@ public class PlayerFragment extends AbstractFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
         viewModel.initializeEventBus(this);
@@ -71,7 +65,7 @@ public class PlayerFragment extends AbstractFragment {
 
     @NonNull
     public PlayerViewModel obtainViewModel() {
-        return new ViewModelProvider(getActivity(), factory).get(PlayerViewModel.class);
+        return new ViewModelProvider(this).get(PlayerViewModel.class);
     }
 
     @Subscribe(threadMode = ThreadMode.POSTING, priority = 1)

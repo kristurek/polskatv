@@ -7,6 +7,9 @@ import android.view.WindowManager;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.ui.arch.AbstractActivity;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class LoginActivity extends AbstractActivity {
 
     @Override

@@ -11,28 +11,24 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.ConsoleFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.event.EpgCurrentTimeEvent;
 import com.kristurek.polskatv.ui.event.SelectedEpgEvent;
 import com.kristurek.polskatv.ui.event.StopPlayerEvent;
 import com.kristurek.polskatv.ui.event.StreamEndedEvent;
 import com.kristurek.polskatv.util.Tag;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.Serializable;
 
-import javax.inject.Inject;
-
+@AndroidEntryPoint
 public class ConsoleFragment extends AbstractFragment {
-
-    @Inject
-    public ViewModelProviderFactory factory;
 
     private ConsoleViewModel viewModel;
 
@@ -40,8 +36,6 @@ public class ConsoleFragment extends AbstractFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
         viewModel.initializeEventBus(this);
@@ -63,7 +57,7 @@ public class ConsoleFragment extends AbstractFragment {
 
     @NonNull
     public ConsoleViewModel obtainViewModel() {
-        return new ViewModelProvider(getActivity(), factory).get(ConsoleViewModel.class);
+        return new ViewModelProvider(this).get(ConsoleViewModel.class);
     }
 
     public void onForwardClick() {

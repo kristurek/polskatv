@@ -15,11 +15,9 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.tabs.TabLayout;
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.EpgsFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.epgs.adapter.EpgsAdapter;
 import com.kristurek.polskatv.ui.epgs.model.EpgModel;
 import com.kristurek.polskatv.ui.event.FindCurrentEpgEvent;
@@ -33,15 +31,13 @@ import com.kristurek.polskatv.util.Focus;
 import com.kristurek.polskatv.util.FontHelper;
 import com.kristurek.polskatv.util.Tag;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import javax.inject.Inject;
-
+@AndroidEntryPoint
 public class EpgsFragment extends AbstractFragment implements XTabLayout.OnTabSelectedListener, AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
-
-    @Inject
-    public ViewModelProviderFactory factory;
 
     private EpgsViewModel viewModel;
     private EpgsAdapter adapter;
@@ -53,8 +49,6 @@ public class EpgsFragment extends AbstractFragment implements XTabLayout.OnTabSe
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        PolskaTvApplication.getComponent().inject(this);
 
         adapter = new EpgsAdapter(getActivity());
 
@@ -123,7 +117,7 @@ public class EpgsFragment extends AbstractFragment implements XTabLayout.OnTabSe
 
     @NonNull
     public EpgsViewModel obtainViewModel() {
-        return new ViewModelProvider(getActivity(), factory).get(EpgsViewModel.class);
+        return new ViewModelProvider(this).get(EpgsViewModel.class);
     }
 
     @Override

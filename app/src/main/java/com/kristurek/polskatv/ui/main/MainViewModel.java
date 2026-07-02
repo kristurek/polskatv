@@ -16,6 +16,10 @@ import io.reactivex.schedulers.Schedulers;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+import dagger.hilt.android.qualifiers.ApplicationContext;
+
+@HiltViewModel
 public class MainViewModel extends AbstractViewModel {
 
     private MutableLiveData<Boolean> visibility = new MutableLiveData<>();
@@ -33,7 +37,7 @@ public class MainViewModel extends AbstractViewModel {
     //==============================================================================================
 
     @Inject
-    public MainViewModel(Context context,
+    public MainViewModel(@ApplicationContext Context context,
                          PreferencesService prefService) {
         this.iptvService = FactoryService.SERVICE.getInstance();
         this.prefService = prefService;

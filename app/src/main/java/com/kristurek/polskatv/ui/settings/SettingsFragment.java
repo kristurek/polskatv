@@ -1,6 +1,5 @@
 package com.kristurek.polskatv.ui.settings;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +13,6 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.kristurek.polskatv.BuildConfig;
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.iptv.FactoryService;
 import com.kristurek.polskatv.iptv.core.IptvService;
@@ -29,6 +27,8 @@ import com.kristurek.polskatv.ui.view.XTimePreferenceDialogFragmentCompat;
 import com.kristurek.polskatv.util.DateTimeHelper;
 import com.kristurek.polskatv.util.FontHelper;
 import com.kristurek.polskatv.util.Tag;
+
+import dagger.hilt.android.AndroidEntryPoint;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -63,6 +63,7 @@ import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_FAST
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_FAST_FORWARD_MOVE;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_FORWARD_MOVE;
 
+@AndroidEntryPoint
 public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener, Preference.OnPreferenceChangeListener {
 
     @Inject
@@ -74,8 +75,6 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public LoggerService logService;
     @Inject
     public DiagnosticService diagService;
-    @Inject
-    public Context context;
 
     private final CompositeDisposable disposables = new CompositeDisposable();
 
@@ -111,8 +110,6 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-
-        PolskaTvApplication.getComponent().inject(this);
 
         setPreferencesFromResource(R.xml.settings, rootKey);
 
@@ -249,7 +246,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     }
 
     private boolean uploadLogs() {
-        disposables.add(new GenerateAndUploadLogsInteractor(context, remoteService, logService, diagService)
+        disposables.add(new GenerateAndUploadLogsInteractor(getContext(), remoteService, logService, diagService)
                 .execute()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())

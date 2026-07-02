@@ -11,18 +11,14 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.ClockFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 
-import javax.inject.Inject;
+import dagger.hilt.android.AndroidEntryPoint;
 
+@AndroidEntryPoint
 public class ClockFragment extends AbstractFragment {
-
-    @Inject
-    public ViewModelProviderFactory factory;
 
     private ClockViewModel viewModel;
     private TextView clock;
@@ -31,8 +27,6 @@ public class ClockFragment extends AbstractFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
 
@@ -56,6 +50,6 @@ public class ClockFragment extends AbstractFragment {
 
     @NonNull
     public ClockViewModel obtainViewModel() {
-        return new ViewModelProvider(getActivity(), factory).get(ClockViewModel.class);
+        return new ViewModelProvider(this).get(ClockViewModel.class);
     }
 }

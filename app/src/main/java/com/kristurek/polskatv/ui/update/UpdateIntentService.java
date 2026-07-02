@@ -9,11 +9,12 @@ import android.util.Log;
 import androidx.core.content.FileProvider;
 
 import com.kristurek.polskatv.BuildConfig;
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.service.PreferencesService;
 import com.kristurek.polskatv.service.RemoteServerService;
 import com.kristurek.polskatv.util.CacheHelper;
 import com.kristurek.polskatv.util.Tag;
+
+import dagger.hilt.android.AndroidEntryPoint;
 
 import java.io.File;
 import java.util.Collections;
@@ -21,6 +22,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+@AndroidEntryPoint
 public class UpdateIntentService extends IntentService {
 
     @Inject
@@ -37,8 +39,6 @@ public class UpdateIntentService extends IntentService {
         super.onCreate();
 
         Log.d(Tag.UI, "UpdateIntentService.onCreate()");
-
-        PolskaTvApplication.getComponent().inject(this);
     }
 
     @Override

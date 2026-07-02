@@ -24,9 +24,12 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+import dagger.hilt.android.qualifiers.ApplicationContext;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+@HiltViewModel
 public class LoginViewModel extends AbstractViewModel {
 
     private MutableLiveData<String> subscription = new MutableLiveData<>();
@@ -79,7 +82,7 @@ public class LoginViewModel extends AbstractViewModel {
     }
 
     @Inject
-    public LoginViewModel(Context context,
+    public LoginViewModel(@ApplicationContext Context context,
                           PreferencesService prefService,
                           RemoteServerService remoteService,
                           LoggerService logService,

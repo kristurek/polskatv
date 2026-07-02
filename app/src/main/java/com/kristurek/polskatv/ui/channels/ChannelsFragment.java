@@ -13,11 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.ChannelsFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 import com.kristurek.polskatv.ui.channels.adapter.ChannelsAdapter;
 import com.kristurek.polskatv.ui.event.InitializeChannelsEvent;
 import com.kristurek.polskatv.ui.event.RecreateAppEvent;
@@ -27,15 +25,13 @@ import com.kristurek.polskatv.util.Focus;
 import com.kristurek.polskatv.util.FontHelper;
 import com.kristurek.polskatv.util.Tag;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import javax.inject.Inject;
-
+@AndroidEntryPoint
 public class ChannelsFragment extends AbstractFragment implements AdapterView.OnItemClickListener {
-
-    @Inject
-    public ViewModelProviderFactory factory;
 
     private ChannelsViewModel viewModel;
     private ChannelsAdapter adapter;
@@ -50,8 +46,6 @@ public class ChannelsFragment extends AbstractFragment implements AdapterView.On
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        PolskaTvApplication.getComponent().inject(this);
 
         adapter = new ChannelsAdapter(getActivity());
 
@@ -103,7 +97,7 @@ public class ChannelsFragment extends AbstractFragment implements AdapterView.On
 
     @NonNull
     public ChannelsViewModel obtainViewModel() {
-        return new ViewModelProvider(getActivity(), factory).get(ChannelsViewModel.class);
+        return new ViewModelProvider(this).get(ChannelsViewModel.class);
     }
 
     @Override

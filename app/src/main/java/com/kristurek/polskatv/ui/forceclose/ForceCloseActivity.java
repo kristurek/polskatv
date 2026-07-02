@@ -5,6 +5,9 @@ import android.os.Bundle;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.ui.arch.AbstractActivity;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class ForceCloseActivity extends AbstractActivity {
 
     @Override

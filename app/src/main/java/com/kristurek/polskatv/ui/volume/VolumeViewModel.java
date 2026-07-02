@@ -8,6 +8,9 @@ import com.kristurek.polskatv.ui.event.VolumePlayerEvent;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class VolumeViewModel extends AbstractViewModel {
 
     private MutableLiveData<Integer> progress = new MutableLiveData<>();

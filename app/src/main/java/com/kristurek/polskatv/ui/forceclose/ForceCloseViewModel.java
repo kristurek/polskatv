@@ -16,6 +16,10 @@ import io.reactivex.schedulers.Schedulers;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+import dagger.hilt.android.qualifiers.ApplicationContext;
+
+@HiltViewModel
 public class ForceCloseViewModel extends AbstractViewModel {
 
     private MutableLiveData<String> error = new MutableLiveData<>();
@@ -30,7 +34,7 @@ public class ForceCloseViewModel extends AbstractViewModel {
     }
 
     @Inject
-    public ForceCloseViewModel(Context context,
+    public ForceCloseViewModel(@ApplicationContext Context context,
                                RemoteServerService remoteService,
                                LoggerService logService,
                                DiagnosticService diagService) {

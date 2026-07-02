@@ -34,6 +34,10 @@ import io.reactivex.schedulers.Schedulers;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+import dagger.hilt.android.qualifiers.ApplicationContext;
+
+@HiltViewModel
 @UnstableApi
 public class PlayerViewModel extends AbstractViewModel {
 
@@ -76,7 +80,7 @@ public class PlayerViewModel extends AbstractViewModel {
     //==============================================================================================
 
     @Inject
-    public PlayerViewModel(Context context,
+    public PlayerViewModel(@ApplicationContext Context context,
                            PreferencesService prefService) {
         this.iptvService = FactoryService.SERVICE.getInstance();
         this.prefService = prefService;

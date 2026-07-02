@@ -11,18 +11,15 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kristurek.polskatv.PolskaTvApplication;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.databinding.ForceCloseFragmentBinding;
 import com.kristurek.polskatv.ui.arch.AbstractFragment;
-import com.kristurek.polskatv.ui.arch.ViewModelProviderFactory;
 
-import javax.inject.Inject;
+import dagger.hilt.android.AndroidEntryPoint;
 
+
+@AndroidEntryPoint
 public class ForceCloseFragment extends AbstractFragment {
-
-    @Inject
-    public ViewModelProviderFactory factory;
 
     private ForceCloseViewModel viewModel;
     private TextView error;
@@ -35,8 +32,6 @@ public class ForceCloseFragment extends AbstractFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
-        PolskaTvApplication.getComponent().inject(this);
 
         viewModel = obtainViewModel();
 
@@ -63,6 +58,6 @@ public class ForceCloseFragment extends AbstractFragment {
 
     @NonNull
     public ForceCloseViewModel obtainViewModel() {
-        return new ViewModelProvider(getActivity(), factory).get(ForceCloseViewModel.class);
+        return new ViewModelProvider(this).get(ForceCloseViewModel.class);
     }
 }

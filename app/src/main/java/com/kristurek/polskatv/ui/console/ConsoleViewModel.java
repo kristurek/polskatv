@@ -26,6 +26,9 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class ConsoleViewModel extends AbstractViewModel {
 
     private MutableLiveData<Boolean> paused = new MutableLiveData<>();

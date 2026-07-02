@@ -7,8 +7,11 @@ import android.os.Bundle;
 import com.kristurek.polskatv.R;
 import com.kristurek.polskatv.ui.arch.AbstractActivity;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 import java.io.Serializable;
 
+@AndroidEntryPoint
 public class SettingsActivity extends AbstractActivity {
 
     @Override
