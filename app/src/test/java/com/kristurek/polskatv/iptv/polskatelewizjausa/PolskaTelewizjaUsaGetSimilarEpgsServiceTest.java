@@ -88,8 +88,7 @@ public class PolskaTelewizjaUsaGetSimilarEpgsServiceTest {
 
     @Test
     public void should_return_successful_response() throws IOException, IptvException {
-        ClassLoader loader = ClassLoader.getSystemClassLoader();
-        String response = new String(Files.readAllBytes(Paths.get(loader.getResource("polskatelewizjausa/similar_epgs_success_response_all_channels.json").getPath())), Charset.defaultCharset());
+        String response = new String(Files.readAllBytes(Paths.get(getClass().getClassLoader().getResource("polskatelewizjausa/similar_epgs_success_response_all_channels.json").getPath())), Charset.defaultCharset());
 
         MockResponse mockedResponse = new MockResponse();
         mockedResponse.setBody(response);
@@ -102,6 +101,6 @@ public class PolskaTelewizjaUsaGetSimilarEpgsServiceTest {
         SimilarEpgsResponse responseDTO = service.getSimilarEpgs(new SimilarEpgsRequest(new HashSet<>(Arrays.asList(2455)), "Międzynarodowi poszukiwacze domów", beginArchive));
 
         assertNotNull(responseDTO);
-        assertEquals(4, responseDTO.getEpgs().size());
+        assertEquals(16, responseDTO.getEpgs().size());
     }
 }

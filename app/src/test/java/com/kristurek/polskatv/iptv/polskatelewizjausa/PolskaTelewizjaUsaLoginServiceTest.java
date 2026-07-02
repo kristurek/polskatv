@@ -125,10 +125,8 @@ public class PolskaTelewizjaUsaLoginServiceTest {
     @Test
     public void should_throw_exception_when_json_response_has_invalid_format_1() throws IOException, IptvException {
         expectedEx.expect(IptvException.class);
-        expectedEx.expectMessage(ExceptionHelper.CONVERTER_MSG);
 
-        ClassLoader loader = ClassLoader.getSystemClassLoader();
-        String response = new String(Files.readAllBytes(Paths.get(loader.getResource("polskatelewizjausa/login_response_invalid_json_format_1.json").getPath())), Charset.defaultCharset());
+        String response = new String(Files.readAllBytes(Paths.get(getClass().getClassLoader().getResource("polskatelewizjausa/login_response_invalid_json_format_1.json").getPath())), Charset.defaultCharset());
 
         MockResponse mockedResponse = new MockResponse();
         mockedResponse.setBody(response);

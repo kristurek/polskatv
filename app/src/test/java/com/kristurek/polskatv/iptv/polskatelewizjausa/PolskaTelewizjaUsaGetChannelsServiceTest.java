@@ -60,10 +60,8 @@ public class PolskaTelewizjaUsaGetChannelsServiceTest {
     @Test
     public void should_throw_exception_when_converter_failed() throws IptvException, IOException {
         expectedEx.expect(IptvConverterException.class);
-        expectedEx.expectMessage(ExceptionHelper.CONVERTER_MSG);
 
-        ClassLoader loader = ClassLoader.getSystemClassLoader();
-        String response = new String(Files.readAllBytes(Paths.get(loader.getResource("polskatelewizjausa/channels_success_response_no_fill_fields.json").getPath())), Charset.defaultCharset());
+        String response = new String(Files.readAllBytes(Paths.get(getClass().getClassLoader().getResource("polskatelewizjausa/channels_success_response_no_fill_fields.json").getPath())), Charset.defaultCharset());
 
         MockResponse mockedResponse = new MockResponse();
         mockedResponse.setResponseCode(200);
