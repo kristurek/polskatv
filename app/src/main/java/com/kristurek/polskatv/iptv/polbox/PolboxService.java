@@ -54,6 +54,8 @@ public class PolboxService extends BasePolboxService implements IptvService {
 
     private LoginRequest reLoginRequest;
 
+    private String parentalPass;
+
     public PolboxService(PolboxApi api) {
         this.api = api;
     }
@@ -72,6 +74,8 @@ public class PolboxService extends BasePolboxService implements IptvService {
         persistRequest(request);
 
         LoginResponse response = process(new LoginConverter(), () -> api.login(request.getLogin(), request.getPass(), "all", "react_linux", "b9007bc2ca5768442a3fa4c41f14a4fb", "en", "apple"));
+
+        this.parentalPass = response.getParentalPass() != null ? response.getParentalPass() : request.getParentalPass();
 
         if (response.getRestOfDay() == 0)
             throw new IptvSubscriptionExpiredException(ExceptionHelper.SUBSCRIPTION_EXPIRED_MSG);
@@ -108,7 +112,9 @@ public class PolboxService extends BasePolboxService implements IptvService {
             case TIME_ZONE:
                 return new SettingsResponse();
             case PARENTAL_PASSWORD:
-                return process(new SettingsConverter(), () -> api.saveSettingsParentalPass("pcode", request.getOldValue(), request.getNewValue(), request.getNewValue()), () -> login(reLoginRequest));
+                SettingsResponse response = process(new SettingsConverter(), () -> api.saveSettingsParentalPass("pcode", request.getOldValue(), request.getNewValue(), request.getNewValue()), () -> login(reLoginRequest));
+                this.parentalPass = request.getNewValue();
+                return response;
             case LANGUAGE:
                 return new SettingsResponse();
             default:
@@ -198,10 +204,10 @@ public class PolboxService extends BasePolboxService implements IptvService {
 
         switch (request.getType()) {
             case LIVE_EPG:
-                response = process(new UrlConverter(), () -> api.getLiveUrl(request.getChannelId(), request.getProtectCode()), () -> login(reLoginRequest));
+                response = process(new UrlConverter(), () -> api.getLiveUrl(request.getChannelId(), parentalPass), () -> login(reLoginRequest));
                 break;
             case ARCHIVE_EPG:
-                response = process(new UrlConverter(), () -> api.getArchiveUrl(request.getChannelId(), request.getSeekToTime(), request.getProtectCode()), () -> login(reLoginRequest));
+                response = process(new UrlConverter(), () -> api.getArchiveUrl(request.getChannelId(), request.getSeekToTime(), parentalPass), () -> login(reLoginRequest));
                 break;
             default:
                 throw new IptvException(ExceptionHelper.UNSUPPORTED_EPG_TYPE_MSG);

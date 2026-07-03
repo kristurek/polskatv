@@ -25,10 +25,11 @@ public class AutoLoginInteractor extends VoidParamAbstractInteractor<Boolean> {
 
             String subscription = prefService.get(PreferencesService.KEYS.ACCOUNT_SUBSCRIPTION, (String) null);
             String password = prefService.get(PreferencesService.KEYS.ACCOUNT_PASSWORD, (String) null);
+            String parentalPass = prefService.get(PreferencesService.KEYS.ACCOUNT_PARENTAL_PASSWORD, (String) null);
 
-            LoginResponse response = iptvService.login(new LoginRequest(subscription, password));
+            LoginResponse response = iptvService.login(new LoginRequest(subscription, password, parentalPass));
 
-            prefService.save(PreferencesService.KEYS.ACCOUNT_PARENTAL_PASSWORD, response.getParentalPass());
+            prefService.save(PreferencesService.KEYS.ACCOUNT_PARENTAL_PASSWORD, response.getParentalPass() != null ? response.getParentalPass() : parentalPass);
             prefService.save(PreferencesService.KEYS.ACCOUNT_LANGUAGE, response.getInterfaceLang());
             prefService.save(PreferencesService.KEYS.ACCOUNT_MEDIA_SERVERS, (LinkedHashMap<String, String>) response.getMediaServers());
             prefService.save(PreferencesService.KEYS.ACCOUNT_MEDIA_SERVER_ID, response.getMediaServerId());

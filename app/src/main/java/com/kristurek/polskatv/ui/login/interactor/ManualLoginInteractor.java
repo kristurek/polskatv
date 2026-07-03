@@ -27,7 +27,7 @@ public class ManualLoginInteractor extends ArrayParamAbstractInteractor<Boolean,
         Integer providerId = (Integer) param[3];
         String parentalPassword = (String) param[4];
 
-        LoginResponse response = iptvService.login(new LoginRequest(subscription, password));
+        LoginResponse response = iptvService.login(new LoginRequest(subscription, password, parentalPassword));
 
         if (save) {
             prefService.save(PreferencesService.KEYS.ACCOUNT_SUBSCRIPTION, subscription);

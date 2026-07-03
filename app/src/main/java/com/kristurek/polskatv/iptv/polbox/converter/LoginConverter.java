@@ -31,7 +31,7 @@ public class LoginConverter implements Converter<LoginRetrofitResponse, LoginRes
         responseDTO.setHttpCachingId(response.getSettings().getHttpCaching().getValue());
         responseDTO.setTimeShift(Integer.parseInt(response.getSettings().getTimeshift().getValue()));
         responseDTO.setTimeZone(Integer.parseInt(response.getSettings().getTimezone().getValue()));
-        responseDTO.setParentalPass("1111");//TODO
+        responseDTO.setParentalPass(response.getSettings().getParentalPass());
         responseDTO.setInterfaceLang("en");
         for (List mediaServer : response.getSettings().getStreamServer().getList())
             responseDTO.getMediaServers().put(mediaServer.getIp(), mediaServer.getDescr());

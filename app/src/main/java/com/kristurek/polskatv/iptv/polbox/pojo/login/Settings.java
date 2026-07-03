@@ -15,6 +15,9 @@ public class Settings {
     @SerializedName("stream_server")
     @Expose
     private StreamServer streamServer;
+    @SerializedName("parental_pass")
+    @Expose
+    private String parentalPass;
     @SerializedName("timeshift")
     @Expose
     private Timeshift timeshift;
@@ -36,6 +39,14 @@ public class Settings {
 
     public void setHttpCaching(HttpCaching httpCaching) {
         this.httpCaching = httpCaching;
+    }
+
+    public String getParentalPass() {
+        return parentalPass;
+    }
+
+    public void setParentalPass(String parentalPass) {
+        this.parentalPass = parentalPass;
     }
 
     public StreamServer getStreamServer() {
@@ -67,6 +78,7 @@ public class Settings {
         return "Settings{" +
                 "bitrate=" + bitrate +
                 ", httpCaching=" + httpCaching +
+                ", parentalPass='" + parentalPass + '\'' +
                 ", streamServer=" + streamServer +
                 ", timeshift=" + timeshift +
                 ", timezone=" + timezone +
