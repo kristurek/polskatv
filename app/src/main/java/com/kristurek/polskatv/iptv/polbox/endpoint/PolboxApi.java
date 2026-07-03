@@ -26,7 +26,7 @@ public interface PolboxApi {
     @FormUrlEncoded
     @POST("/api/json/login")
     @Headers({
-            "User-Agent: Polbox.TV 3.0.0B - Windows, built at Jul 18 2016",
+            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
@@ -42,7 +42,7 @@ public interface PolboxApi {
     @TargetClass(clazz = LogoutRetrofitResponse.class)
     @GET("/api/json/logout")
     @Headers({
-            "User-Agent: Polbox.TV 3.0.0B - Windows, built at Jul 18 2016",
+            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
@@ -53,7 +53,7 @@ public interface PolboxApi {
     @FormUrlEncoded
     @POST("/api/json/channel_list")
     @Headers({
-            "User-Agent: Polbox.TV 3.0.0B - Windows, built at Jul 18 2016",
+            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
@@ -63,7 +63,7 @@ public interface PolboxApi {
     @TargetClass(clazz = EpgsRetrofitResponse.class)
     @GET("/api/json/epg")
     @Headers({
-            "User-Agent: Polbox.TV 3.0.0B - Windows, built at Jul 18 2016",
+            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
@@ -73,7 +73,7 @@ public interface PolboxApi {
     @TargetClass(clazz = CurrentEpgsRetrofitResponse.class)
     @GET("/api/json/epg_current")
     @Headers({
-            "User-Agent: Polbox.TV 3.0.0B - Windows, built at Jul 18 2016",
+            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
@@ -84,7 +84,7 @@ public interface PolboxApi {
     @TargetClass(clazz = UrlRetrofitResponse.class)
     @GET("/api/json/get_url")
     @Headers({
-            "User-Agent: Polbox.TV 3.0.0B - Windows, built at Jul 18 2016",
+            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
@@ -95,7 +95,7 @@ public interface PolboxApi {
     @TargetClass(clazz = UrlRetrofitResponse.class)
     @GET("/api/json/get_url")
     @Headers({
-            "User-Agent: Polbox.TV 3.0.0B - Windows, built at Jul 18 2016",
+            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
@@ -109,7 +109,7 @@ public interface PolboxApi {
     @FormUrlEncoded
     @POST("/api/json/settings_set")
     @Headers({
-            "User-Agent: Polbox.TV 3.0.0B - Windows, built at Jul 18 2016",
+            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
@@ -121,7 +121,7 @@ public interface PolboxApi {
     @FormUrlEncoded
     @POST("/api/json/settings_set")
     @Headers({
-            "User-Agent: Polbox.TV 3.0.0B - Windows, built at Jul 18 2016",
+            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
