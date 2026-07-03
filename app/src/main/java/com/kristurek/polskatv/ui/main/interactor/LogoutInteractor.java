@@ -31,6 +31,10 @@ public class LogoutInteractor extends VoidParamAbstractInteractor<Boolean> {
         prefService.clear(PreferencesService.KEYS.ACCOUNT_PARENTAL_PASSWORD);
         prefService.clear(PreferencesService.KEYS.ACCOUNT_MEDIA_SERVER_ID);
         prefService.clear(PreferencesService.KEYS.ACCOUNT_MEDIA_SERVERS);
+        prefService.clear(PreferencesService.KEYS.ACCOUNT_BITRATE_ID);
+        prefService.clear(PreferencesService.KEYS.ACCOUNT_BITRATES);
+        prefService.clear(PreferencesService.KEYS.ACCOUNT_HTTP_CACHING_ID);
+        prefService.clear(PreferencesService.KEYS.ACCOUNT_HTTP_CACHINGS);
         prefService.clear(PreferencesService.KEYS.ACCOUNT_TIME_SHIFT);
         prefService.clear(PreferencesService.KEYS.ACCOUNT_TIME_ZONE);
         prefService.clear(PreferencesService.KEYS.ACCOUNT_REST_OF_DAY);

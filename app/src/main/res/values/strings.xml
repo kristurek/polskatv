@@ -65,6 +65,12 @@
     <string name="media_server_title_settings">Stream server</string>
     <string name="media_server_dialog_settings">Please select stream server location</string>
 
+    <string name="bitrate_title_settings">Bitrate</string>
+    <string name="bitrate_dialog_settings">Please select bitrate</string>
+
+    <string name="http_caching_title_settings">HTTP caching</string>
+    <string name="http_caching_dialog_settings">Please select HTTP caching</string>
+
     <string name="time_shift_title_settings">Time shift</string>
 
     <string name="time_zone_title_settings">Time zone</string>

@@ -97,6 +97,10 @@ public class PolboxService extends BasePolboxService implements IptvService {
             throw new IptvValidatorException(ExceptionHelper.VALIDATOR_MSG);
 
         switch (request.getType()) {
+            case HTTP_CACHING:
+                return process(new SettingsConverter(), () -> api.saveSettings("http_caching", request.getNewValue()), () -> login(reLoginRequest));
+            case BITRATE:
+                return process(new SettingsConverter(), () -> api.saveSettings("bitrate", request.getNewValue()), () -> login(reLoginRequest));
             case STREAM_SERVER:
                 return process(new SettingsConverter(), () -> api.saveSettings("stream_server", request.getNewValue()), () -> login(reLoginRequest));
             case TIME_SHIFT:

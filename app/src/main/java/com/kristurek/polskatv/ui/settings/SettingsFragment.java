@@ -41,6 +41,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
+import static com.kristurek.polskatv.service.PreferencesService.KEYS.ACCOUNT_BITRATES;
+import static com.kristurek.polskatv.service.PreferencesService.KEYS.ACCOUNT_BITRATE_ID;
+import static com.kristurek.polskatv.service.PreferencesService.KEYS.ACCOUNT_HTTP_CACHINGS;
+import static com.kristurek.polskatv.service.PreferencesService.KEYS.ACCOUNT_HTTP_CACHING_ID;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.ACCOUNT_LANGUAGE;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.ACCOUNT_MEDIA_SERVERS;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.ACCOUNT_MEDIA_SERVER_ID;
@@ -136,6 +140,30 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         accountMediaServerPref.setEntryValues(entryValues.toArray(new CharSequence[0]));
         accountMediaServerPref.setOnPreferenceChangeListener(this);
 
+        ListPreference accountBitratePref = (ListPreference) findPreference(ACCOUNT_BITRATE_ID.getValue());
+        Map<String, String> bitrates = prefService.get(ACCOUNT_BITRATES, new LinkedHashMap<>());
+        List<CharSequence> bitrateEntries = new ArrayList<>();
+        List<CharSequence> bitrateEntryValues = new ArrayList<>();
+        for (Map.Entry<String, String> entry : bitrates.entrySet()) {
+            bitrateEntries.add(entry.getValue());
+            bitrateEntryValues.add(entry.getKey());
+        }
+        accountBitratePref.setEntries(bitrateEntries.toArray(new CharSequence[0]));
+        accountBitratePref.setEntryValues(bitrateEntryValues.toArray(new CharSequence[0]));
+        accountBitratePref.setOnPreferenceChangeListener(this);
+
+        ListPreference accountHttpCachingPref = (ListPreference) findPreference(ACCOUNT_HTTP_CACHING_ID.getValue());
+        Map<String, String> httpCachings = prefService.get(ACCOUNT_HTTP_CACHINGS, new LinkedHashMap<>());
+        List<CharSequence> httpCachingEntries = new ArrayList<>();
+        List<CharSequence> httpCachingEntryValues = new ArrayList<>();
+        for (Map.Entry<String, String> entry : httpCachings.entrySet()) {
+            httpCachingEntries.add(entry.getValue());
+            httpCachingEntryValues.add(entry.getKey());
+        }
+        accountHttpCachingPref.setEntries(httpCachingEntries.toArray(new CharSequence[0]));
+        accountHttpCachingPref.setEntryValues(httpCachingEntryValues.toArray(new CharSequence[0]));
+        accountHttpCachingPref.setOnPreferenceChangeListener(this);
+
         EditTextPreference accountTimeShiftPref = (EditTextPreference) findPreference(ACCOUNT_TIME_SHIFT.getValue());
         accountTimeShiftPref.setOnPreferenceChangeListener(this);
 
@@ -214,6 +242,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         ListPreference mediaServersPref = (ListPreference) findPreference(ACCOUNT_MEDIA_SERVER_ID.getValue());
         mediaServersPref.setSummary(mediaServersPref.getEntry());
 
+        ListPreference bitratesPref = (ListPreference) findPreference(ACCOUNT_BITRATE_ID.getValue());
+        bitratesPref.setSummary(bitratesPref.getEntry());
+
+        ListPreference httpCachingsPref = (ListPreference) findPreference(ACCOUNT_HTTP_CACHING_ID.getValue());
+        httpCachingsPref.setSummary(httpCachingsPref.getEntry());
+
         EditTextPreference timeShiftPref = (EditTextPreference) findPreference(ACCOUNT_TIME_SHIFT.getValue());
         timeShiftPref.setSummary(String.valueOf(prefService.get(ACCOUNT_TIME_SHIFT, 0)));
 
@@ -290,6 +324,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
                 return false;
             case ACCOUNT_MEDIA_SERVER_ID:
                 persistSetting(preference, ACCOUNT_MEDIA_SERVER_ID, ((ListPreference) preference).getValue(), String.valueOf(newValue));
+                return false;
+            case ACCOUNT_BITRATE_ID:
+                persistSetting(preference, ACCOUNT_BITRATE_ID, ((ListPreference) preference).getValue(), String.valueOf(newValue));
+                return false;
+            case ACCOUNT_HTTP_CACHING_ID:
+                persistSetting(preference, ACCOUNT_HTTP_CACHING_ID, ((ListPreference) preference).getValue(), String.valueOf(newValue));
                 return false;
             case ACCOUNT_TIME_SHIFT:
                 persistSetting(preference, ACCOUNT_TIME_SHIFT, ((EditTextPreference) preference).getText(), String.valueOf(newValue));

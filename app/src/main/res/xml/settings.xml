@@ -34,6 +34,14 @@
             android:dialogTitle="@string/media_server_dialog_settings"
             android:key="__ACCOUNT_MEDIA_SERVER_ID__"
             android:title="@string/media_server_title_settings" />
+        <ListPreference
+            android:dialogTitle="@string/bitrate_dialog_settings"
+            android:key="__ACCOUNT_BITRATE_ID__"
+            android:title="@string/bitrate_title_settings" />
+        <ListPreference
+            android:dialogTitle="@string/http_caching_dialog_settings"
+            android:key="__ACCOUNT_HTTP_CACHING_ID__"
+            android:title="@string/http_caching_title_settings" />
         <com.kristurek.polskatv.ui.view.XIntegerEditTextPreference
             android:dialogLayout="@layout/x_integer_edit_text_preference"
             android:key="__ACCOUNT_TIME_SHIFT__"

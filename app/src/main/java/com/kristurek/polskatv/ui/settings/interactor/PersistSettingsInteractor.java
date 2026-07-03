@@ -37,6 +37,12 @@ public class PersistSettingsInteractor extends ArrayParamAbstractInteractor<Bool
             case ACCOUNT_MEDIA_SERVER_ID:
                 type = SettingType.STREAM_SERVER;
                 break;
+            case ACCOUNT_BITRATE_ID:
+                type = SettingType.BITRATE;
+                break;
+            case ACCOUNT_HTTP_CACHING_ID:
+                type = SettingType.HTTP_CACHING;
+                break;
             case ACCOUNT_TIME_SHIFT:
                 type = SettingType.TIME_SHIFT;
                 break;

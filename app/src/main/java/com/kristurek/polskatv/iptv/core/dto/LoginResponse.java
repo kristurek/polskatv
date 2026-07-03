@@ -7,11 +7,15 @@ public class LoginResponse {
 
     private int restOfDay;
     private String mediaServerId;
+    private String bitrateId;
+    private String httpCachingId;
     private int timeShift;
     private int timeZone;
     private String parentalPass;
     private String interfaceLang;
     private Map<String, String> mediaServers = new LinkedHashMap<>();
+    private Map<String, String> bitrates = new LinkedHashMap<>();
+    private Map<String, String> httpCachings = new LinkedHashMap<>();
 
     public int getRestOfDay() {
         return restOfDay;
@@ -27,6 +31,22 @@ public class LoginResponse {
 
     public void setMediaServerId(String mediaServerId) {
         this.mediaServerId = mediaServerId;
+    }
+
+    public String getBitrateId() {
+        return bitrateId;
+    }
+
+    public void setBitrateId(String bitrateId) {
+        this.bitrateId = bitrateId;
+    }
+
+    public String getHttpCachingId() {
+        return httpCachingId;
+    }
+
+    public void setHttpCachingId(String httpCachingId) {
+        this.httpCachingId = httpCachingId;
     }
 
     public int getTimeShift() {
@@ -69,16 +89,36 @@ public class LoginResponse {
         this.mediaServers = mediaServers;
     }
 
+    public Map<String, String> getBitrates() {
+        return bitrates;
+    }
+
+    public void setBitrates(Map<String, String> bitrates) {
+        this.bitrates = bitrates;
+    }
+
+    public Map<String, String> getHttpCachings() {
+        return httpCachings;
+    }
+
+    public void setHttpCachings(Map<String, String> httpCachings) {
+        this.httpCachings = httpCachings;
+    }
+
     @Override
     public String toString() {
         return "LoginRetrofitResponse{" +
                 " restOfDay=" + restOfDay +
                 ", mediaServerId=" + mediaServerId +
+                ", bitrateId=" + bitrateId +
+                ", httpCachingId=" + httpCachingId +
                 ", timeShift=" + timeShift +
                 ", timeZone=" + timeZone +
                 ", parentalPass=" + parentalPass +
                 ", interfaceLang='" + interfaceLang + '\'' +
                 ", mediaServers=" + mediaServers +
+                ", bitrates=" + bitrates +
+                ", httpCachings=" + httpCachings +
                 '}';
     }
 }

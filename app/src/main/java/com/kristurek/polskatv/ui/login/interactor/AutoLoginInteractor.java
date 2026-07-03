@@ -32,6 +32,10 @@ public class AutoLoginInteractor extends VoidParamAbstractInteractor<Boolean> {
             prefService.save(PreferencesService.KEYS.ACCOUNT_LANGUAGE, response.getInterfaceLang());
             prefService.save(PreferencesService.KEYS.ACCOUNT_MEDIA_SERVERS, (LinkedHashMap<String, String>) response.getMediaServers());
             prefService.save(PreferencesService.KEYS.ACCOUNT_MEDIA_SERVER_ID, response.getMediaServerId());
+            prefService.save(PreferencesService.KEYS.ACCOUNT_BITRATES, (LinkedHashMap<String, String>) response.getBitrates());
+            prefService.save(PreferencesService.KEYS.ACCOUNT_BITRATE_ID, response.getBitrateId());
+            prefService.save(PreferencesService.KEYS.ACCOUNT_HTTP_CACHINGS, (LinkedHashMap<String, String>) response.getHttpCachings());
+            prefService.save(PreferencesService.KEYS.ACCOUNT_HTTP_CACHING_ID, response.getHttpCachingId());
             prefService.save(PreferencesService.KEYS.ACCOUNT_REST_OF_DAY, response.getRestOfDay());
             prefService.save(PreferencesService.KEYS.ACCOUNT_TIME_SHIFT, response.getTimeShift());
             prefService.save(PreferencesService.KEYS.ACCOUNT_TIME_ZONE, response.getTimeZone());
