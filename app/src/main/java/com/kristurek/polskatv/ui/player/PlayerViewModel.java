@@ -10,8 +10,10 @@ import androidx.lifecycle.MutableLiveData;
 
 import androidx.media3.common.util.UnstableApi;
 import androidx.media3.common.MediaItem;
+import androidx.media3.common.PlaybackException;
 import androidx.media3.common.Player;
 import androidx.media3.exoplayer.ExoPlayer;
+import androidx.media3.exoplayer.source.BehindLiveWindowException;
 import com.kristurek.polskatv.iptv.FactoryService;
 import com.kristurek.polskatv.iptv.core.IptvService;
 import com.kristurek.polskatv.service.PreferencesService;
@@ -237,6 +239,15 @@ public class PlayerViewModel extends AbstractViewModel {
 
             timeline = new PlayerTimeline(result.getEpgCurrentTime());
             internalPlayer.addListener(timeline);
+            internalPlayer.addListener(new Player.Listener() {
+                @Override
+                public void onPlayerError(PlaybackException error) {
+                    if (isBehindLiveWindow(error)) {
+                        internalPlayer.seekToDefaultPosition();
+                        internalPlayer.prepare();
+                    }
+                }
+            });
             internalPlayer.setVolume(prefService.get(PreferencesService.KEYS.PLAYER_VOLUME, 1f));
 
             timeline.start();
@@ -244,5 +255,19 @@ public class PlayerViewModel extends AbstractViewModel {
 
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl()[end]");
         }
+    }
+
+    private static boolean isBehindLiveWindow(PlaybackException error) {
+        if (error.errorCode != PlaybackException.ERROR_CODE_BEHIND_LIVE_WINDOW) {
+            return false;
+        }
+        Throwable cause = error.getCause();
+        while (cause != null) {
+            if (cause instanceof BehindLiveWindowException) {
+                return true;
+            }
+            cause = cause.getCause();
+        }
+        return false;
     }
 }
