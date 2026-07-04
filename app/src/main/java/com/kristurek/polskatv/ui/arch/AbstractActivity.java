@@ -36,7 +36,7 @@ public abstract class AbstractActivity extends AppCompatActivity implements Abst
     }
 
     public void post(Event event) {
-        Log.d(Tag.EVENT, "AbstractFragment.post()[" + event + "]");
+        //Log.d(Tag.EVENT, "AbstractFragment.post()[" + event + "]");
         EventBus.getDefault().post(event);
     }
 

@@ -120,7 +120,7 @@ public class EpgFragment extends AbstractFragment {
 
     @Subscribe(threadMode = ThreadMode.POSTING)
     public void receive(EpgCurrentTimeEvent event) {
-        Log.d(Tag.MASSIVE, "EpgFragment.receive()[" + event + "]");
+        //Log.d(Tag.MASSIVE, "EpgFragment.receive()[" + event + "]");
         viewModel.updateProgress(event);
     }
 

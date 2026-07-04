@@ -9,16 +9,29 @@ import com.kristurek.polskatv.iptv.polbox.pojo.login.LoginRetrofitResponse;
 import com.kristurek.polskatv.iptv.polbox.pojo.logout.LogoutRetrofitResponse;
 import com.kristurek.polskatv.iptv.polbox.pojo.settings.SettingsRetrofitResponse;
 import com.kristurek.polskatv.iptv.polbox.pojo.url.UrlRetrofitResponse;
+import com.kristurek.polskatv.iptv.util.Tag;
 
+import android.util.Log;
+
+import java.io.IOException;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.CookieJar;
+import okhttp3.Interceptor;
 import okhttp3.JavaNetCookieJar;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okio.Buffer;
+import okio.BufferedSource;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class PolboxApiFactory {
 
@@ -39,7 +52,55 @@ public class PolboxApiFactory {
                 .connectTimeout(5, TimeUnit.SECONDS)
                 .readTimeout(5, TimeUnit.SECONDS)
                 .writeTimeout(5, TimeUnit.SECONDS)
-                .cookieJar(cookieJar);
+                .cookieJar(cookieJar)
+                .addInterceptor(chain -> {
+                    Request request = chain.request();
+
+                    StringBuilder requestLog = new StringBuilder();
+                    requestLog.append("\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 RETROFIT REQUEST \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
+                    requestLog.append("\u2503 URL: ").append(request.url()).append("\n");
+                    requestLog.append("\u2503 Method: ").append(request.method()).append("\n");
+
+                    if (request.headers().size() > 0) {
+                        requestLog.append("\u2503 Headers:\n");
+                        for (String name : request.headers().names()) {
+                            requestLog.append("\u2503   ").append(name).append(": ").append(request.header(name)).append("\n");
+                        }
+                    }
+
+                    String cookies = cookieJar.loadForRequest(request.url()).toString();
+                    if (!cookies.equals("[]")) {
+                        requestLog.append("\u2503 Cookies: ").append(cookies).append("\n");
+                    }
+                    requestLog.append("\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
+
+                    Log.d(Tag.API, requestLog.toString());
+
+                    Response response = chain.proceed(request);
+
+                    ResponseBody responseBody = response.body();
+                    String bodyString = "";
+                    if (responseBody != null) {
+                        BufferedSource source = responseBody.source();
+                        source.request(Long.MAX_VALUE); // Buffer the entire body.
+                        Buffer buffer = source.getBuffer();
+                        Charset charset = StandardCharsets.UTF_8;
+                        bodyString = buffer.clone().readString(charset);
+                    }
+
+                    StringBuilder responseLog = new StringBuilder();
+                    responseLog.append("\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 RETROFIT RESPONSE \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
+                    responseLog.append("\u2503 Code: ").append(response.code()).append("\n");
+                    responseLog.append("\u2503 Message: ").append(response.message()).append("\n");
+                    if (!bodyString.isEmpty()) {
+                        responseLog.append("\u2503 Payload: ").append(bodyString).append("\n");
+                    }
+                    responseLog.append("\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
+
+                    Log.d(Tag.API, responseLog.toString());
+
+                    return response;
+                });
 
         OkHttpClient okHttpClient = okHttpClientBuilder.build();
 

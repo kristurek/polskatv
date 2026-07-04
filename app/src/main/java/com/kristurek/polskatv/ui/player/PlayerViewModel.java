@@ -107,21 +107,21 @@ public class PlayerViewModel extends AbstractViewModel {
         if (player.getValue() != null) {
             switch (player.getValue().getPlaybackState()) {
                 case Player.STATE_BUFFERING:
-                    Log.d(Tag.MASSIVE, "PlayerViewModel.refresh()[Player.STATE_BUFFERING]");
+                    //Log.d(Tag.MASSIVE, "PlayerViewModel.refresh()[Player.STATE_BUFFERING]");
                     loading.postValue(View.VISIBLE);
                     break;
                 case Player.STATE_ENDED:
-                    Log.d(Tag.MASSIVE, "PlayerViewModel.refresh()[Player.STATE_ENDED]");
+                    //Log.d(Tag.MASSIVE, "PlayerViewModel.refresh()[Player.STATE_ENDED]");
 
                     releasePlayer();
                     getEventBus().post(new StreamEndedEvent());
                     break;
                 case Player.STATE_IDLE:
-                    Log.d(Tag.MASSIVE, "PlayerViewModel.refresh()[Player.STATE_IDLE]");
+                    //Log.d(Tag.MASSIVE, "PlayerViewModel.refresh()[Player.STATE_IDLE]");
                     loading.postValue(View.GONE);
                     break;
                 case Player.STATE_READY:
-                    Log.d(Tag.MASSIVE, "PlayerViewModel.refresh()[Player.STATE_READY]");
+                    //Log.d(Tag.MASSIVE, "PlayerViewModel.refresh()[Player.STATE_READY]");
                     loading.postValue(View.GONE);
                     break;
                 default:

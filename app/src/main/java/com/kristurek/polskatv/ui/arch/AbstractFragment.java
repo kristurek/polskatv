@@ -34,7 +34,7 @@ public abstract class AbstractFragment extends Fragment implements AbstractViewM
     }
 
     public void post(Event event) {
-        Log.d(Tag.EVENT, "AbstractFragment.post()[" + event + "]");
+        //Log.d(Tag.EVENT, "AbstractFragment.post()[" + event + "]");
         EventBus.getDefault().post(event);
     }
 

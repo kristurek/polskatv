@@ -142,7 +142,7 @@ public class ConsoleViewModel extends AbstractViewModel {
     //==============================================================================================
 
     public void updateProgress(EpgCurrentTimeEvent event) {
-        Log.d(Tag.MASSIVE, "ConsoleViewModel.updateProgress()[" + event + "]");
+        //Log.d(Tag.MASSIVE, "ConsoleViewModel.updateProgress()[" + event + "]");
 
         if (model != null) {
             model.setEpgCurrentTime(event.getEpgCurrentTime());
@@ -229,7 +229,7 @@ public class ConsoleViewModel extends AbstractViewModel {
     //==============================================================================================
 
     private Event determineIfNeedReloadLiveEpg() {
-        Log.d(Tag.MASSIVE, "ConsoleViewModel.determineLivePosition()");
+        //Log.d(Tag.MASSIVE, "ConsoleViewModel.determineLivePosition()");
 
         if (model.getEpgCurrentTime() > model.getEpgEndTime()) {
             FindCurrentEpgEvent event = new FindCurrentEpgEvent();
@@ -242,7 +242,7 @@ public class ConsoleViewModel extends AbstractViewModel {
     }
 
     private Event determineIfNeedReloadArchiveEpg(Action action) {
-        Log.d(Tag.MASSIVE, "ConsoleViewModel.determineIfNeedReloadArchiveEpg()[" + action + "]");
+        //Log.d(Tag.MASSIVE, "ConsoleViewModel.determineIfNeedReloadArchiveEpg()[" + action + "]");
 
         long currentInSeconds = model.getEpgCurrentTime() - model.getEpgBeginTime();
         long stepInSeconds = getTimeStepInSeconds(action);

@@ -41,7 +41,7 @@ public class PlayerTimeline implements Player.Listener {
     }
 
     public long getEpgCurrentTime() {
-        Log.d(Tag.MASSIVE, "PlayerTimeline.getEpgCurrentTime()[" + (actualProgressTotal + actualProgressLastFrame) + "]");
+        //Log.d(Tag.MASSIVE, "PlayerTimeline.getEpgCurrentTime()[" + (actualProgressTotal + actualProgressLastFrame) + "]");
         return actualProgressTotal + actualProgressLastFrame;
     }
 

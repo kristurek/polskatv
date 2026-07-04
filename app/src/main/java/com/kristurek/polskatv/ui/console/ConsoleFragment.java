@@ -103,7 +103,7 @@ public class ConsoleFragment extends AbstractFragment {
 
     @Subscribe(threadMode = ThreadMode.POSTING)
     public void receive(EpgCurrentTimeEvent event) {
-        Log.d(Tag.MASSIVE, "ConsoleFragment.receive()[" + event + "]");
+        //Log.d(Tag.MASSIVE, "ConsoleFragment.receive()[" + event + "]");
         viewModel.updateProgress(event);
     }
 
