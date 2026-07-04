@@ -68,6 +68,40 @@ public class PolboxService extends BasePolboxService implements IptvService {
         reLoginRequest = request;
     }
 
+    private String getSoftId() {
+        String mode = prefService.get(PreferencesService.KEYS.PLAYER_COMPATIBILITY_MODE, "LINUX");
+        Log.d(Tag.API, "PolboxService.getSoftId() mode: " + mode);
+        switch (mode) {
+            case "LEGACY":
+                return "polwin-jo-001";
+            case "WEB":
+                return "react_smarttv_other";
+            case "LINUX":
+                return "react_linux";
+            case "WINDOWS":
+                return "react_win";
+            default:
+                return "react_linux";
+        }
+    }
+
+    private String getUserAgent() {
+        String mode = prefService.get(PreferencesService.KEYS.PLAYER_COMPATIBILITY_MODE, "LINUX");
+        Log.d(Tag.API, "PolboxService.getUserAgent() mode: " + mode);
+        switch (mode) {
+            case "LEGACY":
+                return "Polbox.TV 3.0.0B - Windows, built at Jul 18 2016";
+            case "WEB":
+                return "Mozilla/5.0 (X11; Linux x86_64; rv:152.0) Gecko/20100101 Firefox/152.0";
+            case "LINUX":
+                return "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36";
+            case "WINDOWS":
+                return "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.1 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36";
+            default:
+                return "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36";
+        }
+    }
+
     @Override
     public LoginResponse login(LoginRequest request) throws IptvException {
         Log.d(Tag.API, "Polbox.login(" + request + ")");
@@ -77,9 +111,12 @@ public class PolboxService extends BasePolboxService implements IptvService {
 
         persistRequest(request);
 
-        String softId = prefService.get(PreferencesService.KEYS.PLAYER_COMPATIBILITY_MODE, "react_linux");
+        String userAgent = getUserAgent();
+        String softId = getSoftId();
 
-        LoginResponse response = process(new LoginConverter(), () -> api.login(request.getLogin(), request.getPass(), "all", softId, "b9007bc2ca5768442a3fa4c41f14a4fb", "en", "apple"));
+        Log.d(Tag.API, "Polbox.login() userAgent: " + userAgent + ", softId: " + softId);
+
+        LoginResponse response = process(new LoginConverter(), () -> api.login(userAgent, request.getLogin(), request.getPass(), "all", softId, "b9007bc2ca5768442a3fa4c41f14a4fb", "en", "apple"));
 
         this.parentalPass = response.getParentalPass() != null ? response.getParentalPass() : request.getParentalPass();
 
@@ -96,7 +133,7 @@ public class PolboxService extends BasePolboxService implements IptvService {
         if (!ValidatorBean.validate(request))
             throw new IptvValidatorException(ExceptionHelper.VALIDATOR_MSG);
 
-        return process(new LogoutConverter(), () -> api.logout());
+        return process(new LogoutConverter(), () -> api.logout(getUserAgent()));
     }
 
     @Override
@@ -106,19 +143,21 @@ public class PolboxService extends BasePolboxService implements IptvService {
         if (!ValidatorBean.validate(request))
             throw new IptvValidatorException(ExceptionHelper.VALIDATOR_MSG);
 
+        String userAgent = getUserAgent();
+
         switch (request.getType()) {
             case HTTP_CACHING:
-                return process(new SettingsConverter(), () -> api.saveSettings("http_caching", request.getNewValue()), () -> login(reLoginRequest));
+                return process(new SettingsConverter(), () -> api.saveSettings(userAgent, "http_caching", request.getNewValue()), () -> login(reLoginRequest));
             case BITRATE:
-                return process(new SettingsConverter(), () -> api.saveSettings("bitrate", request.getNewValue()), () -> login(reLoginRequest));
+                return process(new SettingsConverter(), () -> api.saveSettings(userAgent, "bitrate", request.getNewValue()), () -> login(reLoginRequest));
             case STREAM_SERVER:
-                return process(new SettingsConverter(), () -> api.saveSettings("stream_server", request.getNewValue()), () -> login(reLoginRequest));
+                return process(new SettingsConverter(), () -> api.saveSettings(userAgent, "stream_server", request.getNewValue()), () -> login(reLoginRequest));
             case TIME_SHIFT:
-                return process(new SettingsConverter(), () -> api.saveSettings("timeshift", request.getNewValue()), () -> login(reLoginRequest));
+                return process(new SettingsConverter(), () -> api.saveSettings(userAgent, "timeshift", request.getNewValue()), () -> login(reLoginRequest));
             case TIME_ZONE:
                 return new SettingsResponse();
             case PARENTAL_PASSWORD:
-                SettingsResponse response = process(new SettingsConverter(), () -> api.saveSettingsParentalPass("pcode", request.getOldValue(), request.getNewValue(), request.getNewValue()), () -> login(reLoginRequest));
+                SettingsResponse response = process(new SettingsConverter(), () -> api.saveSettingsParentalPass(userAgent, "pcode", request.getOldValue(), request.getNewValue(), request.getNewValue()), () -> login(reLoginRequest));
                 this.parentalPass = request.getNewValue();
                 return response;
             case LANGUAGE:
@@ -135,7 +174,7 @@ public class PolboxService extends BasePolboxService implements IptvService {
         if (!ValidatorBean.validate(request))
             throw new IptvValidatorException(ExceptionHelper.VALIDATOR_MSG);
 
-        return process(new ChannelsConverter(), () -> api.getChannels(1), () -> login(reLoginRequest));
+        return process(new ChannelsConverter(), () -> api.getChannels(getUserAgent(), 1), () -> login(reLoginRequest));
     }
 
     @Override
@@ -154,16 +193,17 @@ public class PolboxService extends BasePolboxService implements IptvService {
         String nextDay = nextDayLD != null ? DateTimeHelper.localDateToString(nextDayLD, DateTimeHelper.ddMMyy) : null;
 
         String cid = Joiner.on(",").join(request.getChannelIds());
+        String userAgent = getUserAgent();
 
         EpgsRetrofitResponse response1 = null;
         if (previousDay != null)
-            response1 = process(new EpgsConverter(), () -> api.getEpgs(cid, previousDay), () -> login(reLoginRequest));
+            response1 = process(new EpgsConverter(), () -> api.getEpgs(userAgent, cid, previousDay), () -> login(reLoginRequest));
 
-        EpgsRetrofitResponse response2 = process(new EpgsConverter(), () -> api.getEpgs(cid, currentDay), () -> login(reLoginRequest));
+        EpgsRetrofitResponse response2 = process(new EpgsConverter(), () -> api.getEpgs(userAgent, cid, currentDay), () -> login(reLoginRequest));
 
         EpgsRetrofitResponse response3 = null;
         if (nextDay != null)
-            response3 = process(new EpgsConverter(), () -> api.getEpgs(cid, nextDay), () -> login(reLoginRequest));
+            response3 = process(new EpgsConverter(), () -> api.getEpgs(userAgent, cid, nextDay), () -> login(reLoginRequest));
 
         return new UnionEpgsConverter(request.getFromBeginTime()).convert(response1, response2, response3);
     }
@@ -175,7 +215,7 @@ public class PolboxService extends BasePolboxService implements IptvService {
         if (!ValidatorBean.validate(request) || request.getChannelIds().isEmpty())
             throw new IptvValidatorException(ExceptionHelper.VALIDATOR_MSG);
 
-        return process(new CurrentEpgsConverter(), () -> api.getCurrentEpgs(Joiner.on(",").join(request.getChannelIds()), 3, 1), () -> login(reLoginRequest));
+        return process(new CurrentEpgsConverter(), () -> api.getCurrentEpgs(getUserAgent(), Joiner.on(",").join(request.getChannelIds()), 3, 1), () -> login(reLoginRequest));
     }
 
     @Override
@@ -207,13 +247,14 @@ public class PolboxService extends BasePolboxService implements IptvService {
             throw new IptvValidatorException(ExceptionHelper.VALIDATOR_MSG);
 
         UrlResponse response = null;
+        String userAgent = getUserAgent();
 
         switch (request.getType()) {
             case LIVE_EPG:
-                response = process(new UrlConverter(), () -> api.getLiveUrl(request.getChannelId(), parentalPass), () -> login(reLoginRequest));
+                response = process(new UrlConverter(), () -> api.getLiveUrl(userAgent, request.getChannelId(), parentalPass), () -> login(reLoginRequest));
                 break;
             case ARCHIVE_EPG:
-                response = process(new UrlConverter(), () -> api.getArchiveUrl(request.getChannelId(), request.getSeekToTime(), parentalPass), () -> login(reLoginRequest));
+                response = process(new UrlConverter(), () -> api.getArchiveUrl(userAgent, request.getChannelId(), request.getSeekToTime(), parentalPass), () -> login(reLoginRequest));
                 break;
             default:
                 throw new IptvException(ExceptionHelper.UNSUPPORTED_EPG_TYPE_MSG);

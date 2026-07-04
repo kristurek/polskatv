@@ -109,7 +109,6 @@ public class PolskaTelewizjaUsaServiceMock implements IptvService {
     @Override
     public UrlResponse getUrl(UrlRequest requestDTO) throws IptvException {
         UrlResponse response = new UrlResponse();
-        response.setUserAgent("UserAgent");
         response.setUrl("http://37.221.172.231:8469/2134?587706569=5bbf6e548ff613e12b3de435f08a413cc19697ea14a7de8642e438bf23e50f6242414406247563701622767");
 
         return response;

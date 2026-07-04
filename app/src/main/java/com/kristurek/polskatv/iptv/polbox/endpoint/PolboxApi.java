@@ -14,6 +14,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -26,12 +27,12 @@ public interface PolboxApi {
     @FormUrlEncoded
     @POST("/api/json/login")
     @Headers({
-            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
     })
-    Call<BaseRetrofitResponse> login(@Field("login") String login,
+    Call<BaseRetrofitResponse> login(@Header("User-Agent") String userAgent,
+                                     @Field("login") String login,
                                      @Field("pass") String pass,
                                      @Field("settings") String settings,
                                      @Field("softid") String softId,
@@ -42,65 +43,67 @@ public interface PolboxApi {
     @TargetClass(clazz = LogoutRetrofitResponse.class)
     @GET("/api/json/logout")
     @Headers({
-            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
     })
-    Call<BaseRetrofitResponse> logout();
+    Call<BaseRetrofitResponse> logout(@Header("User-Agent") String userAgent);
 
     @TargetClass(clazz = ChannelsRetrofitResponse.class)
     @FormUrlEncoded
     @POST("/api/json/channel_list")
     @Headers({
-            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
     })
-    Call<BaseRetrofitResponse> getChannels(@Field("icon") int icon);
+    Call<BaseRetrofitResponse> getChannels(@Header("User-Agent") String userAgent,
+                                            @Field("icon") int icon);
 
     @TargetClass(clazz = EpgsRetrofitResponse.class)
     @GET("/api/json/epg")
     @Headers({
-            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
     })
-    Call<BaseRetrofitResponse> getEpgs(@Query("cid") String cid, @Query("day") String day);
+    Call<BaseRetrofitResponse> getEpgs(@Header("User-Agent") String userAgent,
+                                       @Query("cid") String cid,
+                                       @Query("day") String day);
 
     @TargetClass(clazz = CurrentEpgsRetrofitResponse.class)
     @GET("/api/json/epg_current")
     @Headers({
-            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
     })
-    Call<BaseRetrofitResponse> getCurrentEpgs(@Query("cids") String cids, @Query("epg") int epg, @Query("fixtime") int fixTime);
+    Call<BaseRetrofitResponse> getCurrentEpgs(@Header("User-Agent") String userAgent,
+                                              @Query("cids") String cids,
+                                              @Query("epg") int epg,
+                                              @Query("fixtime") int fixTime);
 
 
     @TargetClass(clazz = UrlRetrofitResponse.class)
     @GET("/api/json/get_url")
     @Headers({
-            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
     })
-    Call<BaseRetrofitResponse> getLiveUrl(@Query("cid") int cid,
+    Call<BaseRetrofitResponse> getLiveUrl(@Header("User-Agent") String userAgent,
+                                          @Query("cid") int cid,
                                           @Query("protect_code") String protectCode);
 
     @TargetClass(clazz = UrlRetrofitResponse.class)
     @GET("/api/json/get_url")
     @Headers({
-            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
     })
-    Call<BaseRetrofitResponse> getArchiveUrl(@Query("cid") int cid,
+    Call<BaseRetrofitResponse> getArchiveUrl(@Header("User-Agent") String userAgent,
+                                             @Query("cid") int cid,
                                              @Query("gmt") long gmt,
                                              @Query("protect_code") String protectCode);
 
@@ -109,24 +112,24 @@ public interface PolboxApi {
     @FormUrlEncoded
     @POST("/api/json/settings_set")
     @Headers({
-            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
     })
-    Call<BaseRetrofitResponse> saveSettings(@Field("var") String var,
+    Call<BaseRetrofitResponse> saveSettings(@Header("User-Agent") String userAgent,
+                                            @Field("var") String var,
                                             @Field("val") String val);
 
     @TargetClass(clazz = SettingsRetrofitResponse.class)
     @FormUrlEncoded
     @POST("/api/json/settings_set")
     @Headers({
-            "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36",
             "Connection: close",
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
     })
-    Call<BaseRetrofitResponse> saveSettingsParentalPass(@Field("var") String var,
+    Call<BaseRetrofitResponse> saveSettingsParentalPass(@Header("User-Agent") String userAgent,
+                                                        @Field("var") String var,
                                                         @Field("old_code") String oldCode,
                                                         @Field("new_code") String newCode,
                                                         @Field("confirm_code") String confirmCode);

@@ -84,7 +84,7 @@
             android:summary="@string/fast_backward_summary_settings"
             android:title="@string/fast_backward_title_settings" />
         <ListPreference
-            android:defaultValue="react_linux"
+            android:defaultValue="LINUX"
             android:dialogTitle="@string/compatibility_mode_dialog_settings"
             android:key="__PLAYER_COMPATIBILITY_MODE__"
             android:title="@string/compatibility_mode_title_settings" />

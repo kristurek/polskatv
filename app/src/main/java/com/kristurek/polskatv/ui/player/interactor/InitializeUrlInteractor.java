@@ -46,7 +46,6 @@ public class InitializeUrlInteractor extends ArrayParamAbstractInteractor<Player
         PlayerModel model = new PlayerModel();
         model.setUrl(response.getUrl());
         model.setEpgCurrentTime(epgCurrentTime);
-        model.setUserAgent(response.getUserAgent());
 
         return model;
     }

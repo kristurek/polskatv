@@ -193,7 +193,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         ListPreference playerCompatibilityModePref = (ListPreference) findPreference(PLAYER_COMPATIBILITY_MODE.getValue());
         playerCompatibilityModePref.setEntries(new String[]{"Legacy", "Web", "Linux", "Windows"});
-        playerCompatibilityModePref.setEntryValues(new String[]{"polwin-jo-001", "react_smarttv_other", "react_linux", "react_win"});
+        playerCompatibilityModePref.setEntryValues(new String[]{"LEGACY", "WEB", "LINUX", "WINDOWS"});
+        playerCompatibilityModePref.setOnPreferenceChangeListener(this);
 
         ListPreference applicationTimeZonePref = (ListPreference) findPreference(APPLICATION_TIME_ZONE.getValue());
         applicationTimeZonePref.setEntries(DateTimeHelper.TIME_ZONE_IDS);
@@ -351,6 +352,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
             case APPLICATION_TIME_ZONE:
                 DateTimeHelper.setSelectedTimeZoneId((String) newValue);
                 break;
+            case PLAYER_COMPATIBILITY_MODE:
+                Log.d(Tag.UI, "SettingsFragment.onPreferenceChange(PLAYER_COMPATIBILITY_MODE) " + newValue);
+                return true;
             default:
                 break;
         }

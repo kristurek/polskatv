@@ -14,7 +14,6 @@ public class UrlConverter implements Converter<UrlRetrofitResponse, UrlResponse>
 
         UrlResponse responseDTO = new UrlResponse();
         responseDTO.setUrl(response.getUrl());
-        responseDTO.setUserAgent("iptv1world.com 2.65 - Windows, built at Jul 30 2013");//TODO delete and use in PlayerViewModel something like PolskaTV 1.21
 
         Log.d(Tag.API, "UrlConverter.convert(" + responseDTO + ")");
         return responseDTO;
