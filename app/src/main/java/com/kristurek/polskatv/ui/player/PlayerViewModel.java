@@ -142,7 +142,7 @@ public class PlayerViewModel extends AbstractViewModel {
         if (locked.compareAndSet(false, true)) {
             disposables.add(new InitializeUrlInteractor(iptvService, prefService)
                     .execute(event.getChannelId(), event.getEpgType(), event.getEpgCurrentTime())
-                    .subscribeOn(Schedulers.newThread())
+                    .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(result -> {
                                 locked.set(false);
@@ -231,7 +231,12 @@ public class PlayerViewModel extends AbstractViewModel {
             Log.d(Tag.UI, "PlayerViewModel.postProcessAfterInitializationUrl() hash[" + internalPlayer.hashCode() + "]");
 
             Uri uri = Uri.parse(result.getUrl());
-            MediaItem mediaItem = MediaItem.fromUri(uri);
+            MediaItem mediaItem = new MediaItem.Builder()
+                    .setUri(uri)
+                    .setLiveConfiguration(new MediaItem.LiveConfiguration.Builder()
+                            .setTargetOffsetMs(15000)
+                            .build())
+                    .build();
 
             player.postValue(internalPlayer);
             internalPlayer.setMediaItem(mediaItem);
@@ -242,11 +247,17 @@ public class PlayerViewModel extends AbstractViewModel {
             internalPlayer.addListener(new Player.Listener() {
                 @Override
                 public void onPlayerError(PlaybackException error) {
+                    Log.e(Tag.UI, "Player error detected: " + error.getMessage() + " (code: " + error.errorCode + ")");
                     if (isBehindLiveWindow(error)) {
+                        Log.w(Tag.UI, "Behind live window, seeking to default position...");
                         internalPlayer.seekToDefaultPosition();
                         internalPlayer.prepare();
                     } else if (isStreamError(error)) {
-                        Log.w(Tag.UI, "Stream error detected (code: " + error.errorCode + "), attempting to recover...");
+                        Log.w(Tag.UI, "Stream/Sink error detected, attempting to recover and skip corrupted data...");
+                        // If it's a sink error, sometimes seeking slightly forward helps skip the "bad" timestamp
+                        if (error.errorCode >= 5000 && error.errorCode <= 5004) {
+                            internalPlayer.seekTo(internalPlayer.getCurrentPosition() + 1000);
+                        }
                         internalPlayer.prepare();
                     }
                 }
@@ -275,9 +286,21 @@ public class PlayerViewModel extends AbstractViewModel {
     }
 
     private static boolean isStreamError(PlaybackException error) {
-        return (error.errorCode >= 5000 && error.errorCode <= 5004) || // Audio sink errors
+        if ((error.errorCode >= 5000 && error.errorCode <= 5004) ||
                 error.errorCode == PlaybackException.ERROR_CODE_PARSING_CONTAINER_MALFORMED ||
                 error.errorCode == PlaybackException.ERROR_CODE_PARSING_MANIFEST_MALFORMED ||
-                error.errorCode == PlaybackException.ERROR_CODE_DECODER_INIT_FAILED;
+                error.errorCode == PlaybackException.ERROR_CODE_DECODER_INIT_FAILED ||
+                error.errorCode == PlaybackException.ERROR_CODE_IO_UNSPECIFIED) {
+            return true;
+        }
+        Throwable cause = error.getCause();
+        while (cause != null) {
+            String name = cause.getClass().getName();
+            if (name.contains("AudioSink") || name.contains("PesReader") || name.contains("UnexpectedDiscontinuityException")) {
+                return true;
+            }
+            cause = cause.getCause();
+        }
+        return false;
     }
 }

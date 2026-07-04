@@ -11,6 +11,7 @@ import com.kristurek.polskatv.iptv.polbox.pojo.common.BaseRetrofitResponse;
 import com.kristurek.polskatv.iptv.polbox.pojo.error.ErrorRetrofitResponse;
 import com.kristurek.polskatv.iptv.util.Tag;
 
+import java.io.IOException;
 import java.util.concurrent.Callable;
 
 import retrofit2.Call;
@@ -89,6 +90,14 @@ public abstract class BasePolboxService {
     }
 
     private static IptvException prepareException(Response<BaseRetrofitResponse> response) {
-        return new IptvException(new ExceptionModel(response.errorBody().toString(), String.valueOf(response.code())));
+        String errorMsg = "Unknown error";
+        try {
+            if (response.errorBody() != null) {
+                errorMsg = response.errorBody().string();
+            }
+        } catch (IOException e) {
+            Log.e(Tag.API, "BasePolboxService.prepareException()", e);
+        }
+        return new IptvException(new ExceptionModel(errorMsg, String.valueOf(response.code())));
     }
 }
