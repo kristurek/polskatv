@@ -245,6 +245,9 @@ public class PlayerViewModel extends AbstractViewModel {
                     if (isBehindLiveWindow(error)) {
                         internalPlayer.seekToDefaultPosition();
                         internalPlayer.prepare();
+                    } else if (isStreamError(error)) {
+                        Log.w(Tag.UI, "Stream error detected (code: " + error.errorCode + "), attempting to recover...");
+                        internalPlayer.prepare();
                     }
                 }
             });
@@ -269,5 +272,12 @@ public class PlayerViewModel extends AbstractViewModel {
             cause = cause.getCause();
         }
         return false;
+    }
+
+    private static boolean isStreamError(PlaybackException error) {
+        return (error.errorCode >= 5000 && error.errorCode <= 5004) || // Audio sink errors
+                error.errorCode == PlaybackException.ERROR_CODE_PARSING_CONTAINER_MALFORMED ||
+                error.errorCode == PlaybackException.ERROR_CODE_PARSING_MANIFEST_MALFORMED ||
+                error.errorCode == PlaybackException.ERROR_CODE_DECODER_INIT_FAILED;
     }
 }
