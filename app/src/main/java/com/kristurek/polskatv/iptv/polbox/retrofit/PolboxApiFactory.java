@@ -35,6 +35,8 @@ import java.nio.charset.StandardCharsets;
 
 public class PolboxApiFactory {
 
+    private static volatile OkHttpClient okHttpClient;
+
     public static PolboxApi create() {
         return getClient(PolboxApi.SERVICE_ENDPOINT).create(PolboxApi.class);
     }
@@ -43,70 +45,78 @@ public class PolboxApiFactory {
         return getClient(url).create(PolboxApi.class);
     }
 
+    private static OkHttpClient getOkHttpClient() {
+        if (okHttpClient == null) {
+            synchronized (PolboxApiFactory.class) {
+                if (okHttpClient == null) {
+                    CookieManager cookieManager = new CookieManager();
+                    cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+                    CookieJar cookieJar = new JavaNetCookieJar(cookieManager);
+
+                    okHttpClient = new OkHttpClient.Builder()
+                            .connectTimeout(10, TimeUnit.SECONDS)
+                            .readTimeout(10, TimeUnit.SECONDS)
+                            .writeTimeout(10, TimeUnit.SECONDS)
+                            .cookieJar(cookieJar)
+                            .addInterceptor(chain -> {
+                                Request request = chain.request();
+
+                                StringBuilder requestLog = new StringBuilder();
+                                requestLog.append("\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 RETROFIT REQUEST \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
+                                requestLog.append("\u2503 URL: ").append(request.url()).append("\n");
+                                requestLog.append("\u2503 Method: ").append(request.method()).append("\n");
+
+                                if (request.headers().size() > 0) {
+                                    requestLog.append("\u2503 Headers:\n");
+                                    for (String name : request.headers().names()) {
+                                        requestLog.append("\u2503   ").append(name).append(": ").append(request.header(name)).append("\n");
+                                    }
+                                }
+
+                                String cookies = cookieJar.loadForRequest(request.url()).toString();
+                                if (!cookies.equals("[]")) {
+                                    requestLog.append("\u2503 Cookies: ").append(cookies).append("\n");
+                                }
+                                requestLog.append("\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
+
+                                Log.d(Tag.API, requestLog.toString());
+
+                                Response response = chain.proceed(request);
+
+                                ResponseBody responseBody = response.body();
+                                String bodyString = "";
+                                if (responseBody != null) {
+                                    BufferedSource source = responseBody.source();
+                                    source.request(Long.MAX_VALUE); // Buffer the entire body.
+                                    Buffer buffer = source.getBuffer();
+                                    Charset charset = StandardCharsets.UTF_8;
+                                    bodyString = buffer.clone().readString(charset);
+                                }
+
+                                StringBuilder responseLog = new StringBuilder();
+                                responseLog.append("\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 RETROFIT RESPONSE \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
+                                responseLog.append("\u2503 Code: ").append(response.code()).append("\n");
+                                responseLog.append("\u2503 Message: ").append(response.message()).append("\n");
+                                if (!bodyString.isEmpty()) {
+                                    responseLog.append("\u2503 Payload: ").append(bodyString).append("\n");
+                                }
+                                responseLog.append("\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
+
+                                Log.d(Tag.API, responseLog.toString());
+
+                                return response;
+                            })
+                            .build();
+                }
+            }
+        }
+        return okHttpClient;
+    }
+
     private static Retrofit getClient(String url) {
-        CookieManager cookieManager = new CookieManager();
-        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
-        CookieJar cookieJar = new JavaNetCookieJar(cookieManager);
-
-        OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient().newBuilder()
-                .connectTimeout(5, TimeUnit.SECONDS)
-                .readTimeout(5, TimeUnit.SECONDS)
-                .writeTimeout(5, TimeUnit.SECONDS)
-                .cookieJar(cookieJar)
-                .addInterceptor(chain -> {
-                    Request request = chain.request();
-
-                    StringBuilder requestLog = new StringBuilder();
-                    requestLog.append("\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 RETROFIT REQUEST \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
-                    requestLog.append("\u2503 URL: ").append(request.url()).append("\n");
-                    requestLog.append("\u2503 Method: ").append(request.method()).append("\n");
-
-                    if (request.headers().size() > 0) {
-                        requestLog.append("\u2503 Headers:\n");
-                        for (String name : request.headers().names()) {
-                            requestLog.append("\u2503   ").append(name).append(": ").append(request.header(name)).append("\n");
-                        }
-                    }
-
-                    String cookies = cookieJar.loadForRequest(request.url()).toString();
-                    if (!cookies.equals("[]")) {
-                        requestLog.append("\u2503 Cookies: ").append(cookies).append("\n");
-                    }
-                    requestLog.append("\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
-
-                    Log.d(Tag.API, requestLog.toString());
-
-                    Response response = chain.proceed(request);
-
-                    ResponseBody responseBody = response.body();
-                    String bodyString = "";
-                    if (responseBody != null) {
-                        BufferedSource source = responseBody.source();
-                        source.request(Long.MAX_VALUE); // Buffer the entire body.
-                        Buffer buffer = source.getBuffer();
-                        Charset charset = StandardCharsets.UTF_8;
-                        bodyString = buffer.clone().readString(charset);
-                    }
-
-                    StringBuilder responseLog = new StringBuilder();
-                    responseLog.append("\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 RETROFIT RESPONSE \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
-                    responseLog.append("\u2503 Code: ").append(response.code()).append("\n");
-                    responseLog.append("\u2503 Message: ").append(response.message()).append("\n");
-                    if (!bodyString.isEmpty()) {
-                        responseLog.append("\u2503 Payload: ").append(bodyString).append("\n");
-                    }
-                    responseLog.append("\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
-
-                    Log.d(Tag.API, responseLog.toString());
-
-                    return response;
-                });
-
-        OkHttpClient okHttpClient = okHttpClientBuilder.build();
-
         return new Retrofit.Builder()
                 .baseUrl(url)
-                .client(okHttpClient)
+                .client(getOkHttpClient())
                 .addConverterFactory(createGsonConverterFactory())
                 .build();
     }

@@ -22,6 +22,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PolskaTelewizjaUsaApiFactory {
 
+    private static volatile OkHttpClient okHttpClient;
+
     public static PolskaTelewizjaUsaApi create() {
         return getClient(PolskaTelewizjaUsaApi.SERVICE_ENDPOINT).create(PolskaTelewizjaUsaApi.class);
     }
@@ -30,22 +32,30 @@ public class PolskaTelewizjaUsaApiFactory {
         return getClient(url).create(PolskaTelewizjaUsaApi.class);
     }
 
+    private static OkHttpClient getOkHttpClient() {
+        if (okHttpClient == null) {
+            synchronized (PolskaTelewizjaUsaApiFactory.class) {
+                if (okHttpClient == null) {
+                    CookieManager cookieManager = new CookieManager();
+                    cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+                    CookieJar cookieJar = new JavaNetCookieJar(cookieManager);
+
+                    okHttpClient = new OkHttpClient.Builder()
+                            .connectTimeout(10, TimeUnit.SECONDS)
+                            .readTimeout(10, TimeUnit.SECONDS)
+                            .writeTimeout(10, TimeUnit.SECONDS)
+                            .cookieJar(cookieJar)
+                            .build();
+                }
+            }
+        }
+        return okHttpClient;
+    }
+
     private static Retrofit getClient(String url) {
-        CookieManager cookieManager = new CookieManager();
-        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
-        CookieJar cookieJar = new JavaNetCookieJar(cookieManager);
-
-        OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient().newBuilder()
-                .connectTimeout(5, TimeUnit.SECONDS)
-                .readTimeout(5, TimeUnit.SECONDS)
-                .writeTimeout(5, TimeUnit.SECONDS)
-                .cookieJar(cookieJar);
-
-        OkHttpClient okHttpClient = okHttpClientBuilder.build();
-
         return new Retrofit.Builder()
                 .baseUrl(url)
-                .client(okHttpClient)
+                .client(getOkHttpClient())
                 .addConverterFactory(createGsonConverterFactory())
                 .build();
     }

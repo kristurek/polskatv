@@ -23,9 +23,9 @@ public class ExoPlayerFactory {
                     DefaultLoadControl loadControl = new DefaultLoadControl.Builder()
                             .setBufferDurationsMs(
                                     buffer, /* minBufferMs */
-                                    buffer * 2, /* maxBufferMs */
-                                    buffer, /* bufferForPlaybackMs */
-                                    buffer  /* bufferForPlaybackAfterRebufferMs */
+                                    Math.max(buffer * 4, 50000), /* maxBufferMs */
+                                    Math.min(buffer / 2, 2500), /* bufferForPlaybackMs */
+                                    Math.min(buffer, 5000)  /* bufferForPlaybackAfterRebufferMs */
                             )
                             .build();
 
