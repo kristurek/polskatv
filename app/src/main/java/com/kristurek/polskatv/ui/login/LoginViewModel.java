@@ -117,7 +117,7 @@ public class LoginViewModel extends AbstractViewModel {
 
             providerId.setValue(prefService.get(PreferencesService.KEYS.API_PROVIDER_ID, ServiceProvider.POLBOX.getId()));
 
-            FactoryService.SERVICE.initializeService(ServiceProvider.valueOfClazz(prefService.get(PreferencesService.KEYS.API_PROVIDER_ID, ServiceProvider.POLBOX.getId())));
+            FactoryService.SERVICE.initializeService(ServiceProvider.valueOfClazz(prefService.get(PreferencesService.KEYS.API_PROVIDER_ID, ServiceProvider.POLBOX.getId())), prefService);
             this.iptvService = FactoryService.SERVICE.getInstance();
         } else {
             subscription.setValue("");
@@ -149,7 +149,7 @@ public class LoginViewModel extends AbstractViewModel {
     }
 
     public void manualLogin() {
-        FactoryService.SERVICE.initializeService(ServiceProvider.valueOfClazz(providerId.getValue()));
+        FactoryService.SERVICE.initializeService(ServiceProvider.valueOfClazz(providerId.getValue()), prefService);
         this.iptvService = FactoryService.SERVICE.getInstance();
         disposables.add(new ManualLoginInteractor(iptvService, prefService)
                 .execute(subscription.getValue(), password.getValue(), saveChecked.getValue(), providerId.getValue(), parentalPassword.getValue())

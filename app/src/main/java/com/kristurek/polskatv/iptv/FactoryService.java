@@ -8,6 +8,7 @@ import com.kristurek.polskatv.iptv.polbox.retrofit.PolboxApiFactory;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.PolskaTelewizjaUsaService;
 import com.kristurek.polskatv.iptv.polskatelewizjausa.retrofit.PolskaTelewizjaUsaApiFactory;
 import com.kristurek.polskatv.iptv.util.Tag;
+import com.kristurek.polskatv.service.PreferencesService;
 
 public enum FactoryService {
 
@@ -15,13 +16,13 @@ public enum FactoryService {
 
     private IptvService service;
 
-    public void initializeService(ServiceProvider serviceProvider) {
+    public void initializeService(ServiceProvider serviceProvider, PreferencesService preferencesService) {
         if (service != null)
             Log.d(Tag.API, "Service exists, reinitialize service[" + serviceProvider + "]");
 
         try {
             if (serviceProvider.equals(ServiceProvider.POLBOX))
-                service = new PolboxService(PolboxApiFactory.create());
+                service = new PolboxService(PolboxApiFactory.create(), preferencesService);
             else if (serviceProvider.equals(ServiceProvider.POLSKA_TELEWIZJA_USA))
                 service = new PolskaTelewizjaUsaService(PolskaTelewizjaUsaApiFactory.create());
             else

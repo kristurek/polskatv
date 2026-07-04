@@ -95,6 +95,9 @@
     <string name="buffer_dialog_settings">Please select buffer duration</string>
     <string name="buffer_summary_settings">&#160;seconds</string>
 
+    <string name="compatibility_mode_title_settings">Compatibility Mode</string>
+    <string name="compatibility_mode_dialog_settings">Please select compatibility mode</string>
+
     <string name="application_time_zone_title_settings">Time zone</string>
     <string name="application_time_zone_dialog_settings">Please select time zone</string>
 

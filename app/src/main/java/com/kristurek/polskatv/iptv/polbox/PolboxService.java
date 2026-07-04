@@ -38,6 +38,7 @@ import com.kristurek.polskatv.iptv.polbox.converter.UrlConverter;
 import com.kristurek.polskatv.iptv.polbox.endpoint.PolboxApi;
 import com.kristurek.polskatv.iptv.polbox.pojo.epgs.EpgsRetrofitResponse;
 import com.kristurek.polskatv.iptv.util.Tag;
+import com.kristurek.polskatv.service.PreferencesService;
 import com.kristurek.polskatv.util.DateTimeHelper;
 
 import org.apache.commons.collections4.CollectionUtils;
@@ -52,12 +53,15 @@ public class PolboxService extends BasePolboxService implements IptvService {
 
     private PolboxApi api;
 
+    private PreferencesService prefService;
+
     private LoginRequest reLoginRequest;
 
     private String parentalPass;
 
-    public PolboxService(PolboxApi api) {
+    public PolboxService(PolboxApi api, PreferencesService prefService) {
         this.api = api;
+        this.prefService = prefService;
     }
 
     private void persistRequest(LoginRequest request) {
@@ -73,7 +77,9 @@ public class PolboxService extends BasePolboxService implements IptvService {
 
         persistRequest(request);
 
-        LoginResponse response = process(new LoginConverter(), () -> api.login(request.getLogin(), request.getPass(), "all", "react_linux", "b9007bc2ca5768442a3fa4c41f14a4fb", "en", "apple"));
+        String softId = prefService.get(PreferencesService.KEYS.PLAYER_COMPATIBILITY_MODE, "react_linux");
+
+        LoginResponse response = process(new LoginConverter(), () -> api.login(request.getLogin(), request.getPass(), "all", softId, "b9007bc2ca5768442a3fa4c41f14a4fb", "en", "apple"));
 
         this.parentalPass = response.getParentalPass() != null ? response.getParentalPass() : request.getParentalPass();
 

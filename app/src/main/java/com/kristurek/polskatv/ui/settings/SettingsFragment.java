@@ -63,6 +63,7 @@ import static com.kristurek.polskatv.service.PreferencesService.KEYS.APPLICATION
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.APPLICATION_VERSION;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_BACKWARD_MOVE;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_BUFFER;
+import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_COMPATIBILITY_MODE;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_FAST_BACKWARD_MOVE;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_FAST_FORWARD_MOVE;
 import static com.kristurek.polskatv.service.PreferencesService.KEYS.PLAYER_FORWARD_MOVE;
@@ -190,6 +191,10 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         playerFastBackwardPref.setEntries(new String[]{"5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"});
         playerFastBackwardPref.setEntryValues(new String[]{"5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"});
 
+        ListPreference playerCompatibilityModePref = (ListPreference) findPreference(PLAYER_COMPATIBILITY_MODE.getValue());
+        playerCompatibilityModePref.setEntries(new String[]{"Legacy", "Web", "Linux", "Windows"});
+        playerCompatibilityModePref.setEntryValues(new String[]{"polwin-jo-001", "react_smarttv_other", "react_linux", "react_win"});
+
         ListPreference applicationTimeZonePref = (ListPreference) findPreference(APPLICATION_TIME_ZONE.getValue());
         applicationTimeZonePref.setEntries(DateTimeHelper.TIME_ZONE_IDS);
         applicationTimeZonePref.setEntryValues(DateTimeHelper.TIME_ZONE_IDS);
@@ -268,6 +273,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
 
         ListPreference fastBackwardPref = (ListPreference) findPreference(PLAYER_FAST_BACKWARD_MOVE.getValue());
         fastBackwardPref.setSummary(prefService.get(PLAYER_FAST_BACKWARD_MOVE, 0) + getResources().getString(R.string.fast_backward_summary_settings));
+
+        ListPreference compatibilityModePref = (ListPreference) findPreference(PLAYER_COMPATIBILITY_MODE.getValue());
+        compatibilityModePref.setSummary(compatibilityModePref.getEntry());
 
         ListPreference applicationTimeZonePref = (ListPreference) findPreference(APPLICATION_TIME_ZONE.getValue());
         applicationTimeZonePref.setSummary(prefService.get(APPLICATION_TIME_ZONE, "<No saved>"));
