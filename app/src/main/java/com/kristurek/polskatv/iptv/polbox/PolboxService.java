@@ -90,18 +90,16 @@ public class PolboxService extends BasePolboxService implements IptvService {
     private String getUserAgent() {
         String mode = prefService.get(PreferencesService.KEYS.PLAYER_COMPATIBILITY_MODE, "LINUX");
         Log.d(Tag.API, "PolboxService.getUserAgent() mode: " + mode);
-        switch (mode) {
-            case "LEGACY":
-                return "Polbox.TV 3.0.0B - Windows, built at Jul 18 2016";
-            case "WEB":
-                return "Mozilla/5.0 (X11; Linux x86_64; rv:152.0) Gecko/20100101 Firefox/152.0";
-            case "LINUX":
-                return "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36";
-            case "WINDOWS":
-                return "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.1 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36";
-            default:
-                return "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36";
-        }
+        return switch (mode) {
+            case "LEGACY" -> "Polbox.TV 3.0.0B - Windows, built at Jul 18 2016";
+            case "WEB" -> "Mozilla/5.0 (X11; Linux x86_64; rv:152.0) Gecko/20100101 Firefox/152.0";
+            case "LINUX" ->
+                    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36";
+            case "WINDOWS" ->
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.1 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36";
+            default ->
+                    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) polbox.tv/1.4.3 Chrome/89.0.4389.128 Electron/12.0.9 Safari/537.36";
+        };
     }
 
     @Override
