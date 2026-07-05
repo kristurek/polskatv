@@ -61,6 +61,13 @@ public class PolboxApiFactory {
                             .addInterceptor(chain -> {
                                 Request request = chain.request();
 
+                                String requestBodyString = "";
+                                if (request.body() != null) {
+                                    Buffer requestBuffer = new Buffer();
+                                    request.body().writeTo(requestBuffer);
+                                    requestBodyString = requestBuffer.readUtf8();
+                                }
+
                                 StringBuilder requestLog = new StringBuilder();
                                 requestLog.append("\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 RETROFIT REQUEST \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n");
                                 requestLog.append("\u2503 URL: ").append(request.url()).append("\n");
@@ -71,6 +78,10 @@ public class PolboxApiFactory {
                                     for (String name : request.headers().names()) {
                                         requestLog.append("\u2503   ").append(name).append(": ").append(request.header(name)).append("\n");
                                     }
+                                }
+
+                                if (!requestBodyString.isEmpty()) {
+                                    requestLog.append("\u2503 Payload: ").append(requestBodyString).append("\n");
                                 }
 
                                 String cookies = cookieJar.loadForRequest(request.url()).toString();

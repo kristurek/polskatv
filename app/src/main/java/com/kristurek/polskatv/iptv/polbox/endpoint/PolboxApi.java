@@ -10,11 +10,15 @@ import com.kristurek.polskatv.iptv.polbox.pojo.settings.SettingsRetrofitResponse
 import com.kristurek.polskatv.iptv.polbox.pojo.url.UrlRetrofitResponse;
 import com.kristurek.polskatv.iptv.polbox.retrofit.TargetClass;
 
+import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.HeaderMap;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -31,14 +35,8 @@ public interface PolboxApi {
             "Content-Type: application/x-www-form-urlencoded",
             "Accept-Language: en-US,*"
     })
-    Call<BaseRetrofitResponse> login(@Header("User-Agent") String userAgent,
-                                     @Field("login") String login,
-                                     @Field("pass") String pass,
-                                     @Field("settings") String settings,
-                                     @Field("softid") String softId,
-                                     @Field("cli_serial") String cliSerial,
-                                     @Field("lang") String lang,
-                                     @Field("device") String device);
+    Call<BaseRetrofitResponse> login(@HeaderMap Map<String, String> headers,
+                                     @FieldMap Map<String, String> fields);
 
     @TargetClass(clazz = LogoutRetrofitResponse.class)
     @GET("/api/json/logout")

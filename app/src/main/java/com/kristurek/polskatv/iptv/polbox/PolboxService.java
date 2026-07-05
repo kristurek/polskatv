@@ -46,8 +46,10 @@ import org.apache.commons.text.similarity.JaroWinklerDistance;
 
 import java.time.LocalDate;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class PolboxService extends BasePolboxService implements IptvService {
 
@@ -116,7 +118,24 @@ public class PolboxService extends BasePolboxService implements IptvService {
 
         Log.d(Tag.API, "Polbox.login() userAgent: " + userAgent + ", softId: " + softId);
 
-        LoginResponse response = process(new LoginConverter(), () -> api.login(userAgent, request.getLogin(), request.getPass(), "all", softId, "b9007bc2ca5768442a3fa4c41f14a4fb", "en", "apple"));
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", userAgent);
+
+        Map<String, String> fields = new HashMap<>();
+        fields.put("login", request.getLogin());
+        fields.put("pass", request.getPass());
+        fields.put("settings", "all");
+        fields.put("softid", softId);
+        fields.put("lang", "en");
+        fields.put("device", "apple");
+
+        if (softId.equals("react_smarttv_other")) {
+            fields.put("userAgent", "react_web");
+        } else {
+            fields.put("cli_serial", "b9007bc2ca5768442a3fa4c41f14a4fb");
+        }
+
+        LoginResponse response = process(new LoginConverter(), () -> api.login(headers, fields));
 
         this.parentalPass = response.getParentalPass() != null ? response.getParentalPass() : request.getParentalPass();
 
