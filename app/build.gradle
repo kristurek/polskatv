@@ -8,12 +8,12 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
-def getDropboxToken() {
+def getDropboxProperty(String key) {
     Properties properties = new Properties()
     File settingsFile = project.rootProject.file('settings.properties')
     if (settingsFile.exists()) {
         properties.load(settingsFile.newDataInputStream())
-        return properties.getProperty("dropbox_token", "");
+        return properties.getProperty(key, "");
     }
     return "";
 }
@@ -40,7 +40,9 @@ android {
         versionName "2000"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
-        buildConfigField "String", "DROPBOX_TOKEN", "\"" + getDropboxToken() + "\""
+        buildConfigField "String", "DROPBOX_APP_KEY", "\"" + getDropboxProperty("dropbox_app_key") + "\""
+        buildConfigField "String", "DROPBOX_APP_SECRET", "\"" + getDropboxProperty("dropbox_app_secret") + "\""
+        buildConfigField "String", "DROPBOX_REFRESH_TOKEN", "\"" + getDropboxProperty("dropbox_refresh_token") + "\""
     }
 
     buildTypes {
@@ -107,7 +109,7 @@ dependencies {
     // WorkManager
     implementation 'androidx.work:work-runtime:2.11.2'
 
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs_nio:2.1.5'
 
     implementation 'com.squareup.retrofit2:retrofit:3.0.0'
     implementation 'com.squareup.retrofit2:converter-gson:3.0.0'
@@ -118,6 +120,7 @@ dependencies {
     implementation 'org.apache.commons:commons-text:1.15.0'
     implementation 'org.apache.commons:commons-collections4:4.5.0'
     implementation 'com.dropbox.core:dropbox-core-sdk:8.0.1'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.0'
     api 'com.google.guava:guava:33.6.0-android'  //remember - android, not jre
 
     implementation 'com.google.dagger:hilt-android:2.60'

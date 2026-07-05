@@ -2,6 +2,7 @@ package com.kristurek.polskatv.service.impl;
 
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
+import com.dropbox.core.oauth.DbxCredential;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
@@ -31,7 +32,8 @@ public class PolskaTvRemoteServerService implements RemoteServerService {
 
     private DbxClientV2 login() {
         DbxRequestConfig config = new DbxRequestConfig("polskatv.firetv");
-        return new DbxClientV2(config, BuildConfig.DROPBOX_TOKEN);
+        DbxCredential credential = new DbxCredential("", 0L, BuildConfig.DROPBOX_REFRESH_TOKEN, BuildConfig.DROPBOX_APP_KEY, BuildConfig.DROPBOX_APP_SECRET);
+        return new DbxClientV2(config, credential);
     }
 
     @Override
