@@ -43,6 +43,12 @@ public class UnionEpgsConverter {
             for (com.kristurek.polskatv.iptv.polbox.pojo.epgs.Epg epg : response3.getEpg())
                 response.add(epg);
 
+        long unixTimeNextDay = Long.MAX_VALUE;
+        LocalDate nextDayDate = DateTimeHelper.getNextDay(DateTimeHelper.unixTimeToLocalDate(fromBeginTime));
+        if (nextDayDate != null) {
+            unixTimeNextDay = DateTimeHelper.localDateToUnixTime(nextDayDate);
+        }
+
         for (int i = 0; i < response.size() - 1; i++) {
             com.kristurek.polskatv.iptv.polbox.pojo.epgs.Epg epg = response.get(i);
 
@@ -57,8 +63,6 @@ public class UnionEpgsConverter {
 
             epgDTO.setType(determineEpgType(epgDTO.getBeginTime(), epgDTO.getEndTime()));
 
-            LocalDate nextDayDate = DateTimeHelper.getNextDay(DateTimeHelper.unixTimeToLocalDate(fromBeginTime));
-            long unixTimeNextDay = DateTimeHelper.localDateToUnixTime(nextDayDate);
             if (epg.getUtStart() <= unixTimeNextDay)
                 epgsDTO.add(epgDTO);
         }

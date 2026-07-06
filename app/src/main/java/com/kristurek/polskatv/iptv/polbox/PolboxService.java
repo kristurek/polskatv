@@ -308,7 +308,7 @@ public class PolboxService extends BasePolboxService implements IptvService {
         JaroWinklerDistance jaroWinklerDistance = new JaroWinklerDistance();
         CollectionUtils.filter(results, epg -> {
             double result = jaroWinklerDistance.apply(request.getTitle(), epg.getTitle());
-            return result > 0.80 && epg.getType().equals(EpgType.ARCHIVE_EPG);
+            return result <= 0.20 && epg.getType().equals(EpgType.ARCHIVE_EPG);
         });
 
         Collections.reverse(results);

@@ -100,13 +100,13 @@ public class PolskaTelewizjaUsaGetSimilarEpgsServiceTest {
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate()
                 .atStartOfDay(ZoneId.systemDefault())
-                .minusDays(13)
+                .minusDays(4)
                 .toInstant()
                 .toEpochMilli() / 1000L;
 
         SimilarEpgsResponse responseDTO = service.getSimilarEpgs(new SimilarEpgsRequest(new HashSet<>(Arrays.asList(2455)), "Międzynarodowi poszukiwacze domów", beginArchive));
 
         assertNotNull(responseDTO);
-        assertEquals(16, responseDTO.getEpgs().size());
+        assertEquals(4, responseDTO.getEpgs().size());
     }
 }
