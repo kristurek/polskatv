@@ -1,18 +1,13 @@
 # Android
-# Build your Android project with Gradle.
-# Add steps that test, sign, and distribute the APK, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/android
+# Build your Android project with Gradle and upload to Dropbox.
 
 trigger:
-#  branches:
-#    include:
-#    - master
   tags:
     include:
     - v*
 
 pool:
-  vmImage: 'macos-latest'
+  vmImage: 'ubuntu-latest'
 
 steps:
 
@@ -21,50 +16,88 @@ steps:
   displayName: 'Download polskatv.jks'
   inputs:
     secureFile: 'polskatv.jks'
+
 - task: DownloadSecureFile@1
   name: keystore
-  displayName: 'Download keystore_azure.properties'
+  displayName: 'Download keystore.properties'
   inputs:
     secureFile: 'keystore.properties'
+
 - task: DownloadSecureFile@1
   name: settings
   displayName: 'Download settings.properties'
   inputs:
     secureFile: 'settings.properties'
+
 - task: Bash@3
+  displayName: 'Prepare Configuration Files'
   inputs:
     targetType: 'inline'
     script: |
-      cp $(keystore.secureFilePath) $(Build.SourcesDirectory)
-      cp $(settings.secureFilePath) $(Build.SourcesDirectory)
-      cp $(polskatv.secureFilePath) $(Build.SourcesDirectory)
+      cp $(keystore.secureFilePath) $(Build.SourcesDirectory)/keystore.properties
+      cp $(settings.secureFilePath) $(Build.SourcesDirectory)/settings.properties
+      cp $(polskatv.secureFilePath) $(Build.SourcesDirectory)/polskatv.jks
       ls -all
-- task: Gradle@2
+
+- task: Gradle@3
+  displayName: 'Build APK'
   inputs:
     workingDirectory: ''
     gradleWrapperFile: 'gradlew'
     gradleOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
-    jdkArchitectureOption: 'x64'
+    jdkVersionOption: '17'
     publishJUnitResults: false
-    testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleRelease'
+
 - task: CopyFiles@2
+  displayName: 'Copy APK to Staging'
   inputs:
     contents: 'app/build/outputs/apk/release/*.apk'
     targetFolder: $(Build.ArtifactStagingDirectory)
+    flattenFolders: true
+
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifacts'
   inputs:
     pathToPublish: $(Build.ArtifactStagingDirectory)
     artifactName: MyBuildOutputs
+
 - task: Bash@3
+  displayName: 'Upload to Dropbox'
+  env:
+    DROPBOX_APP_KEY: $(dropbox_app_key)
+    DROPBOX_APP_SECRET: $(dropbox_app_secret)
+    DROPBOX_REFRESH_TOKEN: $(dropbox_refresh_token)
   inputs:
     targetType: 'inline'
     script: |
-      echo "Start"
-      for file in $(Build.ArtifactStagingDirectory)/app/build/outputs/apk/release/*; do
-          echo curl -X POST https://content.dropboxapi.com/2/files/upload --header "Authorization: Bearer $(DB)" --header "Dropbox-API-Arg: {\"path\": \"/apk/$(basename "$file")\",\"mode\": \"add\",\"autorename\": true,\"mute\": false}" --header "Content-Type: application/octet-stream" --data-binary "@$file"
-          curl -vvv -X POST https://content.dropboxapi.com/2/files/upload --header "Authorization: Bearer $(DB)" --header "Dropbox-API-Arg: {\"path\": \"/apk/$(basename "$file")\",\"mode\": \"add\",\"autorename\": true,\"mute\": false}" --header "Content-Type: application/octet-stream" --data-binary "@$file"
+      set -e
+      echo "Refreshing Dropbox access token..."
+      
+      # Fetching access token using refresh token
+      RESPONSE=$(curl -s -X POST https://api.dropbox.com/oauth2/token \
+        -u "$DROPBOX_APP_KEY:$DROPBOX_APP_SECRET" \
+        -d grant_type=refresh_token \
+        -d refresh_token="$DROPBOX_REFRESH_TOKEN")
+      
+      # Extracting access_token from JSON response
+      ACCESS_TOKEN=$(echo $RESPONSE | sed -n 's/.*"access_token": *"\([^"]*\)".*/\1/p')
+      
+      if [ -z "$ACCESS_TOKEN" ]; then
+        echo "Error: Failed to obtain access token"
+        echo "Full response: $RESPONSE"
+        exit 1
+      fi
+
+      echo "Uploading APK files to Dropbox..."
+      for file in $(Build.ArtifactStagingDirectory)/*.apk; do
+          FILENAME=$(basename "$file")
+          echo "Uploading $FILENAME..."
+          curl -X POST https://content.dropboxapi.com/2/files/upload \
+            --header "Authorization: Bearer $ACCESS_TOKEN" \
+            --header "Dropbox-API-Arg: {\"path\": \"/apk/$FILENAME\",\"mode\": \"add\",\"autorename\": true,\"mute\": false}" \
+            --header "Content-Type: application/octet-stream" \
+            --data-binary "@$file"
+          echo -e "\nFinished uploading $FILENAME"
       done
-      echo "Stop"
